@@ -1,0 +1,26 @@
+{
+  "name": "interest-app",
+  "version": "1.0.0",
+  "description": "Our purpose for the interest app is to connect the new paradigm of thinkers, start-ups and businesses, to those in their area, who can be assets to their new business.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdsteph1/InterestApp.git"
+  },
+  "keywords": [
+    "start-up",
+    "networking",
+    "connect",
+    "entrepreneurs"
+  ],
+  "author": "TJ Stephens, Jesse Forte, Reyna Perez, Tim DeGraw, Bethany Pfeister",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdsteph1/InterestApp/issues"
+  },
+  "homepage": "https://github.com/tdsteph1/InterestApp#readme"
+}
