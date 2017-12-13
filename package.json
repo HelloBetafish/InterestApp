@@ -18,8 +18,9 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.2",
     "express": "^4.15.4",
-    "method-override": "^2.3.10"
+    "method-override": "^2.3.10",
+    "routes": "^2.1.0"
   }
 }
