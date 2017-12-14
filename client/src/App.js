@@ -1,10 +1,9 @@
 import React from "react";
+import Login from "./components/Login";
 
 
-const App = () => 
+const App = () => <Login />
 
-<h1>
-hi
-</h1>
+
 
 export default App;
