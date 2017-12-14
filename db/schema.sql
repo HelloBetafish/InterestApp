@@ -1,0 +1,39 @@
+DROP DATABASE if exists
+app_intdb;
+CREATE DATABASE app_intDB;
+USE app_intDB;
+
+CREATE TABLE user(
+userID INT NOT NULL AUTO_INCREMENT,
+person_name VARCHAR (35) NOT NULL,
+dob DATE NOT NULL,
+gender VARCHAR (20),
+occupation VARCHAR (30) NOT NULL,
+interest VARCHAR (50) NOT NULL,
+PRIMARY KEY(userID)
+);
+
+CREATE TABLE interest (
+interest_id INT NOT NULL AUTO_INCREMENT,
+tech_int BOOLEAN NOT NULL DEFAULT 0,
+tech_exp BOOLEAN NOT NULL DEFAULT 0,
+tech_years INT (2) NOT NULL DEFAULT 0,
+art_int BOOLEAN NOT NULL DEFAULT 0,
+art_exp BOOLEAN NOT NULL DEFAULT 0,
+art_years INT (2) NOT NULL DEFAULT 0,
+science_int BOOLEAN NOT NULL DEFAULT 0,
+science_exp BOOLEAN NOT NULL DEFAULT 0,
+science_years INT (2) NOT NULL DEFAULT 0,
+network_int BOOLEAN NOT NULL DEFAULT 0,
+network_exp BOOLEAN NOT NULL DEFAULT 0,
+network_years INT (2) NOT NULL DEFAULT 0,
+entertainment_int BOOLEAN NOT NULL DEFAULT 0,
+entertainment_exp BOOLEAN NOT NULL DEFAULT 0,
+entertainment_years INT (2) NOT NULL DEFAULT 0,
+entrepreneur_int BOOLEAN NOT NULL DEFAULT 0,
+entrepreneur_exp BOOLEAN NOT NULL DEFAULT 0,
+entrepreneur_years INT (2) NOT NULL DEFAULT 0,
+userID INT NOT NULL,
+PRIMARY KEY(interest_id),
+FOREIGN KEY(userID) REFERENCES user(userID)
+);
