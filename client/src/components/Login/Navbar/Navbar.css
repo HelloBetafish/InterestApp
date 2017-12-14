@@ -3,20 +3,24 @@
 	height: 150px;
 	background: rgb(60, 60, 60);							/* NOTE: setting opacity to 0.5 will cause the see through effect but, the children <div>/jumbotrons will be affected as well so using rgb fixes that. */
     background: rgba(60, 60, 60, 0.4);
-	color: black;
+	
 }
 
 img
 {
-	height: 160px;
-	width: 160px;
+	height: 185px;
+	width: 185px;
 	
 
 	overflow: hidden;
 }
 
-h2
+.navTitle
 {
-	margin-top: 100px;
+	/*
+	margin-top: 50px;
+	margin-left: 7px;
 	float: right;
+	*/
+	color: Gold;
 }

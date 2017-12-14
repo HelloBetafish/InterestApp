@@ -7,6 +7,7 @@ import Row from "./Row";
 import Col from "./Col";
 import Navbar from "./Navbar";
 
+
 class Login extends Component
 {
    state = 
@@ -18,6 +19,8 @@ class Login extends Component
   render()
   {
     return(
+
+    	
 
     	<div>
 
@@ -31,7 +34,7 @@ class Login extends Component
 
     					<Col size="lg-12">
 
-    						
+    						<Jumbotron />
 
     					</Col>
     				</Row>

@@ -9,7 +9,7 @@ const Navbar = props =>
 
     </img>
 
-    <h2> Interest App </h2>
+    
   </a>
 
   <a className="navbar-brand" >
@@ -17,7 +17,7 @@ const Navbar = props =>
   </a>
 
   <a className="navbar-brand" >
-    
+    <h1 className="navTitle"> Interest App </h1>
   </a>
 
 </nav>
