@@ -293,7 +293,7 @@ body, html, main {
 
 /*----------------messages box--------------------------------*/
 .envelope{
-    margin-top: -80px;
+   
 	margin-left: -50px;
 }
 
@@ -327,7 +327,7 @@ padding: 15px; }
 }
 #pb{
 	margin-top:5px;
-	margin-left:55px;
+	margin-left:50px;
 }
 .messageicon{
 	margin-left:200px;
@@ -344,7 +344,7 @@ padding: 15px; }
 
 #computer {
   background-image: url("images/idea2.jpg");
-  margin-top: 50px;
+  margin-top: 70px;
   width: 60%;
  /* height :100%;
   width: 100%;*/
@@ -353,7 +353,7 @@ padding: 15px; }
 .navbar-inverse {
     background-color: #222;
     border-color: #080808;
-    height: 80px;
+    height: 70px;
     margin-top: 10px;
 }
 
@@ -385,4 +385,31 @@ padding: 15px; }
 	margin-top: -93px;
 	width: 140%;
 	padding-right:25px; 
+ }
+ .modal-body{
+ 	background-color: #e3c721;
+ 	height: 80%;
+
+ }
+ .modal-footer{
+ 	background-color: #e3c721;
+ 	opacity: 30%;
+ }
+
+ .footer{
+ 	height: 100px;
+ 	width: 100%;
+ 	background-color: #d1e3dc;
+ 	/*background-color: #212121;*/
+ 	border-radius: 5px;
+ 	margin-top: 90px;
+ }
+ #footlink{
+ 	padding-top: 40px;
+ 	margin-left: 50%;
+ }
+
+ #foottext{
+ 	padding-top: 40px;
+ 	margin-left: 5%;
  }
