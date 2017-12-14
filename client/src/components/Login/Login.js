@@ -5,7 +5,7 @@ import Jumbotron from "./Jumbotron";
 import Container from "./Container";
 import Row from "./Row";
 import Col from "./Col";
-
+import Navbar from "./Navbar";
 
 class Login extends Component
 {
@@ -21,6 +21,8 @@ class Login extends Component
 
     	<div>
 
+    		<Navbar />
+
     		<Wrapper>
 
     			<Container>
@@ -29,9 +31,7 @@ class Login extends Component
 
     					<Col size="lg-12">
 
-    						<h1>
-    							Hey you guys!
-    						</h1>
+    						
 
     					</Col>
     				</Row>
