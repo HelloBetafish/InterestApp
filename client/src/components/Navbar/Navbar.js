@@ -2,24 +2,41 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-const Navpills = () =>
-  <ul className="nav nav-tabs">
-    {/* <li className={window.location.pathname === "/" ? "active" : ""}>
-      <Link to="/">Home</Link>
-    </li>
-    <li className={window.location.pathname === "/about" ? "active" : ""}>
-      <Link to="/about">About</Link>
-    </li>
-    <li className={window.location.pathname === "/blog" ? "active" : ""}>
-      <Link to="/blog">Blog</Link>
-    </li>
-    <li className={window.location.pathname === "/contact" ? "active" : ""}>
-      <Link to="/contact">Contact</Link>
-    </li>
-    <li
-      className={window.location.pathname === "/contact/learn" ? "active" : ""}
-    >
-      <Link to="/contact/learn">Learn</Link>
-    </li> */}
-  </ul>;
+const Navbar = props =>
+ <nav className="navbar navbar-dark bg-dark navbar-expand-sm">
+  <div className="container-fluid">
+    <div className="navbar-header">
+      <Link className="navbar-brand" to="/">
+        InterestApp
+      </Link>
+    </div>
+      <ul className="nav navbar-nav">
+        <li className = "nav-item"
+          className={ 
+            window.location.pathname === "/" ||
+            window.location.pathname === "/about"
+              ? "active"
+              : ""
+          }
+        >
+        <Link to="/" className="nav-link" >Profile</Link>
+        </li>
+        <li className = "nav-item" 
+          className={window.location.pathname === "/connect&collaborate" ? "active" : ""}>
+          <Link to="/connect&collaborate" className="nav-link" >Connect or Collaborate</Link>
+        </li>
+        <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+          <Link to="/messages" className="nav-link">Messages Box</Link>
+        </li>
+      </ul>
+    <form className=" form-inline navbar-form navbar-left" action="/action_page.php">
+      <div className="input-group">
+        <input type="text" className="form-control" placeholder="Search" name="search"/>
+        <button  className="btn btn-outline-success my-2 my-sm-0" type="submit">Search
+        </button>
+      </div>
+    </form>
+  </div>
+</nav>;
+
 export default Navbar;;
