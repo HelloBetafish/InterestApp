@@ -7,8 +7,7 @@
 
 
 .zoom{
-  /*width: 300px;
-  height: 200px;*/
+ 
   float: left;
   border-left: solid 0 transparent;
   z-index:1;
@@ -18,10 +17,10 @@
 }
 
 .zoom:hover{
- /* border-width: 300px;*/
+
   transform: scale(1.5);
   transition: .3s linear;
- /* box-shadow: 0 0 10px #000;*/
+
   z-index: 10000;
 }
 
@@ -100,14 +99,7 @@
 
 }
 
-/*.glyph{
-   height:3em;
-   width:3em;
-   border-radius:50%;
-   border:3px solid #fff;
-   text-align: center;
-   padding-left: 110px;
-}*/
+
 .glyphicon-search{
 	margin-left:5px;
 	margin-top:22px;
@@ -308,17 +300,12 @@ body, html, main {
 }
 
 #messagebox{
-	/*background-color:#d0d0d0;
-	height: 400px;
-	width: 100%;
-	border-radius: 10px;*/
-	/*outline: 1px solid gray;*/
 	background-color: rgba(5,4,2,0.1);
 	height: 400px;
-	width: 70%;
+	width: 60%;
+    padding: 15px; 
+ }
 
-padding: 15px; }
-}
 
 
 #p{
@@ -335,6 +322,7 @@ padding: 15px; }
 #messageppp{
 	font-size: 20px;
 	text-align: center;
+	color:white;
 }
 #box{
 	height: 70%;
@@ -343,11 +331,10 @@ padding: 15px; }
 }
 
 #computer {
-  background-image: url("images/idea2.jpg");
+  background-image: url("images/littleIdea2.jpg");
   margin-top: 70px;
-  width: 60%;
- /* height :100%;
-  width: 100%;*/
+  width: 70%;
+
 }
 
 .navbar-inverse {
@@ -355,20 +342,29 @@ padding: 15px; }
     border-color: #080808;
     height: 70px;
     margin-top: 10px;
+    position: fixed;
+
 }
+
+.affix {
+      top: 0;
+      width: 85%;
+      z-index: 9999 !important;
+  }
+
 
 /*@media (min-width: 768px)*/
 .navbar-nav{
-	padding-top: 18px;
+	padding-top: 12px;
 
 }
 
 .input-group{
-	padding-top: 18px;
+	padding-top: 12px;
 
 }
 .navbar-header{
-	padding-top: 18px;
+	padding-top: 12px;
 
 }
 #reply{
@@ -413,3 +409,80 @@ padding: 15px; }
  	padding-top: 40px;
  	margin-left: 5%;
  }
+
+
+ /*------------------addidea---------------*/
+
+ #form{
+ 	height: 100%;
+ 	width: 100%;
+ 	background-color: orange;
+ }
+
+ .form-group{
+ 	padding-left:20px;
+ 	padding-right: 20px;
+ }
+ .form-control{
+
+ 	padding-left:20px;
+ 	padding-right: 20px;
+ }
+ #surveybox{
+ 	height: 60px;
+ 	width: 93%;
+ 	border-radius: 10px;
+ 	background-color: orange;
+ 	margin-top: 20px;
+ 	margin-left: 20px;
+ 	margin-bottom: 20px;
+ }
+ #ideatitle{
+ 	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	color:white;
+	font-size: 25px;
+	padding-top:14px;
+ }
+#transparentbox{
+	background-color: rgba(5,4,2,0.1);
+	height: 100%;
+	width: 50%;
+    padding:15px;
+    margin-left: 50px; 
+    margin-top:60px;
+
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+ }
+#carousel{
+	margin-top: 5px;
+	margin-left: 80px;
+}
+#idea{
+	background-image: url("images/littleIdea.jpg");
+	height: 230px;
+	width: 340px;
+	margin-left: 97px;
+	margin-top: 80px;
+	
+}
+
+.effect1{
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+#textsubmited{
+	font-family: 'Raleway', sans-serif;
+	color:orange;
+	font-size: 25px;
+	margin-top: 180px;
+	margin-left: 170px;
+
+}
+#submitidea{
+	margin-top: 20px;
+}
