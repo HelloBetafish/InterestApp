@@ -1,5 +1,4 @@
 import React from "react";
-import "./FormList.css";
 import Row from "../Row";
 import Col from "../Col";
 

@@ -1,7 +1,5 @@
 import React from "react";
 import "./Jumbotron.css";
-import Row from "../Row";
-import Col from "../Col";
 import { FormList, Textfields } from "../FormList";
 
 
