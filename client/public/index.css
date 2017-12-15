@@ -1,4 +1,4 @@
-body
+/* body
 {
 	background: url("images/login3.jpg");
 
@@ -6,4 +6,493 @@ body
 
 
 
-}
+/* }  */
+
+.fa-search:hover {  
+  -webkit-transform: translateY(0px) rotate(360deg);
+    -ms-transform: translateY(0px) rotate(360deg);
+    -o-transform: translateY(0px) rotate(360deg);
+    transform: translateY(0px) rotate(360deg);
+  }
+  
+  
+  .zoom{
+   
+    float: left;
+    border-left: solid 0 transparent;
+    z-index:1;
+    box-sizing: border-box;
+    cursor: pointer;
+    backface-visibility: hidden;
+  }
+  
+  .zoom:hover{
+  
+    transform: scale(1.5);
+    transition: .3s linear;
+  
+    z-index: 10000;
+  }
+  
+  .fa-lightbulb-o {
+    /*z-index: 99999999999;*/
+    color:red;
+    padding-top: 6px;
+    width: 55px;
+      height: 55px;
+  
+  }
+  .fa-search {
+    color:red;
+    padding-top: 6px;
+    width: 55px;
+      height: 55px;
+  }
+  #clickableAwesomeFont {
+       cursor: pointer
+  }
+  
+  .fa-envelope{
+    color:red;
+    padding-top: 6px;
+    width: 55px;
+      height: 55px;
+  
+  }
+  .fa-address-book{
+    margin-top:20px;
+    margin-left:20px;
+  }
+  .fa-list{
+    margin-top:50px;
+    margin-left:20px;
+  }
+  .circle-icon {
+      background: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 80px;
+      margin-left: 100px;
+    margin-top:20px;
+    
+  }
+  
+  
+  .searchprofile{
+  
+    height:280px;
+    width: 250px;
+    background-color: gray;
+    margin-left:20px;
+    margin-bottom:50px;
+  
+  }
+  #messageprofile{
+  
+    height:280px;
+    width: 250px;
+    background-color: gray;
+    margin-left:50px;
+    margin-bottom:50px;
+  
+  
+  }
+  #ideasprofile{
+    height:280px;
+    width: 250px;
+    margin-right:10px;
+    background-color: gray;
+    margin-left:60px;
+    margin-bottom:50px;
+  
+  }
+  
+  
+  .glyphicon-search{
+    margin-left:5px;
+    margin-top:22px;
+  }
+  
+  .glyphicon{
+    margin-top: -80px;
+  }
+  .glyphicon-ring {
+    width: 55px;
+    height: 55px;
+    border-radius: 60%;
+    /*border: 4px solid white;*/
+    color: white;
+    display: inline-table;
+    text-align: center;
+    margin-left: 130px;
+    margin-top:20px;
+  }
+  
+  
+  .glyphicon-white {
+    background: white;
+    color: black;
+    border: 4px solid white;
+    margin-top:10px;
+  }
+  
+  #connect {
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    background-color: darkgray;
+    font-family: arial;
+  }
+  #connectp{
+    color:white;
+    padding:20px;
+    font-size:16px;
+    text-align: center;
+  }
+  #message{
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    background-color: darkgray;
+    font-family: arial;
+  
+  }
+  #messagep{
+    color:white;
+    padding:20px;
+    font-size:16px;
+    text-align: center;
+  
+  }
+  #ideas{
+    color:white;
+    font-size: 20px;
+    text-align: center;
+    background-color: darkgray;
+    font-family: arial;
+  }
+  
+  #ideasp{
+    color:white;
+    padding:20px;
+    font-size:16px;
+    text-align: center;
+  
+  }
+  .caption{
+    background:#e3c721;
+  }
+  
+  
+  .people{
+    /*background:#a5c57f;*/
+    /*background: #b1df4c;*/
+    /*background: #81c8c9;*/
+    background: #f9bd05;
+    height: 10%;
+  }
+  #text{
+    text-align: center;
+    color:black;
+    font-weight: bold;
+    font-size:20px;
+  }
+  #text2{
+    text-align: center;
+    color:black;
+    
+    font-size:15px;
+  
+  }
+  
+  #texta{
+    text-align: center;
+    padding-top: 15px;
+    color:black;
+    font-weight: bold;
+    font-size:17px;
+  }
+  #textb{
+    text-align: center;
+    color:black;
+    
+    font-size:13px;
+  
+  }
+  #photo{
+    margin-top:50px;
+  }
+  #textmessage{
+    margin-top: -20px;
+    margin-left: -3px;
+  
+  }
+  #contacts{
+  margin-top:5px;
+  margin-left:5px;
+  color:black;
+  }
+  .btn{
+    margin-top: 80px;
+    margin-left: 30px;
+  
+  }
+  
+  
+  body, html, main {
+    /* important */
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  .cd-fixed-bg.cd-bg-1 {
+    background-image: url("images/connections2.jpg");
+    height :100%;
+    width: 100%;
+  }
+  #people{
+    margin-top: 20px;
+  }
+  #titleconnections{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  #highlight, #highlight:hover, #highlight:active, #highlight:focus {
+      color:white;
+      // more css
+  }
+  #buttons{
+    margin-top:-70px;
+  }
+  #formcontrol{
+    width: 80%;
+  }
+  
+  .bounceInUp {
+    animation-name: bounceInUp;
+  }
+  
+  @keyframes bounceOut {
+    20% {
+      transform: scale3d(.9, .9, .9);
+    }
+  
+    50%, 55% {
+      opacity: 1;
+  
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    to {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+  }
+  
+  /*----------------messages box--------------------------------*/
+  .envelope{
+     
+    margin-left: -50px;
+  }
+  
+  .openenvelope{
+    margin-left: -50px;
+     margin-top: -80px;
+  }
+  
+  .noread{
+    margin-left: -50px;
+     margin-top: -80px;
+  }
+  
+  #messagebox{
+    background-color: rgba(5,4,2,0.1);
+    height: 400px;
+    width: 70%;
+      padding: 15px; 
+   }
+  
+  
+  
+  #p{
+    margin-top:11px;
+    margin-left:-40px;
+  }
+  #pb{
+    margin-top:5px;
+    margin-left:50px;
+  }
+  .messageicon{
+    margin-left:200px;
+  }
+  #messageppp{
+    font-size: 20px;
+    text-align: center;
+    color:white;
+  }
+  #box{
+    height: 70%;
+    width: 100%;
+    background: white;
+  }
+  
+  #computer {
+    background-image: url("images/connections3.jpg");
+    margin-top: 70px;
+    width: 60%;
+  
+  }
+  
+  .navbar-inverse {
+      background-color: #222;
+      border-color: #080808;
+      height: 70px;
+      margin-top: 10px;
+      position: fixed;
+  
+  }
+  
+  .affix {
+        top: 0;
+        width: 85%;
+        z-index: 9999 !important;
+    }
+  
+  
+  /*@media (min-width: 768px)*/
+  .navbar-nav{
+    padding-top: 12px;
+  
+  }
+  
+  .input-group{
+    padding-top: 12px;
+  
+  }
+  .navbar-header{
+    padding-top: 12px;
+  
+  }
+  #reply{
+    margin-left: 460px;
+    margin-top: 9px;
+   }
+  #keep{
+    margin-left: 520px;
+    margin-top: -56px;
+   }
+  
+   #delete{
+    margin-left: 580px;
+    margin-top: -93px;
+    /*width: 170%;*/
+    padding-right:10px; 
+   }
+   .modal-body{
+     background-color: #e3c721;
+     height: 80%;
+  
+   }
+   .modal-footer{
+     background-color: #e3c721;
+     opacity: 30%;
+   }
+  
+   .footer{
+     height: 100px;
+     width: 100%;
+     background-color: #d1e3dc;
+     /*background-color: #212121;*/
+     border-radius: 5px;
+     margin-top: 90px;
+   }
+   #footlink{
+     padding-top: 40px;
+     margin-left: 50%;
+   }
+  
+   #foottext{
+     padding-top: 40px;
+     margin-left: 5%;
+   }
+  
+  
+   /*------------------addidea---------------*/
+  
+   #form{
+     height: 100%;
+     width: 100%;
+     background-color: orange;
+   }
+  
+   .form-group{
+     padding-left:20px;
+     padding-right: 20px;
+   }
+   .form-control{
+  
+     padding-left:20px;
+     padding-right: 20px;
+   }
+   #surveybox{
+     height: 60px;
+     width: 93%;
+     border-radius: 10px;
+     background-color: orange;
+     margin-top: 20px;
+     margin-left: 20px;
+     margin-bottom: 20px;
+   }
+   #ideatitle{
+     text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color:white;
+    font-size: 25px;
+    padding-top:14px;
+   }
+  #transparentbox{
+    background-color: rgba(5,4,2,0.1);
+    height: 100%;
+    width: 50%;
+      padding:15px;
+      margin-left: 50px; 
+      margin-top:60px;
+  
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+         -moz-box-shadow: 0 10px 6px -6px #777;
+              box-shadow: 0 10px 6px -6px #777;
+   }
+  #carousel{
+    margin-top: 5px;
+    margin-left: 80px;
+  }
+  #idea{
+    background-image: url("images/littleIdea.jpg");
+    height: 230px;
+    width: 340px;
+    margin-left: 97px;
+    margin-top: 80px;
+    
+  }
+  
+  .effect1{
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+         -moz-box-shadow: 0 10px 6px -6px #777;
+              box-shadow: 0 10px 6px -6px #777;
+  }
+  
+  #textsubmited{
+    font-family: 'Raleway', sans-serif;
+    color:orange;
+    font-size: 25px;
+    margin-top: 180px;
+    margin-left: 170px;
+  
+  }
+  #submitidea{
+    margin-top: 20px;
+  }
