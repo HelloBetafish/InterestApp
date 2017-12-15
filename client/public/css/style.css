@@ -302,7 +302,7 @@ body, html, main {
 #messagebox{
 	background-color: rgba(5,4,2,0.1);
 	height: 400px;
-	width: 60%;
+	width: 70%;
     padding: 15px; 
  }
 
@@ -331,9 +331,9 @@ body, html, main {
 }
 
 #computer {
-  background-image: url("images/littleIdea2.jpg");
+  background-image: url("images/connections3.jpg");
   margin-top: 70px;
-  width: 70%;
+  width: 60%;
 
 }
 
@@ -368,19 +368,19 @@ body, html, main {
 
 }
 #reply{
-	margin-left: 445px;
+	margin-left: 460px;
 	margin-top: 9px;
  }
 #keep{
-	margin-left: 510px;
+	margin-left: 520px;
 	margin-top: -56px;
  }
 
  #delete{
 	margin-left: 580px;
 	margin-top: -93px;
-	width: 140%;
-	padding-right:25px; 
+	/*width: 170%;*/
+	padding-right:10px; 
  }
  .modal-body{
  	background-color: #e3c721;
