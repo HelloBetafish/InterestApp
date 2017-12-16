@@ -4,6 +4,7 @@ import Profile from "./pages/Profile";
 import ConnectColl from "./pages/ConnectColl";
 import Messages from "./pages/Messages";
 import AddIdea from "./pages/AddIdea";
+import CreateAcct from "./pages/CreateAcct";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 
@@ -18,6 +19,7 @@ const App = () =>
         <Route exact path="/messages" component={Messages} />
         <Route exact path="/connect&collaborate" component={ConnectColl} />
         <Route exact path="/addidea" component={AddIdea} />
+        <Route exact path="/createaccount" component={CreateAcct} />
     </div>
   </Router>;
 
