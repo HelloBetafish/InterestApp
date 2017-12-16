@@ -332,7 +332,7 @@ body, html, main {
 }
 
 #computer {
-  background-image: url("images/connectionssmall3.jpg");
+  background-image: url("images/idea2.jpg");
   margin-top: 70px;
   width: 60%;
   border-radius: 15px;
@@ -543,8 +543,8 @@ body, html, main {
 	width: 50%;
     padding:15px;
     margin-left: 50px; 
-    margin-top:60px;
-    margin-bottom: 60%;
+    margin-top:50px;
+    margin-bottom: 50px;
     margin-left: 50px;
 
     -webkit-box-shadow: 0 10px 6px -6px #777;
@@ -587,10 +587,10 @@ body, html, main {
 	width: 90%;
 }
 #addphoto{
-	width:250px;
-	height: 250px;
-	margin-top: 60px;
-	margin-left:100px;
+	width:230px;
+	height: 230px;
+	margin-top: 95px;
+	margin-left:140px;
 	-webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
