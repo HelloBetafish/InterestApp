@@ -12,11 +12,10 @@ const App = () =>
   <Router>
     <div>
       <Navbar />
-                                                                                                                                                          
+        <Route exact path="/" component={Profile} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/messages" component={Messages} />
         <Route exact path="/connect&collaborate" component={ConnectColl} />
-
     </div>
   </Router>;
 
