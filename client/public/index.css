@@ -2,11 +2,15 @@
 {
 	background: url("images/login3.jpg");
 
-	/*background-size: 100%; */
+	background-size: 100%;
 
 
 
+<<<<<<< HEAD
  }  
+=======
+}  */
+>>>>>>> 0c445be6ef96eed1ff3032f98494518485dfbb4e
 
 .fa-search:hover {  
   -webkit-transform: translateY(0px) rotate(360deg);
@@ -413,11 +417,13 @@
    #footlink{
      padding-top: 40px;
      margin-left: 50%;
+
    }
   
    #foottext{
      padding-top: 40px;
      margin-left: 5%;
+     float:left;
    }
   
   
