@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign-Up Today!</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <br>
+  
+    <div class="jumbotron">
+      <h1 class="text-center">Create Profile</h1>
+    </div>
+    <div class="row">
+   
+      <div class="col-lg-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Create</h3>
+          </div>
+          <div class="panel-body">
+         
+            <form role="form">
+              <div class="form-group">
+                <label for="name-input">Name:</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group">
+                <label for="email-input">Date Of Birth</label>
+                <input class="form-control" id="email-input" type="email">
+              </div>
+              <div class="form-group">
+                <label for="age-input">Gender:</label>
+                <input class="form-control" id="age-input" type="number">
+              </div>
+              <div class="form-group">
+                <label for="comment-input">Occupation</label>
+                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="comment-input">Interest</label>
+                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+              </div>
+              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="col-lg-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Most Recent Member</h3>
+          </div>
+          <div class="panel-body" id="recent-member">
+            <h2 id="name-display">Jesse Forte</h2>
+            <h4 id="email-display">Email: fortejesse@yahoo.com</h4>
+            <h4 id="age-display">Age: 12</h4>
+            <p id="comment-display">I'm signing up, because I want to connect people to other people.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+ 
+  <script>
+  
+    $("#add-user").on("click", function(event) {
+      event.preventDefault();
+      var ame = $("#name-input").val().trim();
+      var DateOfBirth = $("#comment-input").val().trim();
+      var Gender = $("#comment-input").val().trim();
+      var Occupation = $("#comment-input").val().trim();
+      var Interest = $("#comment-input").val().trim();
+      console.log(Name);
+      console.log(DateOfBirth);
+      console.log(Gender);
+      console.log(Occupation);
+      console.log(Interest);
+     $("#name-display").html(name);
+      $("#email-display").html(dateofbirth);
+      $("#age-display").html(Gender);
+      $("#comment-display").html(Occupation);
+      $("#comment-display").html(Interest);
+    });
+  </script>
+</body>
+</html>
