@@ -22,7 +22,7 @@ const ConnectColl = () =>
                 <div className="col-sm-12">
 
                   <div id="people" className="col-md-3 zoom">
-                    <div className="thumbnail">
+                    <div className="img-thumbnail">
                       <img src="css/images/GitHubProfile.jpg" width="100" height="120"/>
                       <div className="people">
                         <p id="texta">Bethany</p> 
@@ -32,7 +32,7 @@ const ConnectColl = () =>
                   </div>
 
                   <div id="people" className="col-md-3 zoom">
-                    <div className="thumbnail">
+                    <div className="img-thumbnail">
                       <img src="css/images/graduation.jpg" width="100" height="90"/>
                       <div className="people">
                         <p id="texta">TJ</p> 
@@ -42,7 +42,7 @@ const ConnectColl = () =>
                   </div>
 
                   <div id="people"   className="col-md-3 zoom">
-                    <div className="thumbnail" className="zoom">
+                    <div className="img-thumbnail" className="zoom">
                       <img src="css/images/guy.jpeg" width="100" height="110"/>
                       <div className="people">
                         <p id="texta">Chris</p> 
@@ -53,7 +53,7 @@ const ConnectColl = () =>
 
 
                   <div id="people" className="col-md-3 zoom">
-                    <div className="thumbnail">
+                    <div className="img-thumbnail">
                       <img src="css/images/jesse1.jpg" width="100" height="110"/>
                       <div className="people">
                         <p id="texta">Jesse</p> 
@@ -71,7 +71,7 @@ const ConnectColl = () =>
                 <div className="col-sm-12">
 
                   <div id="people" className="col-md-3 zoom">
-                    <div className="thumbnail">
+                    <div className="img-thumbnail">
                       <img src="css/images/reyna.jpg" width="100" height="110"/>
                       <div className="people">
                         <p id="texta">Reyna</p> 
@@ -82,7 +82,7 @@ const ConnectColl = () =>
 
 
                   <div id="people" className="col-md-3 zoom">
-                    <div className="thumbnail">
+                    <div className="img-thumbnail">
                       <img src="css/images/emma.jpg" width="100" height="110"/>
                       <div className="people">
                         <p id="texta">Emma</p> 
@@ -93,7 +93,7 @@ const ConnectColl = () =>
 
 
                   <div id="people" className="col-md-3 zoom">
-                    <div className="thumbnail">
+                    <div className="img-thumbnail">
                       <img src="css/images/john.jpg" width="100" height="110"/>
                       <div className="people">
                         <p id="texta">John</p> 
@@ -103,7 +103,7 @@ const ConnectColl = () =>
                   </div>
 
                   <div id="people" className="col-md-3 zoom">
-                    <div className="thumbnail">
+                    <div className="img-thumbnail">
                       <img src="css/images/zac.jpg" width="100" height="110"/>
                       <div className="people">
                         <p id="texta">Lindsay</p> 

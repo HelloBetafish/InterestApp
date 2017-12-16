@@ -1,4 +1,4 @@
- body
+ /* body
 {
 	background: url("images/login3.jpg");
 
@@ -6,12 +6,7 @@
 
 
 
-<<<<<<< HEAD
- }  
-=======
-}  */
->>>>>>> 0c445be6ef96eed1ff3032f98494518485dfbb4e
-
+}   */
 .fa-search:hover {  
   -webkit-transform: translateY(0px) rotate(360deg);
     -ms-transform: translateY(0px) rotate(360deg);
@@ -270,7 +265,8 @@
       // more css
   }
   #buttons{
-    margin-top:-70px;
+    margin-top:-50px;
+    margin-bottom: 20px;
   }
   #formcontrol{
     width: 80%;
@@ -345,9 +341,13 @@
   }
   
   #computer {
-    background-image: url("images/connections3.jpg");
+    background-image: url("images/idea2.jpg");
     margin-top: 70px;
     width: 60%;
+    border-radius: 15px;
+     -webkit-box-shadow: 0 10px 6px -6px #777;
+         -moz-box-shadow: 0 10px 6px -6px #777;
+              box-shadow: 0 10px 6px -6px #777;
   
   }
   
@@ -356,7 +356,10 @@
       border-color: #080808;
       height: 70px;
       margin-top: 10px;
-      position: fixed;
+      width: 100%;
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+         -moz-box-shadow: 0 10px 6px -6px #777;
+              box-shadow: 0 10px 6px -6px #777;
   
   }
   
@@ -370,9 +373,26 @@
   /*@media (min-width: 768px)*/
   .navbar-nav{
     padding-top: 12px;
+    
+  }
+  /*.nav li{
+      float: left;
+      width: 20%;
+  }
+  */
+  /*.nav{
+   display: table;
+   text-align: center;
+   width: 100%
   
   }
+  .nav ul{
+   display: table-row;
+  }
   
+  .nav li {
+   display: table-cell;
+  }*/
   .input-group{
     padding-top: 12px;
   
@@ -417,13 +437,12 @@
    #footlink{
      padding-top: 40px;
      margin-left: 50%;
-
    }
   
    #foottext{
      padding-top: 40px;
      margin-left: 5%;
-     float:left;
+  
    }
   
   
@@ -502,3 +521,88 @@
   #submitidea{
     margin-top: 20px;
   }
+  
+  /*---------------createaccount---------------------*/
+  
+  #idea{
+    background-image: url("images/littleIdea.jpg");
+    height: 230px;
+    width: 340px;
+    margin-left: 97px;
+    margin-top: 80px;
+    
+  }
+  
+  /*#transparentbox2{
+    background-color: rgba(5,4,2,0.1);
+    height: 100%;
+    width: 50%;
+      padding:15px;
+      margin-left: 50px; 
+      margin-top:60px;
+  
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+         -moz-box-shadow: 0 10px 6px -6px #777;
+              box-shadow: 0 10px 6px -6px #777;
+   }
+  */
+   #transparentbox2{
+    background-image: url("images/littlebulbs.jpg");
+    height: 100%;
+    width: 50%;
+      padding:15px;
+      margin-left: 50px; 
+      margin-top:50px;
+      margin-bottom: 50px;
+      margin-left: 50px;
+  
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+         -moz-box-shadow: 0 10px 6px -6px #777;
+              box-shadow: 0 10px 6px -6px #777;
+   }
+  
+  
+   
+   #accountbox{
+     height: 60px;
+     width: 93%;
+     border-radius: 10px;
+     background-color: orange;
+     margin-top: 20px;
+     margin-left: 20px;
+     margin-bottom: 20px;
+  
+   }
+   #accounttitle{
+     text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color:white;
+    font-size: 25px;
+    padding-top:14px;
+   }
+  
+   #accountbox{
+     height: 60px;
+     width: 93%;
+     border-radius: 10px;
+     background-color: orange;
+     margin-top: 30px;
+     margin-left: 20px;
+     margin-bottom: 20px;
+  
+   }
+  #submitaccount{
+    margin-top: 20px;
+    width: 90%;
+  }
+  #addphoto{
+    width:230px;
+    height: 230px;
+    margin-top: 95px;
+    margin-left:140px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+         -moz-box-shadow: 0 10px 6px -6px #777;
+              box-shadow: 0 10px 6px -6px #777;
+  }
+  
+  
