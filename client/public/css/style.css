@@ -256,8 +256,8 @@ body, html, main {
     // more css
 }
 #buttons{
-	margin-top:-60px;
-	margin-bottom: 50px;
+	margin-top:-50px;
+	margin-bottom: 20px;
 }
 #formcontrol{
 	width: 80%;
@@ -433,6 +433,7 @@ body, html, main {
  #foottext{
  	padding-top: 40px;
  	margin-left: 5%;
+
  }
 
 
@@ -511,3 +512,87 @@ body, html, main {
 #submitidea{
 	margin-top: 20px;
 }
+
+/*---------------createaccount---------------------*/
+
+#idea{
+	background-image: url("images/littleIdea.jpg");
+	height: 230px;
+	width: 340px;
+	margin-left: 97px;
+	margin-top: 80px;
+	
+}
+
+/*#transparentbox2{
+	background-color: rgba(5,4,2,0.1);
+	height: 100%;
+	width: 50%;
+    padding:15px;
+    margin-left: 50px; 
+    margin-top:60px;
+
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+ }
+*/
+ #transparentbox2{
+	background-image: url("images/littlebulbs.jpg");
+	height: 100%;
+	width: 50%;
+    padding:15px;
+    margin-left: 50px; 
+    margin-top:60px;
+    margin-bottom: 60%;
+    margin-left: 50px;
+
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+ }
+
+
+ 
+ #accountbox{
+ 	height: 60px;
+ 	width: 93%;
+ 	border-radius: 10px;
+ 	background-color: orange;
+ 	margin-top: 20px;
+ 	margin-left: 20px;
+ 	margin-bottom: 20px;
+
+ }
+ #accounttitle{
+ 	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	color:white;
+	font-size: 25px;
+	padding-top:14px;
+ }
+
+ #accountbox{
+ 	height: 60px;
+ 	width: 93%;
+ 	border-radius: 10px;
+ 	background-color: orange;
+ 	margin-top: 30px;
+ 	margin-left: 20px;
+ 	margin-bottom: 20px;
+
+ }
+#submitaccount{
+	margin-top: 20px;
+	width: 90%;
+}
+#addphoto{
+	width:250px;
+	height: 250px;
+	margin-top: 60px;
+	margin-left:100px;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
