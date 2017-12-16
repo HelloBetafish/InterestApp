@@ -17,7 +17,7 @@
   
   .zoom{
    
-    float: left;
+    /* float: left; */
     border-left: solid 0 transparent;
     z-index:1;
     box-sizing: border-box;
@@ -341,7 +341,7 @@
   }
   
   #computer {
-    background-image: url("images/idea2.jpg");
+    background-image: url("css/images/idea2.jpg");
     margin-top: 70px;
     width: 60%;
     border-radius: 15px;
@@ -354,7 +354,7 @@
   .navbar-inverse {
       background-color: #222;
       border-color: #080808;
-      height: 70px;
+      /* height: 70px; */
       margin-top: 10px;
       width: 100%;
       -webkit-box-shadow: 0 10px 6px -6px #777;
@@ -525,7 +525,7 @@
   /*---------------createaccount---------------------*/
   
   #idea{
-    background-image: url("images/littleIdea.jpg");
+    background-image: url("css/images/littleIdea.jpg");
     height: 230px;
     width: 340px;
     margin-left: 97px;

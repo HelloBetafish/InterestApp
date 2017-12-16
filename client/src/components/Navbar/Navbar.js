@@ -28,6 +28,9 @@ const Navbar = props =>
         <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
           <Link to="/messages" className="nav-link">Messages Box</Link>
         </li>
+        <li className ="nav-item" className={window.location.pathname === "/addidea" ? "active" : ""}>
+          <Link to="/addidea" className="nav-link">Add Idea</Link>
+        </li>
       </ul>
     <form className=" form-inline navbar-form navbar-left" action="/action_page.php">
       <div className="input-group">
