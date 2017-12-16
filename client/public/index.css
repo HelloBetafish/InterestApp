@@ -247,7 +247,6 @@
     width: 100%;
   }
   
-  
   .cd-fixed-bg.cd-bg-1 {
     background-image: url("images/connections2.jpg");
     height :100%;
@@ -426,27 +425,7 @@
      background-color: #e3c721;
      opacity: 30%;
    }
-  
-   .footer{
-     height: 100px;
-     width: 100%;
-     background-color: #d1e3dc;
-     /*background-color: #212121;*/
-     border-radius: 5px;
-     margin-top: 90px;
-   }
-   #footlink{
-     padding-top: 40px;
-     margin-left: 50%;
-   }
-  
-   #foottext{
-     padding-top: 40px;
-     margin-left: 5%;
-  
-   }
-  
-  
+
    /*------------------addidea---------------*/
   
    #form{

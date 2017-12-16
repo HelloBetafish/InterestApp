@@ -29,19 +29,6 @@ const ConnectColl = () =>
     </div>
   </div>
 </div>
-
-<div class="container">
-  <div class="row">
-    <div class="footer">
-      <div class="col-md-6">
-        <p id="foottext">InterestApp , Gilbert AZ  </p>
-      </div>
-      <div class="col-md-6">
-        <p id="footlink">Privacity | Android App | help | contact us</p>
-      </div>
-    </div>
-  </div>
-</div>
 </div>;
 
 export default ConnectColl; 
