@@ -17,7 +17,7 @@ const Profile = () =>
     <div className="col-md-4">
       <div className="img-thumbnail mx-auto">
 
-        <img src="css/images/guy.jpeg" width="220" height="220"/>
+        <img src="css/images/guy.jpeg" width="110" height="110" style={{marginLeft: "80px"}}/>
         <div className="caption">
           <p id="text">Bruno Smith</p> 
           <p id="text2">Web Developer <br/> Front and Back end <br/> ICE CREAM APPLICATION </p>

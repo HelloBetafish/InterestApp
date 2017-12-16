@@ -182,6 +182,7 @@
   }
   .caption{
     background:#e3c721;
+
   }
   
   
@@ -343,7 +344,7 @@
   #computer {
     background-image: url("css/images/idea2.jpg");
     margin-top: 70px;
-    width: 60%;
+    width:20%;
     border-radius: 15px;
      -webkit-box-shadow: 0 10px 6px -6px #777;
          -moz-box-shadow: 0 10px 6px -6px #777;
@@ -354,7 +355,7 @@
   .navbar-inverse {
       background-color: #222;
       border-color: #080808;
-      /* height: 70px; */
+      height: 70px;
       margin-top: 10px;
       width: 100%;
       -webkit-box-shadow: 0 10px 6px -6px #777;
@@ -496,7 +497,7 @@
     margin-left: 80px;
   }
   #idea{
-    background-image: url("images/littleIdea.jpg");
+    background-image: url("css/images/littleIdea.jpg");
     height: 230px;
     width: 340px;
     margin-left: 97px;

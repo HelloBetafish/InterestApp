@@ -335,7 +335,7 @@ body, html, main {
   background-image: url("images/idea2.jpg");
   margin-top: 70px;
   width: 60%;
-  border-radius: 15px;
+  border-radius: 10px;
    -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
@@ -584,7 +584,8 @@ body, html, main {
  }
 #submitaccount{
 	margin-top: 20px;
-	width: 90%;
+	width: 93%;
+	margin-left: 20px
 }
 #addphoto{
 	width:230px;
