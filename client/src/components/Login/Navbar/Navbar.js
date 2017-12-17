@@ -3,9 +3,9 @@ import "./Navbar.css";
 
 const Navbar = props =>
 
-<nav class="navbar navbar-light">
-  <a class="navbar-brand" href="#">
-    <img src="images/Idea.jpg" class="img-fluid" alt="Responsive image">
+<nav className="navbar navbar-light">
+  <a className="navbar-brand" href="#">
+    <img src="images/Idea.jpg" className="img-fluid" alt="Responsive image">
 
     </img>
 
