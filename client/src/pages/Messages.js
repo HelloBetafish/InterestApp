@@ -14,8 +14,8 @@ const ConnectColl = () =>
      <p id="pb" style={{fontSize: "15px", color: "black"}}>No Read</p>
   </div>
 
-  <div id="computer" class="col-md-9">
-    <div id="messagebox" class="col-md-6">
+  <div id="computer" class="col-md-6" >
+    <div id="messagebox" class="col-md-8">
       <span class="messageicon"><i class="fa fa-envelope fa-4x " style={{fontSize: "40px", color:"white"}}></i></span>
       <h2 id="messageppp">Message Box</h2>
       <div id="box">
@@ -25,19 +25,6 @@ const ConnectColl = () =>
         <button type="button" id="reply" class="btn btn-danger">reply</button>
         <button type="button" id="keep" class="btn btn-warning">keep</button>
         <button type="button" id="delete" class="btn btn-light">delete</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="footer">
-      <div class="col-md-6">
-        <p id="foottext">InterestApp , Gilbert AZ  </p>
-      </div>
-      <div class="col-md-6">
-        <p id="footlink">Privacity | Android App | help | contact us</p>
       </div>
     </div>
   </div>

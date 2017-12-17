@@ -77,6 +77,7 @@
 	background-color: gray;
 	margin-left:20px;
 	margin-bottom:50px;
+	margin-top: 25px;
 
 }
 #messageprofile{
@@ -86,6 +87,7 @@
 	background-color: gray;
 	margin-left:50px;
 	margin-bottom:50px;
+	margin-top: 25px;
 
 
 }
@@ -96,6 +98,7 @@
 	background-color: gray;
 	margin-left:60px;
 	margin-bottom:50px;
+	margin-top: 25px;
 
 }
 
@@ -538,7 +541,7 @@ body, html, main {
  }
 */
  #transparentbox2{
-	background-image: url("images/littlebulbs.jpg");
+	background-image: url("css/images/littlebulbs.jpg");
 	height: 100%;
 	width: 50%;
     padding:15px;
