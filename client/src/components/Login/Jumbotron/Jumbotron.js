@@ -1,23 +1,14 @@
 import React from "react";
 import "./Jumbotron.css";
-import { FormList, Textfields } from "../FormList";
+//import { FormList, Textfields } from "../FormList";
 
 
-const Jumbotron = props =>
+const Jumbotron = ({ children })=>
 
 <div className="jumbotron">
 
+ {children}
 
-
-        	<FormList>
-
-        		<Textfields />
-
-        	</FormList>
-
-
-      
-      
 </div>
 
 

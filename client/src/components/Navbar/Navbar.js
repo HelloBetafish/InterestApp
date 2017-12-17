@@ -14,25 +14,24 @@ const Navbar = props =>
         <li className = "nav-item"
           className={ 
             window.location.pathname === "/" ||
-            window.location.pathname === "/about"
+            window.location.pathname === "/login"
               ? "active"
               : ""
-          }
-        >
-        <Link to="/" className="nav-link" >Profile</Link>
+          }>
+      
+        
         </li>
+
+        <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+          <Link to="/profile" className="nav-link" >Profile</Link>
+        </li>
+
         <li className = "nav-item" 
           className={window.location.pathname === "/connect&collaborate" ? "active" : ""}>
           <Link to="/connect&collaborate" className="nav-link" >Connect or Collaborate</Link>
         </li>
         <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
           <Link to="/messages" className="nav-link">Messages Box</Link>
-        </li>
-        <li className ="nav-item" className={window.location.pathname === "/addidea" ? "active" : ""}>
-          <Link to="/addidea" className="nav-link">Add Idea</Link>
-        </li>
-        <li className ="nav-item" className={window.location.pathname === "/createaccount" ? "active" : ""}>
-          <Link to="/createaccount" className="nav-link">Create Account</Link>
         </li>
       </ul>
     <form className=" form-inline navbar-form navbar-left" action="/action_page.php">
