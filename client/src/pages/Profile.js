@@ -28,7 +28,7 @@ const Profile = () =>
 
     <div className="col-md-1"></div>
     <div className="col-md-3">
-      <button type="button" className="btn btn-danger">Recent Activity</button>
+      <button id="btn1" type="button" className="btn btn-danger">Recent Activity</button>
       <button type="button" className="btn btn-danger">Portfolios link</button> 
     </div>
   </div>
@@ -43,7 +43,7 @@ const Profile = () =>
 
       <div className="service row">   
         <div className="col-md-4 ">
-          <div className="searchprofile">
+          <div className="searchprofile" >
             <span id='clickableAwesomeFont'><i className="fa fa-search fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i></span>
 
             <h2 id="connect">Connect or Collaborate</h2>

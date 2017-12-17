@@ -14,8 +14,8 @@ const ConnectColl = () =>
      <p id="pb" style={{fontSize: "15px", color: "black"}}>No Read</p>
   </div>
 
-  <div id="computer" class="col-md-9">
-    <div id="messagebox" class="col-md-6">
+  <div id="computer" class="col-md-6" >
+    <div id="messagebox" class="col-md-8">
       <span class="messageicon"><i class="fa fa-envelope fa-4x " style={{fontSize: "40px", color:"white"}}></i></span>
       <h2 id="messageppp">Message Box</h2>
       <div id="box">
