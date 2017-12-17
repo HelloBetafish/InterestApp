@@ -6,7 +6,7 @@ const Footer = () =>
   <div className='container'>
     <div className='row'>
       <div className='col-md-6'>
-        <p >InterestApp , Gilbert AZ  </p>
+        <p className="text-left">InterestApp , Gilbert AZ  </p>
       </div>
       <div className='col-md-6'>
         <p className="text-right">Privacy | Android App | help | contact us</p>
