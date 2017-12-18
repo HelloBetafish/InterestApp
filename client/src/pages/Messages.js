@@ -11,11 +11,11 @@ const ConnectColl = () =>
   <div className="col-md-1">
   </div>
   <div class="col-md-2">
-    <span className="envelope" id='clickableAwesomeFont'><i className="fa fa-envelope fa-4x circle-icon" style={{fontSize: "60px", color: "#e3c721", marginTop: "110px"}}></i></span>
+    <span className="envelope" id='clickableAwesomeFont'><i className="fa fa-envelope fa-4x " style={{fontSize: "40px", color: "black", marginTop: "110px"}}></i></span>
      <p id="pb"> 4 New</p>
-     <span className="openenvelope" id='clickableAwesomeFont'><i class="fa fa-envelope-open fa-4x circle-icon" style={{fontSize: "60px", color: "#e3c721"}}></i></span>
+     <span className="openenvelope" id='clickableAwesomeFont'><i class="fa fa-envelope-open fa-4x " style={{fontSize: "40px", color: "black"}}></i></span>
      <p id="pb">Read</p>
-     <span className="noread" id='clickableAwesomeFont'><i className="fa fa-envelope-square fa-4x circle-icon" style={{fontSize: "60px", color:"#e3c721"}}></i></span>
+     <span className="noread" id='clickableAwesomeFont'><i className="fa fa-envelope-square fa-4x " style={{fontSize: "40px", color:"black"}}></i></span>
      <p id="pb" style={{fontSize: "15px", color: "black"}}>No Read</p>
   </div>
 

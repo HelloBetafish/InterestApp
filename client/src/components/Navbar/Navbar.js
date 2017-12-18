@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-
 const Navbar = props =>
- <nav className="navbar navbar-dark bg-dark navbar-expand-sm">
+ <nav className="navbar navbar-dark bg-dark data-spy-affix navbar-expand-sm">
   <div className="container-fluid">
     <div className="navbar-header">
       <Link className="navbar-brand" to="/">
@@ -21,11 +20,9 @@ const Navbar = props =>
       
         
         </li>
-
         <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
           <Link to="/profile" className="nav-link" >Profile</Link>
         </li>
-
         <li className = "nav-item" 
           className={window.location.pathname === "/connect&collaborate" ? "active" : ""}>
           <Link to="/connect&collaborate" className="nav-link" >Connect or Collaborate</Link>
@@ -49,5 +46,4 @@ const Navbar = props =>
     </form>
   </div>
 </nav>;
-
 export default Navbar;

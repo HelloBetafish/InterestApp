@@ -3,3 +3,9 @@
          -moz-box-shadow: 0 10px 6px -6px #777;
               box-shadow: 0 10px 6px -6px #777;
        }
+
+.affix {
+      top: 0;
+      width: 85%;
+      z-index: 9999 !important;
+  }

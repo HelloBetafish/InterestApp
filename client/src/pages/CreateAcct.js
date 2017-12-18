@@ -10,15 +10,15 @@ const CreateAcct = () =>(
 <div className="container">
 <div className="row">
 
-<div id="addphoto" className="col-md-3" style={{marginTop: "80px"}}>
+<div id="addphoto" className="col-md-3" style={{marginTop: "-10px"}}>
   <img src="css/images/addphoto.png" alt="upload" className="img-thumbnail"/>
 </div>
 
 
 
-  <div id="backgroundphoto" className="col-md-6" style={{height:"100%", width:"100%", backgroundColor:"#345f87", marginTop:"50px",marginBottom:"50px", borderRadius: "5px"}}> 
+  <div id="backgroundphoto" className="col-md-6" style={{height:"100%", width:"100%", backgroundColor:"gray", marginTop:"-9px",marginBottom:"-20px", borderRadius: "5px"}}> 
     <div className="bulbsphoto" >
-          <div id="accountbox" style={{height: "60px", width: "93%", borderRadius: "10px", backgroundColor: "orange", marginTop: "30px",marginLeft: "20px",
+          <div id="accountbox" style={{height: "60px", width: "93%", borderRadius: "10px", backgroundColor: "#f9bd05", marginTop: "30px",marginLeft: "20px",
      marginBottom: "20px"}}>
             <p id="accounttitle" style={{color:"white", textAlign: "center", fontFamily: "Raleway", fontSize: "25px",
     paddingTop:"14px"}}>CREATE ACCOUNT</p>
@@ -58,7 +58,7 @@ const CreateAcct = () =>(
         </form>
              
 
-         <button id="submitaccount" type="button" className="btn btn-danger" style={{marginLeft: "20px", marginRight: "30px", marginBottom: "30px", width: "95%"}}>submit</button>
+         <button id="submitaccount" type="button" className="btn btn-danger" style={{marginLeft: "20px", marginRight: "30px", marginTop: "10px", marginBottom: "30px", width: "95%"}}>submit</button>
 
     </div>
   </div>

@@ -336,16 +336,16 @@
   /*----------------messages box--------------------------------*/
   .envelope{
      
-    margin-left: -50px;
+    margin-left: 90px;
   }
   
   .openenvelope{
-    margin-left: -50px;
+    margin-left: 90px;
      margin-top: -80px;
   }
   
   .noread{
-    margin-left: -50px;
+    margin-left: 90px;
      margin-top: -80px;
   }
   
@@ -360,11 +360,11 @@
   
   #p{
     margin-top:11px;
-    margin-left:-40px;
+    margin-left:90px;
   }
   #pb{
     margin-top:5px;
-    margin-left:50px;
+    margin-left:90px;
   }
   .messageicon{
     margin-left:215px;
@@ -477,10 +477,14 @@
      width: 100%;
      background-color: orange;
    }
+   #formbox{
+   	background-image: url("images/littlebulbs.jpg");
+
+   }
   
    .form-group{
-     padding-left:20px;
-     padding-right: 20px;
+     padding-left:40px;
+     padding-right: 420px;
    }
    .form-control{
   
@@ -515,7 +519,7 @@
          -moz-box-shadow: 0 10px 6px -6px #777;
               box-shadow: 0 10px 6px -6px #777;
    }
-  #carousel{
+  .carousel{
     margin-top: 5px;
     margin-left: 80px;
   }

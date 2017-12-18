@@ -30,9 +30,13 @@ const App = () =>
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/messages" component={Messages} />
         <Route exact path="/connect&collaborate" component={ConnectColl} />
+ Updated upstream
          <Route exact path="/addidea" component={AddIdea} />
         <Route exact path="/createaccount" component={CreateAcct} />
        
+
+
+ Stashed changes
 
       </Wrapper>
       <Footer />
