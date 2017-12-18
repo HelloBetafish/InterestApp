@@ -1,12 +1,16 @@
+
  body
 {
 	background: url("images/login3.jpg");
+	background-position: center center;
+	background-repeat:  no-repeat;
+	background-attachment: fixed;
+	background-size:  cover;
+	background-color: #999;
 
-	background-size: 100%;
 
+} 
 
-
-}  
 .fa-search:hover {  
   -webkit-transform: translateY(0px) rotate(360deg);
     -ms-transform: translateY(0px) rotate(360deg);
@@ -288,12 +292,21 @@
   
   #highlight, #highlight:hover, #highlight:active, #highlight:focus {
       color:white;
-      // more css
+     
   }
-  #buttons{
-    margin-top:-30px;
+  
+  .connectColButtons
+  {
+	margin-top:-30px;
     margin-bottom: 50px;
     margin-left:260px;
+  }
+
+  .messagesButtons
+  {
+	margin-top:-30px;
+    margin-bottom: 50px;
+    margin-left:380px;
   }
   #formcontrol{
     width: 80%;

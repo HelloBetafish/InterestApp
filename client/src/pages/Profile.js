@@ -1,6 +1,12 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const Profile = () =>
+
+<div>
+<Navbar />
+
+
 <div id="section1">
 <div id="photo" className="container">
   <div className="row">
@@ -73,6 +79,8 @@ const Profile = () =>
 
 </div>
 </section>
+</div>
+
 </div>
 
 

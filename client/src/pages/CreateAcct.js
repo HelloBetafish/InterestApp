@@ -1,6 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const CreateAcct = () =>(
+
+<div>
+<Navbar />
 
 
 <div className="container">
@@ -58,6 +62,7 @@ const CreateAcct = () =>(
 
     </div>
   </div>
+ </div>
  </div>
  </div>
  )

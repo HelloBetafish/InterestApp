@@ -10,41 +10,34 @@ import { FormList, Textfields } from "../components/Login/FormList";
 import LoginButton from "../components/Login/LoginButton";
 import SignUpButton from "../components/Login/SignUpButton"
 import Profile from "./Profile";
+import CreateAcct from "./CreateAcct";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
 
 class Login extends Component
 {
+
    state = 
   {
     page: false
   }
 
   //Executes when user hits [Login] button
-  handleFormSubmit = event => 
+  authenticationLogin = event => 
   {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
-    //this.state.recipeSearch(contains: Burger) && recipes(this.state.recipes) contains array of burger objects.
-    event.preventDefault();
-
-    console.log("Yoot");
-    this.setState({ page: true });
-    console.log(this.state.page);
-
     
+    //console.log("test");
+    //this.setState({ page: true });
+    //console.log(this.state.page);
 
+    console.log("working!")
+
+   
   };
 
-  renderPage = () =>
-  {
-console.log("test");
- // return <Profile />;
-
-
-  };
-  
 
   render()
   {
@@ -75,25 +68,34 @@ console.log("test");
 
                     </FormList>
 
-                    <SignUpButton
+                  <span className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+                  <Link to="/createaccount" className="nav-link" >
                
-                type="submit"
-                className="btn btn-primary signBtn float-right"
+                  <SignUpButton
+                      type="submit"
+                      className="btn btn-primary signBtn float-right"
+                  >
+                      Sign-Up
+                  </SignUpButton>
 
-                >
-                  Sign-Up
-                </SignUpButton>
+                  </Link>
+                  </span>
+
   
-               <LoginButton
-               
-                onClick={this.handleFormSubmit}
-                type="submit"
-                className="btn btn-primary loginBtn float-right"
 
-                >
+                  <span className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+                  <Link to="/profile" className="nav-link" >
+
+                  <LoginButton
+                    onClick={this.authenticationLogin}
+                    type="submit"
+                     className="btn btn-primary loginBtn float-right"
+                  >
                   Login
-                </LoginButton>
-                {this.renderPage()}
+                  </LoginButton>
+
+                  </Link>
+                  </span>
 
                 </Jumbotron>
                  

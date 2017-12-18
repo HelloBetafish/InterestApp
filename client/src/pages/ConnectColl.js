@@ -1,10 +1,13 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const ConnectColl = () =>(
 
-
+<div>
+  <Navbar />
   
 <div className="cd-fixed-bg cd-bg-1">
+
 <div id="section1">
  <div id="photo" className="container">
 
@@ -18,7 +21,7 @@ const ConnectColl = () =>(
 
    <div className="row">
            <div className="container">
-              <div id="buttons" className="col-md-12">
+              <div className="col-md-12 connectColButtons">
                 <button  id="highlight" type="button" className="btn btn-danger">FRONT and BACK END</button> 
                 <button type="button" className="btn btn-danger">FRONT END</button> 
                 <button type="button" className="btn btn-danger autoFocus">BACK END</button>
@@ -162,6 +165,7 @@ const ConnectColl = () =>(
   
 </div>
 </section>
+</div>
 </div>
 </div>
 

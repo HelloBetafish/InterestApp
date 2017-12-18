@@ -1,0 +1,23 @@
+.signBtn
+{
+	background: red;
+}
+
+.signBtn:hover
+{
+	background: red;
+}
+
+.loginBtn
+{
+	margin-right: 5px;
+}
+
+/*
+input:hover
+{
+	background: red;
+	
+}
+*/
+

@@ -1,6 +1,11 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const ConnectColl = () =>
+
+<div>
+<Navbar />
+
 <div className="container-fluid">
 <div className="row">
   <div className="col-md-1">
@@ -21,7 +26,7 @@ const ConnectColl = () =>
       <div id="box">
         <p id="messagep">Keep your messages organized</p>
       </div>
-      <div id="buttons" className="col-md-2">
+      <div className="col-md-2 messagesButtons">
         <button type="button" id="reply" className="btn btn-danger" style={{marginLeft:"225px", marginTop:"-8px"}}>reply</button>
         <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"300px", marginTop:"-65px"}}>keep</button>
         <button type="button" id="delete" className="btn btn-light"style={{marginLeft:"380px", marginTop:"-115px"}}>delete</button>
@@ -30,5 +35,5 @@ const ConnectColl = () =>
   </div>
 </div>
 </div>;
-
+</div>
 export default ConnectColl; 

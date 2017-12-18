@@ -1,7 +1,13 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const AddIdea = () =>
+
+<div>
+<Navbar />
+
 <div className="container">
+
   <div className="row">
     <div id="transparentbox" className="col-md-6">
       <div id="surveybox">
@@ -96,5 +102,6 @@ const AddIdea = () =>
   </div>
 </div>
 ;
+</div>
 
 export default AddIdea ;
