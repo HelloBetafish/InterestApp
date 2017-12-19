@@ -69,7 +69,7 @@ const Profile = () =>
             <span id='clickableAwesomeFont'><i className="fa fa-lightbulb-o fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i></span>
             <h2 id="ideas">Add and Keep Ideas</h2>
             <p id="ideasp">Add as many ideas you have <br/>
-             See how many ideas you have submitted, keep, updated or delete them
+             See how many ideas you have submitted, keep, update or delete them
            </p>
          </div>
        </div>
