@@ -11,7 +11,7 @@ const ConnectColl = () =>
   <div className="col-md-1">
   </div>
   <div class="col-md-2">
-    <span className="envelope" id='clickableAwesomeFont'><i className="fa fa-envelope fa-4x " style={{marginLeft:"30px", fontSize: "40px", color: "black", marginTop: "110px"}}></i></span>
+    <span className="envelope" id='clickableAwesomeFont'><i className="fa fa-envelope fa-4x " style={{marginLeft:"30px", fontSize: "40px", color: "black", marginTop: "170px"}}></i></span>
      <p id="pb"> 4 New</p>
      <span className="openenvelope" id='clickableAwesomeFont'><i className="fa fa-envelope-open fa-4x " style={{marginLeft:"30px",fontSize: "40px", color: "black"}}></i></span>
      <p id="pb">Read</p>
