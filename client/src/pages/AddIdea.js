@@ -3,16 +3,16 @@ import Navbar from "../components/Navbar";
 
 const AddIdea = () =>
 
-<<<<<<< Updated upstream
+
 <div>
 <Navbar />
 
 <div className="container">
 
-=======
+
 <div id="section1">
 <div id="photo" className="container">
->>>>>>> Stashed changes
+
   <div className="row">
     <div className="col-md-2">
    </div>
@@ -118,11 +118,9 @@ const AddIdea = () =>
      
    </div>
 
+</div>;
 </div>
-<<<<<<< Updated upstream
-;
-</div>
-=======
+
 </div>
 
 
@@ -134,6 +132,7 @@ const AddIdea = () =>
 </div>
 </section>
 </div>
+</div>
 
 
     
@@ -144,6 +143,6 @@ const AddIdea = () =>
 
 
 
->>>>>>> Stashed changes
 
-export default AddIdea ;
+
+export default AddIdea;
