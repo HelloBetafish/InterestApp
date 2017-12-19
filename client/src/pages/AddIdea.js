@@ -9,7 +9,7 @@ const AddIdea = () =>
 
 <div className="container">
 
-<<<<<<< Updated upstream
+
 
 <div id="section1">
 <div id="photo" className="container">
@@ -18,8 +18,6 @@ const AddIdea = () =>
     <div className="col-md-2">
    </div>
 <div className="container" className="col-md-6">
-=======
->>>>>>> Stashed changes
 
 
 
@@ -141,24 +139,15 @@ const AddIdea = () =>
 
   
 
-<<<<<<< Updated upstream
-</div>
-</section>
-</div>
-</div>
-=======
 
->>>>>>> Stashed changes
+</div>
+
+</div>
+</div>
+
 
 
     
         
-  
-
-
-
-
-
-
 
 export default AddIdea;
