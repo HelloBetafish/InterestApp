@@ -5,7 +5,8 @@ USE app_intDB;
 
 CREATE TABLE user(
 userID INT NOT NULL AUTO_INCREMENT,
-person_name VARCHAR (35) NOT NULL,
+first_name VARCHAR (35) NOT NULL,
+last_name VARCHAR (35) NOT NULL,
 dob DATE NOT NULL,
 gender VARCHAR (20),
 occupation VARCHAR (30) NOT NULL,
