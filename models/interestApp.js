@@ -1,8 +1,8 @@
 var orm = require("../config/orm.js");
 
-var interstApp = {
+var interestApp = {
 
 };
 
 // Export the database functions for the controller (catsController.js).
-module.exports = App;
+module.exports = interestApp;
