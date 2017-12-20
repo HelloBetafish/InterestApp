@@ -22,10 +22,11 @@ class Login extends Component
 
    state = 
   {
-    page: false
+    page: false,
+    users: []
   }
 
-  //Executes when user hits [Login] button
+  //Function1: Executes when user clicks [Login] button
   authenticationLogin = event => 
   {
     
@@ -38,6 +39,20 @@ class Login extends Component
    
   };
 
+  /*
+  loadUsers = () => 
+  {
+
+    API.getUsers().then(res =>
+        
+        //change title to userName && change author to password. delete or replace synopsis.
+        this.setState({ users: res.data, title: "", author: "", synopsis: "" })
+      
+      ).catch(err => console.log(err));
+    console.log(res.data);
+  };
+
+*/
 
   render()
   {
