@@ -1,8 +1,11 @@
+//"start": "concurrently \"nodemon server.js\" \"npm run client\"",
+
 const express = require("express");
-// const path = require("path");
+ const path = require("path");
 const method = require("method-override");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
+
 // const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3005;
