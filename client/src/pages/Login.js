@@ -98,7 +98,19 @@ class Login extends Component
 
   
 
-               
+                  <span className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+                  <Link to="/profile" className="nav-link" >
+
+                  <LoginButton
+                    onClick={this.authenticationLogin}
+                    type="submit"
+                     className="btn btn-primary loginBtn float-right"
+                  >
+                  Login
+                  </LoginButton>
+
+                  </Link>
+                  </span>
 
                 </Jumbotron>
                  
