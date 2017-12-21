@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const InterestSchema = new Schema({
+
+const interestSchema = new Schema({
+
   firstname: { type: String,required: true },
   lastname: { type: String, required: true },
   dateofbirth: { type: Date, required: true},
@@ -25,6 +27,6 @@ const InterestSchema = new Schema({
   entrepreneur_exp: { type: String, required: true},
   entrepreneur_years: { type: String, required: true},
 });
-const Interest = mongoose.model("Interest", InterestSchema);
+const Interest = mongoose.model("Interest", interestSchema);
 
 module.exports = Interest;

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const createSchema = new Schema({
+const Create = new Schema({
 
   username: { type: String, required: true},
   password: { type: String, required: true},
@@ -12,6 +12,6 @@ const createSchema = new Schema({
 
 
 });
-const Create = mongoose.model("create", createSchema);
+const Create = mongoose.model("Createp", Createp);
 
-module.exports = Idea;
+module.exports = createp;

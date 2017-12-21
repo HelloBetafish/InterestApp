@@ -14,4 +14,4 @@ const createSchema = new Schema({
 });
 const Create = mongoose.model("create", createSchema);
 
-module.exports = Idea;
+module.exports = create;
