@@ -4,14 +4,14 @@ const express = require("express");
 const method = require("method-override");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
-
+const app = express();
 const path = require("path");
 
-// const mongoose = require("mongoose");
+ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3005;
 
-var app = express();
+
 
 // Serve static content for the app from the "public" directory in the application directory.
 // app.use(express.static("public"));

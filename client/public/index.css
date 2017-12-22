@@ -279,7 +279,8 @@
     width:100%;
 
   }
-  #titleconnections{
+  #titleconnections
+  {
     text-align: center;
     font-family: 'Raleway', sans-serif;
     font-size: 50px;
