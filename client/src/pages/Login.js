@@ -13,6 +13,7 @@ import Profile from "./Profile";
 import CreateAcct from "./CreateAcct";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import API from "../utils/API";
 
 
 
@@ -22,22 +23,42 @@ class Login extends Component
 
    state = 
   {
-    page: false
+    users: [],
+    userName: "",
+    password: ""
+
   }
 
-  //Executes when user hits [Login] button
+  //Function1: Executes when user clicks [Login] button
   authenticationLogin = event => 
   {
     
-    //console.log("test");
-    //this.setState({ page: true });
-    //console.log(this.state.page);
+    
+    console.log("working!");
+/*
+    API.getUsers().then(res =>
 
-    console.log("working!")
+        this.setState({ users: res.data, userName: "", password: ""})
 
+        ).catch(err => console.log(err));
+*/
    
   };
 
+  /*
+  loadUsers = () => 
+  {
+
+    API.getUsers().then(res =>
+        
+        //change title to userName && change author to password. delete or replace synopsis.
+        this.setState({ users: res.data, title: "", author: "", synopsis: "" })
+      
+      ).catch(err => console.log(err));
+    console.log(res.data);
+  };
+
+*/
 
   render()
   {

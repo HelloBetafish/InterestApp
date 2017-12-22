@@ -36,7 +36,7 @@ const ConnectColl = () =>(
 
 
                 <div className="img-thumbnail">
-                      <img src="css/images/GitHubProfile.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/bethany.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">Bethany</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
@@ -50,7 +50,7 @@ const ConnectColl = () =>(
 
              
                 <div className="img-thumbnail">
-                      <img src="css/images/Graduation.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/tj.JPG" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">TJ</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
@@ -65,7 +65,7 @@ const ConnectColl = () =>(
 
              
                 <div className="img-thumbnail">
-                      <img src="css/images/John.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/john.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">John</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
@@ -101,7 +101,7 @@ const ConnectColl = () =>(
 
 
                 <div className="img-thumbnail">
-                      <img src="css/images/Reyna slack.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/reyna2.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">Reyna</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
@@ -130,7 +130,7 @@ const ConnectColl = () =>(
 
              
                 <div className="img-thumbnail">
-                      <img src="css/images/Tim -Group Photo.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/tim.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">Tim</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
