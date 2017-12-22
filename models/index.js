@@ -1,3 +1,3 @@
 module.exports = {
-  Interest: require("./Interest")
+  Interest: require("./user")
 };
