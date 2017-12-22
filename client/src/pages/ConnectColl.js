@@ -50,7 +50,7 @@ const ConnectColl = () =>(
 
              
                 <div className="img-thumbnail">
-                      <img src="css/images/tj.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/tj.JPG" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">TJ</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
