@@ -28,18 +28,19 @@ mongoose.Promise = global.Promise;
 
  ];
 
-db.User.remove({})
 
-	.then(() => db.User.collection.insertMany(userSeed))
-
-	.then(data => 
-  	{
-    	console.log(data.insertedIds.length + " records inserted!");
-    	process.exit(0);
+  db.User.remove({})
   
-  	}).catch(err => {
+  .then(() => db.User.collection.insertMany(userSeed))
 
-    	console.error(err);
-    	process.exit(1);
+  .then(data => 
+  {
+    console.log(data.insertedIds.length + " records inserted!");
+    process.exit(0);
+  
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 
-  	});
