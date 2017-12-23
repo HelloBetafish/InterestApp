@@ -24,10 +24,34 @@ class Login extends Component
    state = 
   {
     users: [],
-    userName: "",
-    password: ""
+    username: "",
+    password: "",
+    full_name: "",
+    email: "",
+    country: "",
+    skills: "",
+    experience: ""
 
   }
+
+  componentDidMount() 
+  {
+    
+    this.loadUsers();
+  }
+
+  
+  loadUsers = () => 
+  {
+    API.getUsers().then(res =>
+
+        this.setState({ users: res.data, username: "", password: "", full_name:"", email:"", country:"", skills:"", experience:"" })
+
+        ).catch(err => console.log(err));
+  
+  };
+
+
 
   //Function1: Executes when user clicks [Login] button
   authenticationLogin = event => 
@@ -38,27 +62,14 @@ class Login extends Component
 /*
     API.getUsers().then(res =>
 
-        this.setState({ users: res.data, userName: "", password: ""})
+        this.setState({ users: res.data, username: "", password: "", full_name="", email="", country="", skills="", experience=""})
 
         ).catch(err => console.log(err));
 */
    
   };
 
-  /*
-  loadUsers = () => 
-  {
-
-    API.getUsers().then(res =>
-        
-        //change title to userName && change author to password. delete or replace synopsis.
-        this.setState({ users: res.data, title: "", author: "", synopsis: "" })
-      
-      ).catch(err => console.log(err));
-    console.log(res.data);
-  };
-
-*/
+  
 
   render()
   {
