@@ -1,5 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import "../style/connectColl.css";
+
+
 
 const ConnectColl = () =>(
 
@@ -19,15 +22,38 @@ const ConnectColl = () =>(
 </div>
 
 
-   <div className="row">
-           <div className="container">
-              <div className="col-md-12 connectColButtons">
-                <button  id="highlight" type="button" className="btn btn-danger">FRONT and BACK END</button> 
-                <button type="button" className="btn btn-danger">FRONT END</button> 
-                <button type="button" className="btn btn-danger autoFocus">BACK END</button>
-              </div>
-           </div>
-      </div>
+
+
+
+
+<div className="radiobuttons">
+  <label style={{color:"white"}}>
+    <input type="radio" className="option-input radio" name="example" checked  / >
+    Tech
+  </label>
+  <label>
+    <input type="radio" className="option-input radio" name="example" />
+    Art
+  </label>
+  <label>
+    <input type="radio" className="option-input radio" name="example" />
+    Science
+  </label>
+   <label>
+    <input type="radio" className="option-input radio" name="example" />
+    Entertainment
+  </label>
+   <label>
+    <input type="radio" className="option-input radio" name="example" />
+    Entrepreneurship
+  </label>
+  <button style={{marginTop:"-10px"}} type="button" className="btn btn-outline-danger">search</button>
+</div>
+
+
+
+
+
 
 
   <div className="row">
@@ -36,13 +62,14 @@ const ConnectColl = () =>(
 
 
                 <div className="img-thumbnail">
-                      <img src="css/images/GitHubProfile.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/bethany.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">Bethany</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
+                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p> 
+                      
                     </div>   
                 </div>
-          
+                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
       
     </div>
     <div className="col-md-3 zoom">
@@ -50,12 +77,13 @@ const ConnectColl = () =>(
 
              
                 <div className="img-thumbnail">
-                      <img src="css/images/Graduation.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/tj.JPG" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">TJ</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
+                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
               
 
     </div>
@@ -65,12 +93,13 @@ const ConnectColl = () =>(
 
              
                 <div className="img-thumbnail">
-                      <img src="css/images/John.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/john.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">John</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
+                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
               
 
     </div>
@@ -87,6 +116,7 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
+                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
               
 
     </div>
@@ -101,12 +131,13 @@ const ConnectColl = () =>(
 
 
                 <div className="img-thumbnail">
-                      <img src="css/images/Reyna slack.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/reyna2.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">Reyna</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
+                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
           
       
     </div>
@@ -121,6 +152,7 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
+                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
               
 
     </div>
@@ -130,12 +162,13 @@ const ConnectColl = () =>(
 
              
                 <div className="img-thumbnail">
-                      <img src="css/images/Tim -Group Photo.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
+                      <img src="css/images/tim.jpg" width="100" height="100" style={{marginLeft:"25px"}}/>
                     <div className="people">
                         <p id="texta">Tim</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
+                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
               
 
     </div>
@@ -152,6 +185,7 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
+                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
               
 
     </div>
