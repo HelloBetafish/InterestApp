@@ -13,6 +13,7 @@ import Profile from "./Profile";
 import CreateAcct from "./CreateAcct";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import API from "../utils/API";
 
 
 
@@ -22,22 +23,53 @@ class Login extends Component
 
    state = 
   {
-    page: false
+    users: [],
+    username: "",
+    password: "",
+    full_name: "",
+    email: "",
+    country: "",
+    skills: "",
+    experience: ""
+
   }
 
-  //Executes when user hits [Login] button
+  componentDidMount() 
+  {
+    
+    this.loadUsers();
+  }
+
+  
+  loadUsers = () => 
+  {
+    API.getUsers().then(res =>
+
+        this.setState({ users: res.data, username: "", password: "", full_name:"", email:"", country:"", skills:"", experience:"" })
+
+        ).catch(err => console.log(err));
+  
+  };
+
+
+
+  //Function1: Executes when user clicks [Login] button
   authenticationLogin = event => 
   {
     
-    //console.log("test");
-    //this.setState({ page: true });
-    //console.log(this.state.page);
+    
+    console.log("working!");
+/*
+    API.getUsers().then(res =>
 
-    console.log("working!")
+        this.setState({ users: res.data, username: "", password: "", full_name="", email="", country="", skills="", experience=""})
 
+        ).catch(err => console.log(err));
+*/
    
   };
 
+  
 
   render()
   {
