@@ -6,7 +6,7 @@ import Container from "../components/Login/Container";
 import Row from "../components/Login/Row";
 import Col from "../components/Login/Col";
 import Navbar from "../components/Login/Navbar";
-import { FormList, Textfields } from "../components/Login/FormList";
+import { FormList, Textfield } from "../components/Login/FormList";
 import LoginButton from "../components/Login/LoginButton";
 import SignUpButton from "../components/Login/SignUpButton"
 import Profile from "./Profile";
@@ -24,8 +24,10 @@ class Login extends Component
    state = 
   {
     users: [],
+
     username: "",
     password: "",
+
     full_name: "",
     email: "",
     country: "",
@@ -69,6 +71,26 @@ class Login extends Component
    
   };
 
+
+  //user enters data in textfields
+  handleInputChange = event => 
+  {
+    //name and value come from <input  value={this.state.title} name "title" ...>
+    //                         <input  value={this.state.author} name "author" ...>                       
+    //                         <input  value={this.state.synopsis} name "synopsis" ...>
+    const { name, value } = event.target;
+
+
+    this.setState({
+
+      [name]: value
+
+    });
+
+ 
+
+  };
+
   
 
   render()
@@ -96,11 +118,30 @@ class Login extends Component
 
                   <FormList>
 
-                    <Textfields />
+
+                    <h4> Email </h4>
+                    <Textfield 
+                          value = {this.state.username}
+                          onChange={this.handleInputChange}
+                          type="email"
+                          name="username"
+                          placeholder="Email"
+
+                    />
+
+                    <h4> Password </h4>
+                    <Textfield 
+                          value = {this.state.password}
+                          type="password"
+                          onChange={this.handleInputChange}
+                          name="password"
+                          placeholder="Password"
+
+                    />
 
                     </FormList>
 
-                  <span className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+                  <span className ="nav-item" className={window.location.pathname === "/createaccount" ? "active" : ""}>
                   <Link to="/createaccount" className="nav-link" >
                
                   <SignUpButton
@@ -115,7 +156,7 @@ class Login extends Component
 
   
 
-                  <span className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+                  <span className ="nav-item" className={window.location.pathname === "/profile" ? "active" : ""}>
                   <Link to="/profile" className="nav-link" >
 
                   <LoginButton
