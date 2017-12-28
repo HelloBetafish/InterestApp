@@ -15,9 +15,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
 
-
-
-
 class Login extends Component
 {
 
@@ -42,7 +39,7 @@ class Login extends Component
     this.loadUsers();
   }
 
-  
+  //Function1: load users from seedDB.js into mongoDB.
   loadUsers = () => 
   {
     API.getUsers().then(res =>
@@ -53,33 +50,46 @@ class Login extends Component
   
   };
 
-
-
-  //Function1: Executes when user clicks [Login] button
+  //Function2: Executes when user clicks [Login] button
   authenticationLogin = event => 
   {
     
+    //Boolean variable determins whether or not the user can log in.
+    //we set it to true if the user enters valid credentials
+    var valid = false;
+
+    //get username and password from textfield by using this.state.username && this.state.password
+    //if they are valid then log user into profile page. Else display error message.
+    //window.location.href = "/profile";
+
+    //scan through entire database to see if username and password is valid
+    for(var i = 0; i < this.state.users.length; i++)
+    {
+
+      //if user enters valid username and password set valid to true so that he or she may log in.
+      if(this.state.username === this.state.users[i].username && this.state.password === this.state.users[i].password )
+      {
+        valid = true;
+      }
+    }
+
+    //check boolean value to determine if login success
+    if(valid === true)
+    {
+      window.location.href = "/profile";
+    }
+    else
+    {
+      console.log("Invalid username or password");
+    }
     
-    console.log("working!");
-/*
-    API.getUsers().then(res =>
-
-        this.setState({ users: res.data, username: "", password: "", full_name="", email="", country="", skills="", experience=""})
-
-        ).catch(err => console.log(err));
-*/
-   
   };
 
-
-  //user enters data in textfields
+  //Function3: user enters data in textfields
   handleInputChange = event => 
   {
-    //name and value come from <input  value={this.state.title} name "title" ...>
-    //                         <input  value={this.state.author} name "author" ...>                       
-    //                         <input  value={this.state.synopsis} name "synopsis" ...>
+    
     const { name, value } = event.target;
-
 
     this.setState({
 
@@ -87,24 +97,74 @@ class Login extends Component
 
     });
 
- 
-
   };
 
   
-
   render()
   {
 
-
-
     return(
-
-    	
 
     	<div>
 
-    		<Navbar />
+    		<Navbar>
+
+          <nav className="navbar navbar-light">
+  
+
+            <a className="navbar-brand" >
+              <h1 className="navTitle"> Interest App </h1>
+            </a>
+
+            <a className="navbar-brand" >
+              
+              <Row>
+              <Col size="lg-6">
+
+               
+                <Textfield 
+                          value = {this.state.username}
+                          onChange={this.handleInputChange}
+                          type="email"
+                          name="username"
+                          placeholder="Username or Email"
+
+                />
+
+              </Col>
+
+
+                
+
+              <Col size="lg-6">
+
+            
+              <Textfield 
+                          value = {this.state.password}
+                          type="password"
+                          onChange={this.handleInputChange}
+                          name="password"
+                          placeholder="Password"
+
+                />
+
+                <LoginButton
+                    onClick={this.authenticationLogin}
+                    type="submit"
+                     className="btn btn-primary loginBtn float-right"
+                  >
+                  Login
+                  </LoginButton>
+
+              </Col>
+
+              </Row>
+
+            </a>
+
+          </nav>
+        </Navbar>
+      
 
     		<Wrapper>
 
@@ -118,63 +178,15 @@ class Login extends Component
 
                   <FormList>
 
-
-                    <h4> Email </h4>
-                    <Textfield 
-                          value = {this.state.username}
-                          onChange={this.handleInputChange}
-                          type="email"
-                          name="username"
-                          placeholder="Email"
-
-                    />
-
-                    <h4> Password </h4>
-                    <Textfield 
-                          value = {this.state.password}
-                          type="password"
-                          onChange={this.handleInputChange}
-                          name="password"
-                          placeholder="Password"
-
-                    />
+                  
+                   
 
                     </FormList>
 
-                  <span className ="nav-item" className={window.location.pathname === "/createaccount" ? "active" : ""}>
-                  <Link to="/createaccount" className="nav-link" >
-               
-                  <SignUpButton
-                      type="submit"
-                      className="btn btn-primary signBtn float-right"
-                  >
-                      Sign-Up
-                  </SignUpButton>
-
-                  </Link>
-                  </span>
-
-  
-
-                  <span className ="nav-item" className={window.location.pathname === "/profile" ? "active" : ""}>
-                  <Link to="/profile" className="nav-link" >
-
-                  <LoginButton
-                    onClick={this.authenticationLogin}
-                    type="submit"
-                     className="btn btn-primary loginBtn float-right"
-                  >
-                  Login
-                  </LoginButton>
-
-                  </Link>
-                  </span>
-
-                </Jumbotron>
-                 
-
+                  
+         
+               </Jumbotron>
                 
-
     					</Col>
     				</Row>
     			</Container>
@@ -184,7 +196,7 @@ class Login extends Component
 
 
 
-    	);
+    );
     
   }
 }

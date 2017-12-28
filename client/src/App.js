@@ -14,11 +14,6 @@ import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 
 
-
-// const App = () => <Login/>;
-//<Route exact path="/" component={Profile} />
-
-
 const App = () => 
 
   <Router>
