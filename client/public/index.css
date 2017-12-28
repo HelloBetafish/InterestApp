@@ -1,5 +1,5 @@
 
- body
+/* body
 {
 	background: url("images/login3.jpg");
 	background-position: center center;
@@ -9,7 +9,7 @@
 	background-color: #999;
 
 
-} 
+} */
 
 .fa-search:hover {  
   -webkit-transform: translateY(0px) rotate(360deg);
@@ -88,7 +88,7 @@
     width: 250px;
     background-color: #65737e;
     margin-left:20px;
-    margin-bottom:50px;
+    margin-bottom:40px;
     margin-top: 20px;
   
   }
@@ -98,7 +98,7 @@
     width: 250px;
     background-color: #65737e;
     margin-left:50px;
-    margin-bottom:50px;
+    margin-bottom:40px;
     margin-top:20px;
   
   
@@ -109,7 +109,7 @@
     margin-right:10px;
     background-color: #65737e;
     margin-left:60px;
-    margin-bottom:50px;
+    margin-bottom:40px;
     margin-top: 20px;
   
   }
@@ -234,6 +234,7 @@
 
   .img-thumbnail{
   	margin-bottom: 30px;
+    margin-top:40px;
   }
   #photo{
     margin-top:50px;
@@ -549,6 +550,11 @@
   }
   #submitidea{
     margin-top: 20px;
+  }
+  .boardbox{
+    height: 10px;
+    width: 100px;
+    outline-color: gray;
   }
   
   /*---------------createaccount---------------------*/

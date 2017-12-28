@@ -18,7 +18,7 @@ const CreateAcct = () =>(
 
   <div id="backgroundphoto" className="col-md-6" style={{boxShadow: "9px 9px 5px grey",height:"100%", width:"100%", backgroundColor:"#343d46", marginTop:"80px",marginBottom:"-20px", borderRadius: "5px"}}> 
     <div className="bulbsphoto" >
-          <div id="accountbox" style={{height: "60px", width: "93%", borderRadius: "10px", backgroundColor: "#f9bd05", marginTop: "20px",marginLeft: "20px",
+          <div id="accountbox" style={{height: "60px", width: "93%", borderRadius: "10px", backgroundColor: "#343d46", marginTop: "20px",marginLeft: "20px",
        marginBottom: "20px"}}>
             <p id="accounttitle" style={{color:"white", textAlign: "center", fontFamily: "Raleway", fontSize: "25px",
           paddingTop:"14px"}}>CREATE ACCOUNT</p>
@@ -318,7 +318,7 @@ const CreateAcct = () =>(
               <div className="col">
                  <label className="col-form-label" for="formGroupExampleInput">Do you have experience?</label>
                         <div className="yesnoselection">
-                            <select name="options" id="input7" style={{width:"240px",height:"38px"}}>
+                            <select name="options" id="input7" style={{width:"238px",height:"38px"}}>
                              <option value="blanck"></option>
                               <option value="Yes">Yes</option>
                               <option value="No">No</option>           
@@ -368,7 +368,7 @@ const CreateAcct = () =>(
               <div className="col">
                  <label className="col-form-label" for="formGroupExampleInput">Do you have experience?</label>
                         <div className="yesnoselection">
-                            <select name="options" id="input7" style={{width:"240px",height:"38px"}}>
+                            <select name="options" id="input7" style={{width:"238px",height:"38px"}}>
                              <option value="blanck"></option>
                               <option value="Yes">Yes</option>
                               <option value="No">No</option>           
@@ -418,7 +418,7 @@ const CreateAcct = () =>(
               <div className="col">
                  <label className="col-form-label" for="formGroupExampleInput">Do you have experience?</label>
                         <div className="yesnoselection">
-                            <select name="options" id="input7" style={{width:"240px",height:"38px"}}>
+                            <select name="options" id="input7" style={{width:"238px",height:"38px"}}>
                              <option value="blanck"></option>
                               <option value="Yes">Yes</option>
                               <option value="No">No</option>           
@@ -469,7 +469,7 @@ const CreateAcct = () =>(
               <div className="col">
                  <label className="col-form-label" for="formGroupExampleInput">Do you have experience?</label>
                         <div className="yesnoselection">
-                            <select name="options" id="input7" style={{width:"240px",height:"38px"}}>
+                            <select name="options" id="input7" style={{width:"238px",height:"38px"}}>
                              <option value="blanck"></option>
                               <option value="Yes">Yes</option>
                               <option value="No">No</option>           

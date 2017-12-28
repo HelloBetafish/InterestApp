@@ -37,6 +37,7 @@
   margin-top:-30px;
     margin-bottom: 50px;
     margin-left:260px;
+
   }
 
   .messagesButtons
@@ -171,5 +172,15 @@ label{
   padding-bottom: 10px;
 }
 
-
-
+/*-----------------messageboard-------------------*/
+.boardbox{
+  height: 400px;
+  width: 700px;
+  outline-color: gray;
+  background-color: lightgray;
+  margin-top: 100px;
+  margin-left: 40px;
+  color:gray;
+  padding-left: 20px;
+  padding-top: 20px;
+}
