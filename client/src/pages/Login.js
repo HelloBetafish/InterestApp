@@ -14,6 +14,7 @@ import CreateAcct from "./CreateAcct";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
+import Badge from "../components/Login/Badge";
 
 class Login extends Component
 {
@@ -24,6 +25,7 @@ class Login extends Component
 
     username: "",
     password: "",
+    title: "",
 
     full_name: "",
     email: "",
@@ -145,16 +147,15 @@ class Login extends Component
                           onChange={this.handleInputChange}
                           name="password"
                           placeholder="Password"
+              />
 
-                />
-
-                <LoginButton
+              <LoginButton
                     onClick={this.authenticationLogin}
                     type="submit"
                      className="btn btn-primary loginBtn float-right"
-                  >
+              >
                   Login
-                  </LoginButton>
+              </LoginButton>
 
               </Col>
 
@@ -164,7 +165,6 @@ class Login extends Component
 
           </nav>
         </Navbar>
-      
 
     		<Wrapper>
 
@@ -176,12 +176,57 @@ class Login extends Component
 
     						<Jumbotron>
 
+                  <Badge />
+
                   <FormList>
 
-                  
-                   
+                    <Textfield 
+                          value = {this.state.username}
+                          onChange={this.handleInputChange}
+                          type="text"
+                          name="username"
+                          placeholder="Username or Email"
 
-                    </FormList>
+                    />
+
+                    <Textfield 
+                          value = {this.state.password}
+                          type="password"
+                          onChange={this.handleInputChange}
+                          name="password"
+                          placeholder="Password"
+
+                    />
+
+                    <Textfield 
+                          value = {this.state.title}
+                          type="text"
+                          onChange={this.handleInputChange}
+                          name="title"
+                          placeholder="Title"
+
+                    />
+
+                    <Textfield 
+                          value = {this.state.full_name}
+                          type="text"
+                          onChange={this.handleInputChange}
+                          name="full_name"
+                          placeholder="Full Name"
+
+                    />
+
+                    <Textfield 
+                          value = {this.state.email}
+                          type="email"
+                          onChange={this.handleInputChange}
+                          name="email"
+                          placeholder="Email"
+
+                    />
+
+
+                  </FormList>
 
                   
          
