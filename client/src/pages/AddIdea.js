@@ -22,8 +22,13 @@ const AddIdea = () =>(
                         <p id="text">Bruno Smith</p> 
                         <p id="text2">Web Developer <br/> Front and Back end <br/> ICE CREAM APPLICATION </p>
                       </div>
-
+                      
                     </div>
+                      <i className="fa fa-github" aria-hidden="true" style={{fontSize: "40px", marginLeft:"20px"}}></i>
+                      <i className="fa fa-linkedin" aria-hidden="true"style={{fontSize: "35px", marginLeft:"20px"}}></i>
+                      <i className="fa fa-vimeo-square" aria-hidden="true" style={{fontSize: "35px", marginLeft:"20px"}}></i>
+                      <i className="fa fa-twitter" aria-hidden="true" style={{fontSize: "35px", marginLeft:"20px"}}></i>
+
                   </div>
                  
                       <div className="col-md-6">
