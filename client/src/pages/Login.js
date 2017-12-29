@@ -233,7 +233,7 @@ class Login extends Component
 
                     />
 
-                    <select class="form-control bfh-countries" data-available="US,AG,AU"></select>
+                   
 
 
               </FormList>
