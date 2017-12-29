@@ -1,4 +1,7 @@
+
+
 import React, {Component} from "react";
+import $ from "jquery";
 import "../components/Login/Login.css";
 import Wrapper from "../components/Login/Wrapper";
 import Jumbotron from "../components/Login/Jumbotron";
@@ -14,6 +17,9 @@ import CreateAcct from "./CreateAcct";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
+import Badge from "../components/Login/Badge";
+
+
 
 class Login extends Component
 {
@@ -24,7 +30,10 @@ class Login extends Component
 
     username: "",
     password: "",
-
+    
+    username2: "",
+    password2: "",
+    title: "",
     full_name: "",
     email: "",
     country: "",
@@ -100,6 +109,7 @@ class Login extends Component
   };
 
   
+  
   render()
   {
 
@@ -145,16 +155,15 @@ class Login extends Component
                           onChange={this.handleInputChange}
                           name="password"
                           placeholder="Password"
+              />
 
-                />
-
-                <LoginButton
+              <LoginButton
                     onClick={this.authenticationLogin}
                     type="submit"
                      className="btn btn-primary loginBtn float-right"
-                  >
+              >
                   Login
-                  </LoginButton>
+              </LoginButton>
 
               </Col>
 
@@ -164,7 +173,6 @@ class Login extends Component
 
           </nav>
         </Navbar>
-      
 
     		<Wrapper>
 
@@ -176,14 +184,59 @@ class Login extends Component
 
     						<Jumbotron>
 
+                  <Badge />
+
                   <FormList>
 
-                  
+                    <Textfield 
+                          value = {this.state.username2}
+                          onChange={this.handleInputChange}
+                          type="text"
+                          name="username2"
+                          placeholder="Username or Email"
+
+                    />
+
+                    <Textfield 
+                          value = {this.state.password2}
+                          type="password"
+                          onChange={this.handleInputChange}
+                          name="password2"
+                          placeholder="Password"
+
+                    />
+
+                    <Textfield 
+                          value = {this.state.title}
+                          type="text"
+                          onChange={this.handleInputChange}
+                          name="title"
+                          placeholder="Title"
+
+                    />
+
+                    <Textfield 
+                          value = {this.state.full_name}
+                          type="text"
+                          onChange={this.handleInputChange}
+                          name="full_name"
+                          placeholder="Full Name"
+
+                    />
+
+                    <Textfield 
+                          value = {this.state.email}
+                          type="email"
+                          onChange={this.handleInputChange}
+                          name="email"
+                          placeholder="Email"
+
+                    />
+
                    
 
-                    </FormList>
 
-                  
+              </FormList>
          
                </Jumbotron>
                 
