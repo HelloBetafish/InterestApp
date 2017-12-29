@@ -20,26 +20,55 @@ mongoose.Promise = global.Promise;
  	country: "USA",
  	skills: "programming, Engineering",
  	experience: "5 years"
+ },
+
+{
+ 	username: "Jesse202",
+ 	password: "123",
+ 	full_name: "Jesse Forte",
+ 	email: "Jesse@gmail.com",
+ 	country: "USA",
+ 	skills: "programming, Engineering",
+ 	experience: "5 years"
+ },
+
+ {
+ 	username: "Reyna303",
+ 	password: "123",
+ 	full_name: "Reyna Perez",
+ 	email: "Reyna@gmail.com",
+ 	country: "USA",
+ 	skills: "programming, Engineering",
+ 	experience: "5 years"
+ },
+
+ {
+ 	username: "Bethany404",
+ 	password: "123",
+ 	full_name: "Bethany Pfeister",
+ 	email: "Bethany@gmail.com",
+ 	country: "USA",
+ 	skills: "programming, Engineering",
+ 	experience: "5 years"
  }
-
-
 
 
 
  ];
 
-db.User.remove({})
 
-	.then(() => db.User.collection.insertMany(userSeed))
-
-	.then(data => 
-  	{
-    	console.log(data.insertedIds.length + " records inserted!");
-    	process.exit(0);
+  db.User.remove({})
   
-  	}).catch(err => {
+  .then(() => db.User.collection.insertMany(userSeed))
 
+  .then(data => 
+  {
+    console.log(data.insertedIds.length + " records inserted!");
+    process.exit(0);
+  
+  })
+  .catch(err => {
     console.error(err);
     process.exit(1);
-    
   });
+
