@@ -1,4 +1,7 @@
+
+
 import React, {Component} from "react";
+import $ from "jquery";
 import "../components/Login/Login.css";
 import Wrapper from "../components/Login/Wrapper";
 import Jumbotron from "../components/Login/Jumbotron";
@@ -16,6 +19,8 @@ import { Link } from "react-router-dom";
 import API from "../utils/API";
 import Badge from "../components/Login/Badge";
 
+
+
 class Login extends Component
 {
 
@@ -25,8 +30,10 @@ class Login extends Component
 
     username: "",
     password: "",
+    
+    username2: "",
+    password2: "",
     title: "",
-
     full_name: "",
     email: "",
     country: "",
@@ -101,6 +108,7 @@ class Login extends Component
 
   };
 
+  
   
   render()
   {
@@ -181,19 +189,19 @@ class Login extends Component
                   <FormList>
 
                     <Textfield 
-                          value = {this.state.username}
+                          value = {this.state.username2}
                           onChange={this.handleInputChange}
                           type="text"
-                          name="username"
+                          name="username2"
                           placeholder="Username or Email"
 
                     />
 
                     <Textfield 
-                          value = {this.state.password}
+                          value = {this.state.password2}
                           type="password"
                           onChange={this.handleInputChange}
-                          name="password"
+                          name="password2"
                           placeholder="Password"
 
                     />
@@ -226,9 +234,7 @@ class Login extends Component
                     />
 
 
-                  </FormList>
-
-                  
+              </FormList>
          
                </Jumbotron>
                 

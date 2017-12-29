@@ -1548,6 +1548,14 @@ cosmiconfig@^2.1.0, cosmiconfig@^2.1.1:
     parse-json "^2.2.0"
     require-from-string "^1.1.0"
 
+country-region-dropdown-menu@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/country-region-dropdown-menu/-/country-region-dropdown-menu-1.2.0.tgz#acb08e5068c85cd9e92f447f2df31891dc60bbb1"
+
+country-select-js@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/country-select-js/-/country-select-js-1.0.8.tgz#9dc4c174a95a15c2d3d34277d7888d094d21f84f"
+
 create-ecdh@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.0.tgz#888c723596cdf7612f6498233eebd7a35301737d"
@@ -3704,6 +3712,10 @@ jest@20.0.4:
   resolved "https://registry.yarnpkg.com/jest/-/jest-20.0.4.tgz#3dd260c2989d6dad678b1e9cc4d91944f6d602ac"
   dependencies:
     jest-cli "^20.0.4"
+
+jquery@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
 js-base64@^2.1.9:
   version "2.4.0"
