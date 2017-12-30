@@ -30,11 +30,11 @@ class Login extends Component
   {
     users: [],
 
-    username: "",
-    password: "",
-    
     username2: "",
     password2: "",
+    
+    username: "",
+    password: "",
     title: "",
     full_name: "",
     email: "",
@@ -78,7 +78,7 @@ class Login extends Component
     {
 
       //if user enters valid username and password set valid to true so that he or she may log in.
-      if(this.state.username === this.state.users[i].username && this.state.password === this.state.users[i].password )
+      if(this.state.username2 === this.state.users[i].username && this.state.password2 === this.state.users[i].password )
       {
         valid = true;
       }
@@ -103,6 +103,7 @@ class Login extends Component
     
     const { name, value } = event.target;
 
+
     this.setState({
 
       [name]: value
@@ -120,26 +121,27 @@ class Login extends Component
     
 
     //Checks to make sure textfields are not empty when submitting new user.
-    if (this.state.username2 && this.state.password2 && this.state.title && this.state.full_name &&
+    if (this.state.username && this.state.password && this.state.title && this.state.full_name &&
         this.state.email && this.state.country && this.state.skills && this.state.experience) 
     {
 
-      /*
+      
       API.saveUser({
 
-        username2: "",
-        password2: "",
-        title: "",
-        full_name: "",
-        email: "",
-        country: "",
-        skills: "",
-        experience: ""
+        username: this.state.username,
+        password: this.state.password,
+        title: this.state.title,
+        full_name: this.state.full_name,
+        email: this.state.email,
+        country: this.state.country,
+        skills: this.state.skills,
+        experience: this.state.experience
 
       }).then(res => this.loadUsers())
 
         .catch(err => console.log(err));
-      */
+        
+      
         
     }
 
@@ -170,10 +172,10 @@ class Login extends Component
 
                
                 <Textfield 
-                          value = {this.state.username}
+                          value = {this.state.username2}
                           onChange={this.handleInputChange}
                           type="email"
-                          name="username"
+                          name="username2"
                           placeholder="Username or Email"
 
                 />
@@ -187,10 +189,10 @@ class Login extends Component
 
             
               <Textfield 
-                          value = {this.state.password}
+                          value = {this.state.password2}
                           type="password"
                           onChange={this.handleInputChange}
-                          name="password"
+                          name="password2"
                           placeholder="Password"
               />
 
@@ -226,19 +228,19 @@ class Login extends Component
                   
 
                     <Textfield 
-                          value = {this.state.username2}
+                          value = {this.state.username}
                           onChange={this.handleInputChange}
                           type="text"
-                          name="username2"
+                          name="username"
                           placeholder="Username or Email"
 
                     />
 
                     <Textfield 
-                          value = {this.state.password2}
+                          value = {this.state.password}
                           type="password"
                           onChange={this.handleInputChange}
-                          name="password2"
+                          name="password"
                           placeholder="Password"
 
                     />
