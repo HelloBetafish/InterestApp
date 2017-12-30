@@ -6,17 +6,7 @@
     background: rgba(60, 60, 60, 0.4);
 
     overflow-x: auto;
+
 }
 
-@media screen and (max-width: 960px)
-{
-	
-	.badge
-	{
-	
-		color: red;
-	 
-	}
 
-	
-}

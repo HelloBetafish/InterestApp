@@ -109,6 +109,8 @@ class Login extends Component
 
     });
 
+    console.log(this.state.users);
+
   };
 
   //Function4: adds new user to MongoDB when signing up.
