@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import "../style/connectColl.css";
 
 const Profile = () =>
 
@@ -11,17 +12,29 @@ const Profile = () =>
           <div id="photo" className="container">
             <div className="row">
               <div className="col-md-1"></div>
-              <div className="col-md-3">
-                <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black", marginTop:"80px"}} ></i></span>
+              <div className="col-md-1">
+                <div tabindex="1" className="box1">
+                <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
                 <p id="personal">Personal Info</p>
+                </div>
+                <div tabindex="2"className="box2">
                 <span id='clickableAwesomeFont'><i className=" fa fa-address-book" style={{fontSize: "40px", color:"black"}} ></i></span>
                 <p id="contacts">Contacts</p>
-                <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "40px", fontWeight: "bold", marginLeft: "20px"}}>4</p></span>
-                <p id="textmessage" style={{fontSize: "15px", color: "black"}}>Messages</p>
-
+                </div>
               </div>
+              <div className="col-md-2">
+                <div tabindex="3"className="box3">
+                <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>4</p></span>
+                <p id="textmessage" >Messages</p>
+                </div>
+                <div tabindex="4"className="box4">
+                <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold",  marginLeft: "25px",paddingTop:"26px"}}>11</p></span>
+                <p id="textinvitation" >Invitations</p>
+                </div>
+              </div>
+                
               <div className="col-md-4">
-                <div className="img-thumbnail mx-auto"style={{boxShadow: "9px 9px 5px grey"}}>
+                <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey"}}>
 
                   <img src="css/images/guy.jpeg" width="200" height="200" style={{marginLeft: "70px"}}/>
                   <div className="caption">
@@ -49,7 +62,7 @@ const Profile = () =>
 
                 <div className="service row">   
                   <div className="col-md-4 ">
-                    <div className="searchprofile" style={{boxShadow: "9px 9px 5px grey"}}>
+                    <div className="searchprofile" style={{boxShadow: "9px 9px 20px grey"}}>
                       <span id='clickableAwesomeFont'><i className="fa fa-search fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i></span>
 
                       <h2 id="connect">Connect or Collaborate</h2>
@@ -58,19 +71,19 @@ const Profile = () =>
                     </div>
                   </div>
                   <div className="col-md-4">
-                    <div id="messageprofile"style={{boxShadow: "9px 9px 5px grey"}}>
+                    <div id="messageprofile"style={{boxShadow: "9px 9px 20px grey"}}>
                       <span id='clickableAwesomeFont'><i className="fa fa-envelope fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i></span>
                       <h2 id="message">Message Box</h2>
                       <p id="messagep">Keep your messages organized</p>
                     </div>
                   </div>
                   <div className="col-md-4 ">
-                    <div id="ideasprofile"style={{boxShadow: "9px 9px 5px grey"}}>
+                    <div id="ideasprofile"style={{boxShadow: "9px 9px 20px grey"}}>
                       <span id='clickableAwesomeFont'><i className="fa fa-lightbulb-o fa-4x circle-icon" data-toggle="modal" data-target="#exampleModal" style={{fontSize: "40px", color:"red"}}></i></span>
                       <h2 id="ideas">Add and Keep Ideas</h2>
                       <p id="ideasp">Add as many ideas you have <br/>
                        See how many ideas you have submitted, keep, update or delete them
-                     </p>
+                      </p>
 
                     
 

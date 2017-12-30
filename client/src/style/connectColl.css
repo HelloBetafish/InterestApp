@@ -1,6 +1,64 @@
+div:focus {
+    background-color:lightgray;
+}
+.box1{
+  width:120px; 
+  padding-left:15px;
+  padding-bottom:10px;
+  outline: 1px solid lightgray;
+  margin-left:-65px; 
+  margin-top:90px;
+}
+#personal{
+font-size:9px;
+margin-left:10px;
+}
 
+.box2{
+  width:120px; 
+  padding-left:15px;
+  padding-bottom:10px;
+  outline: 1px solid lightgray;
+  margin-left:-65px; 
+  
 
+}
 
+#contacts{
+  font-size:9px;
+  margin-left:15px;
+}
+.box3{
+  width:120px; 
+  padding-left:15px; 
+  padding-bottom:10px; 
+  outline: 1px solid lightgray;
+  margin-left: -37px;
+  margin-right:20px;
+  margin-top:90px;
+}
+#textmessage{
+ font-size: 9px; 
+ margin-left:15px; 
+ color: black;
+ 
+}
+.box4{
+  width:120px; 
+  padding-left:15px;
+  padding-bottom:10px;
+  outline: 1px solid lightgray;
+  margin-left: -37px;
+}
+#textinvitation{
+  font-size: 9px; 
+  color: black;
+  margin-top:-20px; 
+  padding-left:20px;
+                
+
+}
+/*------------connectColl---------------*/
   
   body, html, main {
     /* important */
@@ -173,15 +231,42 @@ label{
 }
 
 /*-----------------messageboard-------------------*/
-.boardbox{
-  height: 400px;
-  width: 700px;
- 
+.boardann{
+  height: 150px;
+  width: 200px;
   background-color: white;
   margin-top:48px;
   margin-left: 40px;
   color:gray;
   padding-left: 20px;
   padding-top: 20px;
+  border: .5px solid lightgray;
+}
+/*.boardbox1{
+  height: 80px;
+  width: 700px;
+  background-color: white;
+  margin-top:10px;
+  margin-left: 40px;
+  color:gray;
+  padding-left: 20px;
+  padding-top: 20px;
   border: .5px solid gray;
+}*/
+h5{
+  font-size: 12px;
+}
+#text3{
+  margin-top: 50px;
+  margin-left:20px;
+  font-size: 14px;
+  padding: 20px 20px 20px 20px;
+  outline: 1px solid lightgray;
+}
+#text4{
+  margin-top: 30px;
+  margin-left:20px;
+  font-size: 14px;
+  padding: 20px 20px 20px 20px;
+  outline: 1px solid lightgray;
 }

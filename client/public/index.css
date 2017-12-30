@@ -66,7 +66,7 @@
     margin-left:20px;
   }
   .fa-list{
-    margin-top:50px;
+    margin-top:30px;
     margin-left:20px;
   }
   .circle-icon {
@@ -334,11 +334,11 @@
     }
   }
   
->>>>>>> master
+
   /*----------------messages box--------------------------------*/
   .envelope{
      
-    margin-left: 90px;
+    margin-left: 70px;
   }
   
   .openenvelope{
