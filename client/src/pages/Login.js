@@ -1,4 +1,4 @@
-
+//NOTE: adding fluid to containter or <Container fluid> causes wider navbar & jumbotron.
 
 import React, {Component} from "react";
 import $ from "jquery";
@@ -21,14 +21,7 @@ import Badge from "../components/Login/Badge";
 import "../components/Login/Login.css";
 
 
-/*
-      $("#country_selector").countrySelect({
-        //defaultCountry: "jp",
-        //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-        preferredCountries: ['ca', 'gb', 'us']
-      });
-  
-*/
+
 
 class Login extends Component
 {
@@ -110,9 +103,6 @@ class Login extends Component
     
     const { name, value } = event.target;
 
-    console.log("name " + name);
-    console.log("value " + value);
-
     this.setState({
 
       [name]: value
@@ -121,14 +111,40 @@ class Login extends Component
 
   };
 
+  //Function4: adds new user to MongoDB when signing up.
+  addNewUser = event => 
+  {
+    event.preventDefault();
+
+    
+
+    //Checks to make sure textfields are not empty when submitting new user.
+    if (this.state.username2 && this.state.password2 && this.state.title && this.state.full_name &&
+        this.state.email && this.state.country && this.state.skills && this.state.experience) 
+    {
+
+      /*
+      API.saveBook({
+
+        title: this.state.title,
+        author: this.state.author,
+        synopsis: this.state.synopsis
+
+      }).then(res => this.loadBooks())
+
+        .catch(err => console.log(err));
+        */
+    }
+  };
+
   
   
   render()
   {
 
     return(
-
-    	<div className="container">
+<Wrapper>
+    	<Container>
 
     		<Navbar>
 
@@ -187,9 +203,9 @@ class Login extends Component
           </nav>
         </Navbar>
 
-    		<Wrapper>
+    		
 
-    			<Container>
+    			
 
     				<Row>
 
@@ -513,6 +529,17 @@ class Login extends Component
 
                     />
 
+                    <SignUpButton
+                        disabled={!(this.state.username2 && this.state.password2 && this.state.title && this.state.full_name &&
+                                      this.state.email && this.state.country && this.state.skills && this.state.experience)}
+                        onClick={this.addNewUser}
+                        type="submit"
+                        className="btn btn-primary  float-right"
+                        
+                    >
+                      SignUp
+                    </SignUpButton>
+
    
               
 
@@ -524,8 +551,7 @@ class Login extends Component
     				</Row>
     			</Container>
     		</Wrapper>
-    	</div>
-
+    	
 
 
 
