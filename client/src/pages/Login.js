@@ -1,7 +1,7 @@
 //NOTE: adding fluid to containter or <Container fluid> causes wider navbar & jumbotron.
 
 import React, {Component} from "react";
-import $ from "jquery";
+//import $ from "jquery";
 import "../components/Login/Login.css";
 import Wrapper from "../components/Login/Wrapper";
 import Jumbotron from "../components/Login/Jumbotron";
@@ -109,7 +109,6 @@ class Login extends Component
 
     });
 
-    console.log(this.state.users);
 
   };
 
@@ -126,17 +125,24 @@ class Login extends Component
     {
 
       /*
-      API.saveBook({
+      API.saveUser({
 
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
+        username2: "",
+        password2: "",
+        title: "",
+        full_name: "",
+        email: "",
+        country: "",
+        skills: "",
+        experience: ""
 
-      }).then(res => this.loadBooks())
+      }).then(res => this.loadUsers())
 
         .catch(err => console.log(err));
-        */
+      */
+        
     }
+
   };
 
   
