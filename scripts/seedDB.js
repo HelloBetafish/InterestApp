@@ -14,7 +14,7 @@ mongoose.Promise = global.Promise;
 
  {
  	username: "TJ101",
- 	password: "123",
+ 	password: "U2FsdGVkX1+jqZJflJwT8lb+PykvPm3dWFIOVF6bCSU=",
  	full_name: "TJ Stephens",
  	email: "TJ@gmail.com",
  	country: "USA",
@@ -24,7 +24,7 @@ mongoose.Promise = global.Promise;
 
 {
  	username: "Jesse202",
- 	password: "123",
+ 	password: "U2FsdGVkX1+jqZJflJwT8lb+PykvPm3dWFIOVF6bCSU=",
  	full_name: "Jesse Forte",
  	email: "Jesse@gmail.com",
  	country: "USA",
@@ -34,7 +34,7 @@ mongoose.Promise = global.Promise;
 
  {
  	username: "Reyna303",
- 	password: "123",
+ 	password: "U2FsdGVkX1+jqZJflJwT8lb+PykvPm3dWFIOVF6bCSU=",
  	full_name: "Reyna Perez",
  	email: "Reyna@gmail.com",
  	country: "USA",
@@ -44,7 +44,7 @@ mongoose.Promise = global.Promise;
 
  {
  	username: "Bethany404",
- 	password: "123",
+ 	password: "U2FsdGVkX1+jqZJflJwT8lb+PykvPm3dWFIOVF6bCSU=",
  	full_name: "Bethany Pfeister",
  	email: "Bethany@gmail.com",
  	country: "USA",

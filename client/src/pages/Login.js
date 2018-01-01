@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import API from "../utils/API";
 import Badge from "../components/Login/Badge";
 import "../components/Login/Login.css";
+import Encrypt_Decrypt from "../EncryptionDecryption/Encrypt_Decrypt";
 
 
 
@@ -76,10 +77,11 @@ class Login extends Component
     //scan through entire database to see if username and password is valid
     for(var i = 0; i < this.state.users.length; i++)
     {
-
-      //if user enters valid username and password set valid to true so that he or she may log in.
-      if(this.state.username2 === this.state.users[i].username && this.state.password2 === this.state.users[i].password )
+     
+      //if user enters valid username and password(which gets decrypted) set valid to true so that he or she may log in.
+      if(this.state.username2 === this.state.users[i].username && this.state.password2 ===  Encrypt_Decrypt.decrypt(this.state.users[i].password) )
       {
+        
         valid = true;
       }
     }
@@ -87,6 +89,7 @@ class Login extends Component
     //check boolean value to determine if login success
     if(valid === true)
     {
+      
       window.location.href = "/profile";
     }
     else
@@ -96,13 +99,26 @@ class Login extends Component
     
   };
 
+  fun = event =>
+  {
+    console.log("funn");
+  };
+
   //Function3: user enters data in textfields
   handleInputChange = event => 
   {
-    
+
+   
+   /*
+    var en = Encrypt_Decrypt.encrypt('my message');
+    console.log(en);
+
+    var dec = Encrypt_Decrypt.decrypt(en);
+    console.log(dec);
+  */
+
     
     const { name, value } = event.target;
-
 
     this.setState({
 
@@ -125,11 +141,15 @@ class Login extends Component
         this.state.email && this.state.country && this.state.skills && this.state.experience) 
     {
 
-      
+
+      //Encrypt plaintext password and store encrypted password into variable
+      //which will be used for storing the encypted passord inside mongoDB.
+      var encryptPass = Encrypt_Decrypt.encrypt(this.state.password);
+
       API.saveUser({
 
         username: this.state.username,
-        password: this.state.password,
+        password: encryptPass,
         title: this.state.title,
         full_name: this.state.full_name,
         email: this.state.email,
@@ -153,7 +173,7 @@ class Login extends Component
   {
 
     return(
-<Wrapper>
+    <Wrapper>
     	<Container>
 
     		<Navbar>
@@ -272,7 +292,7 @@ class Login extends Component
 
                     />
 
-                   <select className="custom-select" value={this.state.value} onChange={this.handleInputChange} name="country">
+                   <select className="form-control" value={this.state.value} onChange={this.handleInputChange} name="country">
 
                       <option selected> Country </option>
                       <option value="blanck"></option>
