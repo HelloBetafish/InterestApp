@@ -1,33 +1,50 @@
-import React from "react";
+import React, {Component} from "react";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 
-const Profile = () =>
-
-<div>
-<Navbar />
 
 
-<div id="section1">
+class Profile extends Component
+{
+
+    componentDidMount() 
+    {
+
+      this.loadBooks();
+    }
+
+    loadBooks = () => 
+    {
+      console.log("I Want");
+    };
+
+    render()
+    {
+  
+      return(
+      <div>
+      <Navbar />
+
+      <div id="section1">
           <div id="photo" className="container">
             <div className="row">
               <div className="col-md-1"></div>
               <div className="col-md-1">
-                <div tabindex="1" className="box1">
+                <div tabIndex="1" className="box1">
                 <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
                 <p id="personal">Personal Info</p>
                 </div>
-                <div tabindex="2"className="box2">
+                <div tabIndex="2"className="box2">
                 <span id='clickableAwesomeFont'><i className=" fa fa-address-book" style={{fontSize: "40px", color:"black"}} ></i></span>
                 <p id="contacts">Contacts</p>
                 </div>
               </div>
               <div className="col-md-2">
-                <div tabindex="3"className="box3">
+                <div tabIndex="3"className="box3">
                 <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>4</p></span>
                 <p id="textmessage" >Messages</p>
                 </div>
-                <div tabindex="4"className="box4">
+                <div tabIndex="4"className="box4">
                 <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold",  marginLeft: "25px",paddingTop:"26px"}}>11</p></span>
                 <p id="textinvitation" >Invitations</p>
                 </div>
@@ -87,7 +104,7 @@ const Profile = () =>
 
                     
 
-                            <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
                                     <div className="modal-content"style={{backgroundColor:" #e3c721"}}>
                                         <div className="modal-header">
@@ -146,10 +163,11 @@ const Profile = () =>
 
           </div>
       </section>
-   </div>
+    </div>
+  </div>
 
-
-</div>
-
+    );
+    }
+}
 
 export default Profile; 
