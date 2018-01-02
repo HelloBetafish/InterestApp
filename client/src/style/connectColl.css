@@ -1,3 +1,6 @@
+
+/*------------profile-----------------*/
+
 div:focus {
     background-color:lightgray;
 }
@@ -58,6 +61,8 @@ margin-left:10px;
                 
 
 }
+
+
 /*------------connectColl---------------*/
   
   body, html, main {
@@ -257,16 +262,52 @@ h5{
   font-size: 12px;
 }
 #text3{
-  margin-top: 50px;
+ 
   margin-left:20px;
+  margin-right:20px;
+  margin-bottom:20px;
   font-size: 14px;
   padding: 20px 20px 20px 20px;
-  outline: 1px solid lightgray;
+  outline: 1px solid white;
 }
 #text4{
-  margin-top: 30px;
+  
   margin-left:20px;
+  margin-right:20px;
+  margin-bottom:20px;
   font-size: 14px;
   padding: 20px 20px 20px 20px;
-  outline: 1px solid lightgray;
+  outline: 1px solid white;
 }
+.fa:active{
+ color: red;
+
+}
+
+.backgroundbox{
+  background-color:#eeeeee;
+  padding-top:20px;
+  padding-bottom: 20px;
+  margin-top:40px;
+  margin-left:40px;
+}
+
+#boxbox{
+
+}
+#addedtitle{
+  
+  width: 260px;
+  margin-top:30px;
+  margin-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color:#65737e;
+  border-radius: 5px;
+
+  text-align: center;
+    font-family: 'Raleway', sans-serif;
+   
+}
+  
+ 

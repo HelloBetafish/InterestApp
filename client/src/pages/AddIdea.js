@@ -33,16 +33,20 @@ const AddIdea = () =>(
                   </div>
                  
                       <div className="col-md-6">
+                        <div className="backgroundbox">
                         
                          
-                         <p id="text3">Sarah Lee <br/>Hi, I would to know more about your application, I am interested in working with you</p>
-                        
-                         <p id="text4">Joshua Phils <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
-                       
-                         <p id="text4">Zac Parker <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
-                       
-                         <p id="text4">Tarra Sanders <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
-                       
+                           <p id="text3">Sarah Lee <br/>Hi, I would to know more about your application, I am interested in working with you</p>
+                          
+                           <p id="text4">Joshua Phils <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+                         
+                           <p id="text4">Zac Parker <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+                         
+                           <p id="text4">Tarra Sanders <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+
+
+                        </div>
+                         
                       </div>
 
                   
@@ -61,87 +65,97 @@ const AddIdea = () =>(
 
 
 
-  <section id="services">
+
       <div className="container">
-
-        <div className="row">
-           
-
-
-              
-                 <div className="col-md-3 ">
-                
-                   <div className="form-group">
+       <div id="addedtitle">
+          <h5 style={{fontSize:"20px",color:"white"}}>Added Ideas</h5>
+        </div>
+            
+      <hr/>
+        <div className="row" id="boxbox">
+         
+               
+                   <div className="form-group" className="col-md-3 ">
                                           
-                        <img src="css/images/health.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                        <i className="fa fa-thumbs-o-up" aria-hidden="true">6</i>
-                        <i className="fa fa-thumbs-o-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i>
-                    
+                        <img src="css/images/darkroom3.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
+                       
                       <div className="box">
-                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                           <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
+                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
                       </div>
                       
                    </div>                                                   
                     
-                 </div>  
+                 
 
 
-                 <div className="col-md-3 ">
                 
-                   <div className="form-group">
+                
+                   <div className="form-group" className="col-md-3 ">
                                           
                         <img src="css/images/sports.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                         <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                        <i className="fa fa-thumbs-o-down" aria-hidden="true" style={{marginLeft:"20px"}}></i>
-                    
+                        
+                      <div className="thumbs-component thumbs thumbs-horizontal animated unrated"style={{color:"black"}}>
+                       <div className="nf-svg-button-wrapper thumb-container thumb-up-container"style={{color:"black"}}>
+                        <a role="link" data-rating="2" tabindex="0" className="nf-svg-button simpleround" style={{color:"black"}}></a>
+                        </div>
+                      </div>
+
                       <div className="box">
-                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                          <i className="fa fa-thumbs-up" aria-hidden="true">6</i>
+                        <i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i>
                       </div>
                       
                    </div>                                                   
                     
-                 </div>      
+                 
 
 
-                 <div className="col-md-3 ">
                 
-                   <div className="form-group">
+                   <div className="form-group" className="col-md-3 ">
                                           
                         <img src="css/images/books.png" alt="..." className="img-thumbnail" style={{width:"100%"}} />
                     
                       <div className="box">
-                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
+                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
                       </div>
                       
                    </div>                                                   
                     
-                 </div>      
-
-
-                   <div className="col-md-3 ">
                 
-                   <div className="form-group">
+
+
+                 
+                
+                   <div className="form-group" className="col-md-3 ">
                                           
                         <img src="css/images/healthy.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
                     
                       <div className="box">
-                         <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
+                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
                       </div>
                       
                    </div>                                                   
                     
-                 </div>  
+              
 
 
 
-                     
+              </div> 
+               <hr/>      
 
               </div>
             
-        </div>
-
+       
+          
     
-</section>
+
    
 
 
