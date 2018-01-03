@@ -38,10 +38,14 @@ class Profile extends Component
                 </div>
               </div>
               <div className="col-md-2">
+              
                 <div tabIndex="3"className="box3">
-                <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>4</p></span>
-                <p id="textmessage" >Messages</p>
+                  <Link to="/messages">
+                    <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>4</p></span>
+                    <p id="textmessage" >Messages</p>
+                  </Link>
                 </div>
+                
                 <div tabIndex="4"className="box4">
                 <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold",  marginLeft: "25px",paddingTop:"26px"}}>11</p></span>
                 <p id="textinvitation" >Invitations</p>
