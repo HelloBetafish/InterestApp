@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 
@@ -77,7 +78,11 @@ class Profile extends Component
                 <div className="service row">   
                   <div className="col-md-4 ">
                     <div className="searchprofile" style={{boxShadow: "9px 9px 20px grey"}}>
-                      <span id='clickableAwesomeFont'><i className="fa fa-search fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i></span>
+                      <span id='clickableAwesomeFont'>
+                        <Link to="/connect&collaborate">
+                          <i className="fa fa-search fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i>
+                        </Link>
+                      </span>
 
                       <h2 id="connect">Connect or Collaborate</h2>
                       <p id="connectp">Connect with people who are looking for ideas <br/><br/>Find ideas you like and collarate with them
@@ -86,7 +91,11 @@ class Profile extends Component
                   </div>
                   <div className="col-md-4">
                     <div id="messageprofile"style={{boxShadow: "9px 9px 20px grey"}}>
-                      <span id='clickableAwesomeFont'><i className="fa fa-envelope fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i></span>
+                      <span id='clickableAwesomeFont'>
+                        <Link to="/messages">
+                          <i className="fa fa-envelope fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i>
+                        </Link>
+                      </span>
                       <h2 id="message">Message Box</h2>
                       <p id="messagep">Keep your messages organized</p>
                     </div>
