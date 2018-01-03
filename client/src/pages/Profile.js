@@ -10,13 +10,10 @@ class Profile extends Component
     componentDidMount() 
     {
 
-      this.loadBooks();
+      console.log(this.props.match);
     }
 
-    loadBooks = () => 
-    {
-      console.log("I Want");
-    };
+    
 
     render()
     {

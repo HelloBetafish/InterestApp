@@ -19,7 +19,8 @@ mongoose.Promise = global.Promise;
  	email: "TJ@gmail.com",
  	country: "USA",
  	skills: "programming, Engineering",
- 	experience: "5 years"
+ 	experience: "5 years",
+ 	online: false
  },
 
 {
@@ -29,7 +30,8 @@ mongoose.Promise = global.Promise;
  	email: "Jesse@gmail.com",
  	country: "USA",
  	skills: "programming, Engineering",
- 	experience: "5 years"
+ 	experience: "5 years",
+ 	online: false
  },
 
  {
@@ -39,7 +41,8 @@ mongoose.Promise = global.Promise;
  	email: "Reyna@gmail.com",
  	country: "USA",
  	skills: "programming, Engineering",
- 	experience: "5 years"
+ 	experience: "5 years",
+ 	online: false
  },
 
  {
@@ -49,7 +52,8 @@ mongoose.Promise = global.Promise;
  	email: "Bethany@gmail.com",
  	country: "USA",
  	skills: "programming, Engineering",
- 	experience: "5 years"
+ 	experience: "5 years",
+ 	online: false
  }
 
 

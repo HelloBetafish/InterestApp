@@ -43,6 +43,15 @@ const userSchema = new Schema({
   {
   	type: String,
   	required: true
+  },
+
+  //When new user is created they are automatically given the field(online) where
+  //the value is set to default value (false).
+  online:
+  {
+    type: Boolean,
+    default: false,
+  
   }
 
 

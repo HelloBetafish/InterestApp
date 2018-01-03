@@ -81,6 +81,14 @@ class Login extends Component
       //if user enters valid username and password(which gets decrypted) set valid to true so that he or she may log in.
       if(this.state.username2 === this.state.users[i].username && this.state.password2 ===  Encrypt_Decrypt.decrypt(this.state.users[i].password) )
       {
+        //Set (online) field of user signing in to true
+        var id = this.state.users[i]._id;
+
+    console.log(id);
+        API.userOnline(id).then(res => this.loadUsers())
+
+        .catch(err => console.log(err));
+        
         
         valid = true;
       }
@@ -99,10 +107,7 @@ class Login extends Component
     
   };
 
-  fun = event =>
-  {
-    console.log("funn");
-  };
+  
 
   //Function3: user enters data in textfields
   handleInputChange = event => 
@@ -160,10 +165,14 @@ class Login extends Component
       }).then(res => this.loadUsers())
 
         .catch(err => console.log(err));
+
+       
         
       
         
     }
+
+
 
   };
 
