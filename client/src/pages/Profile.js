@@ -99,7 +99,7 @@ class Profile extends Component
                                                <div className="form-group">
 
                                                  <a href="Bethany Pfeister" alt="Bethany">
-                                                 <img src="css/images/bethany.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                 <img src="css/images/bethany.jpg" width="30" height="30" style={{marginTop:"30px",marginLeft:"30px"}}/>
                                                  <p alt="Bethany Pfeister" style={{marginLeft:"90px", marginTop:"-20px"}}>Bethany Pfeister - Web Developer</p>
                                                  </a>
 
