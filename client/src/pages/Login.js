@@ -41,8 +41,8 @@ class Login extends Component
     email: "",
     country: "",
     skills: "",
-    log: false,
-    experience: ""
+    experience: "",
+    photoURL: ""
 
 
 
@@ -59,7 +59,7 @@ class Login extends Component
   {
     API.getUsers().then(res =>
 
-        this.setState({ users: res.data, username: "", password: "", title: "", full_name:"", email:"", country:"", skills:"", experience:"" })
+        this.setState({ users: res.data, username: "", password: "", title: "", full_name:"", email:"", country:"", skills:"", experience:"", photoURL:"" })
 
         ).catch(err => console.log(err));
 
@@ -87,7 +87,7 @@ class Login extends Component
       if(this.state.username2 === this.state.users[i].username && this.state.password2 ===  Encrypt_Decrypt.decrypt(this.state.users[i].password) )
       {
         //Set (online) field of user signing in to true
-        var id = this.state.users[i]._id;
+         var id = this.state.users[i]._id;
 
         console.log(id);
         API.userOnline(id).then(res => this.loadUsers())
@@ -103,7 +103,7 @@ class Login extends Component
     if(valid === true)
     {
       
-      window.location.href = "/profile";
+      window.location.href = "/profile"
 
      
     }
@@ -168,7 +168,8 @@ class Login extends Component
         email: this.state.email,
         country: this.state.country,
         skills: this.state.skills,
-        experience: this.state.experience
+        experience: this.state.experience,
+        photoURL: this.state.photoURL
 
       }).then(res => this.loadUsers())
 
@@ -232,6 +233,7 @@ class Login extends Component
                           placeholder="Password"
               />
 
+            
               <LoginButton
                     onClick={this.authenticationLogin}
                     type="submit"
@@ -573,6 +575,15 @@ class Login extends Component
                           name="experience"
                           placeholder="Experience"
 
+
+                    />
+
+                    <Textfield 
+                          value = {this.state.photoURL}
+                          onChange={this.handleInputChange}
+                          type="text"
+                          name="photoURL"
+                          placeholder="Photo Link"
 
                     />
 

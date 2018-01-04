@@ -9,7 +9,7 @@ class Profile extends Component
 {
    state = 
   {
-    logInUser: {},
+    logInUser: {}
 
   }
 
@@ -33,7 +33,7 @@ class Profile extends Component
     // <div id='gsearch'>
     // </div>
       
-      console.log(this.props.match);
+      //console.log(this.props.match);
     }
 
 

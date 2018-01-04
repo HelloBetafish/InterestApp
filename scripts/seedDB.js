@@ -21,7 +21,8 @@ mongoose.Promise = global.Promise;
  	country: "USA",
  	skills: "programming, Engineering",
  	experience: "5 years",
- 	online: false
+ 	online: false,
+ 	photoURL: "https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAgfAAAAJGE2N2FjMTAyLTQ4OGMtNDYzNi04OTRkLTQzYTUwMzQwNzU4OQ.jpg"
  },
 
 {
@@ -33,7 +34,8 @@ mongoose.Promise = global.Promise;
  	country: "USA",
  	skills: "programming, Engineering",
  	experience: "5 years",
- 	online: false
+ 	online: false,
+ 	photoURL: "https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAqPAAAAJDdiMjVkOWI0LTExYmItNGNjZS1iMzMyLWRhNjg5MTRiNDE2ZA.jpg"
  },
 
  {
@@ -45,7 +47,8 @@ mongoose.Promise = global.Promise;
  	country: "USA",
  	skills: "programming, Engineering",
  	experience: "5 years",
- 	online: false
+ 	online: false,
+ 	photoURL: "https://avatars1.githubusercontent.com/u/26176947?s=460&v=4"
  },
 
  {
@@ -57,7 +60,8 @@ mongoose.Promise = global.Promise;
  	country: "USA",
  	skills: "programming, Engineering",
  	experience: "5 years",
- 	online: false
+ 	online: false,
+ 	photoURL: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAIABADGAAAAAQAAAAAAAA02AAAAJDhkOGZiM2E5LTQxMjYtNDc0YS1hMzI1LTNiMmFiZTI1ZWRkMQ.jpg"
  }
 
 
