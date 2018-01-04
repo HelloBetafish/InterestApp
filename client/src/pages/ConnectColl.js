@@ -28,7 +28,7 @@ const ConnectColl = () =>(
 
       <div className="radiobuttons">
         <label style={{color:"white"}}>
-          <input type="radio" className="option-input radio" name="example" checked  / >
+          <input type="radio" className="option-input radio" name="example"  / >
           Tech
         </label>
         <label>
