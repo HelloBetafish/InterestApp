@@ -62,25 +62,60 @@ margin-left:10px;
 
 }
 
+.searchprofile{
+  
+    height:280px;
+    width: 250px;
+    background-color: #65737e;
+    margin-left:20px;
+    margin-bottom:90px;
+    margin-top: 20px;
+  
+  }
+  #messageprofile{
+  
+    height:280px;
+    width: 250px;
+    background-color: #65737e;
+    margin-left:50px;
+    margin-bottom:90px;
+    margin-top:20px;
+  
+  
+  }
+  #ideasprofile{
+    height:280px;
+    width: 250px;
+    margin-right:10px;
+    background-color: #65737e;
+    margin-left:60px;
+    margin-bottom:90px;
+    margin-top: 20px;
+  
+  }
+
+
 
 /*------------connectColl---------------*/
   
   body, html, main {
     /* important */
     height: 100%;
-    width: 100%;
+    
   }
   
   .cd-fixed-bg.cd-bg-1 {
-    background-image: url("/css/images/connections2.jpg");
-    height :100%;
+    background-image: url("/css/images/connect.jpg");
+  /*  height :120%;*/
     width: 100%;
-    margin-top: -60px;
+ /*   margin-top: -50px;*/
   }
-  #people{
-    margin-top: 20px;
+  .people{
+    margin-top: 0px;
    /* margin-left:25px;*/
     width:100%;
+    background: #f9bd05;
+    height: 10%;
 
   }
   #titleconnections{
@@ -94,12 +129,13 @@ margin-left:10px;
       color:white;
      
   }
-  
+
+
   .connectColButtons
   {
   margin-top:-30px;
-    margin-bottom: 50px;
-    margin-left:260px;
+  margin-bottom: 50px;
+  margin-left:260px;
 
   }
 
