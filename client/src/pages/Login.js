@@ -41,7 +41,10 @@ class Login extends Component
     email: "",
     country: "",
     skills: "",
+    log: false,
     experience: ""
+
+
 
   }
 
@@ -59,6 +62,8 @@ class Login extends Component
         this.setState({ users: res.data, username: "", password: "", title: "", full_name:"", email:"", country:"", skills:"", experience:"" })
 
         ).catch(err => console.log(err));
+
+    <h1> hi </h1>
   
   };
 
@@ -84,7 +89,7 @@ class Login extends Component
         //Set (online) field of user signing in to true
         var id = this.state.users[i]._id;
 
-    console.log(id);
+        console.log(id);
         API.userOnline(id).then(res => this.loadUsers())
 
         .catch(err => console.log(err));
@@ -99,6 +104,8 @@ class Login extends Component
     {
       
       window.location.href = "/profile";
+
+     
     }
     else
     {
@@ -113,17 +120,9 @@ class Login extends Component
   handleInputChange = event => 
   {
 
-   
-   /*
-    var en = Encrypt_Decrypt.encrypt('my message');
-    console.log(en);
-
-    var dec = Encrypt_Decrypt.decrypt(en);
-    console.log(dec);
-  */
-
-    
     const { name, value } = event.target;
+
+
 
     this.setState({
 
@@ -131,7 +130,16 @@ class Login extends Component
 
     });
 
+  };
 
+  test = event => 
+  {
+    //console.log(this.state.username2);
+
+    if(this.state.username2 == "a")
+    {
+      console.log("true");
+    }
   };
 
   //Function4: adds new user to MongoDB when signing up.
@@ -166,10 +174,9 @@ class Login extends Component
 
         .catch(err => console.log(err));
 
-       
-        
-      
-        
+
+
+           
     }
 
 
@@ -228,10 +235,11 @@ class Login extends Component
               <LoginButton
                     onClick={this.authenticationLogin}
                     type="submit"
-                     className="btn btn-primary loginBtn float-right"
+                    className="btn btn-primary loginBtn float-right"
               >
                   Login
               </LoginButton>
+
 
               </Col>
 
