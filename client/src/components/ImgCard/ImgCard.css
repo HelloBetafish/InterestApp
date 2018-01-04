@@ -1,0 +1,21 @@
+.people{
+	/*background:#a5c57f;*/
+	/*background: #b1df4c;*/
+	/*background: #81c8c9;*/
+	background: #f9bd05;
+	height: 10%;
+}
+
+#texta{
+	text-align: center;
+	padding-top: 15px;
+	color:black;
+	font-weight: bold;
+	font-size:17px;
+}
+
+#textb{
+	text-align: center;
+	color:black;
+	font-size:13px;
+}

@@ -1,10 +1,40 @@
-import React from "react";
+import React, {Component} from "react";
 import Navbar from "../components/Navbar";
+import Row from "../components/Row";
+import Col from "../components/Col";
+import ImgCard from "../components/ImgCard";
+import AddContactBtn from "../components/AddContactBtn";
+import API from "../utils/API";
 import "../style/connectColl.css";
 
 
 
-const ConnectColl = () =>(
+class ConnectColl extends Component {
+  state = 
+  {
+    users: [],
+    full_name: "",
+    title: "",
+    skills: "",
+  };
+
+  componentDidMount() 
+  {
+    this.loadUsers();
+  }
+
+  loadUsers = () => 
+  {
+    console.log("In progress");
+    API.getUsers()
+      .then(res =>
+        this.setState({ users: res.data, full_name: "", title: "", skills:""})
+        ).
+        catch(err => console.log(err));
+  };
+
+  render() {
+    return(
 
 <div>
   <Navbar />
@@ -14,17 +44,11 @@ const ConnectColl = () =>(
 <div id="section1">
  <div id="photo" className="container">
 
-<div className="row">
-  <div  className="col-md-12">
-
+<Row>
+<Col size="md-12">
    <h1 id="titleconnections" className="bounceInUp" style={{marginTop:"50px"}}>Connect or Collaborate</h1> 
-  </div>
-</div>
-
-
-
-
-
+  </Col>
+</Row>
 
       <div className="radiobuttons">
         <label style={{color:"white"}}>
@@ -50,29 +74,35 @@ const ConnectColl = () =>(
         <button style={{marginTop:"-10px"}} type="button" className="btn btn-outline-danger">search</button>
       </div>
 
+    <Row>
+      {this.state.users.map(card => (
+        <Col size="md-3" className="zoom">
+          <ImgCard
+            full_name={card.full_name}
+            title={card.title}
+            skills={card.skills}
+            id={card.id}
+            key={card.id}
+          />
+          <AddContactBtn handleClick={this.handleClick}/>
+        </Col>
+      ))}
+    </Row>
 
 
+  <Row>
+    <Col size="md-3" className="zoom">
+      <div className="img-thumbnail">
+        <img src="css/images/bethany.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
+        <div className="people">
+          <p id="texta">Bethany</p> 
+          <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p> 
+        </div>   
+      </div>
+      <AddContactBtn handleClick={this.handleClick}/>
+    </Col>
 
-
-
-
-  <div className="row">
-   
-    <div className="col-md-3 zoom">
-
-
-                <div className="img-thumbnail">
-                      <img src="css/images/bethany.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-                    <div className="people">
-                        <p id="texta">Bethany</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p> 
-                      
-                    </div>   
-                </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
-      
-    </div>
-    <div className="col-md-3 zoom">
+    <Col size="md-3" className="zoom">
             
 
              
@@ -83,12 +113,12 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
+                <AddContactBtn handleClick={this.handleClick}/>
               
 
-    </div>
+    </Col>
 
-     <div className="col-md-3 zoom">
+    <Col size="md-3" className="zoom">
             
 
              
@@ -99,13 +129,13 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
+                <AddContactBtn handleClick={this.handleClick}/>
               
 
-    </div>
+    </Col>
 
   
-    <div className="col-md-3 zoom">
+    <Col size="md-3" className="zoom">
             
 
              
@@ -116,18 +146,18 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
+                <AddContactBtn handleClick={this.handleClick}/>
               
 
-    </div>
-  </div>
+    </Col>
+  </Row>
 </div>
 
 
 <div id="photo" className="container">
-  <div className="row">
+  <Row>
    
-    <div className="col-md-3 zoom">
+    <Col size="md-3" className="zoom">
 
 
                 <div className="img-thumbnail">
@@ -137,11 +167,11 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
+                <AddContactBtn handleClick={this.handleClick}/>
           
       
-    </div>
-    <div className="col-md-3 zoom">
+    </Col>
+    <Col size="md-3" className="zoom">
             
 
              
@@ -152,12 +182,12 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
+                <AddContactBtn handleClick={this.handleClick}/>
               
 
-    </div>
+    </Col>
 
-     <div className="col-md-3 zoom">
+    <Col size="md-3" className="zoom">
             
 
              
@@ -168,13 +198,13 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
+                <AddContactBtn handleClick={this.handleClick}/>
               
 
-    </div>
+    </Col>
 
   
-    <div className="col-md-3 zoom">
+    <Col size="md-3" className="zoom">
             
 
              
@@ -185,11 +215,11 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
+                <AddContactBtn handleClick={this.handleClick}/>
               
 
-    </div>
-  </div>
+    </Col>
+  </Row>
 </div>
 
 
@@ -205,8 +235,8 @@ const ConnectColl = () =>(
 
 
 
-)
-
-
+    );
+  }
+}
 
 export default ConnectColl;
