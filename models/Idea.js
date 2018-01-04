@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const IdeaSchema = new Schema({
+const ideaSchema = new Schema({
   
   idea_name: { type: String, required: true},
   time_frame: { type: String, required: true},

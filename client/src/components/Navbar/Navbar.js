@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
+
 const Navbar = props =>
  <nav className="navbar navbar-dark bg-dark data-spy-affix navbar-expand-sm">
   <div className="container-fluid">
@@ -37,7 +39,7 @@ const Navbar = props =>
          <Link to="/createaccount" className="nav-link">Create Account</Link>
          </li>
       </ul>
-    <form className=" form-inline navbar-form navbar-left" action="/action_page.php">
+      <form className=" form-inline navbar-form navbar-left" action="/action_page.php">
       <div className="input-group">
         <input type="text" className="form-control" placeholder="Search" name="search"/>
         <button  className="btn btn-outline-success my-2 my-sm-0" type="submit">Search

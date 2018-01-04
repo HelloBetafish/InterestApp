@@ -56,7 +56,7 @@ class Login extends Component
   {
     API.getUsers().then(res =>
 
-        this.setState({ users: res.data, username: "", password: "", full_name:"", email:"", country:"", skills:"", experience:"" })
+        this.setState({ users: res.data, username: "", password: "", title: "", full_name:"", email:"", country:"", skills:"", experience:"" })
 
         ).catch(err => console.log(err));
   
