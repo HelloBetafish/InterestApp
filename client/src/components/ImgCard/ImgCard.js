@@ -4,7 +4,7 @@ import "./ImgCard.css";
 
 const ImgCard = props => (
 <div className="img-thumbnail">
-  <img src="css/images/addphoto.png" alt={props.full_name} data-id={props.id} width="150" height="150" style={{marginLeft:"45px"}}/>
+  <img src="css/images/addphoto.png" alt={props.full_name}  width="150" height="150" style={{marginLeft:"45px"}}/>
     <div className="people">
       <p id="texta">{props.full_name}</p> 
       <p id="textb">{props.title}<br/>{props.skills}</p> 
