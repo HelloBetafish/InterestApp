@@ -7,6 +7,11 @@ import "../style/connectColl.css";
 
 class Profile extends Component
 {
+   state = 
+  {
+    logInUser: {},
+
+  }
 
     componentDidMount() 
     {
@@ -30,6 +35,23 @@ class Profile extends Component
       
       console.log(this.props.match);
     }
+
+
+  
+
+  //Function1: load users from seedDB.js into mongoDB.
+  loadLoggedUsers = () => 
+  {
+    /*
+    API.getUsers().then(res =>
+
+        this.setState({ users: res.data, username: "", password: "", full_name:"", email:"", country:"", skills:"", experience:"" })
+
+        ).catch(err => console.log(err));
+    */
+  
+  };
+
 
     
 
