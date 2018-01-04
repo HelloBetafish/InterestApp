@@ -9,3 +9,7 @@
       width: 85%;
       z-index: 9999 !important;
   }
+
+.nav-item{
+	margin-left: 80px;
+}

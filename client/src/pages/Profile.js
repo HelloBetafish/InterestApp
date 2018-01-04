@@ -99,7 +99,7 @@ class Profile extends Component
                                                <div className="form-group">
 
                                                  <a href="Bethany Pfeister" alt="Bethany">
-                                                 <img src="css/images/bethany.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                 <img src="css/images/bethany.jpg" width="30" height="30" style={{marginTop:"30px",marginLeft:"30px"}}/>
                                                  <p alt="Bethany Pfeister" style={{marginLeft:"90px", marginTop:"-20px"}}>Bethany Pfeister - Web Developer</p>
                                                  </a>
 
@@ -154,6 +154,9 @@ class Profile extends Component
                     <p id="textmessage" >Messages</p>
                   </Link>
                 </div>
+
+
+
                 
                 <div tabIndex="4"className="box4">
                 <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold",  marginLeft: "25px",paddingTop:"26px"}}>11</p></span>
@@ -225,7 +228,7 @@ class Profile extends Component
 
                             <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
-                                    <div className="modal-content"style={{backgroundColor:" #e3c721"}}>
+                                    <div className="modal-content"style={{backgroundColor:" #f9bd05"}}>
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="exampleModalLabel"style={{marginLeft:"40%"}}>ADD IDEA</h5>
 

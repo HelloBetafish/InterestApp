@@ -52,13 +52,12 @@ const AddIdea = () =>(
                   
 
                   <div className="col-md-3">
-                  <div className="boardann"></div>
-                   <div className="boardann"></div>
-                    <div className="boardann"></div>
                      <div className="boardann"></div>
-
-                  
+                     <div className="boardann"></div>
+                     <div className="boardann"></div>
+                     <div className="boardann"></div>
                   </div>
+
                 </div>
           </div>
 </div>
@@ -67,12 +66,14 @@ const AddIdea = () =>(
 
 
       <div className="container">
-       <div id="addedtitle">
-          <h5 style={{fontSize:"20px",color:"white"}}>Added Ideas</h5>
-        </div>
+         <div id="addedtitle">
+            <h5 style={{fontSize:"20px",color:"white"}}>Added Ideas</h5>
+         </div>
+
+         <hr/>
             
-      <hr/>
-        <div className="row" id="boxbox">
+      
+         <div className="row" id="boxbox">
          
                
                    <div className="form-group" className="col-md-3 ">
@@ -103,8 +104,8 @@ const AddIdea = () =>(
                       </div>
 
                       <div className="box">
-                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                          <i className="fa fa-thumbs-up" aria-hidden="true">6</i>
+                        <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        <i className="fa fa-thumbs-up" aria-hidden="true">6</i>
                         <i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i>
                       </div>
                       
@@ -121,7 +122,7 @@ const AddIdea = () =>(
                       <div className="box">
                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
                         <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
-                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
+                        <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
                       </div>
                       
                    </div>                                                   
@@ -143,9 +144,6 @@ const AddIdea = () =>(
                       
                    </div>                                                   
                     
-              
-
-
 
               </div> 
                <hr/>      
