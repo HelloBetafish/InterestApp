@@ -58,6 +58,12 @@ const userSchema = new Schema({
     type: Boolean,
     default: false,
   
+  },
+
+  photoURL:
+  {
+    type: String,
+    default: ""
   }
 
 
