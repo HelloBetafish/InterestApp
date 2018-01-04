@@ -335,51 +335,9 @@
   
 
   /*----------------messages box--------------------------------*/
-  .envelope{
-     
-    margin-left: 70px;
-  }
+ 
   
-  .openenvelope{
-    margin-left: 90px;
-     margin-top: -80px;
-  }
-  
-  .noread{
-    margin-left: 90px;
-     margin-top: -80px;
-  }
-  
-  #messagebox{
-    background-color: rgba(5,4,2,0.1);
-    height: 400px;
-    width: 100%;
-      padding: 15px; 
-   }
-  
-  
-  
-  #p{
-    margin-top:11px;
-    margin-left:90px;
-  }
-  #pb{
-    margin-top:5px;
-    margin-left:115px;
-  }
-  .messageicon{
-    margin-left:235px;
-  }
-  #messageppp{
-    font-size: 20px;
-    text-align: center;
-    color:white;
-  }
-  #box{
-    height: 70%;
-    width: 100%;
-    background: white;
-  }
+ 
   
   #computer {
     background-image: url("css/images/idea2.jpg");

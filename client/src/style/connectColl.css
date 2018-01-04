@@ -234,6 +234,70 @@ label{
   color:white;
   padding-bottom: 10px;
 }
+/*-----------------messagespage--------------------*/
+
+ .envelope{
+     
+    margin-left: 70px;
+  }
+
+  .openenvelope{
+    margin-left: 90px;
+     margin-top: -80px;
+  }
+  
+  .noread{
+    margin-left: 90px;
+     margin-top: -80px;
+  }
+  
+  #messagebox{
+    background-color: rgba(5,4,2,0.1);
+    height: 400px;
+    width: 100%;
+      padding: 15px; 
+   }
+  
+  
+  
+  #p{
+    margin-top:11px;
+    margin-left:90px;
+  }
+  
+  .messageicon{
+    margin-left:235px;
+  }
+ 
+  #box{
+    height: 70%;
+    width: 100%;
+    background: white;
+  }
+
+ #messageppp{
+    font-size: 20px;
+    text-align: center;
+    color:white;
+  }
+  .modal-content{
+    background-color: #65737e;
+  }
+
+  .modal-title{
+    font-size:20px;
+    color:white;
+    margin-left:40%;
+
+  }
+   #pb{
+    margin-top:5px;
+    margin-left:115px;
+    font-size: 15px; 
+    color: black;
+  }
+
+  #
 
 /*-----------------messageboard-------------------*/
 .boardann{
