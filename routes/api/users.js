@@ -13,7 +13,8 @@ router.route("/")
  router.route("/:id")
  .get(appController.update);
 
-
+ router.route("/connect&collaborate")
+ .get(appController.findAll);
 
   
   //.delete(booksController.remove);

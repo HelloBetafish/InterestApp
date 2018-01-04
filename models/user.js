@@ -15,6 +15,12 @@ const userSchema = new Schema({
   	required: true
   },
 
+  title:
+  { 
+  	type: String, 
+  	required: true
+  },
+
   full_name: 
   { 
   	type: String, 

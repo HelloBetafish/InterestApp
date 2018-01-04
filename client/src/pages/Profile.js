@@ -10,7 +10,24 @@ class Profile extends Component
 
     componentDidMount() 
     {
-
+      // Code for Google Custom Search 
+    //   const embedcode = `<script>
+    //   (function() {
+    //     var cx = '012846532156912947869:kzgtinco-hg';
+    //     var gcse = document.createElement('script');
+    //     gcse.type = 'text/javascript';
+    //     gcse.async = true;
+    //     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    //     var s = document.getElementsByTagName('script')[0];
+    //     s.parentNode.insertBefore(gcse, s);
+    //   })();
+    // </script>
+    //   <gcse:search></gcse:search>`
+    //   document.getElementById("gsearch").innerHTML = embedcode;
+// Code for div would go under render() and return ()
+    // <div id='gsearch'>
+    // </div>
+      
       console.log(this.props.match);
     }
 
@@ -18,7 +35,7 @@ class Profile extends Component
 
     render()
     {
-  
+      
       return(
       <div>
       <Navbar />

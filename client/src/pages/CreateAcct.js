@@ -32,7 +32,7 @@ const CreateAcct = () =>(
             </div>
             <div className="form-group">
               <label className="col-form-label" for="formGroupExampleInput2">Password</label>
-              <input style={{ backgroundColor: "white"}} type="text" className="form-control" id="formGroupExampleInput2" placeholder=" 8 charateres minimun at least one lower case and one upper case"/>
+              <input style={{ backgroundColor: "white"}} type="text" className="form-control" id="formGroupExampleInput2" placeholder=" 8 characters minimum and at least one lower case and one upper case"/>
             </div>
 
              <div className="form-group">
