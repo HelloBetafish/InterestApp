@@ -28,7 +28,7 @@ const ConnectColl = () =>(
 
       <div className="radiobuttons">
         <label style={{color:"white"}}>
-          <input type="radio" className="option-input radio" name="example"  / >
+          <input type="radio" className="option-input radio" name="example" / >
           Tech
         </label>
         <label>
@@ -185,7 +185,7 @@ const ConnectColl = () =>(
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
-                <button style={{marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
+                <button style={{marginBottom:"100px",marginTop:"-20px", marginLeft:"50px"}} type="button" className="btn btn-outline-danger">Add to Contacts</button>
               
 
     </div>
