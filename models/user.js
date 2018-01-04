@@ -63,7 +63,7 @@ const userSchema = new Schema({
   photoURL:
   {
     type: String,
-    default: ""
+    default: "css/images/addphoto.png"
   }
 
 

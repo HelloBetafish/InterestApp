@@ -14,7 +14,8 @@ class ConnectColl extends Component {
     full_name: "",
     title: "",
     skills: "",
-    _id: ""
+    _id: "",
+    photoURL: ""
   };
 
   componentDidMount() 
@@ -26,7 +27,7 @@ class ConnectColl extends Component {
   {
     API.getUsers()
       .then(res =>
-        this.setState({ users: res.data, full_name: "", title: "", skills:"", _id: ""})
+        this.setState({ users: res.data, full_name: "", title: "", skills:"", _id: "", photoURL: ""})
         ).
         catch(err => console.log(err));
   };
@@ -34,6 +35,7 @@ class ConnectColl extends Component {
   handleClick = (event) => {
     const cardId = event.target.attributes.getNamedItem("data-id").value;
     console.log(cardId);
+    console.log()
     // Use ID value to redirect to that person's profile page.
     // 
   }
@@ -83,6 +85,7 @@ class ConnectColl extends Component {
       {this.state.users.map(card => (
         <Col size="md-3" className="zoom">
           <ImgCard
+            photoURL={card.photoURL}
             full_name={card.full_name}
             title={card.title}
             skills={card.skills}
