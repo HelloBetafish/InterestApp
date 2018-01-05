@@ -11,6 +11,11 @@ export default
 	getUser: function(id) 
   	{
     	return axios.get("/api/users/" + id);
+    },
+
+  getPUser: function(id) 
+  	{
+    	return axios.get("/profile/" + id);
   	},
 
 	// Saves a book to the database
@@ -25,7 +30,11 @@ export default
   	{
 
   		return axios.get("/api/users/" + id);
-  	}
+    }
+    
+    // For Connect/Collaborate page
+
+
 
 
 }

@@ -38,7 +38,7 @@ class ConnectColl extends Component {
     console.log()
     // Use ID value to redirect to that person's profile page.
     // 
-  }
+  };
 
   render() {
     return(
