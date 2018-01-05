@@ -16,11 +16,15 @@ module.exports =
 {
   findAll: function(req, res)
   {
+  	
 	db.User
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))						
       .catch(err => res.status(422).json(err));
+      
+
+    
    },
 
   findById: function(req, res) 
@@ -53,14 +57,49 @@ module.exports =
     	res.status(422).json(err)
     })
     */
-   
-	
-	
     
+
+	
+	
+      //DB1: user collection(table). Set field(online = true)
       db.User.update({ _id: req.params.id }, {$set: {"online": 1}} ).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+
+      //Removes user id of previous user so profile can obtain data of new user signing in.
+      db.Signin.remove({}).then(dbModel => res.json(dbModel)).catch(err => res.status(422).json(err));
+
+      //DB2: signin collection(table). set field(IdOfSignedUser = id of user logging in)
+      db.Signin
+      .create({ IdOfSignedUser: req.params.id }).then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+
    
+  },
+
+  findId: function(req, res) 
+  {
+  	/*
+    db.Signin
+      .find(req.query)
+      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))						
+      .catch(err => res.status(422).json(err));
+     */
+
+
+      db.Signin.find(req.query).sort({ date: -1 }).then(function(dbModel)
+      {
+      	console.log("TEST");
+      	res.json(dbModel);
+
+      }).catch(function(err)
+      {
+      	console.log("falseeeee");
+      	res.status(422).json(err);
+
+      });
   }
+
 
 
 

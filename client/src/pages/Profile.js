@@ -3,18 +3,65 @@ import { Link } from "react-router-dom";
 import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
+import API from "../utils/API";
 
 
 
 class Profile extends Component
 {
+  state = 
+  {
+    user: {},
+    IdOfSignedUser: []
+
+
+
+  }
 
     componentDidMount() 
     {
 
-      console.log(this.props.match);
+      // Code for Google Custom Search 
+    //   const embedcode = `<script>
+    //   (function() {
+    //     var cx = '012846532156912947869:kzgtinco-hg';
+    //     var gcse = document.createElement('script');
+    //     gcse.type = 'text/javascript';
+    //     gcse.async = true;
+    //     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    //     var s = document.getElementsByTagName('script')[0];
+    //     s.parentNode.insertBefore(gcse, s);
+    //   })();
+    // </script>
+    //   <gcse:search></gcse:search>`
+    //   document.getElementById("gsearch").innerHTML = embedcode;
+// Code for div would go under render() and return ()
+    // <div id='gsearch'>
+    // </div>
+      
+    
+      
+
+      this.loadLoggedUsers();
+      
     }
 
+
+  
+
+  //Function1: load users from seedDB.js into mongoDB.
+  loadLoggedUsers = () => 
+  {
+    //Get id stored in the (signins) collection
+      API.getIdOfLoggedInUser().then(res => this.setState({ IdOfSignedUser: res.data })
+        ).catch(err => console.log(err));
+
+      console.log("obj");
+  
+  };
+
+
+    
     uploadFile = (event) => {
       const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
       filestack.pick({
@@ -30,6 +77,8 @@ class Profile extends Component
         document.getElementById("docUpload").innerHTML += `<p><a href="` + fileUrl + `">` + fileName +`</a></p>`;
       })
     };
+
+    
 
     render()
     {

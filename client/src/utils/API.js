@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default
 {
-	//function 1
+	//Login: function 1
 	getUsers: function()
 	{
 		return axios.get("/api/users");
@@ -13,12 +13,12 @@ export default
     	return axios.get("/api/users/" + id);
     },
 
-  getPUser: function(id) 
+    getPUser: function(id) 
   	{
     	return axios.get("/profile/" + id);
   	},
 
-	// Saves a book to the database
+	// Saves a user to the database
   	saveUser: function(userData) 
   	{
     	return axios.post("/api/users", userData);
@@ -29,7 +29,21 @@ export default
   	userOnline: function(id)
   	{
 
-  		return axios.get("/api/users/" + id);
+  		return axios.put("/api/users/" + id);
+
+  	},
+
+  	addSignUserId: function(id)
+  	{
+  		return axios.post("/api/users/", id);
+  	
+
+    },
+
+    //Profile: Get id that stored in (signins) collection
+    getIdOfLoggedInUser: function()
+    {
+    	return axios.get("/api/users");
     },
     
     // For Filestack API
@@ -38,6 +52,7 @@ export default
     {
 
     }
+
 
 
 }
