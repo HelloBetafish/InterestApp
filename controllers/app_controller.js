@@ -69,19 +69,9 @@ module.exports =
       db.Signin.remove({}).then(dbModel => res.json(dbModel)).catch(err => res.status(422).json(err));
 
       //DB2: signin collection(table). set field(IdOfSignedUser = id of user logging in)
-      /*
       db.Signin
       .create({ IdOfSignedUser: req.params.id }).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-      */
-
-      db.Signin
-      .create({ IdOfSignedUser: req.params.id }).then(function(dbModel)
-      {
-      	console.log("TRUE in");
-      	res.json(dbModel);
-      }).catch(err => res.status(422).json(err));
-
 
    
   },
