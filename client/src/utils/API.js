@@ -40,6 +40,7 @@ export default
 
     },
 
+
     //Profile: Get id that stored in (signins) collection
     getIdOfLoggedInUser: function()
     {

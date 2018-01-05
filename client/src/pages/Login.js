@@ -99,7 +99,7 @@ class Login extends Component
          //Online.setId(id);
 
 
-        console.log(id);
+        //console.log(id);
         API.userOnline(id).then(res => this.loadUsers())
 
         .catch(err => console.log(err));

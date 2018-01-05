@@ -89,7 +89,7 @@ module.exports =
 
       db.Signin.find(req.query).sort({ date: -1 }).then(function(dbModel)
       {
-      	console.log("TEST");
+      	console.log("TES");
       	res.json(dbModel);
 
       }).catch(function(err)
