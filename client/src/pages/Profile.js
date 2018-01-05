@@ -53,8 +53,16 @@ class Profile extends Component
   loadLoggedUsers = () => 
   {
     //Get id stored in the (signins) collection
-      API.getIdOfLoggedInUser().then(res => this.setState({ IdOfSignedUser: res.data })
-        ).catch(err => console.log(err));
+      //API.getIdOfLoggedInUser().then(res => this.setState({ IdOfSignedUser: res.data })
+       // ).catch(err => console.log(err));
+
+      API.getIdOfLoggedInUser().then(function(res)
+      {
+        console.log("test2");
+        console.log(res.data);
+        this.setState({ IdOfSignedUser: res.data })
+      }).catch(err => console.log(err));
+
 
       console.log("obj");
   

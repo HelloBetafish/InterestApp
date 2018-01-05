@@ -16,8 +16,8 @@ router.route("/")
  router.route("/connect&collaborate")
  .get(appController.findAll);
 
- router.route("/profile")
- .get(appController.findId);
+// router.route("/profile")
+ //.get(appController.findId);
 
  router.route("/profile/:id")
  .get(appController.findById);

@@ -43,7 +43,7 @@ export default
     //Profile: Get id that stored in (signins) collection
     getIdOfLoggedInUser: function()
     {
-    	return axios.get("/api/users");
+    	return axios.get("/api/signin");
     },
     
     // For Filestack API
