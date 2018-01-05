@@ -195,6 +195,11 @@
   
   }
 
+  .MeetUs{
+    background-image: url("littleIdea.jpg");
+}
+  }
+
   .img-thumbnail{
   	margin-bottom: 30px;
     margin-top:40px;
