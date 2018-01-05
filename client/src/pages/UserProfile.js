@@ -21,25 +21,6 @@ class UserProfile extends Component
         this.setState({ logInUser: res.data})
         ).
         catch(err => console.log(err));
-      // Code for Google Custom Search 
-    //   const embedcode = `<script>
-    //   (function() {
-    //     var cx = '012846532156912947869:kzgtinco-hg';
-    //     var gcse = document.createElement('script');
-    //     gcse.type = 'text/javascript';
-    //     gcse.async = true;
-    //     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    //     var s = document.getElementsByTagName('script')[0];
-    //     s.parentNode.insertBefore(gcse, s);
-    //   })();
-    // </script>
-    //   <gcse:search></gcse:search>`
-    //   document.getElementById("gsearch").innerHTML = embedcode;
-// Code for div would go under render() and return ()
-    // <div id='gsearch'>
-    // </div>
-      
-      //console.log(this.props.match);
     }
   
     uploadFile = (event) => {
@@ -57,19 +38,6 @@ class UserProfile extends Component
         document.getElementById("docUpload").innerHTML += `<p><a href="` + fileUrl + `">` + fileName +`</a></p>`;
       })
     };
-
-  //Function1: load users from seedDB.js into mongoDB.
-  // loadLoggedUsers = () => 
-  // {
-    /*
-    API.getUsers().then(res =>
-
-        this.setState({ users: res.data, username: "", password: "", full_name:"", email:"", country:"", skills:"", experience:"" })
-
-        ).catch(err => console.log(err));
-    */
-  
-  // };
 
     render()
     {
@@ -195,7 +163,7 @@ class UserProfile extends Component
               <div className="col-md-1"></div>
               <div className="col-md-3">
                 <button id="btn1" type="button" className="btn btn-danger">Recent Activity</button>
-                <button type="button" className="btn btn-danger">Portfolios link</button> 
+                <button type="button" className="btn btn-danger" onClick={this.uploadFile}>Portfolios link</button> 
                 <div id="docUpload">
                 </div>
               </div>
