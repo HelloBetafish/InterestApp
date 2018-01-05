@@ -22,7 +22,7 @@ const Navbar = props =>
       
         
         </li>
-        <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+        <li className ="nav-item" className={window.location.pathname === "/profile" ? "active" : ""}>
           <Link to="/profile" className="nav-link" >Profile</Link>
         </li>
         <li className = "nav-item" 
@@ -32,8 +32,8 @@ const Navbar = props =>
         <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
           <Link to="/messages" className="nav-link">Message Box</Link>
         </li>
-        <li className ="nav-item" className={window.location.pathname === "/addidea" ? "active" : ""}>
-           <Link to="/addidea" className="nav-link">Add Idea</Link>
+        <li className ="nav-item" className={window.location.pathname === "/personalinfo" ? "active" : ""}>
+           <Link to="/personalinfo" className="nav-link">Personal Info</Link>
        </li>
          <li className ="nav-item" className={window.location.pathname === "/createaccount" ? "active" : ""}>
          <Link to="/createaccount" className="nav-link">Create Account</Link>

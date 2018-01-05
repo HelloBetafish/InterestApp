@@ -53,6 +53,9 @@ class Login extends Component
   {
     
     this.loadUsers();
+
+    let i = 0;
+    
   }
 
   //Function1: load users from seedDB.js into mongoDB.
@@ -65,7 +68,8 @@ class Login extends Component
 
         ).catch(err => console.log(err));
 
-  
+    console.log("login");
+
   };
 
   //Function2: Executes when user clicks [Login] button
@@ -95,7 +99,7 @@ class Login extends Component
          //Online.setId(id);
 
 
-        //console.log(id);
+        console.log(id);
         API.userOnline(id).then(res => this.loadUsers())
 
         .catch(err => console.log(err));
