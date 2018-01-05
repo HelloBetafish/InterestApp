@@ -7,8 +7,6 @@ import AddContactBtn from "../components/AddContactBtn";
 import API from "../utils/API";
 import "../style/connectColl.css";
 
-
-
 class ConnectColl extends Component {
   state = 
   {
@@ -16,6 +14,8 @@ class ConnectColl extends Component {
     full_name: "",
     title: "",
     skills: "",
+    _id: "",
+    photoURL: ""
   };
 
   componentDidMount() 
@@ -25,13 +25,20 @@ class ConnectColl extends Component {
 
   loadUsers = () => 
   {
-    console.log("In progress");
     API.getUsers()
       .then(res =>
-        this.setState({ users: res.data, full_name: "", title: "", skills:""})
+        this.setState({ users: res.data, full_name: "", title: "", skills:"", _id: "", photoURL: ""})
         ).
         catch(err => console.log(err));
   };
+
+  handleClick = (event) => {
+    const cardId = event.target.attributes.getNamedItem("data-id").value;
+    console.log(cardId);
+    console.log()
+    // Use ID value to redirect to that person's profile page.
+    // 
+  }
 
   render() {
     return(
@@ -78,13 +85,13 @@ class ConnectColl extends Component {
       {this.state.users.map(card => (
         <Col size="md-3" className="zoom">
           <ImgCard
+            photoURL={card.photoURL}
             full_name={card.full_name}
             title={card.title}
             skills={card.skills}
-            id={card.id}
-            key={card.id}
+            key={card._id}
           />
-          <AddContactBtn handleClick={this.handleClick}/>
+          <AddContactBtn id={card._id} handleClick={this.handleClick}/>
         </Col>
       ))}
     </Row>
