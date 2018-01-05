@@ -25,6 +25,11 @@ export default
   	{
 
   		return axios.get("/api/users/" + id);
+  	},
+
+  	addSignUserId: function(id)
+  	{
+  		return axios.get("/api/users/", id);
   	}
 
 

@@ -60,7 +60,16 @@ module.exports =
       db.User.update({ _id: req.params.id }, {$set: {"online": 1}} ).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
    
-  }
+  },
+
+  addId: function(req, res) 
+  {
+    db.Signin
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
 
 
 

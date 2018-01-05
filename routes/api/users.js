@@ -4,7 +4,8 @@ const appController = require("../../controllers/app_controller");
 // Matches with "/api/books"
 router.route("/")
   .get(appController.findAll)
-  .post(appController.create);
+  .post(appController.create)
+  .post(appController.addId);
   
   //.put(appController.update);
 
