@@ -11,11 +11,6 @@ class ConnectColl extends Component {
   state = 
   {
     users: [],
-    full_name: "",
-    title: "",
-    skills: "",
-    _id: "",
-    photoURL: ""
   };
 
   componentDidMount() 
@@ -27,7 +22,7 @@ class ConnectColl extends Component {
   {
     API.getUsers()
       .then(res =>
-        this.setState({ users: res.data, full_name: "", title: "", skills:"", _id: "", photoURL: ""})
+        this.setState({ users: res.data})
         ).
         catch(err => console.log(err));
   };

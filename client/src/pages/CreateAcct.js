@@ -1,8 +1,39 @@
-import React from "react";
+import React, {Component} from "react";
+import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
 
-const CreateAcct = () =>(
+class CreateAcct extends Component {
+  state = 
+  {
+    options: {
+      accept: 'image/*',
+      fromSources:["local_file_system","url","facebook","instagram","googledrive","dropbox"],
+      maxSize: 2*1024*1024
+    }
+  };
 
+
+  callbackFunction = (result) => {
+    const fileUrl = result.filesUploaded[0].url;
+    console.log(fileUrl);
+    console.log("Success!");
+  };
+
+  handleClick = (event) => {
+    const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
+    filestack.pick({
+      accept: 'image/*',
+      fromSources:["local_file_system","url","facebook","instagram","googledrive","dropbox"],
+      maxSize: 2*1024*1024,
+    }).then(function(result) {
+      var fileUrl = result.filesUploaded[0].url;
+      console.log(fileUrl);
+    })
+
+  };
+
+  render() {
+    return(
 <div>
 <Navbar />
 
@@ -11,7 +42,15 @@ const CreateAcct = () =>(
 <div className="row">
 
     <div id="addphoto" className="col-md-3" style={{ marginTop: "78px"}}>
-      <img style={{boxShadow: "9px 9px 5px grey"}}src="css/images/addphoto.png" alt="upload" className="img-thumbnail"/>
+      <img style={{boxShadow: "9px 9px 5px grey"}}src="css/images/addphoto.png" alt="upload" className="img-thumbnail" onClick={this.handleClick}/>
+      
+      <ReactFilestack
+  apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
+  buttonText="Upload Profile Pic"
+  buttonClass="classname"
+  options={this.state.options}
+  onSuccess={this.callbackFunction}
+/>
     </div>
 
 
@@ -612,8 +651,9 @@ const CreateAcct = () =>(
  </div>
  </div>
  </div>
- )
-
+    );
+  }
+}
 
 
 

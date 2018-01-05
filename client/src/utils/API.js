@@ -30,11 +30,14 @@ export default
   	{
 
   		return axios.get("/api/users/" + id);
-    }
+    },
     
-    // For Connect/Collaborate page
+    // For Filestack API
 
+    uploadPhoto: function()
+    {
 
+    }
 
 
 }
