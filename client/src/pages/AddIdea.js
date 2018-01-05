@@ -42,7 +42,12 @@ const AddIdea = () =>(
                          
                            <p id="text4">Zac Parker <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
                          
-                           <p id="text4">Tarra Sanders <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+                           <p id="text4">Tarra Sanders <br/> Ey Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+
+                          <p id="text4"> | <br/> </p>
+                          <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"5px"}}>post</button>
+                         
+
 
 
                         </div>
@@ -98,15 +103,15 @@ const AddIdea = () =>(
                         <img src="css/images/sports.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
                         
                       <div className="thumbs-component thumbs thumbs-horizontal animated unrated"style={{color:"black"}}>
-                       <div className="nf-svg-button-wrapper thumb-container thumb-up-container"style={{color:"black"}}>
-                        <a role="link" data-rating="2" tabindex="0" className="nf-svg-button simpleround" style={{color:"black"}}></a>
-                        </div>
+                         <div className="nf-svg-button-wrapper thumb-container thumb-up-container"style={{color:"black"}}>
+                          <a role="link" data-rating="2" tabindex="0" className="nf-svg-button simpleround" style={{color:"black"}}></a>
+                         </div>
                       </div>
 
                       <div className="box">
                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        <i className="fa fa-thumbs-up" aria-hidden="true">6</i>
-                        <i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i>
+                        <i className="fa fa-thumbs-up" aria-hidden="true">7</i>
+                        <i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}></i>
                       </div>
                       
                    </div>                                                   
@@ -121,8 +126,8 @@ const AddIdea = () =>(
                     
                       <div className="box">
                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
-                        <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
+                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">5</i></span>
+                        <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>2</i></span>
                       </div>
                       
                    </div>                                                   
@@ -138,7 +143,7 @@ const AddIdea = () =>(
                     
                       <div className="box">
                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
+                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">11</i></span>
                            <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
                       </div>
                       

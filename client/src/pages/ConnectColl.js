@@ -167,7 +167,7 @@ class ConnectColl extends Component {
     <Col size="md-3" className="zoom">
 
 
-                <div className="img-thumbnail">
+                <div className="img-thumbnail" style={{marginTop:"-5px"}}>
                       <img src="css/images/reyna2.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
                     <div className="people">
                         <p id="texta">Reyna</p> 
@@ -182,7 +182,7 @@ class ConnectColl extends Component {
             
 
              
-                <div className="img-thumbnail">
+                <div className="img-thumbnail" style={{marginTop:"-5px"}}>
                       <img src="css/images/Emma.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
                     <div className="people">
                         <p id="texta">Emma</p> 
@@ -198,7 +198,7 @@ class ConnectColl extends Component {
             
 
              
-                <div className="img-thumbnail">
+                <div className="img-thumbnail" style={{marginTop:"-5px"}}>
                       <img src="css/images/tim.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
                     <div className="people">
                         <p id="texta">Tim</p> 
@@ -215,7 +215,7 @@ class ConnectColl extends Component {
             
 
              
-                <div className="img-thumbnail">
+                <div className="img-thumbnail" style={{marginTop:"-5px"}}>
                       <img src="css/images/zac.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
                     <div className="people">
                         <p id="texta">Zac</p> 
