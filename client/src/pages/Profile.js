@@ -131,7 +131,7 @@ class Profile extends Component
               <div className="col-md-1"></div>
               <div className="col-md-3">
                 <button id="btn1" type="button" className="btn btn-danger">Recent Activity</button>
-                <button type="button" className="btn btn-danger" onClick={this.uploadFile}>Portfolios link</button> 
+                <button type="button" className="btn btn-danger" onClick={this.uploadFile}>Upload Files</button> 
                 <div id="docUpload">
                 </div>
               </div>
