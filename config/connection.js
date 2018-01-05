@@ -11,7 +11,7 @@ else {
     host: "localhost",
     user: "root",
     password: "",
-    database: "closet_db"
+    database: "app_intDB"
   });
 };
 

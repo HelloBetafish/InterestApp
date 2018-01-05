@@ -2,7 +2,7 @@ import React from "react";
 import "./SignUpButton.css";
 
 // Destructuring the type, className, children and onClick props, applying them to the button element
-const LoginButton = ({ type, className, children, onClick }) => (
+const SignUpButton = ({ type, className, children, onClick }) => (
 
 <button
     onClick={onClick}
@@ -15,4 +15,4 @@ const LoginButton = ({ type, className, children, onClick }) => (
   
 );
 
-export default LoginButton;
+export default SignUpButton;

@@ -1,11 +1,162 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import "../style/connectColl.css";
 
 const AddIdea = () =>(
 
 
 <div>
 <Navbar />
+
+
+<div id="section1">
+          <div id="photo" className="container">
+              <div className="row">
+              
+              
+              <div className="col-md-3">
+                    <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey"}}>
+
+                      <img src="css/images/guy.jpeg" width="160" height="160" style={{marginLeft: "45px"}}/>
+                      <div className="caption">
+                        <p id="text">Bruno Smith</p> 
+                        <p id="text2">Web Developer <br/> Front and Back end</p>
+                      </div>
+                      
+                    </div>
+                       <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px", marginLeft:"20px"}}></i></span>
+                      <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
+                      <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
+                      <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
+                      <span id='clickableAwesomeFont'><i class="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
+
+                  </div>
+                 
+                      <div className="col-md-6">
+                        <div className="backgroundbox">
+                        
+                         
+                           <p id="text3">Sarah Lee <br/>Hi, I would to know more about your application, I am interested in working with you</p>
+                          
+                           <p id="text4">Joshua Phils <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+                         
+                           <p id="text4">Zac Parker <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+                         
+                           <p id="text4">Tarra Sanders <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+
+
+                        </div>
+                         
+                      </div>
+
+                  
+
+                  <div className="col-md-3">
+                  <div className="boardann"></div>
+                   <div className="boardann"></div>
+                    <div className="boardann"></div>
+                     <div className="boardann"></div>
+
+                  
+                  </div>
+                </div>
+          </div>
+</div>
+
+
+
+
+      <div className="container">
+       <div id="addedtitle">
+          <h5 style={{fontSize:"20px",color:"white"}}>Added Ideas</h5>
+        </div>
+            
+      <hr/>
+        <div className="row" id="boxbox">
+         
+               
+                   <div className="form-group" className="col-md-3 ">
+                                          
+                        <img src="css/images/darkroom3.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
+                       
+                      <div className="box">
+                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                           <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
+                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
+                      </div>
+                      
+                   </div>                                                   
+                    
+                 
+
+
+                
+                
+                   <div className="form-group" className="col-md-3 ">
+                                          
+                        <img src="css/images/sports.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
+                        
+                      <div className="thumbs-component thumbs thumbs-horizontal animated unrated"style={{color:"black"}}>
+                       <div className="nf-svg-button-wrapper thumb-container thumb-up-container"style={{color:"black"}}>
+                        <a role="link" data-rating="2" tabindex="0" className="nf-svg-button simpleround" style={{color:"black"}}></a>
+                        </div>
+                      </div>
+
+                      <div className="box">
+                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                          <i className="fa fa-thumbs-up" aria-hidden="true">6</i>
+                        <i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i>
+                      </div>
+                      
+                   </div>                                                   
+                    
+                 
+
+
+                
+                   <div className="form-group" className="col-md-3 ">
+                                          
+                        <img src="css/images/books.png" alt="..." className="img-thumbnail" style={{width:"100%"}} />
+                    
+                      <div className="box">
+                        <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
+                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
+                      </div>
+                      
+                   </div>                                                   
+                    
+                
+
+
+                 
+                
+                   <div className="form-group" className="col-md-3 ">
+                                          
+                        <img src="css/images/healthy.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
+                    
+                      <div className="box">
+                        <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
+                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
+                      </div>
+                      
+                   </div>                                                   
+                    
+              
+
+
+
+              </div> 
+               <hr/>      
+
+              </div>
+            
+       
+          
+    
+
+   
 
 
 
@@ -18,107 +169,14 @@ const AddIdea = () =>(
              <div className="container">
     <div className="row">
           
-      <div  className="col-md-6 offset-md-2">
-                            <div id="formtitle" style={{height: "100px", width: "100%", borderRadius: "10px", backgroundColor: "gray", marginLeft: "-20px"}}>
-                                <div id="surveybox" style={{height: "60px", width: "100%", borderRadius: "10px", backgroundColor: "#e3c721", marginTop: "50px", marginLeft: "0px",
-                                            marginBottom: "20px"}}>
-                                     <p id="ideatitle" style={{color:"white", textAlign: "center", fontFamily: "Raleway", fontSize: "25px",
-                                           paddingTop:"14px"}}>ADD IDEA</p>
-                                </div>
-                              </div>
-
-                  
-                    <div style={{height:"420px",width:"100%",overflow:"auto",backgroundColor:"gray", marginTop:"20px", color:"white",scrollbarBaseColor:"gold", marginLeft:"-20px",fontFamily:"sans-serif",padding:"10px"}}>
-
-                             <form id="input" style={{width:"93%", marginLeft:"20px",marginBottom:"40px"}}>
-
-                                   <div className="formName-group">
-                                     <label className="col-form-label" for="formGroupExampleInput2">Idea's Name</label>
-                                     <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Idea's Name"/>
-                                   </div>
-                                
-                                   <div className="form-group" >
-                                     <label class="col-form-label" for="formGroupExampleInput2">Time Frame</label>
-                                     <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Time Frame"/>
-                                   </div>
-                                   <div className="form-group">
-                                     <label className="col-form-label" for="formGroupExampleInput">What is your idea?</label>
-                                     <input type="text" className="form-control" id="formGroupExampleInput" placeholder="What is your idea?"/>
-                                   </div>
-                                    
-                                   <div className="form-group">
-                                     <label for="exampleFormControlTextarea1">Why is a good idea?</label>
-                                     <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                   </div>
-                                
-                                  
-                                   <div className="form-group">
-                                     <label className="col-form-label" for="formGroupExampleInput">Example label</label>
-                                     <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input"/>
-                                   </div>
-                                   <div className="form-group">
-                                     <label className="col-form-label" for="formGroupExampleInput2">Another label</label>
-                                     <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Another input"/>
-                                   </div>
-                                   <div className="form-group">
-                                     <label className="col-form-label" for="formGroupExampleInput">Example label</label>
-                                     <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input"/>
-                                   </div>
-                                   <div className="form-group">
-                                     <label className="col-form-label" for="formGroupExampleInput2">Another label</label>
-                                     <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Another input"/>
-                                   </div>
-                                   <div className="form-group">
-                                     <label className="col-form-label" for="formGroupExampleInput">Example label</label>
-                                     <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input"/>
-                                   </div>
-                                  
-                            </form>
-                    </div>
-
-                    <div> 
-                         <div id="formtitle" style={{height: "100px", width: "100%", borderRadius: "10px", backgroundColor: "gray", marginLeft: "-20px", marginTop:"20px"}}>
-                           <button id="submitidea" type="button" className="btn btn-warning" style={{marginTop:"30px",width:"100%", marginLeft:"0px", marginBottom:"40px"}}>submit</button>
-                        </div>
-                    </div>
-        </div>
-
-
+     
 
 
                   
                 
                     <div className="col-md-4">
                         
-                          <div className="ideaphoto">
-                                <img style={{width:"140%",marginTop:"130px", marginLeft:"0px"}}  src="css/images/littleIdea.jpg" alt="upload" className="img-thumbnail"/>
-                                
-                                  <p style={{marginBottom:"5px", marginTop:"-75px", marginLeft:"140px",fontSize:"20px", color:"orange"}} >SUBMITTED</p>
-                                <div className="carousel" >
-                                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-                                              <div className="carousel-inner" role="listbox">
-                                                  <div className="carousel-item active">
-                                                     <img className="d-block img-fluid"  style={{width:"140%",marginLeft:"0px"}} src="css/images/books.png" alt="First slide"/>
-                                                  </div>
-                                                  <div className="carousel-item">
-                                                     <img class="d-block img-fluid" style={{width:"140%",marginLeft:"0px"}} src="css/images/kids.jpg" alt="Second slide"/>
-                                                  </div>
-                                                  <div className="carousel-item">
-                                                    <img className="d-block img-fluid" style={{width:"140%",marginLeft:"0px"}} src="css/images/darkroom3.jpg" alt="Third slide"/>
-                                                  </div>
-                                              </div>
-                                                  <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style={{marginLeft:"40px"}}>
-                                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                    <span className="sr-only">Previous</span>
-                                                  </a>
-                                                  <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                                    <span className="sr-only">Next</span>
-                                                  </a>
-                                    </div>
-                                </div>
-                             
-                          </div>
+                         
                          
                    </div>
               

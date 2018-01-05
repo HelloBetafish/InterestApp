@@ -1,0 +1,313 @@
+
+/*------------profile-----------------*/
+
+div:focus {
+    background-color:lightgray;
+}
+.box1{
+  width:120px; 
+  padding-left:15px;
+  padding-bottom:10px;
+  outline: 1px solid lightgray;
+  margin-left:-65px; 
+  margin-top:90px;
+}
+#personal{
+font-size:9px;
+margin-left:10px;
+}
+
+.box2{
+  width:120px; 
+  padding-left:15px;
+  padding-bottom:10px;
+  outline: 1px solid lightgray;
+  margin-left:-65px; 
+  
+
+}
+
+#contacts{
+  font-size:9px;
+  margin-left:15px;
+}
+.box3{
+  width:120px; 
+  padding-left:15px; 
+  padding-bottom:10px; 
+  outline: 1px solid lightgray;
+  margin-left: -37px;
+  margin-right:20px;
+  margin-top:90px;
+}
+#textmessage{
+ font-size: 9px; 
+ margin-left:15px; 
+ color: black;
+ 
+}
+.box4{
+  width:120px; 
+  padding-left:15px;
+  padding-bottom:10px;
+  outline: 1px solid lightgray;
+  margin-left: -37px;
+}
+#textinvitation{
+  font-size: 9px; 
+  color: black;
+  margin-top:-20px; 
+  padding-left:20px;
+                
+
+}
+
+
+/*------------connectColl---------------*/
+  
+  body, html, main {
+    /* important */
+    height: 100%;
+    width: 100%;
+  }
+  
+  .cd-fixed-bg.cd-bg-1 {
+    background-image: url("/css/images/connections2.jpg");
+    height :100%;
+    width: 100%;
+    margin-top: -60px;
+  }
+  #people{
+    margin-top: 20px;
+   /* margin-left:25px;*/
+    width:100%;
+
+  }
+  #titleconnections{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    
+  }
+  
+  #highlight, #highlight:hover, #highlight:active, #highlight:focus {
+      color:white;
+     
+  }
+  
+  .connectColButtons
+  {
+  margin-top:-30px;
+    margin-bottom: 50px;
+    margin-left:260px;
+
+  }
+
+  .messagesButtons
+  {
+  margin-top:-30px;
+    margin-bottom: 50px;
+    margin-left:380px;
+  }
+  #formcontrol{
+    width: 80%;
+  }
+  
+  .bounceInUp {
+    animation-name: bounceInUp;
+  }
+  
+  @keyframes bounceOut {
+    20% {
+      transform: scale3d(.9, .9, .9);
+    }
+  
+    50%, 55% {
+      opacity: 1;
+  
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    to {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+  }
+
+
+
+
+/*radio buttons*/
+
+*{font-family: 'Roboto', sans-serif;}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #343d46;
+  outline-border: #343d46;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+  margin-left: 80px;
+
+}
+.option-input:hover {
+  background: gray;
+}
+
+.option-input:checked {
+  background: #343d46;
+  outline-color:  white;
+}
+
+
+
+
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+  /*margin-left: 80px;*/
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #343d46;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+
+.radiobuttons{
+ /* margin-left:20%;*/
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background-color:#343d46;
+}
+label{
+  color:white;
+  padding-bottom: 10px;
+}
+
+/*-----------------messageboard-------------------*/
+.boardann{
+  height: 150px;
+  width: 200px;
+  background-color: white;
+  margin-top:48px;
+  margin-left: 40px;
+  color:gray;
+  padding-left: 20px;
+  padding-top: 20px;
+  border: .5px solid lightgray;
+}
+/*.boardbox1{
+  height: 80px;
+  width: 700px;
+  background-color: white;
+  margin-top:10px;
+  margin-left: 40px;
+  color:gray;
+  padding-left: 20px;
+  padding-top: 20px;
+  border: .5px solid gray;
+}*/
+h5{
+  font-size: 12px;
+}
+#text3{
+ 
+  margin-left:20px;
+  margin-right:20px;
+  margin-bottom:20px;
+  font-size: 14px;
+  padding: 20px 20px 20px 20px;
+  outline: 1px solid white;
+}
+#text4{
+  
+  margin-left:20px;
+  margin-right:20px;
+  margin-bottom:20px;
+  font-size: 14px;
+  padding: 20px 20px 20px 20px;
+  outline: 1px solid white;
+}
+.fa:active{
+ color: red;
+
+}
+
+.backgroundbox{
+  background-color:#eeeeee;
+  padding-top:20px;
+  padding-bottom: 20px;
+  margin-top:40px;
+  margin-left:40px;
+}
+
+#boxbox{
+
+}
+#addedtitle{
+  
+  width: 260px;
+  margin-top:30px;
+  margin-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color:#65737e;
+  border-radius: 5px;
+
+  text-align: center;
+    font-family: 'Raleway', sans-serif;
+   
+}
+  
+ 
