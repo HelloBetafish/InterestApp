@@ -29,7 +29,6 @@ class CreateAcct extends Component {
       var fileUrl = result.filesUploaded[0].url;
       console.log(fileUrl);
     })
-
   };
 
   render() {

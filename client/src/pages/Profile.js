@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 
@@ -14,7 +15,21 @@ class Profile extends Component
       console.log(this.props.match);
     }
 
-    
+    uploadFile = (event) => {
+      const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
+      filestack.pick({
+        accept: [".pdf",".doc",".docx",".docm"],
+        fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
+        maxFiles: 1,
+      }).then(function(result) {
+        console.log(JSON.stringify(result.filesUploaded));
+        var fileUrl = result.filesUploaded[0].url;
+        var fileName = result.filesUploaded[0].filename;
+        console.log(fileName + " " + fileUrl);
+        // Need to write code to send fileName, fileURL, and user ID to database to save.
+        document.getElementById("docUpload").innerHTML += `<p><a href="` + fileUrl + `">` + fileName +`</a></p>`;
+      })
+    };
 
     render()
     {
@@ -67,7 +82,9 @@ class Profile extends Component
               <div className="col-md-1"></div>
               <div className="col-md-3">
                 <button id="btn1" type="button" className="btn btn-danger">Recent Activity</button>
-                <button type="button" className="btn btn-danger">Portfolios link</button> 
+                <button type="button" className="btn btn-danger" onClick={this.uploadFile}>Portfolios link</button> 
+                <div id="docUpload">
+                </div>
               </div>
             </div>
           </div>
