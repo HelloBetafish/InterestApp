@@ -133,11 +133,10 @@ class Profile extends Component
               <Col size="md-4">
                 <Thumbnail 
                     
-                        full_name={this.state.user.full_name}
-                />
+                        full_name={this.state.user.full_name} style={{marginTop:"30px",boxShadow: "1px 9px 20px grey"}}/>
+            
               </Col>
-              <div className="col-md-4">
-                <div className="img-thumbnail mx-auto"style={{marginTop:"30px",boxShadow: "1px 9px 20px grey"}}>
+             
 
               <div className="col-md-1"></div>
               <div className="col-md-3">

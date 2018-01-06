@@ -15,7 +15,7 @@ const AddIdea = () =>(
               
               
               <div className="col-md-3">
-                    <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey"}}>
+                    <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey",marginTop:"40px"}}>
 
                       <img src="css/images/guy.jpeg" width="160" height="160" style={{marginLeft: "45px"}}/>
                       <div className="caption">
@@ -24,7 +24,7 @@ const AddIdea = () =>(
                       </div>
                       
                     </div>
-                       <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px", marginLeft:"20px"}}></i></span>
+                       <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
@@ -44,7 +44,9 @@ const AddIdea = () =>(
                          
                            <p id="text4">Tarra Sanders <br/> Ey Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
 
-                          <p id="text4"> | <br/> </p>
+                          <div className="form-group">
+                         <input style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
+                         </div>
                           <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"5px"}}>post</button>
                          
 
