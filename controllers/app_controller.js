@@ -14,6 +14,7 @@ const db = require("../models");
 
 module.exports =
 {
+  //login:
   findAll: function(req, res)
   {
   	
@@ -27,6 +28,7 @@ module.exports =
     
    },
 
+  //profile:
   findById: function(req, res) 
   {
      db.User
@@ -89,7 +91,7 @@ module.exports =
 
       db.Signin.find(req.query).sort({ date: -1 }).then(function(dbModel)
       {
-      	console.log("TES");
+      	
       	res.json(dbModel);
 
       }).catch(function(err)
@@ -98,7 +100,9 @@ module.exports =
       	res.status(422).json(err);
 
       });
-  }
+  },
+
+
 
 
 

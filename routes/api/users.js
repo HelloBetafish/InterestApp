@@ -10,7 +10,6 @@ router.route("/")
 // Matches with "/api/books/:id"
 
  router.route("/:id")
- .get(appController.findById)
  .put(appController.update);
 
  router.route("/connect&collaborate")

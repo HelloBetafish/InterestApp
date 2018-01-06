@@ -10,7 +10,7 @@ export default
 
 	getUser: function(id) 
   	{
-    	return axios.get("/api/users/" + id);
+    	return axios.get("/api/signin/" + id);
     },
 
     getPUser: function(id) 
@@ -37,7 +37,6 @@ export default
   	{
   		return axios.post("/api/users/", id);
   	
-
     },
 
 

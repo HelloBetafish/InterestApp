@@ -5,5 +5,7 @@ const appController = require("../../controllers/app_controller");
 router.route("/")
 .get(appController.findId);
 
+router.route("/:id")
+.get(appController.findById)
 
 module.exports = router;

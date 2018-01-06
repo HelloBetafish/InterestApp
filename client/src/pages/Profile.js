@@ -4,6 +4,8 @@ import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 import API from "../utils/API";
+import Col from "../components/Login/Col";
+import Thumbnail from "../components/Thumbnail";
 
 
 
@@ -12,8 +14,7 @@ class Profile extends Component
   state = 
   {
     user: {},
-    IdOfSignedUser: []
-
+    IdOfSignedUser: ""
 
 
   }
@@ -52,20 +53,25 @@ class Profile extends Component
   //Function1: load users from seedDB.js into mongoDB.
   loadLoggedUsers = () => 
   {
-    //Get id stored in the (signins) collection
-      //API.getIdOfLoggedInUser().then(res => this.setState({ IdOfSignedUser: res.data })
-       // ).catch(err => console.log(err));
+    
+      API.getIdOfLoggedInUser().then(res =>
+        
+        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, this.getUser(res.data[0].IdOfSignedUser) )
 
-      API.getIdOfLoggedInUser().then(function(res)
-      {
-        console.log("test2");
-        console.log(res.data);
-        this.setState({ IdOfSignedUser: res.data })
-      }).catch(err => console.log(err));
+        ).catch(err => console.log(err))
 
-
-      console.log("obj");
+  };
   
+
+  getUser = (id) =>
+  {
+    console.log("yes");
+    console.log(id);
+    
+    API.getUser(id).then(res => 
+        
+          this.setState({ user: res.data },  console.log(res.data) )
+          ).catch(err => console.log(err))
   };
 
 
@@ -86,7 +92,7 @@ class Profile extends Component
       })
     };
 
-    
+  
 
     render()
     {
@@ -124,17 +130,12 @@ class Profile extends Component
                 </div>
               </div>
                 
-              <div className="col-md-4">
-                <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey"}}>
-
-                  <img src="css/images/guy.jpeg" width="200" height="200" style={{marginLeft: "70px"}}/>
-                  <div className="caption">
-                    <p id="text">Bruno Smith</p> 
-                    <p id="text2">Web Developer <br/> Front and Back end <br/> ICE CREAM APPLICATION </p>
-                  </div>
-
-                </div>
-              </div>
+              <Col size="md-4">
+                <Thumbnail 
+                    
+                        full_name={this.state.user.full_name}
+                />
+              </Col>
 
               <div className="col-md-1"></div>
               <div className="col-md-3">

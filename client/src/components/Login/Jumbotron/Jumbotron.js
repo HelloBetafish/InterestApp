@@ -1,7 +1,5 @@
 import React from "react";
 import "./Jumbotron.css";
-//import { FormList, Textfields } from "../FormList";
-
 
 const Jumbotron = ({ children })=>
 
@@ -12,4 +10,4 @@ const Jumbotron = ({ children })=>
 </div>
 
 
-  export default Jumbotron;
+ export default Jumbotron;
