@@ -69,7 +69,7 @@ margin-left:10px;
     background-color: #65737e;
     margin-left:20px;
     margin-bottom:90px;
-    margin-top: 20px;
+    margin-top: 50px;
   
   }
   #messageprofile{
@@ -79,7 +79,7 @@ margin-left:10px;
     background-color: #65737e;
     margin-left:50px;
     margin-bottom:90px;
-    margin-top:20px;
+    margin-top:50px;
   
   
   }
@@ -90,7 +90,7 @@ margin-left:10px;
     background-color: #65737e;
     margin-left:60px;
     margin-bottom:90px;
-    margin-top: 20px;
+    margin-top: 50px;
   
   }
 
@@ -133,7 +133,7 @@ margin-left:10px;
 
   .connectColButtons
   {
-  margin-top:-30px;
+  margin-top:0px;
   margin-bottom: 50px;
   margin-left:260px;
 
@@ -366,6 +366,7 @@ h5{
   margin-left:20px;
   margin-right:20px;
   margin-bottom:20px;
+  background-color:white;
   font-size: 14px;
   padding: 20px 20px 20px 20px;
   outline: 1px solid white;
@@ -375,6 +376,7 @@ h5{
   margin-left:20px;
   margin-right:20px;
   margin-bottom:20px;
+  background-color:white;
   font-size: 14px;
   padding: 20px 20px 20px 20px;
   outline: 1px solid white;

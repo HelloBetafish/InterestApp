@@ -165,7 +165,7 @@ class Profile extends Component
               </div>
                 
               <div className="col-md-4">
-                <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey"}}>
+                <div className="img-thumbnail mx-auto"style={{marginTop:"30px",boxShadow: "1px 9px 20px grey"}}>
 
                   <img src="css/images/guy.jpeg" width="200" height="200" style={{marginLeft: "70px"}}/>
                   <div className="caption">
