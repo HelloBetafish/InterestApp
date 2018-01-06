@@ -259,7 +259,7 @@ class Profile extends Component
 
                             <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
-                                    <div className="modal-content"style={{backgroundColor:" #e3c721"}}>
+                                    <div className="modal-content"style={{backgroundColor:" #f9bd05"}}>
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="exampleModalLabel"style={{marginLeft:"40%"}}>ADD IDEA</h5>
 
@@ -289,7 +289,7 @@ class Profile extends Component
                                              
                                               
                                               <img src="css/images/health.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                                              <button id="addideaphoto" type="button" className="btn btn-secondary" style={{marginLeft:"0px",marginTop:"-10px"}}>add photo</button>
+                                              <button id="addideaphoto" type="button" className="btn btn-secondary" style={{marginLeft:"0px",marginTop:"10px"}}>add photo</button>
                                            
                                              </div>
                                              

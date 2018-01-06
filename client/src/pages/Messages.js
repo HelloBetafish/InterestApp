@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 
-const ConnectColl = () =>
+const Messages = () =>
 
 <div>
 <Navbar />
@@ -91,4 +91,4 @@ const ConnectColl = () =>
 
   </div>;
 </div>
-export default ConnectColl; 
+export default Messages; 
