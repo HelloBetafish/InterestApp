@@ -111,10 +111,77 @@ class Profile extends Component
                 <p id="personal">Personal Info</p>
                 </div>
                 <div tabIndex="2"className="box2">
-                <span id='clickableAwesomeFont'><i className=" fa fa-address-book" style={{fontSize: "40px", color:"black"}} ></i></span>
+                <span id='clickableAwesomeFont'><i className=" fa fa-address-book" data-toggle="modal" data-target=".bs-example-modal-sm" style={{fontSize: "40px", color:"black"}} ></i></span>
                 <p id="contacts">Contacts</p>
                 </div>
               </div>
+
+
+<div className="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div className="modal-dialog" role="document">
+                  <div className="modal-body"style={{backgroundColor:" #343d46"}}>
+                    <div className="modal-header">
+                      <h5 className="modal-title" id="modaltitle"style={{marginLeft:"40%"}}>CONTACTS</h5>
+
+                          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                    </div>
+                                 
+                          <div className="modal-body" style={{backgroundColor:" white"}}>               
+                            <div className="modal-dialog modal-lg" role="document">
+                              <div className="modal-content">
+                                <div className="modal-body" style={{backgroundColor:" white"}}>
+
+                                            <form id="input" style={{width:"93%", marginLeft:"20px",marginBottom:"40px"}}>
+
+                                               <div className="form-group">
+
+                                                 <a href="Bethany Pfeister" alt="Bethany">
+                                                 <img src="css/images/bethany.jpg" width="30" height="30" style={{marginTop:"30px",marginLeft:"30px"}}/>
+                                                 <p alt="Bethany Pfeister" style={{marginLeft:"90px", marginTop:"-20px"}}>Bethany Pfeister - Web Developer</p>
+                                                 </a>
+
+                                                 <a href="Jesse Forte" alt="Jesse">
+                                                 <img src="css/images/Jesse1.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                 <p alt="Jesse Forte" style={{marginLeft:"90px", marginTop:"-20px"}}>Jesse Forte - Web Developer</p>
+                                                 </a>
+
+                                                 <a href="TJ Stephens" alt="TJ">
+                                                 <img src="css/images/tj.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                 <p alt="TJ Stephens" style={{marginLeft:"90px", marginTop:"-20px"}}>TJ Stephens - Web Developer</p>
+                                                 </a>
+                                                  
+                                                 <a href="Reyna Perez" alt="Reyna">
+                                                 <img src="css/images/reyna.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                 <p alt="Reyna Perez" style={{marginLeft:"90px", marginTop:"-20px"}}>Reyna Perez - Web Developer</p>
+                                                 </a>
+
+                                                 <a href="John Anders" alt="Reyna">
+                                                 <img src="css/images/john.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                 <p alt="John Anders" style={{marginLeft:"90px", marginTop:"-20px"}}>John Anders - Web Developer</p>
+                                                 </a>
+                                                 
+
+                                               </div>
+                                                                                       
+
+                                            </form>
+                                          
+                              </div>
+
+                                         <div className="modal-footer" style={{backgroundColor:" white"}}>
+                                            <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>      
+                                        </div>
+
+                           </div>
+                        </div>                                
+                     </div> 
+                  </div>
+                </div>
+              </div>
+
+
               <div className="col-md-2">
               
                 <div tabIndex="3"className="box3">
