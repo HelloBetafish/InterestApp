@@ -22,6 +22,7 @@ import "../components/Login/Login.css";
 import Encrypt_Decrypt from "../EncryptionDecryption/Encrypt_Decrypt";
 
 
+var stack = [];
 
 
 class Login extends Component
@@ -52,19 +53,23 @@ class Login extends Component
   {
     
     this.loadUsers();
+
+    let i = 0;
+    
   }
 
   //Function1: load users from seedDB.js into mongoDB.
   loadUsers = () => 
   {
+    
     API.getUsers().then(res =>
 
         this.setState({ users: res.data, username: "", password: "", title: "", full_name:"", email:"", country:"", skills:"", experience:"", photoURL:"" })
 
         ).catch(err => console.log(err));
 
-    <h1> hi </h1>
-  
+    console.log("login");
+
   };
 
   //Function2: Executes when user clicks [Login] button
@@ -89,7 +94,12 @@ class Login extends Component
         //Set (online) field of user signing in to true
          var id = this.state.users[i]._id;
 
-        console.log(id);
+         //Store id of signed in user in a remote location(SignedInUser/Online.js)
+         //in order for the user information in (Profile.js) to be obtained.
+         //Online.setId(id);
+
+
+        //console.log(id);
         API.userOnline(id).then(res => this.loadUsers())
 
         .catch(err => console.log(err));

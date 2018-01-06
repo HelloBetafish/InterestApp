@@ -5,18 +5,21 @@ const appController = require("../../controllers/app_controller");
 router.route("/")
   .get(appController.findAll)
   .post(appController.create);
-  
-  //.put(appController.update);
+ 
 
 // Matches with "/api/books/:id"
 
  router.route("/:id")
- .get(appController.update);
+ .put(appController.update);
 
  router.route("/connect&collaborate")
  .get(appController.findAll);
 
+// router.route("/profile")
+ //.get(appController.findId);
+
+ router.route("/profile/:id")
+ .get(appController.findById);
   
-  //.delete(booksController.remove);
 
 module.exports = router;
