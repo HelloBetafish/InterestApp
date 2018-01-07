@@ -30,6 +30,7 @@ const AddIdea = () =>(
                       <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i class="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
 
+
                   </div>
                  
                       <div className="col-md-6">
@@ -47,7 +48,8 @@ const AddIdea = () =>(
                           <div className="form-group">
                          <input style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
                          </div>
-                          <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"5px"}}>post</button>
+                         <button type="button" id="keep" className="btn btn-danger" style={{marginLeft:"330px", marginTop:"5px"}}>delete</button>
+                          <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"-65px"}}>post</button>
                          
 
 
@@ -59,10 +61,47 @@ const AddIdea = () =>(
                   
 
                   <div className="col-md-3">
-                     <div className="boardann"></div>
-                     <div className="boardann"></div>
-                     <div className="boardann"></div>
-                     <div className="boardann"></div>
+                   <div className="boardann" style={{height:"100px",width:"100px",backgroundColor: "#65737e",marginTop:"45px",marginLeft:"50px"}}>
+                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"20px", marginLeft:"30px"}}></i></span>
+                   <p style={{color:"white",fontSize: "9px",marginTop:"5px", marginLeft:"10px"}}>private message</p>
+                   </div>
+
+                   <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div className="modal-dialog" role="document">
+                                        <div className="modal-content">
+                                            <div className="modal-header">
+                                                <h5 className="modal-title" id="exampleModalLabel">Message</h5>
+
+                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div className="modal-body" style={{backgroundColor:" white"}}>
+                                                  <form id="input" style={{width:"93%", marginLeft:"20px",marginBottom:"40px"}}>
+                                                                                            
+                                                     <div className="form-group">
+                                                       <label for="exampleFormControlTextarea1"style={{color:"#65737e"}}></label>
+                                                       <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                     </div>
+                                                     <div className="form-group">
+                                                       <a href="attach" alt="attach">
+                                                       <p alt="attach"> attach</p>
+                                                       </a>                                            
+                                                     </div>                                                
+                                             
+                                                 </form>
+                                              
+                                            </div>
+                                            <div className="modal-footer" style={{backgroundColor:" white"}}>
+                                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Discard</button>
+                                                <button type="button" className="btn btn-danger">send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+       
+    
+                    
                   </div>
 
                 </div>
