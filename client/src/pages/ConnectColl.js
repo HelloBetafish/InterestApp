@@ -103,7 +103,7 @@ class ConnectColl extends Component {
       </div>
 
     <Row>
-      {this.state.users.filter(user => !user.online)
+      {this.state.users.filter(user => user._id != this.state.IdOfSignedUser)
       .map(card => (
         <Col size="md-3" className="zoom">
           <ImgCard
