@@ -21,7 +21,8 @@ class Profile extends Component
     ideaName: "",
     whatIsIdea: "",
     whyGoodIdea: "",
-    photo: ""
+    photo: "",
+    Author: ""
  
   }
 
@@ -139,7 +140,8 @@ class Profile extends Component
 
           ideaName: this.state.ideaName,
           whatIsIdea: this.state.whatIsIdea,
-          whyGoodIdea: this.state.whyGoodIdea
+          whyGoodIdea: this.state.whyGoodIdea,
+          Author: this.state.user.full_name
         
 
          }).then(res => console.log(res.data))

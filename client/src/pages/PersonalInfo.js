@@ -44,7 +44,7 @@ class AddIdea extends Component
   };
   
   //We use id parameter (associtated with user with idea/id) where the idea (id)
-  //is used to search for the idea object inside (ideas) collection.
+  //is used to search for the idea object inside (ideas) collection. Then returns idea object.
   getIdea = (id) =>
   {
     API.getIdea(id).then(res => 
@@ -180,7 +180,9 @@ class AddIdea extends Component
                    <div className="form-group" className="col-md-3 ">
                                           
                         <img src="css/images/darkroom3.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                       
+                        <p className="theTest"> <b>Idea Name</b> Internet</p>
+                        <p> <b>Idea</b> connect with remote users </p>
+                        <p> <b>Why</b> Lots of money </p>
                       <div className="box">
                          <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
                            <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
