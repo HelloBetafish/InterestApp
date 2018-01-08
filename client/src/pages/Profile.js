@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
-// import "../style/connectColl.css";
+import "../style/connectColl.css";
 // import "../style/Profile.css";
 import API from "../utils/API";
 import Col from "../components/Login/Col";

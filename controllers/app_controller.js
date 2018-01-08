@@ -176,10 +176,29 @@ module.exports =
       }).catch(err => res.status(422).json(err));
       */
   	
-  	
-  }
+  },
 
+// For Document Schema
+findDocById: function(req, res) {
+  db.Document
+    .find(req.query)
+    .sort({ date: -1})
+    .then(dbModel)
+},
 
+createDoc: function(req, res) {
+  db.Document
+    .create(req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+},
+removeDoc: function(req, res) {
+  db.Document
+    .findById({ _id: req.params.id })
+    .then(dbModel => dbModel.remove())
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+}
 
 
 

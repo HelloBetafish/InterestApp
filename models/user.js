@@ -71,6 +71,7 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Idea"
   },
+  
   documents: [
     {
     type: Schema.Types.ObjectId,

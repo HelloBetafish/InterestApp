@@ -11,17 +11,43 @@ class ConnectColl extends Component {
   state = 
   {
     users: [],
+    otherUsers: [],
+    IdOfSignedUser: ""
   };
 
   componentDidMount() 
   {
-    this.loadUsers();
+    this.loadLoggedUsers();
+    
   }
 
+  //Function1: Get the Id of the user that is signed in
+  loadLoggedUsers = () => 
+  {
+    
+      API.getIdOfLoggedInUser().then(res =>
+        
+        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, this.getUser(res.data[0].IdOfSignedUser) )
+
+        ).catch(err => console.log(err))
+
+  };
+
+  //Function2: use the recently obtained (id) to get user object
+  getUser = (id) =>
+  {
+
+   
+    API.getUser(id).then(res => 
+          this.setState({ user: res.data },  console.log(res.data), this.loadUsers() )
+          ).catch(err => console.log(err))
+  };
+
+  // Function3: load other users
   loadUsers = () => 
   {
     API.getUsers()
-      .then(res =>
+      .then( res =>
         this.setState({ users: res.data})
         ).
         catch(err => console.log(err));
@@ -77,7 +103,8 @@ class ConnectColl extends Component {
       </div>
 
     <Row>
-      {this.state.users.map(card => (
+      {this.state.users.filter(user => !user.online)
+      .map(card => (
         <Col size="md-3" className="zoom">
           <ImgCard
             photoURL={card.photoURL}

@@ -11,8 +11,5 @@ router.route("/")
  router.route("/:id")
  .put(appController.update);
 
- router.route("/connect&collaborate")
- .get(appController.findAll);
-
 
 module.exports = router;
