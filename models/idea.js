@@ -26,6 +26,12 @@ const userSchema = new Schema({
   {
   	type: String,
   	default: ""
+  },
+
+  Author:
+  {
+    type: String,
+    default: ""
   }
 
 
