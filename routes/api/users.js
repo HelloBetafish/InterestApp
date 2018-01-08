@@ -8,18 +8,11 @@ router.route("/")
  
 
 // Matches with "/api/books/:id"
-
  router.route("/:id")
  .put(appController.update);
 
  router.route("/connect&collaborate")
  .get(appController.findAll);
 
-// router.route("/profile")
- //.get(appController.findId);
-
- router.route("/profile/:id")
- .get(appController.findById);
-  
 
 module.exports = router;

@@ -1,8 +1,62 @@
-import React from "react";
+import React, {Component} from "react";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
+import API from "../utils/API";
 
-const AddIdea = () =>(
+class AddIdea extends Component
+{
+  state = 
+  {
+    user: {},
+    IdOfSignedUser: ""
+
+  }
+
+  componentDidMount() 
+  {
+
+      this.loadLoggedUsers();
+  }
+
+  //ReUse: Get Id of logged in user
+  loadLoggedUsers = () => 
+  {
+    
+      API.getIdOfLoggedInUser().then(res =>
+        
+        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, this.getUser(res.data[0].IdOfSignedUser) )
+
+        ).catch(err => console.log(err))
+
+  };
+
+  //ReUse: We find the signed in user by using the (id) obtained from (signin) collection.
+  //Then we return the object of the signin user. Then obtain (idea)field (id).
+  getUser = (id) =>
+  {
+    
+   
+    API.getUser(id).then(res => 
+          this.setState({ user: res.data }, this.getIdea(res.data.idea) )
+          ).catch(err => console.log(err))
+    
+  };
+  
+  //We use id parameter (associtated with user with idea/id) where the idea (id)
+  //is used to search for the idea object inside (ideas) collection.
+  getIdea = (id) =>
+  {
+    API.getIdea(id).then(res => 
+            console.log(res.data), 
+          ).catch(err => console.log(err))
+  };
+
+
+
+ render()
+ {
+  
+  return(
 
 
 <div>
@@ -230,7 +284,10 @@ const AddIdea = () =>(
 </div>
 </div>
 
-)
+);
+
+}
+}
 
 
 
