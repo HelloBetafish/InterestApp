@@ -134,8 +134,6 @@ module.exports =
   	db.Idea.create(req.body).then(function(dbIdea)
   	{
 
-   
-
     	//Without this the newly created note field is not inserted inside the particular article
     	//that is found by article(id) inside our mongoDB
     	return db.User.findOneAndUpdate({_id: req.params.id}, {idea: dbIdea._id}, {new: true});
@@ -144,7 +142,7 @@ module.exports =
   	}).then(function(dbUser)
   	{
   
-    	//If we were able to successfully update an Article, send it back to client
+    	//If we were able to successfully update an Idea, send it back to client
     	res.json(dbUser)
 
   	}).catch(function(err)
@@ -153,6 +151,32 @@ module.exports =
   	});
 
 
+  },
+
+  //Finds particular idea based on the (id) we pass as parameter
+  getIdea: function(req, res)
+  {
+  	
+  	db.Idea
+  	.findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+    
+      
+
+      /*
+      db.Idea.findById(req.params.id).then(function(dbModel)
+      {
+      	console.log("get idea");
+      	console.log(req.params.id);
+      	console.log(dbModel);
+
+      	res.json(dbModel)
+
+      }).catch(err => res.status(422).json(err));
+      */
+  	
+  	
   }
 
 

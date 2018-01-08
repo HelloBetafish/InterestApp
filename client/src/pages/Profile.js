@@ -6,7 +6,8 @@ import Navbar from "../components/Navbar";
 // import "../style/Profile.css";
 import API from "../utils/API";
 import Col from "../components/Login/Col";
-import Thumbnail from "../components/Thumbnail";
+import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
+
 
 
 
@@ -56,7 +57,7 @@ class Profile extends Component
 
   
 
-  //Function1: load users from seedDB.js into mongoDB.
+  //Function1: Get the Id of the user that is signed in
   loadLoggedUsers = () => 
   {
     
@@ -68,7 +69,7 @@ class Profile extends Component
 
   };
   
-
+  //Function2: use the recently obtained (id) to get user object
   getUser = (id) =>
   {
 
@@ -115,6 +116,7 @@ class Profile extends Component
 
   };
 
+  //creates an (idea) field inside of (users) collection
   addIdeaField = event =>
   {
 
