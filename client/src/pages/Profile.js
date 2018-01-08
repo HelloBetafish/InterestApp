@@ -5,7 +5,8 @@ import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 import API from "../utils/API";
 import Col from "../components/Login/Col";
-import Thumbnail from "../components/Thumbnail";
+import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
+
 
 
 

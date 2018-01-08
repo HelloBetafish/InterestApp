@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 import API from "../utils/API";
+import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 
 class AddIdea extends Component
 {
@@ -68,17 +69,17 @@ class AddIdea extends Component
               <div className="row">
               
               
-              <div className="col-md-3">
-                    <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey",marginTop:"40px"}}>
+              <div classNe="col-md-3">
 
-                      <img src="css/images/guy.jpeg" width="160" height="160" style={{marginLeft: "45px"}}/>
-                      <div className="caption">
-                        <p id="text">Bruno Smith</p> 
-                        <p id="text2">Web Developer <br/> Front and Back end</p>
-                      </div>
-                      
-                    </div>
-                       <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
+                <Thumbnail2 
+                      full_name={this.state.user.full_name} 
+                       photoURL={this.state.user.photoURL}
+                       skills={this.state.user.skills}
+
+                />
+
+                    
+                      <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
