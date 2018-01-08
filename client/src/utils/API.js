@@ -60,10 +60,15 @@ export default
     return axios.post("/api/idea/" + id, ideaData);
   },
 
+  //PersonalInfo: returns an array of all ideas objects from mongoDB
+  getAllIdeas: function()
+  {
+    return axios.get("/api/idea");
+  },
+
   //PersonalInfo: returns idea object by searching for idea with id parameter we pass in.
   getIdea: function(id)
   {
-    console.log(id);
     return axios.get("/api/personalinfo/" + id);
   },
 

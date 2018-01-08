@@ -3,12 +3,15 @@ import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 import API from "../utils/API";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
+import Idea from "../components/Idea";
 
 class AddIdea extends Component
 {
   state = 
   {
     user: {},
+    idea: {},
+    ideas: [],
     IdOfSignedUser: ""
 
   }
@@ -17,6 +20,7 @@ class AddIdea extends Component
   {
 
       this.loadLoggedUsers();
+      this.getAllIdeas();
   }
 
   //ReUse: Get Id of logged in user
@@ -48,8 +52,17 @@ class AddIdea extends Component
   getIdea = (id) =>
   {
     API.getIdea(id).then(res => 
-            console.log(res.data), 
+            this.setState({ idea: res.data }, console.log(res.data))
           ).catch(err => console.log(err))
+  };
+
+  getAllIdeas = () =>
+  {
+    API.getAllIdeas().then(res =>
+
+        this.setState({ ideas: res.data }, console.log("all"), console.log(res.data))
+
+        ).catch(err => console.log(err));
   };
 
 
@@ -177,19 +190,12 @@ class AddIdea extends Component
          <div className="row" id="boxbox">
          
                
-                   <div className="form-group" className="col-md-3 ">
-                                          
-                        <img src="css/images/darkroom3.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                        <p className="theTest"> <b>Idea Name</b> Internet</p>
-                        <p> <b>Idea</b> connect with remote users </p>
-                        <p> <b>Why</b> Lots of money </p>
-                      <div className="box">
-                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                           <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
-                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
-                      </div>
-                      
-                   </div>                                                   
+                   <Idea 
+                      Author={this.state.idea.Author}
+                      ideaName={this.state.idea.ideaName}
+                      whatIsIdea={this.state.idea.whatIsIdea}
+                      whyGoodIdea={this.state.idea.whyGoodIdea} 
+                   />                                                  
                     
                  
 

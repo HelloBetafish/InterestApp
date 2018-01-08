@@ -67,9 +67,6 @@ class Login extends Component
         this.setState({ users: res.data, username: "", password: "", title: "", full_name:"", email:"", country:"", skills:"", experience:"", photoURL:"" })
 
         ).catch(err => console.log(err));
-
-    console.log("login");
-
   };
 
   //Function2: Executes when user clicks [Login] button
