@@ -1,21 +1,40 @@
 .people{
-	/*background:#a5c57f;*/
-	/*background: #b1df4c;*/
-	/*background: #81c8c9;*/
-	background: #f9bd05;
-	height: 10%;
+  margin-top: 0px;
+ /* margin-left:25px;*/
+  width:100%;
+  background: #f9bd05;
+  height: 10%;
 }
 
 #texta{
-	text-align: center;
-	padding-top: 15px;
-	color:black;
-	font-weight: bold;
-	font-size:17px;
+  text-align: center;
+  /*padding-top: 15px;*/
+  color:black;
+  font-weight: bold;
+  font-size:17px;
+  padding-top: 10px;
 }
 
 #textb{
-	text-align: center;
-	color:black;
-	font-size:13px;
+  text-align: center;
+  color:black;
+  font-size:15px;
+  margin-bottom: 10px;
 }
+
+.zoom{
+  
+   border-left: solid 0 transparent;
+   z-index:1;
+   box-sizing: border-box;
+   cursor: pointer;
+   backface-visibility: hidden;
+ }
+ 
+ .zoom:hover{
+ 
+   transform: scale(1.5);
+   transition: .3s linear;
+ 
+   z-index: 10000;
+ }

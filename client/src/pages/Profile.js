@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
-import "../style/connectColl.css";
+// import "../style/connectColl.css";
+// import "../style/Profile.css";
 import API from "../utils/API";
 import Col from "../components/Login/Col";
 import Thumbnail from "../components/Thumbnail";
@@ -162,8 +163,10 @@ class Profile extends Component
               <div className="col-md-1"></div>
               <div className="col-md-1">
                 <div tabIndex="1" className="box1">
-                <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
-                <p id="personal">Personal Info</p>
+                  <Link to="/personalinfo">
+                    <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
+                    <p id="personal">Personal Info</p>
+                  </Link>
                 </div>
                 <div tabIndex="2"className="box2">
                 <span id='clickableAwesomeFont'><i className=" fa fa-address-book" data-toggle="modal" data-target=".bs-example-modal-sm" style={{fontSize: "40px", color:"black"}} ></i></span>
