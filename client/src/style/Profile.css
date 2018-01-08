@@ -1,0 +1,141 @@
+#texta{
+  text-align: center;
+  /*padding-top: 15px;*/
+  color:black;
+  font-weight: bold;
+  font-size:17px;
+  padding-top: 10px;
+}
+
+#textb{
+  text-align: center;
+  color:black;
+  font-size:15px;
+  margin-bottom: 10px;
+  
+}
+
+.people{
+  margin-top: 0px;
+ /* margin-left:25px;*/
+  width:100%;
+  background: #f9bd05;
+  height: 10%;
+
+}
+
+/*------------profile-----------------*/
+
+div:focus {
+  background-color:lightgray;
+}
+.box1{
+width:120px; 
+padding-left:15px;
+padding-bottom:10px;
+outline: 1px solid lightgray;
+margin-left:-65px; 
+margin-top:90px;
+}
+#personal{
+font-size:9px;
+margin-left:10px;
+}
+
+.box2{
+width:120px; 
+padding-left:15px;
+padding-bottom:10px;
+outline: 1px solid lightgray;
+margin-left:-65px; 
+
+
+}
+
+#contacts{
+font-size:9px;
+margin-left:15px;
+}
+.box3{
+width:120px; 
+padding-left:15px; 
+padding-bottom:10px; 
+outline: 1px solid lightgray;
+margin-left: -37px;
+margin-right:20px;
+margin-top:90px;
+}
+#textmessage{
+font-size: 9px; 
+margin-left:15px; 
+color: black;
+
+}
+.box4{
+width:120px; 
+padding-left:15px;
+padding-bottom:10px;
+outline: 1px solid lightgray;
+margin-left: -37px;
+}
+#textinvitation{
+font-size: 9px; 
+color: black;
+margin-top:-20px; 
+padding-left:20px;
+              
+
+}
+
+.searchprofile{
+
+  height:280px;
+  width: 250px;
+  background-color: #65737e;
+  margin-left:20px;
+  margin-bottom:90px;
+  margin-top: 20px;
+
+}
+#messageprofile{
+
+  height:280px;
+  width: 250px;
+  background-color: #65737e;
+  margin-left:50px;
+  margin-bottom:90px;
+  margin-top:20px;
+
+
+}
+#ideasprofile{
+  height:280px;
+  width: 250px;
+  margin-right:10px;
+  background-color: #65737e;
+  margin-left:60px;
+  margin-bottom:90px;
+  margin-top: 20px;
+
+}
+
+.modal-body{
+  background-color: #e3c721;
+  height: 80%;
+
+}
+.modal-footer{
+  background-color: #e3c721;
+  opacity: 30%;
+}
+
+.modal-content{
+  background-color: #65737e;
+}
+
+.modal-title{
+  font-size:20px;
+  color:white;
+  margin-left:40%;
+
+}

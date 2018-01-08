@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
 import API from "../utils/API";
-import "../style/connectColl.css";
-
-
+import "../style/Profile.css";
 
 class UserProfile extends Component
 {
@@ -46,7 +44,7 @@ class UserProfile extends Component
       <div>
       <Navbar />
 
-      <div id="section1">
+      <div>
           <div id="photo" className="container">
             <div className="row">
               <div className="col-md-1"></div>

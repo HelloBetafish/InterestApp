@@ -26,9 +26,12 @@ class CreateAcct extends Component {
       fromSources:["local_file_system","url","facebook","instagram","googledrive","dropbox"],
       maxSize: 2*1024*1024,
     }).then(function(result) {
+      console.log(JSON.stringify(result.filesUploaded))
       var fileUrl = result.filesUploaded[0].url;
       console.log(fileUrl);
+      
     })
+
   };
 
   render() {

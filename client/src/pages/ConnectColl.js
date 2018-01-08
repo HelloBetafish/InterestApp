@@ -11,17 +11,43 @@ class ConnectColl extends Component {
   state = 
   {
     users: [],
+    otherUsers: [],
+    IdOfSignedUser: ""
   };
 
   componentDidMount() 
   {
-    this.loadUsers();
+    this.loadLoggedUsers();
+    
   }
 
+  //Function1: Get the Id of the user that is signed in
+  loadLoggedUsers = () => 
+  {
+    
+      API.getIdOfLoggedInUser().then(res =>
+        
+        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, this.getUser(res.data[0].IdOfSignedUser) )
+
+        ).catch(err => console.log(err))
+
+  };
+
+  //Function2: use the recently obtained (id) to get user object
+  getUser = (id) =>
+  {
+
+   
+    API.getUser(id).then(res => 
+          this.setState({ user: res.data },  console.log(res.data), this.loadUsers() )
+          ).catch(err => console.log(err))
+  };
+
+  // Function3: load other users
   loadUsers = () => 
   {
     API.getUsers()
-      .then(res =>
+      .then( res =>
         this.setState({ users: res.data})
         ).
         catch(err => console.log(err));
@@ -77,7 +103,8 @@ class ConnectColl extends Component {
       </div>
 
     <Row>
-      {this.state.users.map(card => (
+      {this.state.users.filter(user => user._id != this.state.IdOfSignedUser)
+      .map(card => (
         <Col size="md-3" className="zoom">
           <ImgCard
             photoURL={card.photoURL}
@@ -90,69 +117,6 @@ class ConnectColl extends Component {
         </Col>
       ))}
     </Row>
-
-
-  <Row>
-    <Col size="md-3" className="zoom">
-      <div className="img-thumbnail">
-        <img src="css/images/bethany.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-        <div className="people">
-          <p id="texta">Bethany</p> 
-          <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p> 
-        </div>   
-      </div>
-      <AddContactBtn handleClick={this.handleClick}/>
-    </Col>
-
-    <Col size="md-3" className="zoom">
-            
-
-             
-                <div className="img-thumbnail">
-                      <img src="css/images/tj.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-                    <div className="people">
-                        <p id="texta">TJ</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
-                    </div>   
-                </div>
-                <AddContactBtn handleClick={this.handleClick}/>
-              
-
-    </Col>
-
-    <Col size="md-3" className="zoom">
-            
-
-             
-                <div className="img-thumbnail">
-                      <img src="css/images/john.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-                    <div className="people">
-                        <p id="texta">John</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
-                    </div>   
-                </div>
-                <AddContactBtn handleClick={this.handleClick}/>
-              
-
-    </Col>
-
-  
-    <Col size="md-3" className="zoom">
-            
-
-             
-                <div className="img-thumbnail">
-                      <img src="css/images/Jesse1.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-                    <div className="people">
-                        <p id="texta">Jesse</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
-                    </div>   
-                </div>
-                <AddContactBtn handleClick={this.handleClick}/>
-              
-
-    </Col>
-  </Row>
 </div>
 
 
@@ -163,9 +127,9 @@ class ConnectColl extends Component {
 
 
                 <div className="img-thumbnail" style={{marginTop:"-5px"}}>
-                      <img src="css/images/reyna2.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
+                      <img src="css/images/john.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
                     <div className="people">
-                        <p id="texta">Reyna</p> 
+                        <p id="texta">John</p> 
                         <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
                     </div>   
                 </div>
