@@ -8,6 +8,7 @@ export default
 		return axios.get("/api/users");
 	},
 
+	//Find user inside user DB by passing in (id) parameter.
 	getUser: function(id) 
   	{
     	return axios.get("/api/signin/" + id);
@@ -40,14 +41,28 @@ export default
     },
 
 
-    //Profile: Get id that stored in (signins) collection
+    //Profile: Get id that stored in collection (signins)'s field IdOfSignUser 
     getIdOfLoggedInUser: function()
     {
     	return axios.get("/api/signin");
     },
+
+    //adds the idea field inside (user) collection
+    addField: function(id)
+    {
+    	return axios.get("/api/idea/" + id);
+    },
+
+    // Saves a user to the database
+  	saveIdea: function(id, ideaData) 
+  	{
+
+    	return axios.post("/api/idea/" + id, ideaData);
+  	},
+
+
     
     // For Filestack API
-
     uploadPhoto: function()
     {
 

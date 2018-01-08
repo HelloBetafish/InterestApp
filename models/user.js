@@ -64,6 +64,12 @@ const userSchema = new Schema({
   {
     type: String,
     default: "css/images/addphoto.png"
+  },
+
+  idea: 
+  {
+    type: Schema.Types.ObjectId,
+    ref: "Idea"
   }
 });
 
