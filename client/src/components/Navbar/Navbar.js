@@ -27,7 +27,7 @@ const Navbar = props =>
         </li>
         <li className = "nav-item" 
           className={window.location.pathname === "/connect&collaborate" ? "active" : ""}>
-          <Link to="/connect&collaborate" className="nav-link" >Connect or Collaborate</Link>
+          <Link to="/connect&collaborate" className="nav-link" >Connect & Collaborate</Link>
         </li>
         <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
           <Link to="/messages" className="nav-link">Message Box</Link>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () =>
@@ -9,7 +10,7 @@ const Footer = () =>
         <p className="text-left">InterestApp , Gilbert AZ  </p>
       </div>
       <div className='col-md-6'>
-        <p className="text-right">Privacy | Android App | help | contact us</p>
+        <p className="text-right">Privacy | Android App | help | <Link to="/meetus">contact us</Link></p>
       </div>
     </div>
   </div>
