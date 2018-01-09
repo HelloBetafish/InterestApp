@@ -78,7 +78,7 @@ mongoose.Promise = global.Promise;
  },
 
  {
-  username: "Jen605",
+  username: "Jen606",
   password: "U2FsdGVkX1+jqZJflJwT8lb+PykvPm3dWFIOVF6bCSU=",
   title: "Lawyer",
   full_name: "Jennifer Rodriguez",
@@ -89,6 +89,32 @@ mongoose.Promise = global.Promise;
   online: false,
   photoURL: "https://i.pinimg.com/736x/aa/3f/f6/aa3ff6d2f13d4b8ae4aec358a51204a4--business-headshots-business-portrait.jpg"
  },
+
+ {
+  username: "Dave707",
+  password: "U2FsdGVkX1+jqZJflJwT8lb+PykvPm3dWFIOVF6bCSU=",
+  title: "CEO",
+  full_name: "Dave Hill",
+  email: "Dave@gmail.com",
+  country: "USA",
+  skills: "Accounting, Business",
+  experience: "35 years",
+  online: false,
+  photoURL: "http://headshotsplano.com/wp-content/uploads/2013/08/38-Dallas-business-headshots.jpg"
+ },
+
+ {
+  username: "Dan808",
+  password: "U2FsdGVkX1+jqZJflJwT8lb+PykvPm3dWFIOVF6bCSU=",
+  title: "Lead Software Engineer",
+  full_name: "Daniel Barns",
+  email: "Dan@gmail.com",
+  country: "USA",
+  skills: "C++, Java",
+  experience: "20 years",
+  online: false,
+  photoURL: "https://ashwrightphotography.com/wp-content/uploads/2016/01/professional-louisville-business-headshots-nashville-15.jpg"
+ }
 
 
 
