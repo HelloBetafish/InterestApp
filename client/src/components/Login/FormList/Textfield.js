@@ -20,8 +20,9 @@ export const Textfield = props => (
         	
   <div className="form-group">
     
-    <input className="form-control" {...props} >
-    </input>
+    <input className="form-control"  {...props} />
+
+    
    
   </div>
 
