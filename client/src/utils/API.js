@@ -67,7 +67,16 @@ export default
     return axios.get("/api/personalinfo/" + id);
   },
 
+  // Document Schema
+  uploadDoc: function(id)
+  {
+    return axios.post("/api/document/" + id);
+  },
 
+  removeDoc: function(id)
+  {
+    return axios.delete("/api/document/" + id);
+  },
     
     // For Filestack API
     uploadPhoto: function()

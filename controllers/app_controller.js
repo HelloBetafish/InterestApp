@@ -133,12 +133,9 @@ module.exports =
   	//Save new idea inside (ideas) collection
   	db.Idea.create(req.body).then(function(dbIdea)
   	{
-
     	//Without this the newly created note field is not inserted inside the particular article
     	//that is found by article(id) inside our mongoDB
     	return db.User.findOneAndUpdate({_id: req.params.id}, {idea: dbIdea._id}, {new: true});
-
-  
   	}).then(function(dbUser)
   	{
   
@@ -149,8 +146,6 @@ module.exports =
   	{
     	res.json(err);
   	});
-
-
   },
 
   //Finds particular idea based on the (id) we pass as parameter
@@ -178,30 +173,56 @@ module.exports =
   	
   },
 
-// For Document Schema
-findDocById: function(req, res) {
-  db.Document
-    .find(req.query)
-    .sort({ date: -1})
-    .then(dbModel)
-},
 
-createDoc: function(req, res) {
+// For Document Schema
+// findDocById: function(req, res) {
+//   db.Document
+//     .find(req.query)
+//     .sort({ date: -1})
+//     .then(dbModel)
+// },
+
+createDoc: function(req, res)
+{
+  //Save new idea inside (ideas) collection
   db.Document
     .create(req.body)
-    .then(dbModel => res.json(dbModel))
-    .catch(err => res.status(422).json(err));
+    .then(function(dbDoc)
+    {
+    //Without this the newly created note field is not inserted inside the particular article
+    //that is found by article(id) inside our mongoDB
+      return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {documents: dbIdea._id}}, {new: true});
+    }).then(function(dbUser)
+  {
+
+    //If we were able to successfully update an Idea, send it back to client
+    res.json(dbUser)
+
+  }).catch(function(err)
+  {
+    res.json(err);
+  });
 },
+
 removeDoc: function(req, res) {
+
+  db.User
+    .findOneAndUpdate({ _id: req.body.UserID }, { $pull: { comments: req.body.DocID } }, { new: true })
+    .then(function(dbDoc) {
+        // If we were able to successfully update an Article, send it back to the client
+        res.json(dbDoc);
+        console.log("Doc succesfully removed from User!");
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+
   db.Document
     .findById({ _id: req.params.id })
     .then(dbModel => dbModel.remove())
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 }
-
-
-
-
 
 };
