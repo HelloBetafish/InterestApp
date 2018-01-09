@@ -6,7 +6,7 @@ import API from "../utils/API";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import Idea from "../components/Idea";
 
-class AddIdea extends Component
+class PublicProfile extends Component
 {
   state = 
   {
@@ -288,41 +288,9 @@ class AddIdea extends Component
           </div>
 
 
-
- 
-        
-               
-
-  
-
-         
-        
-
-            
-                
-          
-
-
-                
-        
-
-
-
-
-  
-
 );
 
 }
 }
 
-
-
-
-  
-
-
-
- 
-
-export default AddIdea;
+export default PublicProfile;
