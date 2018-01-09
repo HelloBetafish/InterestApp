@@ -4,7 +4,7 @@ import "./ImgCard.css";
 
 const ImgCard = props => (
 
-  <div className="img-thumbnail zoom">
+  <div className="img-thumbnail zoom" >
     <img src={props.photoURL} alt="Profile Pic" width="150" height="150" style={{marginLeft:"45px"}}/>
       <div className="people">
         <p id="texta">{props.full_name}</p> 

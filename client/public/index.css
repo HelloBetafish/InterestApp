@@ -32,7 +32,6 @@
   
     transform: scale(1.5);
     transition: .3s linear;
-  
     z-index: 10000;
   }
   
