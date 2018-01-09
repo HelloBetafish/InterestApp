@@ -165,9 +165,9 @@ class Dashboard extends Component
               <div className="col-md-1"></div>
               <div className="col-md-1">
                 <div tabIndex="1" className="box1">
-                  <Link to="/personalinfo">
+                  <Link to="/publicprofile">
                     <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
-                    <p id="personal">Personal Info</p>
+                    <p id="personal">Public Profile</p>
                   </Link>
                 </div>
                 <div tabIndex="2"className="box2">
