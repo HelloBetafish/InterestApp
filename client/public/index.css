@@ -346,24 +346,7 @@
 
   .navbar {
     height: 70px;
-  /*.nav li{
-      float: left;
-      width: 20%;
-  }
-  */
-  /*.nav{
-   display: table;
-   text-align: center;
-   width: 100%
   
-  }
-  .nav ul{
-   display: table-row;
-  }
-  
-  .nav li {
-   display: table-cell;
-  }*/
   .input-group{
     padding-top: 12px;
   
