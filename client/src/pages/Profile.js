@@ -9,8 +9,6 @@ import Col from "../components/Login/Col";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 
 
-
-
 class Profile extends Component
 {
   state = 

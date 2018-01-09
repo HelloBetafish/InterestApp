@@ -2,25 +2,84 @@ import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
+import "../style/connectColl.css";
+// import "../style/Profile.css";
 import API from "../utils/API";
-import "../style/Profile.css";
+import Col from "../components/Login/Col";
+import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 
-class UserProfile extends Component
+
+class Dashboard extends Component
 {
-   state = 
+  state = 
   {
-    logInUser: {}
+    user: {},
+    IdOfSignedUser: "",
+
+    //For (idea) collection
+    ideaName: "",
+    whatIsIdea: "",
+    whyGoodIdea: "",
+    photo: "",
+    Author: ""
+ 
+  }
+
+  componentDidMount() 
+  {
+
+      // Code for Google Custom Search 
+    //   const embedcode = `<script>
+    //   (function() {
+    //     var cx = '012846532156912947869:kzgtinco-hg';
+    //     var gcse = document.createElement('script');
+    //     gcse.type = 'text/javascript';
+    //     gcse.async = true;
+    //     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    //     var s = document.getElementsByTagName('script')[0];
+    //     s.parentNode.insertBefore(gcse, s);
+    //   })();
+    // </script>
+    //   <gcse:search></gcse:search>`
+    //   document.getElementById("gsearch").innerHTML = embedcode;
+    // Code for div would go under render() and return ()
+    // <div id='gsearch'>
+    // </div>
+      
+    
+      
+
+      this.loadLoggedUsers();
+      
+  }
+
+
+  
+
+  //Function1: Get the Id of the user that is signed in
+  loadLoggedUsers = () => 
+  {
+    
+      API.getIdOfLoggedInUser().then(res =>
+        
+        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, this.getUser(res.data[0].IdOfSignedUser) )
+
+        ).catch(err => console.log(err))
+
+  };
+  
+  //Function2: use the recently obtained (id) to get user object
+  getUser = (id) =>
+  {
+
+   
+    API.getUser(id).then(res => 
+          this.setState({ user: res.data },  console.log(res.data) )
+          ).catch(err => console.log(err))
   };
 
-    componentDidMount() 
-    {
-      API.getUser(this.props.match.params.id)
-      .then(res =>
-        this.setState({ logInUser: res.data})
-        ).
-        catch(err => console.log(err));
-    }
-  
+
+    
     uploadFile = (event) => {
       const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
       filestack.pick({
@@ -37,30 +96,88 @@ class UserProfile extends Component
       })
     };
 
+  handleInputChange = event => 
+  {
+
+    const { name, value } = event.target;
+
+
+    console.log("name");
+    console.log(name);
+    console.log("value");
+    console.log(value);
+
+    this.setState({
+
+      [name]: value
+
+    });
+
+  };
+
+  //creates an (idea) field inside of (users) collection
+  addIdeaField = event =>
+  {
+
+     API.addField(this.state.IdOfSignedUser).then(res => 
+          console.log("add field"),
+          ).catch(err => console.log(err))
+  };
+
+  addIdea = event =>
+  {
+    event.preventDefault();
+
+      //Ensure users enter all data
+      if(this.state.ideaName && this.state.whatIsIdea && this.state.whyGoodIdea)
+      {
+        console.log("works");
+        
+         API.saveIdea(this.state.IdOfSignedUser, 
+
+         { 
+
+          ideaName: this.state.ideaName,
+          whatIsIdea: this.state.whatIsIdea,
+          whyGoodIdea: this.state.whyGoodIdea,
+          Author: this.state.user.full_name
+        
+
+         }).then(res => console.log(res.data))
+
+          .catch(err => console.log(err));
+
+      }
+  };
+
+  
+
     render()
     {
-      
+  
       return(
       <div>
       <Navbar />
 
-      <div>
+      <div id="section1">
           <div id="photo" className="container">
             <div className="row">
               <div className="col-md-1"></div>
               <div className="col-md-1">
                 <div tabIndex="1" className="box1">
-                <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
-                <p id="personal">Personal Info</p>
+                  <Link to="/publicprofile">
+                    <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
+                    <p id="personal">Public Profile</p>
+                  </Link>
                 </div>
                 <div tabIndex="2"className="box2">
                 <span id='clickableAwesomeFont'><i className=" fa fa-address-book" data-toggle="modal" data-target=".bs-example-modal-sm" style={{fontSize: "40px", color:"black"}} ></i></span>
                 <p id="contacts">Contacts</p>
                 </div>
               </div>
-                       
 
-              <div className="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+
+<div className="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                 <div className="modal-dialog" role="document">
                   <div className="modal-body"style={{backgroundColor:" #343d46"}}>
                     <div className="modal-header">
@@ -124,9 +241,6 @@ class UserProfile extends Component
                 </div>
               </div>
 
-              
-                           
-
 
               <div className="col-md-2">
               
@@ -136,9 +250,6 @@ class UserProfile extends Component
                     <p id="textmessage" >Messages</p>
                   </Link>
                 </div>
-
-
-
                 
                 <div tabIndex="4"className="box4">
                 <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold",  marginLeft: "25px",paddingTop:"26px"}}>11</p></span>
@@ -146,22 +257,22 @@ class UserProfile extends Component
                 </div>
               </div>
                 
-              <div className="col-md-4">
-                <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey"}}>
-
-                  <img src={this.state.logInUser.photoURL} width="200" height="200" style={{marginLeft: "70px"}}/>
-                  <div className="caption">
-                    <p id="text">{this.state.logInUser.full_name}</p> 
-                    <p id="text2">{this.state.logInUser.title} <br/> {this.state.logInUser.skills} <br/></p>
-                  </div>
-
-                </div>
-              </div>
+              <Col size="md-4">
+                <Thumbnail 
+                    
+                        full_name={this.state.user.full_name} 
+                        photoURL={this.state.user.photoURL}
+                        skills={this.state.user.skills}
+                        style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
+                />
+            
+              </Col>
+             
 
               <div className="col-md-1"></div>
               <div className="col-md-3">
                 <button id="btn1" type="button" className="btn btn-danger">Recent Activity</button>
-                <button type="button" className="btn btn-danger" onClick={this.uploadFile}>Portfolios link</button> 
+                <button type="button" className="btn btn-danger" onClick={this.uploadFile}>Upload Files</button> 
                 <div id="docUpload">
                 </div>
               </div>
@@ -189,6 +300,7 @@ class UserProfile extends Component
                       </p> 
                     </div>
                   </div>
+
                   <div className="col-md-4">
                     <div id="messageprofile"style={{boxShadow: "9px 9px 20px grey"}}>
                       <span id='clickableAwesomeFont'>
@@ -200,9 +312,10 @@ class UserProfile extends Component
                       <p id="messagep">Keep your messages organized</p>
                     </div>
                   </div>
+
                   <div className="col-md-4 ">
                     <div id="ideasprofile"style={{boxShadow: "9px 9px 20px grey"}}>
-                      <span id='clickableAwesomeFont'><i className="fa fa-lightbulb-o fa-4x circle-icon" data-toggle="modal" data-target="#exampleModal" style={{fontSize: "40px", color:"red"}}></i></span>
+                      <span id='clickableAwesomeFont'><i onClick={this.addIdeaField} className="fa fa-lightbulb-o fa-4x circle-icon" data-toggle="modal" data-target="#exampleModal" style={{fontSize: "40px", color:"red"}}></i></span>
                       <h2 id="ideas">Add and Keep Ideas</h2>
                       <p id="ideasp">Add as many ideas you have <br/>
                        See how many ideas you have submitted, keep, update or delete them
@@ -225,55 +338,50 @@ class UserProfile extends Component
 
                                              <div className="formName-group">
                                                <label className="col-form-label" for="formGroupExampleInput2"style={{color:"#65737e"}}>Idea's Name</label>
-                                               <input type="text" className="form-control" id="formGroupExampleInput2" placeholder=""/>
+                                               <input type="text" name="ideaName" value={this.state.ideaName} onChange={this.handleInputChange} className="form-control" id="formGroupExampleInput2" placeholder=""/>
                                              </div>
                                           
                                           
                                              <div className="form-group">
                                                <label className="col-form-label" for="formGroupExampleInput" style={{color:"#65737e"}}>What is your idea?</label>
-                                               <input type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
+                                               <input type="text"name="whatIsIdea" value={this.state.whatIsIdea} onChange={this.handleInputChange} className="form-control" id="formGroupExampleInput" placeholder=""/>
                                              </div>
                                               
                                              <div className="form-group">
                                                <label for="exampleFormControlTextarea1"style={{color:"#65737e"}}>Why is a good idea?</label>
-                                               <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                               <textarea className="form-control" name="whyGoodIdea" value={this.state.whyGoodIdea} onChange={this.handleInputChange} id="exampleFormControlTextarea1" rows="3"></textarea>
                                              </div>
                                              <div className="form-group">
                                              
                                               
                                               <img src="css/images/health.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                                              <button id="addideaphoto" type="button" className="btn btn-secondary" style={{marginLeft:"0px",marginTop:"-10px"}}>add photo</button>
 
+                                              <button id="addideaphoto" type="button" className="btn btn-secondary" style={{marginLeft:"0px",marginTop:"10px"}}>add photo</button>
                                            
                                              </div>
                                              
                                             
-
                                             </form>
                                           
                                         </div>
                                         <div className="modal-footer" style={{backgroundColor:" white"}}>
                                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" className="btn btn-danger">save</button>
+                                            <button id="addideaphoto" onClick={this.addIdea} type="submit" className="btn btn-danger">save</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                                                     
-
                      </div>
                    </div>
                  </div>
                </div>
              </div>
-
           </div>
       </section>
     </div>
   </div>
-
     );
-  }
+    }
 }
-
-export default UserProfile; 
+export default Dashboard; 

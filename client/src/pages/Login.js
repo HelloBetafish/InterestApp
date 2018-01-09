@@ -12,7 +12,7 @@ import Navbar from "../components/Login/Navbar";
 import { FormList, Textfield, Select } from "../components/Login/FormList";
 import LoginButton from "../components/Login/LoginButton";
 import SignUpButton from "../components/Login/SignUpButton"
-import Profile from "./Profile";
+import Dashboard from "./Dashboard";
 import CreateAcct from "./CreateAcct";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -110,7 +110,7 @@ class Login extends Component
     if(valid === true)
     {
       
-      window.location.href = "/profile"
+      window.location.href = "/dashboard"
 
      
     }
