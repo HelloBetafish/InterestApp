@@ -1,5 +1,5 @@
-
-/* body
+/*
+ body
 {
 	background: url("images/login3.jpg");
 	background-position: center center;
@@ -9,7 +9,8 @@
 	background-color: #999;
 
 
-} */
+} 
+*/
 
 .fa-search:hover {  
   -webkit-transform: translateY(0px) rotate(360deg);
