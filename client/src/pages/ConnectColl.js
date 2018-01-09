@@ -11,7 +11,6 @@ class ConnectColl extends Component {
   state = 
   {
     users: [],
-    otherUsers: [],
     IdOfSignedUser: ""
   };
 
@@ -118,76 +117,6 @@ class ConnectColl extends Component {
       ))}
     </Row>
 </div>
-
-
-<div id="photo" className="container">
-  <Row>
-   
-    <Col size="md-3" className="zoom">
-
-
-                <div className="img-thumbnail" style={{marginTop:"-5px"}}>
-                      <img src="css/images/john.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-                    <div className="people">
-                        <p id="texta">John</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
-                    </div>   
-                </div>
-                <AddContactBtn handleClick={this.handleClick}/>
-          
-      
-    </Col>
-    <Col size="md-3" className="zoom">
-            
-
-             
-                <div className="img-thumbnail" style={{marginTop:"-5px"}}>
-                      <img src="css/images/Emma.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-                    <div className="people">
-                        <p id="texta">Emma</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
-                    </div>   
-                </div>
-                <AddContactBtn handleClick={this.handleClick}/>
-              
-
-    </Col>
-
-    <Col size="md-3" className="zoom">
-            
-
-             
-                <div className="img-thumbnail" style={{marginTop:"-5px"}}>
-                      <img src="css/images/tim.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-                    <div className="people">
-                        <p id="texta">Tim</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
-                    </div>   
-                </div>
-                <AddContactBtn handleClick={this.handleClick}/>
-              
-
-    </Col>
-
-  
-    <Col size="md-3" className="zoom">
-            
-
-             
-                <div className="img-thumbnail" style={{marginTop:"-5px"}}>
-                      <img src="css/images/zac.jpg" width="150" height="150" style={{marginLeft:"45px"}}/>
-                    <div className="people">
-                        <p id="texta">Zac</p> 
-                        <p id="textb">Web Developer <br/> Front and Back end <br/> MEETUP APPLICATION </p>
-                    </div>   
-                </div>
-                <AddContactBtn handleClick={this.handleClick}/>
-              
-
-    </Col>
-  </Row>
-</div>
-
 
 <section id="services">
  <div className="container">
