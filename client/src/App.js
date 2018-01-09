@@ -20,7 +20,7 @@ const App = () =>
       <Wrapper>
       	<Route exact path="/" component={Login} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/profile/:id" component={UserProfile} />
+        <Route exact path="/profile/:id" component={Profile} />
         <Route exact path="/messages" component={Messages} />
         <Route exact path="/connect&collaborate" component={ConnectColl} />
         <Route exact path="/personalinfo" component={PersonalInfo} />

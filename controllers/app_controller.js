@@ -28,7 +28,8 @@ module.exports =
     
    },
 
-  //profile:
+  //Profile: Searches for user by using (id) we pass as parameter and returns user object form mongoDB
+  //Connect&Collaborate: retrieves all users in DB and displays each one.
   findById: function(req, res) 
   {
      db.User
@@ -78,20 +79,24 @@ module.exports =
    
   },
 
+  //Returns the signins object from db to obtain the field (IdOfSignUser)
+  //which implies that this id belongs to a signed in user. 
   findId: function(req, res) 
   {
-  	/*
+  	
     db.Signin
-      .find(req.query)
+      .find()
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))						
       .catch(err => res.status(422).json(err));
-     */
-
-
-      db.Signin.find(req.query).sort({ date: -1 }).then(function(dbModel)
+      
+     
+      /*
+      //dbModel is an array of signin objects stored inside mongoDB
+      db.Signin.find().sort({ date: -1 }).then(function(dbModel)
       {
-      	
+      	console.log("signed user");
+      	console.log(dbModel);
       	res.json(dbModel);
 
       }).catch(function(err)
@@ -100,9 +105,110 @@ module.exports =
       	res.status(422).json(err);
 
       });
+      */
+      
   },
 
+  //Profile: Adds the idea field to (user) collection whenever a user saves his/her idea
+  addField: function(req, res)
+  {
 
+  	db.User.findOne({ _id: req.params.id }).populate("idea").then(function(dbIdea)
+  	{	
+  		console.log("populate");
+  		console.log(req.params.id);
+    	
+    	res.json(dbIdea);
+
+  	}).catch(function(err)
+  	{
+  		
+    	res.json(err);
+  	});
+
+  },
+
+  addIdea: function(req, res)
+  {
+  	//Save new idea inside (ideas) collection
+  	db.Idea.create(req.body).then(function(dbIdea)
+  	{
+
+    	//Without this the newly created note field is not inserted inside the particular article
+    	//that is found by article(id) inside our mongoDB
+    	return db.User.findOneAndUpdate({_id: req.params.id}, {idea: dbIdea._id}, {new: true});
+
+  
+  	}).then(function(dbUser)
+  	{
+  
+    	//If we were able to successfully update an Idea, send it back to client
+    	res.json(dbUser)
+
+  	}).catch(function(err)
+  	{
+    	res.json(err);
+  	});
+
+
+  },
+
+  getAllIdeas: function(req, res)
+  {
+  	db.Idea
+      .find(req.query)
+      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))						
+      .catch(err => res.status(422).json(err));
+
+  },
+
+  //Finds particular idea based on the (id) we pass as parameter
+  getIdea: function(req, res)
+  {
+  	
+  	db.Idea
+  	.findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+    
+      
+
+      /*
+      db.Idea.findById(req.params.id).then(function(dbModel)
+      {
+      	console.log("get idea");
+      	console.log(req.params.id);
+      	console.log(dbModel);
+
+      	res.json(dbModel)
+
+      }).catch(err => res.status(422).json(err));
+      */
+  	
+  },
+
+// For Document Schema
+findDocById: function(req, res) {
+  db.Document
+    .find(req.query)
+    .sort({ date: -1})
+    .then(dbModel)
+},
+
+createDoc: function(req, res) {
+  db.Document
+    .create(req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+},
+removeDoc: function(req, res) {
+  db.Document
+    .findById({ _id: req.params.id })
+    .then(dbModel => dbModel.remove())
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+}
 
 
 

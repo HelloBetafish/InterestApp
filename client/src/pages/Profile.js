@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
+// import "../style/Profile.css";
 import API from "../utils/API";
 import Col from "../components/Login/Col";
-import Thumbnail from "../components/Thumbnail";
+import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
+
 
 
 
@@ -14,13 +16,19 @@ class Profile extends Component
   state = 
   {
     user: {},
-    IdOfSignedUser: ""
+    IdOfSignedUser: "",
 
-
+    //For (idea) collection
+    ideaName: "",
+    whatIsIdea: "",
+    whyGoodIdea: "",
+    photo: "",
+    Author: ""
+ 
   }
 
-    componentDidMount() 
-    {
+  componentDidMount() 
+  {
 
       // Code for Google Custom Search 
     //   const embedcode = `<script>
@@ -36,7 +44,7 @@ class Profile extends Component
     // </script>
     //   <gcse:search></gcse:search>`
     //   document.getElementById("gsearch").innerHTML = embedcode;
-// Code for div would go under render() and return ()
+    // Code for div would go under render() and return ()
     // <div id='gsearch'>
     // </div>
       
@@ -45,12 +53,12 @@ class Profile extends Component
 
       this.loadLoggedUsers();
       
-    }
+  }
 
 
   
 
-  //Function1: load users from seedDB.js into mongoDB.
+  //Function1: Get the Id of the user that is signed in
   loadLoggedUsers = () => 
   {
     
@@ -62,14 +70,12 @@ class Profile extends Component
 
   };
   
-
+  //Function2: use the recently obtained (id) to get user object
   getUser = (id) =>
   {
-    console.log("yes");
-    console.log(id);
-    
+
+   
     API.getUser(id).then(res => 
-        
           this.setState({ user: res.data },  console.log(res.data) )
           ).catch(err => console.log(err))
   };
@@ -92,6 +98,60 @@ class Profile extends Component
       })
     };
 
+  handleInputChange = event => 
+  {
+
+    const { name, value } = event.target;
+
+
+    console.log("name");
+    console.log(name);
+    console.log("value");
+    console.log(value);
+
+    this.setState({
+
+      [name]: value
+
+    });
+
+  };
+
+  //creates an (idea) field inside of (users) collection
+  addIdeaField = event =>
+  {
+
+     API.addField(this.state.IdOfSignedUser).then(res => 
+          console.log("add field"),
+          ).catch(err => console.log(err))
+  };
+
+  addIdea = event =>
+  {
+    event.preventDefault();
+
+      //Ensure users enter all data
+      if(this.state.ideaName && this.state.whatIsIdea && this.state.whyGoodIdea)
+      {
+        console.log("works");
+        
+         API.saveIdea(this.state.IdOfSignedUser, 
+
+         { 
+
+          ideaName: this.state.ideaName,
+          whatIsIdea: this.state.whatIsIdea,
+          whyGoodIdea: this.state.whyGoodIdea,
+          Author: this.state.user.full_name
+        
+
+         }).then(res => console.log(res.data))
+
+          .catch(err => console.log(err));
+
+      }
+  };
+
   
 
     render()
@@ -107,8 +167,10 @@ class Profile extends Component
               <div className="col-md-1"></div>
               <div className="col-md-1">
                 <div tabIndex="1" className="box1">
-                <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
-                <p id="personal">Personal Info</p>
+                  <Link to="/personalinfo">
+                    <span id='clickableAwesomeFont'><i className=" fa fa-list" style={{fontSize: "40px", color:"black"}} ></i></span>
+                    <p id="personal">Personal Info</p>
+                  </Link>
                 </div>
                 <div tabIndex="2"className="box2">
                 <span id='clickableAwesomeFont'><i className=" fa fa-address-book" data-toggle="modal" data-target=".bs-example-modal-sm" style={{fontSize: "40px", color:"black"}} ></i></span>
@@ -240,6 +302,7 @@ class Profile extends Component
                       </p> 
                     </div>
                   </div>
+
                   <div className="col-md-4">
                     <div id="messageprofile"style={{boxShadow: "9px 9px 20px grey"}}>
                       <span id='clickableAwesomeFont'>
@@ -251,9 +314,10 @@ class Profile extends Component
                       <p id="messagep">Keep your messages organized</p>
                     </div>
                   </div>
+
                   <div className="col-md-4 ">
                     <div id="ideasprofile"style={{boxShadow: "9px 9px 20px grey"}}>
-                      <span id='clickableAwesomeFont'><i className="fa fa-lightbulb-o fa-4x circle-icon" data-toggle="modal" data-target="#exampleModal" style={{fontSize: "40px", color:"red"}}></i></span>
+                      <span id='clickableAwesomeFont'><i onClick={this.addIdeaField} className="fa fa-lightbulb-o fa-4x circle-icon" data-toggle="modal" data-target="#exampleModal" style={{fontSize: "40px", color:"red"}}></i></span>
                       <h2 id="ideas">Add and Keep Ideas</h2>
                       <p id="ideasp">Add as many ideas you have <br/>
                        See how many ideas you have submitted, keep, update or delete them
@@ -276,23 +340,24 @@ class Profile extends Component
 
                                              <div className="formName-group">
                                                <label className="col-form-label" for="formGroupExampleInput2"style={{color:"#65737e"}}>Idea's Name</label>
-                                               <input type="text" className="form-control" id="formGroupExampleInput2" placeholder=""/>
+                                               <input type="text" name="ideaName" value={this.state.ideaName} onChange={this.handleInputChange} className="form-control" id="formGroupExampleInput2" placeholder=""/>
                                              </div>
                                           
                                           
                                              <div className="form-group">
                                                <label className="col-form-label" for="formGroupExampleInput" style={{color:"#65737e"}}>What is your idea?</label>
-                                               <input type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
+                                               <input type="text"name="whatIsIdea" value={this.state.whatIsIdea} onChange={this.handleInputChange} className="form-control" id="formGroupExampleInput" placeholder=""/>
                                              </div>
                                               
                                              <div className="form-group">
                                                <label for="exampleFormControlTextarea1"style={{color:"#65737e"}}>Why is a good idea?</label>
-                                               <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                               <textarea className="form-control" name="whyGoodIdea" value={this.state.whyGoodIdea} onChange={this.handleInputChange} id="exampleFormControlTextarea1" rows="3"></textarea>
                                              </div>
                                              <div className="form-group">
                                              
                                               
                                               <img src="css/images/health.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
+
                                               <button id="addideaphoto" type="button" className="btn btn-secondary" style={{marginLeft:"0px",marginTop:"10px"}}>add photo</button>
                                            
                                              </div>
@@ -303,7 +368,7 @@ class Profile extends Component
                                         </div>
                                         <div className="modal-footer" style={{backgroundColor:" white"}}>
                                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" className="btn btn-danger">save</button>
+                                            <button id="addideaphoto" onClick={this.addIdea} type="submit" className="btn btn-danger">save</button>
                                         </div>
                                     </div>
                                 </div>

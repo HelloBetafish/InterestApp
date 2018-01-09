@@ -1,8 +1,95 @@
-import React from "react";
+import React, {Component} from "react";
+import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
+import API from "../utils/API";
+import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
+import Idea from "../components/Idea";
 
-const AddIdea = () =>(
+class AddIdea extends Component
+{
+  state = 
+  {
+    user: {},
+    idea: {},
+    ideas: [],
+    IdOfSignedUser: ""
+
+  }
+
+  componentDidMount() 
+  {
+
+      this.loadLoggedUsers();
+      this.getAllIdeas();
+  }
+
+  //ReUse: Get Id of logged in user
+  loadLoggedUsers = () => 
+  {
+    
+      API.getIdOfLoggedInUser().then(res =>
+        
+        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, this.getUser(res.data[0].IdOfSignedUser) )
+
+        ).catch(err => console.log(err))
+
+  };
+
+  //ReUse: We find the signed in user by using the (id) obtained from (signin) collection.
+  //Then we return the object of the signin user. Then obtain (idea)field (id).
+  getUser = (id) =>
+  {
+    
+   
+    API.getUser(id).then(res => 
+          this.setState({ user: res.data }, this.getIdea(res.data.idea) )
+          ).catch(err => console.log(err))
+    
+  };
+  
+  //We use id parameter (associtated with user with idea/id) where the idea (id)
+  //is used to search for the idea object inside (ideas) collection. Then returns idea object.
+  getIdea = (id) =>
+  {
+    API.getIdea(id).then(res => 
+            this.setState({ idea: res.data }, console.log(res.data))
+          ).catch(err => console.log(err))
+  };
+
+
+  getAllIdeas = () =>
+  {
+    API.getAllIdeas().then(res =>
+
+        this.setState({ ideas: res.data }, console.log("all"), console.log(res.data))
+
+        ).catch(err => console.log(err));
+  };
+
+
+  uploadFile = (event) => {
+    const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
+    filestack.pick({
+      accept: [".pdf",".doc",".docx",".docm"],
+      fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
+      maxFiles: 1,
+    }).then(function(result) {
+      console.log(JSON.stringify(result.filesUploaded));
+      var fileUrl = result.filesUploaded[0].url;
+      var fileName = result.filesUploaded[0].filename;
+      console.log(fileName + " " + fileUrl);
+      // Need to write code to send fileName, fileURL, and user ID to database to save.
+      document.getElementById("docUpload").innerHTML += `<p><a href="` + fileUrl + `">` + fileName +`</a></p>`;
+    })
+  };
+
+
+
+ render()
+ {
+  
+  return(
 
 
 <div>
@@ -14,17 +101,17 @@ const AddIdea = () =>(
               <div className="row">
               
               
-              <div className="col-md-3">
-                    <div className="img-thumbnail mx-auto"style={{boxShadow: "1px 9px 20px grey",marginTop:"40px"}}>
+              <div classNe="col-md-3">
 
-                      <img src="css/images/guy.jpeg" width="160" height="160" style={{marginLeft: "45px"}}/>
-                      <div className="caption">
-                        <p id="text">Bruno Smith</p> 
-                        <p id="text2">Web Developer <br/> Front and Back end</p>
-                      </div>
-                      
-                    </div>
-                       <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
+                <Thumbnail2 
+                      full_name={this.state.user.full_name} 
+                       photoURL={this.state.user.photoURL}
+                       skills={this.state.user.skills}
+
+                />
+
+                    
+                      <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
@@ -64,6 +151,7 @@ const AddIdea = () =>(
                    <div className="boardann" style={{height:"100px",width:"100px",backgroundColor: "#65737e",marginTop:"45px",marginLeft:"40px"}}>
                    <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"20px", marginLeft:"30px"}}></i></span>
                    <p style={{color:"white",fontSize: "9px",marginTop:"5px", marginLeft:"10px"}}>private message</p>
+
                    </div>
 
                    <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -99,7 +187,11 @@ const AddIdea = () =>(
                                         </div>
                                     </div>
                                 </div>
-       
+                    <hr/>
+                    <button type="button" className="btn btn-danger" onClick={this.uploadFile} style={{marginTop:"45px",marginLeft:"40px"}}>Upload Files</button> 
+                    <div id="docUpload">
+                      <hr/>
+                    </div>
     
                     
                   </div>
@@ -122,17 +214,12 @@ const AddIdea = () =>(
          <div className="row" id="boxbox">
          
                
-                   <div className="form-group" className="col-md-3 ">
-                                          
-                        <img src="css/images/darkroom3.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                       
-                      <div className="box">
-                         <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                           <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">6</i></span>
-                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
-                      </div>
-                      
-                   </div>                                                   
+                   <Idea 
+                      Author={this.state.idea.Author}
+                      ideaName={this.state.idea.ideaName}
+                      whatIsIdea={this.state.idea.whatIsIdea}
+                      whyGoodIdea={this.state.idea.whyGoodIdea} 
+                   />                                                  
                     
                  
 
@@ -224,7 +311,10 @@ const AddIdea = () =>(
 
   
 
-)
+);
+
+}
+}
 
 
 

@@ -64,7 +64,35 @@ const userSchema = new Schema({
   {
     type: String,
     default: "css/images/addphoto.png"
-  }
+  },
+
+  idea: 
+  {
+    type: Schema.Types.ObjectId,
+    ref: "Idea"
+  },
+  
+  documents: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: "Document"
+    }
+  ],
+
+  contacts: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: "Contact"
+    }
+  ],
+
+  messages: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: "Message"
+    }
+  ]
+
 });
 
 const User = mongoose.model("User", userSchema);

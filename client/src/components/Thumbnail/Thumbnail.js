@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Thumbnail = (props) => 
+export const Thumbnail = props => (
 
 
 	
@@ -18,6 +18,5 @@ export const Thumbnail = (props) =>
                 </div>
 
 
-
+)
         
-export default Thumbnail;

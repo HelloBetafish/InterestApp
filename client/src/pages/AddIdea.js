@@ -1,9 +1,19 @@
-import React from "react";
+import React, {Component} from "react";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 
-const AddIdea = () =>(
 
+class AddIdea extends Component
+{
+
+
+
+
+
+ render()
+ {
+  
+  return(
 
 <div>
 <Navbar />
@@ -38,7 +48,7 @@ const AddIdea = () =>(
                          
                            <p id="text3">Sarah Lee <br/>Hi, I would to know more about your application, I am interested in working with you</p>
                           
-                           <p id="text4">Joshua Phils <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
+                           <p id="text4">Joshua Phils <br/>o, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
                          
                            <p id="text4">Zac Parker <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
                          
@@ -191,7 +201,9 @@ const AddIdea = () =>(
 </div>
 </div>
 
-)
+);
+}
+}
 
 
 
