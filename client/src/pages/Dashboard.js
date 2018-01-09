@@ -270,9 +270,14 @@ class Dashboard extends Component
              
 
               <div className="col-md-1"></div>
-              <div className="col-md-3">
-                <button id="btn1" type="button" className="btn btn-danger">Recent Activity</button>
-                <button type="button" className="btn btn-danger" onClick={this.uploadFile}>Upload Files</button> 
+              <div className="col-md-3" style={{marginTop:"100px",marginLeft:"-30px"}}>
+                 <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
+                      <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
+                      <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
+                      <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
+                      <span id='clickableAwesomeFont'><i className="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
+
+                <button type="button" className="btn btn-danger"  onClick={this.uploadFile} style={{marginLeft:"70px"}}>Upload Files</button> 
                 <div id="docUpload">
                 </div>
               </div>
