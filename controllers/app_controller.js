@@ -148,6 +148,16 @@ module.exports =
   	});
   },
 
+  getAllIdeas: function(req, res)
+  {
+  	db.Idea
+      .find(req.query)
+      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))						
+      .catch(err => res.status(422).json(err));
+
+  },
+
   //Finds particular idea based on the (id) we pass as parameter
   getIdea: function(req, res)
   {

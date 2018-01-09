@@ -6,7 +6,8 @@ router.route("/:id")
 .post(appController.addIdea);
 
 router.route("/")
-.get(appController.getIdea);
+.get(appController.getAllIdeas);
+
 
 
 
