@@ -188,9 +188,9 @@ class PublicProfile extends Component
                                     </div>
                                 </div>
                     <hr/>
-                    <button type="button" className="btn btn-danger" onClick={this.uploadFile} style={{marginTop:"45px",marginLeft:"40px"}}>Upload Files</button> 
-                    <div id="docUpload">
-                      <hr/>
+                    <h6 >(Display Files here)</h6> 
+                    <div id="docUpload" style={{marginTop:"45px",marginLeft:"40px"}}>
+
                     </div>
     
                     

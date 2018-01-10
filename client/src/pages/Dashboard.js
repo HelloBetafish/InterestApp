@@ -15,15 +15,24 @@ class Dashboard extends Component
   {
     user: {},
     IdOfSignedUser: "",
-
+ 
     //For (idea) collection
     ideaName: "",
     whatIsIdea: "",
     whyGoodIdea: "",
     photo: "",
-    Author: ""
+    Author: "",
  
-  }
+    // For Document collection
+    options: {
+      accept: [".pdf",".doc",".docx",".docm"],
+      fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
+      maxFiles: 1,
+    },
+
+    fileUrl: "",
+    fileName: ""
+  };
 
   componentDidMount() 
   {
@@ -46,15 +55,9 @@ class Dashboard extends Component
     // <div id='gsearch'>
     // </div>
       
-    
-      
-
       this.loadLoggedUsers();
       
   }
-
-
-  
 
   //Function1: Get the Id of the user that is signed in
   loadLoggedUsers = () => 
@@ -78,23 +81,54 @@ class Dashboard extends Component
           ).catch(err => console.log(err))
   };
 
+    // uploadFile = (event) => {
+    //   // event.preventDefault();
+    //   const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
+    //   var fileUrl = "";
+    //   var fileName = "";
 
-    
-    uploadFile = (event) => {
-      const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
-      filestack.pick({
-        accept: [".pdf",".doc",".docx",".docm"],
-        fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
-        maxFiles: 1,
-      }).then(function(result) {
-        console.log(JSON.stringify(result.filesUploaded));
-        var fileUrl = result.filesUploaded[0].url;
-        var fileName = result.filesUploaded[0].filename;
-        console.log(fileName + " " + fileUrl);
-        // Need to write code to send fileName, fileURL, and user ID to database to save.
-        document.getElementById("docUpload").innerHTML += `<p><a href="` + fileUrl + `">` + fileName +`</a></p>`;
-      })
+    //   filestack.pick({
+    //     accept: [".pdf",".doc",".docx",".docm"],
+    //     fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
+    //     maxFiles: 1,
+    //   }).then(function(result) {
+        
+    //     console.log(JSON.stringify(result.filesUploaded));
+    //     fileUrl = result.filesUploaded[0].url;
+    //     fileName = result.filesUploaded[0].filename;
+    //     console.log(fileName + " " + fileUrl);
+    //     // Need to write code to send fileName, fileURL, and user ID to database to save.
+    //     document.getElementById("docUpload").innerHTML += `<p><a href="` + fileUrl + `">` + fileName +`</a></p>`;
+    //     // this.setState({fileName: result.filesUploaded[0].url, fileUrl: result.filesUploaded[0].filename});
+    //   });
+    //   this.setState({fileUrl: fileUrl, fileName: fileName});
+    //   this.addDocument();
+    // };
+
+    callbackFunction = (result) => {
+      const fileUrl = result.filesUploaded[0].url;
+      const fileName = result.filesUploaded[0].filename;
+      this.setState({fileUrl: result.filesUploaded[0].url, fileName: result.filesUploaded[0].filename});
+      this.addDocument();
+      console.log("fileUrl: " + fileUrl + " fileName: " + fileName);
+      console.log("Success!");
     };
+  
+    addDocument = () => {
+      
+        console.log("current fileName: " + this.state.fileName + "current fileUrl" + this.state.fileUrl + " " +
+      "logged in user: " + this.state.IdOfSignedUser);
+  
+        API.saveFile(this.state.IdOfSignedUser,
+          { 
+            fileName: this.state.fileName,
+            fileUrl: this.state.fileUrl,
+            userId: this.state.IdOfSignedUser
+            }).then(res => console.log("Success again!"))
+            .catch(err => console.log(err));
+        this.getUser(this.state.IdOfSignedUser);
+    };
+    
 
   handleInputChange = event => 
   {
@@ -121,7 +155,7 @@ class Dashboard extends Component
 
      API.addField(this.state.IdOfSignedUser).then(res => 
           console.log("add field"),
-          ).catch(err => console.log(err))
+          ).catch(err => console.log(err));
   };
 
   addIdea = event =>
@@ -149,6 +183,7 @@ class Dashboard extends Component
 
       }
   };
+
 
   
 
@@ -272,7 +307,13 @@ class Dashboard extends Component
               <div className="col-md-1"></div>
               <div className="col-md-3">
                 <button id="btn1" type="button" className="btn btn-danger">Recent Activity</button>
-                <button type="button" className="btn btn-danger" onClick={this.uploadFile}>Upload Files</button> 
+                <ReactFilestack
+                  apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
+                  buttonText="Upload Files"
+                  buttonClass="classname"
+                  options={this.state.options}
+                  onSuccess={this.callbackFunction}/>
+                  
                 <div id="docUpload">
                 </div>
               </div>

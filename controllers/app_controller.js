@@ -135,7 +135,7 @@ module.exports =
   	{
     	//Without this the newly created note field is not inserted inside the particular article
     	//that is found by article(id) inside our mongoDB
-    	return db.User.findOneAndUpdate({_id: req.params.id}, {idea: dbIdea._id}, {new: true});
+    	return db.User.findOneAndUpdate({_id: req.params.id}, {$push:{idea: dbIdea._id}}, {new: true});
   	}).then(function(dbUser)
   	{
   
@@ -184,7 +184,7 @@ module.exports =
   },
 
 
-// For Document Schema
+// For File Schema
 // findDocById: function(req, res) {
 //   db.Document
 //     .find(req.query)
@@ -192,19 +192,16 @@ module.exports =
 //     .then(dbModel)
 // },
 
-createDoc: function(req, res)
+createFile: function(req, res)
 {
-  //Save new idea inside (ideas) collection
-  db.Document
-    .create(req.body)
-    .then(function(dbDoc)
+  //Save new doc inside (documents) collection
+  db.File.create(req.body).then(function(dbFile)
     {
     //Without this the newly created note field is not inserted inside the particular article
     //that is found by article(id) inside our mongoDB
-      return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {documents: dbIdea._id}}, {new: true});
+      return db.User.findOneAndUpdate({_id: req.params.id}, {$push:{file: dbFile._id}}, {new: true});
     }).then(function(dbUser)
   {
-
     //If we were able to successfully update an Idea, send it back to client
     res.json(dbUser)
 
@@ -214,10 +211,10 @@ createDoc: function(req, res)
   });
 },
 
-removeDoc: function(req, res) {
+deleteFile: function(req, res) {
 
   db.User
-    .findOneAndUpdate({ _id: req.body.UserID }, { $pull: { comments: req.body.DocID } }, { new: true })
+    .findOneAndUpdate({ _id: req.body.UserID }, { $pull: { comments: req.body.FileID } }, { new: true })
     .then(function(dbDoc) {
         // If we were able to successfully update an Article, send it back to the client
         res.json(dbDoc);
@@ -228,7 +225,7 @@ removeDoc: function(req, res) {
         res.json(err);
       });
 
-  db.Document
+  db.File
     .findById({ _id: req.params.id })
     .then(dbModel => dbModel.remove())
     .then(dbModel => res.json(dbModel))
