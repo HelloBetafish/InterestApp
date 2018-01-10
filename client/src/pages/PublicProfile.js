@@ -242,6 +242,7 @@ handleInputChange = event =>
                       ideaName={idea.ideaName}
                       whatIsIdea={idea.whatIsIdea}
                       whyGoodIdea={idea.whyGoodIdea} 
+                      photo={idea.photo}
                    />                                                  
                     
                  

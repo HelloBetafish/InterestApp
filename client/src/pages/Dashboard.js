@@ -20,7 +20,7 @@ class Dashboard extends Component
     ideaName: "",
     whatIsIdea: "",
     whyGoodIdea: "",
-    photo: "",
+    ideaphoto: "",
     Author: "",
  
     // For Filestack docs
@@ -153,6 +153,13 @@ console.log(this.state.user.idea.Author);
           ).catch(err => console.log(err));
   };
 
+  callbackFunctionIdeaPhoto = (result) => {
+    this.setState({ideaphoto: result.filesUploaded[0].url});
+    var foto = document.getElementById('stockideaphoto');
+    foto.src = result.filesUploaded[0].url;
+    // console.log(result.filesUploaded[0].url);
+  };
+
   addIdea = event =>
   {
     event.preventDefault();
@@ -169,8 +176,9 @@ console.log(this.state.user.idea.Author);
           ideaName: this.state.ideaName,
           whatIsIdea: this.state.whatIsIdea,
           whyGoodIdea: this.state.whyGoodIdea,
+          photo: this.state.ideaphoto,
           Author: this.state.user.full_name
-        
+
 
          }).then(res => console.log(res.data))
 
@@ -401,10 +409,16 @@ console.log(this.state.user.idea.Author);
                                              <div className="form-group">
                                              
                                               
-                                              <img src="css/images/health.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
+                                              <img id="stockideaphoto" src="css/images/health.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
 
-                                              <button id="addideaphoto" type="button" className="btn btn-secondary" style={{marginLeft:"0px",marginTop:"10px"}}>add photo</button>
-                                           
+                          
+                                              <ReactFilestack
+                                                apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
+                                                buttonText="Add Photo"
+                                                buttonClass="classname"
+                                                options={this.state.optionsP}
+                                                onSuccess={this.callbackFunctionIdeaPhoto}
+                                              />
                                              </div>
                                              
                                             

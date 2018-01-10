@@ -10,7 +10,7 @@ const Idea = props =>
 
 <div className="form-group" className="col-md-3 ">
                                           
-                        <img src="css/images/darkroom3.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
+                        <img src={props.photo} alt="..." className="img-thumbnail" style={{width:"100%"}} />
                         <p > <b>Author: </b> {props.Author} </p>
                         <p className="theTest"> <b>Idea Name: </b> {props.ideaName} </p>
                         <p> <b>Idea: </b> {props.whatIsIdea} </p>

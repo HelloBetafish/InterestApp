@@ -25,7 +25,7 @@ const userSchema = new Schema({
   photo:
   {
   	type: String,
-  	default: ""
+  	default: "css/images/darkroom3.jpg"
   },
 
   Author:
