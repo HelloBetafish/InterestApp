@@ -92,5 +92,11 @@ export default
   removeContact: function(id)
   {
     return axios.delete("/api/contacts/" + id);
+  },
+
+  // Upload profile pic
+  changePhoto: function(id, field)
+  {
+    return axios.put("/api/photo/" + id, field);
   }
 };

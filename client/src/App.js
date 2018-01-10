@@ -8,6 +8,7 @@ import PublicProfile from "./pages/PublicProfile";
 import CreateAcct from "./pages/CreateAcct";
 import Login from "./pages/Login";
 import MeetUs from "./pages/MeetUs";
+import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 
@@ -26,6 +27,7 @@ const App = () =>
         <Route exact path="/publicprofile" component={PublicProfile} />
         <Route exact path="/createaccount" component={CreateAcct} />
         <Route exact path="/meetus" component={MeetUs} />
+        <Route component={NoMatch} />
       </Wrapper>
       <Footer />
     </div>

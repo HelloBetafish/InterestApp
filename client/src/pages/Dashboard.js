@@ -23,15 +23,21 @@ class Dashboard extends Component
     photo: "",
     Author: "",
  
-    // For Document collection
-    options: {
+    // For Filestack docs
+    optionsF: {
       accept: [".pdf",".doc",".docx",".docm"],
       fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
       maxFiles: 1,
     },
+    // For Filestack Photo
+      optionsP: {
+        accept: 'image/*',
+        fromSources:["local_file_system","url","facebook","instagram","googledrive","dropbox"],
+        maxSize: 2*1024*1024
+      },
 
     fileUrl: "",
-    fileName: ""
+    fileName: "",
   };
 
   componentDidMount() 
@@ -81,31 +87,7 @@ class Dashboard extends Component
           ).catch(err => console.log(err))
   };
 
-    // uploadFile = (event) => {
-    //   // event.preventDefault();
-    //   const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
-    //   var fileUrl = "";
-    //   var fileName = "";
-
-    //   filestack.pick({
-    //     accept: [".pdf",".doc",".docx",".docm"],
-    //     fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
-    //     maxFiles: 1,
-    //   }).then(function(result) {
-        
-    //     console.log(JSON.stringify(result.filesUploaded));
-    //     fileUrl = result.filesUploaded[0].url;
-    //     fileName = result.filesUploaded[0].filename;
-    //     console.log(fileName + " " + fileUrl);
-    //     // Need to write code to send fileName, fileURL, and user ID to database to save.
-    //     document.getElementById("docUpload").innerHTML += `<p><a href="` + fileUrl + `">` + fileName +`</a></p>`;
-    //     // this.setState({fileName: result.filesUploaded[0].url, fileUrl: result.filesUploaded[0].filename});
-    //   });
-    //   this.setState({fileUrl: fileUrl, fileName: fileName});
-    //   this.addDocument();
-    // };
-
-    callbackFunction = (result) => {
+    callbackFunctionFiles = (result) => {
       const fileUrl = result.filesUploaded[0].url;
       const fileName = result.filesUploaded[0].filename;
       this.setState({fileUrl: result.filesUploaded[0].url, fileName: result.filesUploaded[0].filename});
@@ -129,6 +111,21 @@ class Dashboard extends Component
         this.getUser(this.state.IdOfSignedUser);
     };
     
+    callbackFunctionPhoto = (result) => {
+      const photoUrl = result.filesUploaded[0].url;
+      console.log(photoUrl);
+      console.log("Success!");
+      this.uploadPhoto(photoUrl);
+    };
+
+    uploadPhoto = (photoUrl) => {
+      API.changePhoto(this.state.IdOfSignedUser,
+        {photoURL: photoUrl
+        }).then(res => console.log(res.data))
+        .catch(err => console.log(err));
+      this.getUser(this.state.IdOfSignedUser);
+    }
+
 
   handleInputChange = event => 
   {
@@ -300,7 +297,13 @@ class Dashboard extends Component
                         skills={this.state.user.skills}
                         style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
                 />
-            
+                <ReactFilestack
+                  apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
+                  buttonText="Upload Profile Pic"
+                  buttonClass="classname"
+                  options={this.state.optionsP}
+                  onSuccess={this.callbackFunctionPhoto}
+                />
               </Col>
              
 
@@ -316,8 +319,8 @@ class Dashboard extends Component
                   apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
                   buttonText="Upload Files"
                   buttonClass="classname"
-                  options={this.state.options}
-                  onSuccess={this.callbackFunction}/>
+                  options={this.state.optionsF}
+                  onSuccess={this.callbackFunctionFiles}/>
 
                   <div id="docUpload">
                   </div>

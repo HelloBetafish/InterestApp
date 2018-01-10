@@ -7,7 +7,7 @@ const Navbar = props =>
  <nav className="navbar navbar-dark bg-dark data-spy-affix navbar-expand-sm">
   <div className="container-fluid">
     <div className="navbar-header">
-      <Link className="navbar-brand" to="/">
+      <Link className="navbar-brand" to="/dashboard">
         InterestApp
       </Link>
     </div>
@@ -36,7 +36,7 @@ const Navbar = props =>
            <Link to="/publicprofile" className="nav-link">Profile</Link>
        </li>
          <li className ="nav-item" className={window.location.pathname === "/createaccount" ? "active" : ""}>
-         <Link to="/createaccount" className="nav-link">Create Account</Link>
+         <Link to="/createaccount" className="nav-link">(Create Account)</Link>
          </li>
       </ul>
       <form className=" form-inline navbar-form navbar-left" action="/action_page.php">

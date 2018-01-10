@@ -109,6 +109,13 @@ module.exports =
       
   },
 
+  updateUserField: function(req,res){
+    db.User
+    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+  },
+
   //Profile: Adds the idea field to (user) collection whenever a user saves his/her idea
   addField: function(req, res)
   {
