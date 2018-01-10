@@ -11,7 +11,7 @@ class PublicProfile extends Component
   state = 
   {
     user: {},
-    idea: {},
+   // idea: {},
     ideas: [],
     IdOfSignedUser: ""
 
@@ -21,7 +21,7 @@ class PublicProfile extends Component
   {
 
       this.loadLoggedUsers();
-      this.getAllIdeas();
+      //this.getAllIdeas();
   }
 
   //ReUse: Get Id of logged in user
@@ -36,28 +36,29 @@ class PublicProfile extends Component
 
   };
 
-  //ReUse: We find the signed in user by using the (id) obtained from (signin) collection.
-  //Then we return the object of the signin user. Then obtain (idea)field (id).
+  //ReUse:  1)We find the signed in user by using the (id) obtained from (signin) collection.
+  //        Then we return the object of the signin user. Then obtain (idea)field (id).
+  //        2)we also obtain signIn user's field (idea) which is an array of idea objects
   getUser = (id) =>
   {
     
    
     API.getUser(id).then(res => 
-          this.setState({ user: res.data }, this.getIdea(res.data.idea) )
+          this.setState({ user: res.data, ideas: res.data.idea })
           ).catch(err => console.log(err))
     
   };
   
   //We use id parameter (associtated with user with idea/id) where the idea (id)
   //is used to search for the idea object inside (ideas) collection. Then returns idea object.
-  getIdea = (id) =>
+  storeUserIdeas = (userIdeas) =>
   {
-    API.getIdea(id).then(res => 
-            this.setState({ idea: res.data }, console.log(res.data))
-          ).catch(err => console.log(err))
+    //store the userIdeas(ideas of logIn user) parameter inside state property 
+    
+    
   };
 
-
+/*
   getAllIdeas = () =>
   {
     API.getAllIdeas().then(res =>
@@ -66,6 +67,21 @@ class PublicProfile extends Component
 
         ).catch(err => console.log(err));
   };
+*/
+handleInputChange = event => 
+{
+
+    const { name, value } = event.target;
+
+      console.log(this.state.ideas);
+
+    this.setState({
+
+      [name]: value
+
+    });
+
+};
 
 
   uploadFile = (event) => {
@@ -133,7 +149,7 @@ class PublicProfile extends Component
                            <p id="text4">Tarra Sanders <br/> Ey Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
 
                           <div className="form-group">
-                         <input style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
+                         <input onChange={this.handleInputChange} style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
                          </div>
                          <button type="button" id="keep" className="btn btn-danger" style={{marginLeft:"330px", marginTop:"5px"}}>delete</button>
                           <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"-65px"}}>post</button>
@@ -213,69 +229,27 @@ class PublicProfile extends Component
       
          <div className="row" id="boxbox">
          
-               
+              
+                   {this.state.ideas.map(idea => (
+
                    <Idea 
-                      Author={this.state.idea.Author}
-                      ideaName={this.state.idea.ideaName}
-                      whatIsIdea={this.state.idea.whatIsIdea}
-                      whyGoodIdea={this.state.idea.whyGoodIdea} 
+                      key={idea.id}
+                      id={idea.id}
+                      Author={idea.Author}
+                      ideaName={idea.ideaName}
+                      whatIsIdea={idea.whatIsIdea}
+                      whyGoodIdea={idea.whyGoodIdea} 
                    />                                                  
                     
                  
-
-
-                
-                
-                   <div className="form-group" className="col-md-3 ">
-                                          
-                        <img src="css/images/sports.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                        
-                      <div className="thumbs-component thumbs thumbs-horizontal animated unrated"style={{color:"black"}}>
-                         <div className="nf-svg-button-wrapper thumb-container thumb-up-container"style={{color:"black"}}>
-                          <a role="link" data-rating="2" tabindex="0" className="nf-svg-button simpleround" style={{color:"black"}}></a>
-                         </div>
-                      </div>
-
-                      <div className="box">
-                        <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        <i className="fa fa-thumbs-up" aria-hidden="true">7</i>
-                        <i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}></i>
-                      </div>
-                      
-                   </div>                                                   
+                    ))}
+                                                
                     
                  
-
-
-                
-                   <div className="form-group" className="col-md-3 ">
-                                          
-                        <img src="css/images/books.png" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                    
-                      <div className="box">
-                        <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">5</i></span>
-                        <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>2</i></span>
-                      </div>
-                      
-                   </div>                                                   
-                    
                 
 
-
-                 
                 
-                   <div className="form-group" className="col-md-3 ">
-                                          
-                        <img src="css/images/healthy.jpg" alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                    
-                      <div className="box">
-                        <p style={{fontSize:"11px"}}>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                        <span className="thumbsup" id='clickableAwesomeFont'><i className="fa fa-thumbs-up" aria-hidden="true">11</i></span>
-                           <span className="thumbsdown" id='clickableAwesomeFont'><i className="fa fa-thumbs-down" aria-hidden="true" style={{marginLeft:"20px"}}>1</i></span>
-                      </div>
-                      
-                   </div>                                                   
+                                                                 
                     
 
               </div> 

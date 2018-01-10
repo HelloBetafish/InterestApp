@@ -68,7 +68,7 @@ const userSchema = new Schema({
 
   idea: 
   {
-    type: Schema.Types.ObjectId,
+    type: Array,
     ref: "Idea"
   },
   
@@ -78,6 +78,7 @@ const userSchema = new Schema({
     ref: "Document"
     }
   ],
+  
 
   contacts: [
     {

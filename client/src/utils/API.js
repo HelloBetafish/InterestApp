@@ -53,7 +53,7 @@ export default
     return axios.get("/api/idea/" + id);
   },
 
-  //Profile: Saves a user to the database
+  //Profile: Saves a idea to the idea field defined in user(collection)
   saveIdea: function(id, ideaData) 
   {
 

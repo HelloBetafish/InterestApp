@@ -135,7 +135,7 @@ module.exports =
   	{
     	//Without this the newly created note field is not inserted inside the particular article
     	//that is found by article(id) inside our mongoDB
-    	return db.User.findOneAndUpdate({_id: req.params.id}, {idea: dbIdea._id}, {new: true});
+    	return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {idea: req.body}}, {new: true});
   	}).then(function(dbUser)
   	{
   
