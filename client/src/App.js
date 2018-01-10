@@ -27,7 +27,7 @@ const App = () =>
         <Route exact path="/publicprofile" component={PublicProfile} />
         <Route exact path="/createaccount" component={CreateAcct} />
         <Route exact path="/meetus" component={MeetUs} />
-        <Route component={NoMatch} />
+        {/* <Route path="/*" component={NoMatch} /> */}
       </Wrapper>
       <Footer />
     </div>
