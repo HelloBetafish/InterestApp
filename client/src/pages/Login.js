@@ -1,6 +1,7 @@
 //NOTE: adding fluid to containter or <Container fluid> causes wider navbar & jumbotron.
 
 import React, {Component} from "react";
+import ReactFilestack, { client } from 'filestack-react';
 import "../components/Login/Login.css";
 import Wrapper from "../components/Login/Wrapper";
 import Jumbotron from "../components/Login/Jumbotron";
@@ -195,6 +196,36 @@ class Login extends Component
 
 
   };
+
+  //TESTING FILESTACK
+
+  //Callback function after user uploads image or document
+  onSuccess = result => 
+  {
+
+    console.log('result', result);
+    console.log('link', result.filesUploaded[0].originalPath);
+
+    //store photolink inside (photoURL) field of (user) collection
+    this.setState({photoURL: result.filesUploaded[0].originalPath})
+
+
+  };
+
+  onError = error => 
+  {
+    console.error('error', error);
+  };
+
+//const basicOptions = {
+  basicOptions = error => 
+  {
+      accept: 'image/*';
+      fromSources: ['facebook', 'gmail', 'github'];
+      maxSize: 1024 * 1024;
+      maxFiles: 3;
+  };
+
 
   
   
@@ -608,7 +639,13 @@ class Login extends Component
                     </SignUpButton>
    
               
-              
+              <ReactFilestack
+                apikey={"AwUejHryDRhegGMzsQDKRz"}
+                buttonText="Upload Photo"
+                buttonClass="classname"
+                options={this.basicOptions}
+              onSuccess={this.onSuccess}
+/>
          
                </Jumbotron>
                 

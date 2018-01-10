@@ -1,4 +1,5 @@
 //"start": "concurrently \"nodemon server.js\" \"npm run client\"",
+//"node server.js"
 
 const express = require("express");
 const method = require("method-override");
