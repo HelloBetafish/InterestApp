@@ -136,10 +136,8 @@ class Dashboard extends Component
     const { name, value } = event.target;
 
 
-    console.log("name");
-    console.log(name);
-    console.log("value");
-    console.log(value);
+    
+console.log(this.state.user.idea.Author);
 
     this.setState({
 

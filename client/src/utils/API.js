@@ -63,6 +63,7 @@ export default
   //PersonalInfo: returns an array of all ideas objects from mongoDB
   getAllIdeas: function()
   {
+
     return axios.get("/api/idea");
   },
 
