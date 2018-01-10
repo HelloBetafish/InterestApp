@@ -13,6 +13,7 @@ class PublicProfile extends Component
     user: {},
    // idea: {},
     ideas: [],
+    ideas2: [],
     IdOfSignedUser: ""
 
   }
@@ -44,7 +45,7 @@ class PublicProfile extends Component
     
    
     API.getUser(id).then(res => 
-          this.setState({ user: res.data, ideas: res.data.idea })
+          this.setState({ user: res.data, ideas: res.data.idea }, console.log(res.data.idea[0]))
           ).catch(err => console.log(err))
     
   };
@@ -63,18 +64,20 @@ class PublicProfile extends Component
   {
     API.getAllIdeas().then(res =>
 
-        this.setState({ ideas: res.data }, console.log("all"), console.log(res.data))
+        this.setState({ ideas2: res.data }, console.log("all"), console.log(res.data))
 
         ).catch(err => console.log(err));
   };
-*/
+  */
+
+
+
 handleInputChange = event => 
 {
 
     const { name, value } = event.target;
 
-      console.log(this.state.ideas);
-
+     
     this.setState({
 
       [name]: value

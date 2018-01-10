@@ -66,11 +66,11 @@ const userSchema = new Schema({
     default: "css/images/addphoto.png"
   },
 
-  idea: [
+  idea: 
   {
     type: Array,
     ref: "Idea"
-  }],
+  },
   
   files: [
     {

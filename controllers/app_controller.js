@@ -140,9 +140,12 @@ module.exports =
   	//Save new idea inside (ideas) collection
   	db.Idea.create(req.body).then(function(dbIdea)
   	{
+
     	//Without this the newly created note field is not inserted inside the particular article
     	//that is found by article(id) inside our mongoDB
     	return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {idea: req.body}}, {new: true});
+
+
 
   
   	}).then(function(dbUser)
@@ -160,7 +163,7 @@ module.exports =
   getAllIdeas: function(req, res)
   {
   	db.Idea
-      .find(req.query)
+      .find()
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))						
       .catch(err => res.status(422).json(err));
