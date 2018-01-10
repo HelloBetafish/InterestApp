@@ -10,13 +10,15 @@ import "../style/connectColl.css";
 class ConnectColl extends Component {
   state = 
   {
+    user: {},
     users: [],
-    IdOfSignedUser: ""
+    IdOfSignedUser: "",
   };
 
   componentDidMount() 
   {
     this.loadLoggedUsers();
+    this.loadUsers();
     
   }
 
@@ -36,9 +38,8 @@ class ConnectColl extends Component {
   getUser = (id) =>
   {
 
-   
     API.getUser(id).then(res => 
-          this.setState({ user: res.data },  console.log(res.data), this.loadUsers() )
+          this.setState({ user: res.data }, console.log(res.data))
           ).catch(err => console.log(err))
   };
 
@@ -53,11 +54,22 @@ class ConnectColl extends Component {
   };
 
   handleClick = (event) => {
-    const cardId = event.target.attributes.getNamedItem("data-id").value;
-    console.log(cardId);
-    console.log()
+    event.preventDefault();
+    const contactId = event.target.attributes.getNamedItem("data-id").value;
+    console.log(contactId);
     // Use ID value to redirect to that person's profile page.
-    // 
+    this.addContact(contactId);
+    
+  };
+
+  addContact = (contactId) => {
+    // if (this.state.guessedCards.indexOf(id) === -1) 
+    API.saveContact(this.state.IdOfSignedUser,
+      { 
+        contactUserId: contactId
+        }).then(res => console.log("Success!"))
+        .catch(err => console.log(err));
+    this.getUser(this.state.IdOfSignedUser);
   };
 
   render() {

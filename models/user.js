@@ -66,16 +66,16 @@ const userSchema = new Schema({
     default: "css/images/addphoto.png"
   },
 
-  idea: 
+  idea: [
   {
     type: Array,
     ref: "Idea"
-  },
+  }],
   
-  documents: [
+  files: [
     {
     type: Schema.Types.ObjectId,
-    ref: "Document"
+    ref: "File"
     }
   ],
   

@@ -73,22 +73,24 @@ export default
   },
 
   // Document Schema
-  uploadDoc: function(id)
+  saveFile: function(id, fileData)
   {
-    return axios.post("/api/document/" + id);
+    return axios.post("/api/file/" + id, fileData);
   },
 
-  removeDoc: function(id)
+  removeFile: function(id)
   {
-    return axios.delete("/api/document/" + id);
+    return axios.delete("/api/file/" + id);
   },
-    
-    // For Filestack API
-    uploadPhoto: function()
-    {
 
-    }
+  // Contact Schema
+  saveContact: function(id, contactData)
+  {
+    return axios.post("/api/contacts/" + id, contactData);
+  },
 
-
-
-}
+  removeContact: function(id)
+  {
+    return axios.delete("/api/contacts/" + id);
+  }
+};

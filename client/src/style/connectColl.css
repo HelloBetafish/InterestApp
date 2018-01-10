@@ -69,7 +69,7 @@ margin-left:10px;
     background-color: #65737e;
     margin-left:20px;
     margin-bottom:90px;
-    margin-top: 50px;
+    margin-top: 90px;
   
   }
   #messageprofile{
@@ -79,7 +79,7 @@ margin-left:10px;
     background-color: #65737e;
     margin-left:50px;
     margin-bottom:90px;
-    margin-top:50px;
+    margin-top:90px;
   
   
   }
@@ -90,7 +90,7 @@ margin-left:10px;
     background-color: #65737e;
     margin-left:60px;
     margin-bottom:90px;
-    margin-top: 50px;
+    margin-top: 90px;
   
   }
 
@@ -207,8 +207,7 @@ margin-left:10px;
   height: 40px;
   width: 40px;
   transition: all 0.15s ease-out 0s;
-  background: #343d46;
-  outline-border: #343d46;
+  
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -224,7 +223,7 @@ margin-left:10px;
 }
 
 .option-input:checked {
-  background: #343d46;
+ 
   outline-color:  white;
 }
 
@@ -335,7 +334,7 @@ label{
 
   #
 
-/*-----------------messageboard-------------------*/
+/*-----------------profile-------------------*/
 .boardann{
   height: 150px;
   width: 200px;
