@@ -212,7 +212,7 @@ class Dashboard extends Component
               </div>
 
 
-<div className="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div className="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                 <div className="modal-dialog" role="document">
                   <div className="modal-body"style={{backgroundColor:" #343d46"}}>
                     <div className="modal-header">
@@ -305,15 +305,6 @@ class Dashboard extends Component
              
 
               <div className="col-md-1"></div>
-              <div className="col-md-3">
-                <button id="btn1" type="button" className="btn btn-danger">Recent Activity</button>
-                <ReactFilestack
-                  apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
-                  buttonText="Upload Files"
-                  buttonClass="classname"
-                  options={this.state.options}
-                  onSuccess={this.callbackFunction}/>
-                  
               <div className="col-md-3" style={{marginTop:"100px",marginLeft:"-30px"}}>
                  <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
@@ -321,9 +312,15 @@ class Dashboard extends Component
                       <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
 
-                <button type="button" className="btn btn-danger"  onClick={this.uploadFile} style={{marginLeft:"70px"}}>Upload Files</button> 
-                <div id="docUpload">
-                </div>
+                  <ReactFilestack
+                  apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
+                  buttonText="Upload Files"
+                  buttonClass="classname"
+                  options={this.state.options}
+                  onSuccess={this.callbackFunction}/>
+
+                  <div id="docUpload">
+                  </div>
               </div>
             </div>
           </div>
