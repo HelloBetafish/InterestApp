@@ -197,12 +197,15 @@ module.exports =
 
 
 // For File Schema
-// findDocById: function(req, res) {
-//   db.Document
-//     .find(req.query)
-//     .sort({ date: -1})
-//     .then(dbModel)
-// },
+popFile: function(req,res){
+  db.User.findOne({ _id: req.params.id }).populate("files").then(function(dbFile)
+  {	
+    res.json(dbFile);
+  }).catch(function(err)
+  {
+    res.json(err);
+  });
+},
 
 createFile: function(req, res)
 {
@@ -226,7 +229,7 @@ createFile: function(req, res)
 deleteFile: function(req, res) {
 
   db.User
-    .findOneAndUpdate({ _id: req.body.UserID }, { $pull: {files: req.body.FileID } }, { new: true })
+    .findOneAndUpdate({ _id: req.params.id }, { $pull: {files: req.body.fileID } }, { new: true })
     .then(function(dbFile) {
         // If we were able to successfully update an Article, send it back to the client
         res.json(dbFile);

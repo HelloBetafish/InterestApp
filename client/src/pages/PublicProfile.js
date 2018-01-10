@@ -5,16 +5,17 @@ import "../style/connectColl.css";
 import API from "../utils/API";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import Idea from "../components/Idea";
+import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 
 class PublicProfile extends Component
 {
   state = 
   {
     user: {},
-   // idea: {},
     ideas: [],
     ideas2: [],
-    IdOfSignedUser: ""
+    IdOfSignedUser: "",
+    files: []
 
   }
 
@@ -43,10 +44,13 @@ class PublicProfile extends Component
   getUser = (id) =>
   {
     
-   
+    API.popFile(id).then(res => 
+      this.setState({ files: res.data.files})
+      ).catch(err => console.log(err));
+
     API.getUser(id).then(res => 
-          this.setState({ user: res.data, ideas: res.data.idea }, console.log(res.data.idea[0]))
-          ).catch(err => console.log(err))
+          this.setState({ user: res.data, ideas: res.data.idea})
+          ).catch(err => console.log(err));
     
   };
   
@@ -70,8 +74,6 @@ class PublicProfile extends Component
   };
   */
 
-
-
 handleInputChange = event => 
 {
 
@@ -85,25 +87,6 @@ handleInputChange = event =>
     });
 
 };
-
-
-  uploadFile = (event) => {
-    const filestack = client.init('AXodQkfA4Soq1kmjeI2Vbz');
-    filestack.pick({
-      accept: [".pdf",".doc",".docx",".docm"],
-      fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
-      maxFiles: 1,
-    }).then(function(result) {
-      console.log(JSON.stringify(result.filesUploaded));
-      var fileUrl = result.filesUploaded[0].url;
-      var fileName = result.filesUploaded[0].filename;
-      console.log(fileName + " " + fileUrl);
-      // Need to write code to send fileName, fileURL, and user ID to database to save.
-      document.getElementById("docUpload").innerHTML += `<p><a href="` + fileUrl + `">` + fileName +`</a></p>`;
-    })
-  };
-
-
 
  render()
  {
@@ -120,11 +103,12 @@ handleInputChange = event =>
               <div className="row">
               
               
-              <div classNe="col-md-3">
+              <div className="col-md-3 text-center">
 
                 <Thumbnail2 
                       full_name={this.state.user.full_name} 
                        photoURL={this.state.user.photoURL}
+                       title={this.state.user.title}
                        skills={this.state.user.skills}
 
                 />
@@ -166,10 +150,10 @@ handleInputChange = event =>
 
                   
 
-                  <div className="col-md-3">
-                   <div className="boardann" style={{height:"100px",width:"100px",backgroundColor: "#65737e",marginTop:"45px",marginLeft:"40px"}}>
-                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"20px", marginLeft:"30px"}}></i></span>
-                   <p style={{color:"white",fontSize: "9px",marginTop:"5px", marginLeft:"10px"}}>private message</p>
+                  <div className="col-md-3 text-center">
+                   <div className="boardann" style={{height:"100px",width:"100px",backgroundColor: "#65737e",marginTop:"45px", margin:"auto"}}>
+                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"20px"}}></i></span>
+                   <p style={{color:"white",fontSize: "9px",marginTop:"5px"}}>private message</p>
 
                    </div>
 
@@ -207,8 +191,19 @@ handleInputChange = event =>
                                     </div>
                                 </div>
                     <hr/>
-                    <h6 >(Display Files here)</h6> 
-                    <div id="docUpload" style={{marginTop:"45px",marginLeft:"40px"}}>
+                     
+                    <div className="text-center">
+                    <h4 className="text-center">Resume/Important Docs</h4>
+                    <hr/>
+                      {this.state.files.map(file => (
+                      
+                      <FileDisplay2
+                      key={file._id}
+                      id={file._id}
+                      fileUrl={file.fileUrl}
+                      fileName={file.fileName}
+                      />
+                      ))}
 
                     </div>
     

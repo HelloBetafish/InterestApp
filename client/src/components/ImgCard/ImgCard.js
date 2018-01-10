@@ -8,7 +8,7 @@ const ImgCard = props => (
     <img src={props.photoURL} alt="Profile Pic" width="150" height="150" style={{marginLeft:"45px"}}/>
       <div className="people">
         <p id="texta">{props.full_name}</p> 
-        <p id="textb">{props.title}<br/>{props.skills}</p> 
+        <p id="textb"><strong>{props.title}</strong><br/>{props.skills}</p> 
       </div>   
   </div>
 );

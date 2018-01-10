@@ -74,6 +74,11 @@ export default
   },
 
   // Document Schema
+  popFile: function(id)
+  {
+    return axios.get("/api/file/" + id);
+  },
+
   saveFile: function(id, fileData)
   {
     return axios.post("/api/file/" + id, fileData);

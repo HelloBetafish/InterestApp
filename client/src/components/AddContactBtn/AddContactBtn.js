@@ -8,7 +8,7 @@ const AddContactBtn = props => (
 
 AddContactBtn.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  id: PropTypes.func.isRequired
+  id: PropTypes.string.isRequired
 };
 
 export default AddContactBtn;

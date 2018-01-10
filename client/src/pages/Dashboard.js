@@ -7,6 +7,8 @@ import "../style/connectColl.css";
 import API from "../utils/API";
 import Col from "../components/Login/Col";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
+import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
+import DeleteBtn from "../components/DeleteBtn";
 
 
 class Dashboard extends Component
@@ -38,6 +40,7 @@ class Dashboard extends Component
 
     fileUrl: "",
     fileName: "",
+    files: []
   };
 
   componentDidMount() 
@@ -80,13 +83,16 @@ class Dashboard extends Component
   //Function2: use the recently obtained (id) to get user object
   getUser = (id) =>
   {
-
+    API.popFile(id).then(res => 
+      this.setState({ files: res.data.files})
+      ).catch(err => console.log(err));
    
     API.getUser(id).then(res => 
           this.setState({ user: res.data },  console.log(res.data) )
           ).catch(err => console.log(err))
   };
 
+  // Filestack callback function for uploading files to user db
     callbackFunctionFiles = (result) => {
       const fileUrl = result.filesUploaded[0].url;
       const fileName = result.filesUploaded[0].filename;
@@ -110,7 +116,19 @@ class Dashboard extends Component
             .catch(err => console.log(err));
         this.getUser(this.state.IdOfSignedUser);
     };
+
+    deleteFile = () => {
+      console.log("in progress");
+    };
     
+    // populateFiles = () => {
+    //   API.popFile(this.state.IdOfSignedUser).then(res => 
+    //     this.setState({ files: res.data }, console.log(this.state.files))
+    //     ).catch(err => console.log(err));
+    //   this.addDocument();
+    // };
+
+    // Filestack callback function for uploading profile pic
     callbackFunctionPhoto = (result) => {
       const photoUrl = result.filesUploaded[0].url;
       console.log(photoUrl);
@@ -153,6 +171,7 @@ console.log(this.state.user.idea.Author);
           ).catch(err => console.log(err));
   };
 
+  // Filestack callback function for uploading photo for idea
   callbackFunctionIdeaPhoto = (result) => {
     this.setState({ideaphoto: result.filesUploaded[0].url});
     var foto = document.getElementById('stockideaphoto');
@@ -280,7 +299,7 @@ console.log(this.state.user.idea.Author);
               </div>
 
 
-              <div className="col-md-2">
+              <Col size="md-2">
               
                 <div tabIndex="3"className="box3">
                   <Link to="/messages">
@@ -293,15 +312,15 @@ console.log(this.state.user.idea.Author);
                 <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold",  marginLeft: "25px",paddingTop:"26px"}}>11</p></span>
                 <p id="textinvitation" >Invitations</p>
                 </div>
-              </div>
+              </Col>
                 
-              <Col size="md-4">
+              <Col size="md-4" className="text-center">
                 <Thumbnail 
-                    
-                        full_name={this.state.user.full_name} 
-                        photoURL={this.state.user.photoURL}
-                        skills={this.state.user.skills}
-                        style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
+                  full_name={this.state.user.full_name} 
+                  photoURL={this.state.user.photoURL}
+                  title={this.state.user.title}
+                  skills={this.state.user.skills}
+                  style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
                 />
                 <ReactFilestack
                   apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
@@ -313,24 +332,40 @@ console.log(this.state.user.idea.Author);
               </Col>
              
 
-              <div className="col-md-1"></div>
-              <div className="col-md-3" style={{marginTop:"100px",marginLeft:"-30px"}}>
+              <Col size="md-1"></Col>
+              <Col size="md-3" style={{marginTop:"100px",marginLeft:"-30px"}}>
                  <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
 
-                  <ReactFilestack
-                  apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
-                  buttonText="Upload Files"
-                  buttonClass="classname"
-                  options={this.state.optionsF}
-                  onSuccess={this.callbackFunctionFiles}/>
+                  
+                <hr/>
+                <div className="text-center">
+                  <h4>Resume/Important Docs</h4>
+                  <hr/>
 
-                  <div id="docUpload">
-                  </div>
-              </div>
+                  {this.state.files.map(file => (
+                    <FileDisplay
+                    key={file._id}
+                    id={file._id}
+                    fileUrl={file.fileUrl}
+                    fileName={file.fileName}
+                    handleClick={this.deleteFile}
+                    ></FileDisplay>
+                  ))}
+
+                  <ReactFilestack
+                    apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
+                    buttonText="Upload Files"
+                    buttonClass="classname"
+                    options={this.state.optionsF}
+                    onSuccess={this.callbackFunctionFiles}
+                  />
+                  <hr/>
+                </div>
+              </Col>
             </div>
           </div>
 
@@ -426,8 +461,9 @@ console.log(this.state.user.idea.Author);
                                           
                                         </div>
                                         <div className="modal-footer" style={{backgroundColor:" white"}}>
+                                            <a href="/publicprofile#addedtitle" style={{marginRight:"150px"}} onclick="$('#exampleModal').modal('dismiss')">← View Your Ideas</a>
                                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button id="addideaphoto" onClick={this.addIdea} type="submit" className="btn btn-danger">save</button>
+                                            <button id="addideaphoto" onClick={this.addIdea} type="submit" className="btn btn-danger">Save</button>
                                         </div>
                                     </div>
                                 </div>

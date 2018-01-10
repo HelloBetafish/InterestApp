@@ -8,9 +8,10 @@ export const Thumbnail = props => (
 
         <img src={props.photoURL} width="200" height="200" style={{marginLeft: "70px"}}/>
            
-           <div className="caption">
+           <div className="caption text-center">
 
                     <p id="text"> {props.full_name} </p> 
+                    <strong> {props.title} </strong> 
                     <p id="text2">{props.skills}</p>
 
             </div>
