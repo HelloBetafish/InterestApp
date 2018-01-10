@@ -108,14 +108,20 @@ class Login extends Component
     //check boolean value to determine if login success
     if(valid === true)
     {
-      
-      window.location.href = "/dashboard"
-
      
+      window.location.href = "/dashboard"
     }
     else
     {
       console.log("Invalid username or password");
+
+      //Display Red error message
+      document.getElementById("error-div").style.display = "block";
+
+      //sorround login & password textbox with red borders
+      document.getElementsByClassName("form-control")[0].style.border = "2px solid red"   //login textfield
+      document.getElementsByClassName("form-control")[1].style.border = "2px solid red"   //password textfield
+
     }
     
   };
@@ -198,11 +204,11 @@ class Login extends Component
     return(
       
     <Wrapper>
-    	<Container>
+      <Container>
 
 
 
-    		<Navbar>
+        <Navbar>
 
           <nav className="navbar navbar-light">
   
@@ -212,13 +218,15 @@ class Login extends Component
             </a>
 
             <a className="navbar-brand" >
+
+            <div id="error-div">Invalid Username or Password!</div>
               
               <Row>
               <Col size="lg-6">
 
                
                 <Textfield 
-                          value = {this.state.username2}
+                          value={this.state.username2}
                           onChange={this.handleInputChange}
                           type="email"
                           name="username2"
@@ -261,15 +269,15 @@ class Login extends Component
           </nav>
         </Navbar>
 
-    		
+        
 
-    			
+          
 
-    				<Row>
+            <Row>
 
-    					<Col size="lg-12">
+              <Col size="lg-12">
 
-    						<Jumbotron>
+                <Jumbotron>
 
                   <Badge />
 
@@ -566,7 +574,6 @@ class Login extends Component
   
                     </select>
              
-
                    <Textfield 
                           value = {this.state.skills}
                           type="text"
@@ -574,28 +581,21 @@ class Login extends Component
                           name="skills"
                           placeholder="skills"
                           id="skills"
-
                     />
-
                     <Textfield 
                           value = {this.state.experience}
                           type="text"
                           onChange={this.handleInputChange}
                           name="experience"
                           placeholder="Experience"
-
-
                     />
-
                     <Textfield 
                           value = {this.state.photoURL}
                           onChange={this.handleInputChange}
                           type="text"
                           name="photoURL"
                           placeholder="Photo Link"
-
                     />
-
                     <SignUpButton
                         disabled={!(this.state.username2 && this.state.password2 && this.state.title && this.state.full_name &&
                                       this.state.email && this.state.country && this.state.skills && this.state.experience)}
@@ -606,25 +606,19 @@ class Login extends Component
                     >
                       SignUp
                     </SignUpButton>
-
    
               
-
               
          
                </Jumbotron>
                 
-    					</Col>
-    				</Row>
-    			</Container>
-    		</Wrapper>
-    	
-
-
-
+              </Col>
+            </Row>
+          </Container>
+        </Wrapper>
+      
     );
     
   }
 }
-
 export default Login;
