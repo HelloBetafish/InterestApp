@@ -72,7 +72,7 @@ const userSchema = new Schema({
     ref: "Idea"
   }],
   
-  file: [
+  files: [
     {
     type: Schema.Types.ObjectId,
     ref: "File"

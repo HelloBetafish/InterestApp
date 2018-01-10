@@ -199,7 +199,7 @@ createFile: function(req, res)
     {
     //Without this the newly created note field is not inserted inside the particular article
     //that is found by article(id) inside our mongoDB
-      return db.User.findOneAndUpdate({_id: req.params.id}, {$push:{file: dbFile._id}}, {new: true});
+      return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {files: dbFile._id}}, {new: true});
     }).then(function(dbUser)
   {
     //If we were able to successfully update an Idea, send it back to client
@@ -214,10 +214,10 @@ createFile: function(req, res)
 deleteFile: function(req, res) {
 
   db.User
-    .findOneAndUpdate({ _id: req.body.UserID }, { $pull: { comments: req.body.FileID } }, { new: true })
-    .then(function(dbDoc) {
+    .findOneAndUpdate({ _id: req.body.UserID }, { $pull: {files: req.body.FileID } }, { new: true })
+    .then(function(dbFile) {
         // If we were able to successfully update an Article, send it back to the client
-        res.json(dbDoc);
+        res.json(dbFile);
         console.log("Doc succesfully removed from User!");
       })
       .catch(function(err) {
@@ -226,6 +226,48 @@ deleteFile: function(req, res) {
       });
 
   db.File
+    .findById({ _id: req.params.id })
+    .then(dbModel => dbModel.remove())
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+},
+
+// For ContactSchema
+
+createContact: function(req, res)
+{
+  //Save new doc inside (documents) collection
+  db.Contact.create(req.body).then(function(dbContact)
+    {
+    //Without this the newly created note field is not inserted inside the particular article
+    //that is found by article(id) inside our mongoDB
+      return db.User.findOneAndUpdate({_id: req.params.id}, {$push:{contacts: dbContact._id}}, {new: true});
+    }).then(function(dbUser)
+  {
+    //If we were able to successfully update an Idea, send it back to client
+    res.json(dbUser)
+
+  }).catch(function(err)
+  {
+    res.json(err);
+  });
+},
+
+deleteContact: function(req, res) {
+
+  db.User
+    .findOneAndUpdate({ _id: req.body.UserID }, { $pull: {contacts: req.body.ContactID } }, { new: true })
+    .then(function(dbContact) {
+        // If we were able to successfully update an Article, send it back to the client
+        res.json(dbContact);
+        console.log("Doc succesfully removed from User!");
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+
+  db.Contact
     .findById({ _id: req.params.id })
     .then(dbModel => dbModel.remove())
     .then(dbModel => res.json(dbModel))

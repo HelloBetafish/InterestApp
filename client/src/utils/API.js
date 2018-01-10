@@ -81,6 +81,16 @@ export default
   removeFile: function(id)
   {
     return axios.delete("/api/file/" + id);
-  }
+  },
 
+  // Contact Schema
+  saveContact: function(id, contactData)
+  {
+    return axios.post("/api/contacts/" + id, contactData);
+  },
+
+  removeContact: function(id)
+  {
+    return axios.delete("/api/contacts/" + id);
+  }
 };

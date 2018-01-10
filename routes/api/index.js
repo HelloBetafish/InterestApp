@@ -5,6 +5,7 @@ const userRoutes3 = require("./idea");
 const userRoutes4 = require("./personalinfo");
 const userRoutes5 = require("./conncoll");
 const userRoutes6 = require("./file");
+const userRoutes7 = require("./contact");
 
 
 // users routes app or router can be used
@@ -22,5 +23,7 @@ router.use("/personalinfo", userRoutes4);
 router.use("/connect&collaborate", userRoutes5);
 
 router.use("/file", userRoutes6);
+
+router.use("/contacts",userRoutes7);
 
 module.exports = router;
