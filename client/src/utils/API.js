@@ -116,6 +116,6 @@ export default
   savePost: function(id, postData)
   {
     return axios.post("/api/post/" + id, postData);
-  },
+  }
 
 };

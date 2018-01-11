@@ -6,9 +6,9 @@ const userSchema  = new Schema({
   body: {
     type: String,
     minLength: 1,
-    maxLength: 150
+    maxLength: 500
   },
- 
+
   senderId: {
     type: String,
     required: true

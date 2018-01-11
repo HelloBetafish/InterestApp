@@ -293,7 +293,7 @@ deleteContact: function(req, res) {
 popPosts: function(req,res){
   db.User.findOne({ _id: req.params.id }).populate("posts").then(function(dbPost)
   {	
-    res.json(dbNote);
+    res.json(dbPost);
   }).catch(function(err)
   {
     res.json(err);

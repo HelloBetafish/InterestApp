@@ -1,11 +1,13 @@
 import React, {Component} from "react";
 import ReactFilestack, { client } from 'filestack-react';
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 import API from "../utils/API";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import Idea from "../components/Idea";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
+import { PostBoard, PostBtn, PostItem, TextArea } from "../components/PostBoard";
 
 class PublicProfile extends Component
 {
@@ -55,7 +57,7 @@ class PublicProfile extends Component
       ).catch(err => console.log(err));
 
     API.getUser(id).then(res => 
-          this.setState({ user: res.data, ideas: res.data.idea})
+          this.setState({ user: res.data, ideas: res.data.idea}, console.log(res.data) )
           ).catch(err => console.log(err));
     
   };
@@ -100,16 +102,16 @@ addPost = event =>
     //Ensure users enter all data
     if(this.state.postBody)
     {
-      console.log(this.state.postBody);
-        // API.savePost(this.state.IdOfSignedUser, 
-        // { 
-        // body: this.state.postBody,
-        // receiverId: this.state.IdOfSignedUser,
-        // senderId: this.state.IdOfSignedUser,
-        // senderName: this.state.user.full_name
-        // }).then(res => console.log(res.data))
-        // .catch(err => console.log(err));
+        API.savePost(this.state.IdOfSignedUser, 
+        { 
+        body: this.state.postBody,
+        senderId: this.state.IdOfSignedUser,
+        senderName: this.state.user.full_name
+        }).then(res => console.log("Post added."))
+        .catch(err => console.log(err));
     }
+    this.setState({ postBody:""});
+    this.getUser(this.state.IdOfSignedUser);
 }
 
  render()
@@ -143,31 +145,43 @@ addPost = event =>
                       <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i class="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-
-
                   </div>
                  
-                      <div className="col-md-6">
-                        <div className="backgroundbox">
-                        
-                         
-                           <p id="text3">Sarah Lee <br/>Hi, I would to know more about your application, I am interested in working with you</p>
-                          
-                           <p id="text4">Joshua Phils <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
-                         
-                           <p id="text4">Zac Parker <br/> Hi Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
-                         
-                           <p id="text4">Tarra Sanders <br/> Ey Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
 
-                          <div className="form-group">
-                         <input value={this.state.postBody} name="postBody" onChange={this.handleInputChange} style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
-                         </div> 
-                          <button type="button" id="keep" onClick={this.addPost} className="btn btn-warning" style={{marginLeft:"425px", marginTop:"5px"}}>post</button>
-                        </div>
+                  <div className="col-md-6">
+                    <PostBoard>
+                      <h3 className="text-center">Leave a message &#8595;</h3>
+                      {this.state.posts.length ? (
+                      <div id="scrollPost">
+                        {this.state.posts.map(post => (
+                          <PostItem 
+                            key={post._id}
+                            senderId={post.senderId}>
+                            From <Link to={"/publicprofile/"}>
+                              {post.senderName}
+                            </Link> :
+                              <hr/>
+                              <p style={{textIndent:"10px"}}>{post.body}</p>
+                              <small style={{float:"right"}}>Note sent: {post.userCreated}</small>
+                          </PostItem>
+                        ))}
                       </div>
-
+                      ) : (
+                        <br/>
+                      )}
+                      
+                        <TextArea
+                        value={this.state.postBody}
+                        onChange={this.handleInputChange}
+                        style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}}
+                        id="textAreaPost" 
+                        name="postBody"
+                        />
+                      <PostBtn
+                        onClick={this.addPost}/>
+                    </PostBoard>
+                  </div>
                   
-
                   <div className="col-md-3 text-center">
                    <div className="boardann" style={{height:"100px",width:"100px",backgroundColor: "#65737e",marginTop:"45px", margin:"auto"}}>
                    <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"20px"}}></i></span>
