@@ -1,4 +1,4 @@
-/*
+
 import React, {Component} from "react";
 import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
@@ -104,4 +104,3 @@ class BrowseIdeas extends Component {
   }
 }
 export default BrowseIdeas;
-*/

@@ -238,7 +238,7 @@ class Login extends Component
     <Wrapper>
       <Container>
 
-
+        <img src="images/login3.jpg" class="img-fluid backgroundImg" alt="Responsive image" />
 
         <Navbar>
 
