@@ -1,2 +1,65 @@
 
-.cd-fixed-bg.cd-bg-2{ background-image: url(“css/images/bulbidea3.jpg”);}
+/*.cd-fixed-bg.cd-bg-2{ background-image: url(“css/images/bulbidea3.jpg”);
+}*/
+
+.carousel-item .img-fluid {
+  width:100%;
+  height:100%;
+}
+ 
+ /*li{
+ 	margin-left: 20pc;
+ }*/
+ #photous{
+ 	margin-left:40%;
+ 	margin-bottom:150px;
+ }
+ .card-title{
+ 	color:black;
+ 	font-weight: bold;
+ 	/*font-size:40px;*/
+ 	font-family: helvetica;
+ 	background-color:orange;
+ 	width: 27.5%;
+ 	margin-left:35.5%;
+ 	padding-top:3px;
+ 	padding-bottom:3px;
+ 	margin-top: 10px;
+ 
+ }
+ .jumbotron{
+ 	height: 20px;
+ 	background: 
+ }
+ .barmeetus{
+ 	background-color:#343d46;
+ 	height: 60px;
+ 	width: 60%;
+ 	margin-left: 20%;
+ }
+
+ .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: white;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
+}
+
+
