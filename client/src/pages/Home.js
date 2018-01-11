@@ -20,6 +20,8 @@ import API from "../utils/API";
 import Badge from "../components/Login/Badge";
 import "../style/Home.css";
 import Encrypt_Decrypt from "../EncryptionDecryption/Encrypt_Decrypt";
+import Footer from "../components/Footer";
+
 
 
 var stack = [];
@@ -234,9 +236,13 @@ class Login extends Component
   {
 
     return(
+
+      
       
     <Wrapper>
       <Container>
+
+      
 
         <img src="images/login3.jpg" class="img-fluid backgroundImg" alt="Responsive image" />
 
