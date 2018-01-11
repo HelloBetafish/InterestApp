@@ -85,7 +85,7 @@ class ConnectColl extends Component {
 
 <Row>
 <Col size="md-12">
-   <h1 id="titleconnections" className="bounceInUp" style={{marginTop:"50px"}}>Connect or Collaborate</h1> 
+   <h1 id="titleconnections" className="bounceInUp" style={{marginTop:"50px"}}>Connect & Collaborate</h1> 
   </Col>
 </Row>
 

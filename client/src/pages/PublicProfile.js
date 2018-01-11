@@ -15,7 +15,8 @@ class PublicProfile extends Component
     ideas: [],
     ideas2: [],
     IdOfSignedUser: "",
-    files: []
+    files: [],
+    posts: []
 
   }
 
@@ -46,6 +47,10 @@ class PublicProfile extends Component
     
     API.popFile(id).then(res => 
       this.setState({ files: res.data.files})
+      ).catch(err => console.log(err));
+
+    API.popPost(id).then(res => 
+      this.setState({ posts: res.data.posts})
       ).catch(err => console.log(err));
 
     API.getUser(id).then(res => 
