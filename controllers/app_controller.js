@@ -287,6 +287,36 @@ deleteContact: function(req, res) {
     .then(dbModel => dbModel.remove())
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
+},
+
+// Calls for MessageBoard Posts on Profile pages
+popPosts: function(req,res){
+  db.User.findOne({ _id: req.params.id }).populate("posts").then(function(dbPost)
+  {	
+    res.json(dbPost);
+  }).catch(function(err)
+  {
+    res.json(err);
+  });
+},
+
+createPost: function(req, res)
+{
+  //Save new doc inside (documents) collection
+  db.Post.create(req.body).then(function(dbPost)
+    {
+    //Without this the newly created note field is not inserted inside the particular article
+    //that is found by article(id) inside our mongoDB
+      return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {posts: dbPost._id}}, {new: true});
+    }).then(function(dbUser)
+  {
+    //If we were able to successfully update an Idea, send it back to client
+    res.json(dbUser)
+
+  }).catch(function(err)
+  {
+    res.json(err);
+  });
 }
 
 };

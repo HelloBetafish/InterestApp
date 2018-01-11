@@ -15,7 +15,8 @@ class PublicProfile extends Component
     ideas: [],
     ideas2: [],
     IdOfSignedUser: "",
-    files: []
+    files: [],
+    posts: []
 
   }
 
@@ -46,6 +47,10 @@ class PublicProfile extends Component
     
     API.popFile(id).then(res => 
       this.setState({ files: res.data.files})
+      ).catch(err => console.log(err));
+
+    API.popPost(id).then(res => 
+      this.setState({ posts: res.data.posts})
       ).catch(err => console.log(err));
 
     API.getUser(id).then(res => 
@@ -138,8 +143,8 @@ handleInputChange = event =>
                           <div className="form-group">
                          <input onChange={this.handleInputChange} style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
                          </div>
-                         <button type="button" id="keep" className="btn btn-danger" style={{marginLeft:"330px", marginTop:"5px"}}>delete</button>
-                          <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"-65px"}}>post</button>
+                         
+                          <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"5px"}}>post</button>
                          
 
 

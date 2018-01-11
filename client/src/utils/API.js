@@ -104,5 +104,17 @@ export default
   changePhoto: function(id, field)
   {
     return axios.put("/api/photo/" + id, field);
-  }
+  },
+
+  // For Posts on Profile page
+  popPost: function(id)
+  {
+    return axios.get("/api/posts/" + id);
+  },
+
+  savePost: function(id, postData)
+  {
+    return axios.post("/api/posts/" + id, postData);
+  },
+
 };

@@ -41,7 +41,7 @@ class MeetUs extends Component
 
 
     <div className="carousel-item">    
-      <img id="photous" src="css/images/reyna.jpg" alt="Reyna" width="320" height="350"style={{marginTop:"20px"}}/>      
+      <img id="photous" src="css/images/reyna.jpg" alt="Reyna" width="300" height="330"style={{marginTop:"20px"}}/>      
       <div className="carousel-caption">
           <h5 className="card-title" style={{fontSize:"20px",textAlign:"center",color:"black"}}>Reyna Perez</h5>
           <h6  style={{marginTop:"20px",color:"white"}}><li>Reyna is a marathon runner, who loves to travel and speaks italian.</li>
