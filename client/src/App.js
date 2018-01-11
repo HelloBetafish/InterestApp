@@ -6,6 +6,7 @@ import Messages from "./pages/Messages";
 import PublicProfile from "./pages/PublicProfile";
 import CreateAcct from "./pages/CreateAcct";
 import BrowseIdeas from "./pages/BrowseIdeas";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import MeetUs from "./pages/MeetUs";
 import NoMatch from "./pages/NoMatch";
@@ -20,7 +21,8 @@ const App = () =>
     <div>
       
       <Wrapper>
-      	<Route exact path="/" component={Login} />
+      	<Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/messages" component={Messages} />
         <Route exact path="/connect&collaborate" component={ConnectColl} />
