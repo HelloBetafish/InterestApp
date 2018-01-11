@@ -28,7 +28,7 @@ class Dashboard extends Component
     // For Filestack docs
     optionsF: {
       accept: [".pdf",".doc",".docx",".docm"],
-      fromSources:["local_file_system", "url","googledrive","dropbox","evernote","onedrive","clouddrive"],
+      fromSources:["local_file_system","url","googledrive","dropbox","evernote","onedrive","clouddrive"],
       maxFiles: 1,
     },
     // For Filestack Photo

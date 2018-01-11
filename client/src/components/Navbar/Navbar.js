@@ -25,19 +25,21 @@ const Navbar = props =>
         <li className ="nav-item" className={window.location.pathname === "/dashboard" ? "active" : ""}>
           <Link to="/dashboard" className="nav-link" >Dashboard</Link>
         </li>
+        <li className ="nav-item" className={window.location.pathname === "/publicprofile" ? "active" : ""}>
+           <Link to="/publicprofile" className="nav-link">Profile</Link>
+        </li>
         <li className = "nav-item" 
           className={window.location.pathname === "/connect&collaborate" ? "active" : ""}>
           <Link to="/connect&collaborate" className="nav-link" >Connect & Collaborate</Link>
         </li>
-        <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
-          <Link to="/messages" className="nav-link">Message Box</Link>
+        <li className = "nav-item" 
+          className={window.location.pathname === "/browseideas" ? "active" : ""}>
+          <Link to="/browseideas" className="nav-link" >Browse Ideas</Link>
         </li>
-        <li className ="nav-item" className={window.location.pathname === "/publicprofile" ? "active" : ""}>
-           <Link to="/publicprofile" className="nav-link">Profile</Link>
-       </li>
-         <li className ="nav-item" className={window.location.pathname === "/createaccount" ? "active" : ""}>
-         <Link to="/createaccount" className="nav-link">(Create Account)</Link>
-         </li>
+        <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+          <Link to="/messages" className="nav-link">Inbox</Link>
+        </li>
+        
       </ul>
       <form className=" form-inline navbar-form navbar-left" action="/action_page.php">
       <div className="input-group">
