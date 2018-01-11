@@ -9,7 +9,7 @@ const userRoutes5 = require("./conncoll");
 const userRoutes6 = require("./file");
 const userRoutes7 = require("./contacts");
 const userRoutes8 = require("./photo");
-const userRoutes9 = require("./note");
+const userRoutes9 = require("./post");
 
 
 // users routes app or router can be used

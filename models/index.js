@@ -5,6 +5,6 @@ module.exports =
   Idea: require("./idea"),
   File: require("./File"),
   Contact: require("./Contact"),
-  Note: require("./Note")
+  Post: require("./Post")
   
 };
