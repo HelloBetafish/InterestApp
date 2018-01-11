@@ -15,7 +15,9 @@ class PublicProfile extends Component
     ideas: [],
     ideas2: [],
     IdOfSignedUser: "",
-    files: []
+    files: [],
+    notes: [],
+    noteBody: ""
 
   }
 
@@ -46,6 +48,10 @@ class PublicProfile extends Component
     
     API.popFile(id).then(res => 
       this.setState({ files: res.data.files})
+      ).catch(err => console.log(err));
+
+    API.popPost(id).then(res => 
+      this.setState({ posts: res.data.posts})
       ).catch(err => console.log(err));
 
     API.getUser(id).then(res => 
@@ -87,6 +93,23 @@ handleInputChange = event =>
     });
 
 };
+
+addNote = event =>
+{
+  event.preventDefault();
+    //Ensure users enter all data
+    if(this.state.noteBody)
+    {
+      console.log("works");
+        API.saveNote(this.state.IdOfSignedUser, 
+        { 
+        body: this.state.noteBody,
+        receiverId: this.state.IdOfSignedUser,
+        senderId: this.state.IdOfSignedUser,
+        senderName: this.state.user.full_name
+        }).then(res => console.log(res.data))
+        .catch(err => console.log(err));
+}
 
  render()
  {
@@ -136,10 +159,12 @@ handleInputChange = event =>
                            <p id="text4">Tarra Sanders <br/> Ey Bruno, I have been working in a new idea that I would like to share with you. when are you available to speak?</p>
 
                           <div className="form-group">
-                         <input onChange={this.handleInputChange} style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
+                         <input value={this.state.noteBody} name="noteBody" onChange={this.handleInputChange} style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
                          </div>
                          <button type="button" id="keep" className="btn btn-danger" style={{marginLeft:"330px", marginTop:"5px"}}>delete</button>
                           <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"-65px"}}>post</button>
+                         
+                          <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"5px"}}>post</button>
                          
 
 

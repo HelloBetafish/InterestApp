@@ -107,15 +107,15 @@ export default
     return axios.put("/api/photo/" + id, field);
   },
 
-  // For Posts on Profile page
-  popPost: function(id)
+  // For Notes on Profile page
+  popNote: function(id)
   {
-    return axios.get("/api/posts/" + id);
+    return axios.get("/api/notes/" + id);
   },
 
-  savePost: function(id, postData)
+  saveNote: function(id, noteData)
   {
-    return axios.post("/api/posts/" + id, postData);
+    return axios.post("/api/notes/" + id, noteData);
   },
 
 };

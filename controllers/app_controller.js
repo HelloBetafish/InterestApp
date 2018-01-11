@@ -289,25 +289,25 @@ deleteContact: function(req, res) {
     .catch(err => res.status(422).json(err));
 },
 
-// Calls for MessageBoard Posts on Profile pages
-popPosts: function(req,res){
-  db.User.findOne({ _id: req.params.id }).populate("posts").then(function(dbPost)
+// Calls for NoteBoard Notes on Profile pages
+popNote: function(req,res){
+  db.User.findOne({ _id: req.params.id }).populate("notes").then(function(dbNote)
   {	
-    res.json(dbPost);
+    res.json(dbNote);
   }).catch(function(err)
   {
     res.json(err);
   });
 },
 
-createPost: function(req, res)
+createNote: function(req, res)
 {
-  //Save new doc inside (documents) collection
-  db.Post.create(req.body).then(function(dbPost)
+  //Save new note inside (notes) collection
+  db.Note.create(req.body).then(function(dbNote)
     {
     //Without this the newly created note field is not inserted inside the particular article
     //that is found by article(id) inside our mongoDB
-      return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {posts: dbPost._id}}, {new: true});
+      return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {notes: dbNote._id}}, {new: true});
     }).then(function(dbUser)
   {
     //If we were able to successfully update an Idea, send it back to client

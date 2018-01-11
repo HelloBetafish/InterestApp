@@ -86,10 +86,10 @@ const userSchema = new Schema({
     }
   ],
 
-  posts: [
+  notes: [
     {
     type: Schema.Types.ObjectId,
-    ref: "Post"
+    ref: "Note"
     }
   ]
 
