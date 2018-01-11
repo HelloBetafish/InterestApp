@@ -242,9 +242,15 @@ class Login extends Component
     <Wrapper>
       <Container>
 
-      
+      <div class="flx-embed">
+<div style={{ }}>
+<iframe class="backgroundImg" style={{ }} src="https://media.flixel.com/cinemagraph/ceh139f7piczvwwkf67l?hd=true" frameborder="0" allowfullscreen>
+</iframe>
+</div>
+</div>
 
-        <img src="images/login3.jpg" class="img-fluid backgroundImg" alt="Responsive image" />
+
+        
 
         <Navbar>
 
