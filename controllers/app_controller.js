@@ -290,7 +290,7 @@ deleteContact: function(req, res) {
 },
 
 // Calls for NoteBoard Notes on Profile pages
-popPost: function(req,res){
+popPosts: function(req,res){
   db.User.findOne({ _id: req.params.id }).populate("posts").then(function(dbPost)
   {	
     res.json(dbNote);
