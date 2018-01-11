@@ -110,12 +110,12 @@ export default
   // For Posts on Profile page
   popPost: function(id)
   {
-    return axios.get("/api/posts/" + id);
+    return axios.get("/api/post/" + id);
   },
 
   savePost: function(id, postData)
   {
-    return axios.post("/api/posts/" + id, postData);
+    return axios.post("/api/post/" + id, postData);
   },
 
 };

@@ -289,11 +289,11 @@ deleteContact: function(req, res) {
     .catch(err => res.status(422).json(err));
 },
 
-// Calls for MessageBoard Posts on Profile pages
-popPosts: function(req,res){
+// Calls for NoteBoard Notes on Profile pages
+popPost: function(req,res){
   db.User.findOne({ _id: req.params.id }).populate("posts").then(function(dbPost)
   {	
-    res.json(dbPost);
+    res.json(dbNote);
   }).catch(function(err)
   {
     res.json(err);
@@ -302,7 +302,7 @@ popPosts: function(req,res){
 
 createPost: function(req, res)
 {
-  //Save new doc inside (documents) collection
+  //Save new Post inside (Posts) collection
   db.Post.create(req.body).then(function(dbPost)
     {
     //Without this the newly created note field is not inserted inside the particular article
