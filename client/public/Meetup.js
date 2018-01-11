@@ -9,17 +9,17 @@ import "../style/Meetup.js";
 
 <Navbar />
 
-<div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
+<div className="jumbotron">
+  <h1 className="display-4">Hello, world!</h1>
+  <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr className="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  <p className="lead">
+    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </p>
 </div>
 
- <body>
+ 
 
 
 
@@ -54,7 +54,36 @@ import "../style/Meetup.js";
     </div>
     
 
-</body>
+<div id="demo" className="carousel slide" data-ride="carousel">
+
+ <a href="#" align="center" className="btn btn-primary">Contact</a>
+  <ul className="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" className="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src="css/images/bethany.jpg" alt="Los Angeles"/>
+    </div>
+    <div className="carousel-item">
+      <img src="chicago.jpg" alt="Chicago"/>
+    </div>
+    <div className="carousel-item">
+      <img src="ny.jpg" alt="New York"/>
+    </div>
+  </div>
+
+  
+  <a className="carousel-control-prev" href="#demo" data-slide="prev">
+    <span className="carousel-control-prev-icon"></span>
+  </a>
+  <a className="carousel-control-next" href="#demo" data-slide="next">
+    <span className="carousel-control-next-icon"></span>
+  </a>
+
+</div>
 
 
 
