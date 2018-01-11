@@ -108,7 +108,7 @@ export default
   },
 
   // For Posts on Profile page
-  popPost: function(id)
+  popPosts: function(id)
   {
     return axios.get("/api/post/" + id);
   },

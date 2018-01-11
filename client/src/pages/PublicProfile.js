@@ -50,7 +50,7 @@ class PublicProfile extends Component
       this.setState({ files: res.data.files})
       ).catch(err => console.log(err));
 
-    API.popPost(id).then(res => 
+    API.popPosts(id).then(res => 
       this.setState({ posts: res.data.posts})
       ).catch(err => console.log(err));
 
@@ -100,15 +100,15 @@ addPost = event =>
     //Ensure users enter all data
     if(this.state.postBody)
     {
-      console.log("works");
-        API.savePost(this.state.IdOfSignedUser, 
-        { 
-        body: this.state.postBody,
-        receiverId: this.state.IdOfSignedUser,
-        senderId: this.state.IdOfSignedUser,
-        senderName: this.state.user.full_name
-        }).then(res => console.log(res.data))
-        .catch(err => console.log(err));
+      console.log(this.state.postBody);
+        // API.savePost(this.state.IdOfSignedUser, 
+        // { 
+        // body: this.state.postBody,
+        // receiverId: this.state.IdOfSignedUser,
+        // senderId: this.state.IdOfSignedUser,
+        // senderName: this.state.user.full_name
+        // }).then(res => console.log(res.data))
+        // .catch(err => console.log(err));
     }
 }
 
@@ -161,15 +161,9 @@ addPost = event =>
 
                           <div className="form-group">
                          <input value={this.state.postBody} name="postBody" onChange={this.handleInputChange} style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}} type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
-                         </div>
-                         
-                          <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"425px", marginTop:"5px"}}>post</button>
-                         
-
-
-
+                         </div> 
+                          <button type="button" id="keep" onClick={this.addPost} className="btn btn-warning" style={{marginLeft:"425px", marginTop:"5px"}}>post</button>
                         </div>
-                         
                       </div>
 
                   
