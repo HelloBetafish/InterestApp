@@ -3,6 +3,18 @@
 	width: 1045px;
 }
 
+
+.logoPic
+{
+    /*
+    height: 150px;
+    background: rgb(60, 60, 60);                            
+    background: rgba(60, 60, 60, 0.4);
+    */
+    opacity: 0.75;
+
+}
+
 .backgroundImg
 {
    position:fixed;
@@ -20,6 +32,7 @@
     font-family: serif, Times, "Times New Roman";
     font-size: 45px;
     font-weight: bold;
+    opacity: 0.75;
 }
 
 .aboutUs, .createAccount
@@ -28,6 +41,12 @@
     background: #dbe0d7;
     text-align: center;
     height: 80px;
+    opacity: 0.75;
+}
+
+iframe.backgroundImg
+{
+    pointer-events: none;
 }
 
 .aboutUsText, .createAccountText
