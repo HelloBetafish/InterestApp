@@ -1,3 +1,4 @@
+/*
 import React, {Component} from "react";
 import Navbar from "../components/Navbar";
 import Row from "../components/Row";
@@ -147,3 +148,4 @@ class ConnectColl extends Component {
 }
 
 export default ConnectColl;
+*/

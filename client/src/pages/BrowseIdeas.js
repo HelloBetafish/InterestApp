@@ -1,9 +1,11 @@
+/*
 import React, {Component} from "react";
 import ReactFilestack, { client } from 'filestack-react';
 import Navbar from "../components/Navbar";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import API from "../utils/API";
+
 import Idea from "../components/Idea";
 import "../style/connectColl.css";
 
@@ -102,3 +104,4 @@ class BrowseIdeas extends Component {
   }
 }
 export default BrowseIdeas;
+*/
