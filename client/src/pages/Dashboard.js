@@ -302,8 +302,8 @@ console.log(this.state.user.idea.Author);
               <Col size="md-2">
               
                 <div tabIndex="3"className="box3">
-                  <Link to="/messages">
-                    <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>4</p></span>
+                  <Link to="/publicprofile#scrollPost">
+                    <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>{this.state.user.posts ? (this.state.user.posts.length) : 0 }</p></span>
                     <p id="textmessage" >Messages</p>
                   </Link>
                 </div>

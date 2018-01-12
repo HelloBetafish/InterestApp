@@ -112,8 +112,8 @@ addPost = event =>
         }).then(res => console.log("Post added."))
         .catch(err => console.log(err));
     }
-    this.setState({ postBody:""});
     this.getUser(this.state.IdOfSignedUser);
+    this.setState({ postBody:""});
 }
 
  render()
