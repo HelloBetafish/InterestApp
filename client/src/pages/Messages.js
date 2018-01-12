@@ -19,7 +19,7 @@ const Messages = () =>
 <div className="col-md-12">
 
     <div className="col-md-2">
-    <div style={{marginTop:"100px",height:"650px",width:"100%",overflow:"auto",backgroundColor:"#343d46",color:"white",scrollbarBaseColor:"gold",fontFamily:"sans-serif",padding:"10px"}}>
+    <div style={{marginBottom:"30px",marginLeft:"50px",marginTop:"100px",height:"750px",width:"100%",overflow:"auto",backgroundColor:"#343d46",color:"white",scrollbarBaseColor:"gold",fontFamily:"sans-serif",padding:"10px"}}>
      <img src="css/images/bethany.jpg" width="70" height="70" style={{marginBottom:"10px",marginTop:"15px", borderRadius:"50px",marginLeft:"70px"}}/>
              <p style={{fontSize:"14px",marginLeft:"50px",color: "white"}}>Bethany Pfeister</p>
              <img src="css/images/tj3.jpg" width="70" height="70" style={{marginTop:"20px",marginLeft:"70px",borderRadius:"50px"}}/>
@@ -47,12 +47,12 @@ const Messages = () =>
 
      
      
-      <div id="computer" className="col-md-6"style={{marginTop:"-650px",marginLeft:"30%"}}>
+      <div id="computer" className="col-md-6"style={{marginTop:"-720px",marginLeft:"30%"}}>
        
         <div id="messagebox" className="col-md-12">
             <div style={{marginTop:"20px",height:"465px",width:"100%",overflow:"auto",backgroundColor:"white",color:"white",scrollbarBaseColor:"gold",fontFamily:"sans-serif",padding:"10px"}}>
                   <img src="css/images/Emma.jpg" width="70" height="70" style={{marginBottom:"10px",marginTop:"15px", borderRadius:"50px",marginLeft:"70px"}}/>
-                 <p style={{fontSize:"14px",marginLeft:"50px",color: "black"}}>Emma Sanders - January 1st,2018 03:00pm <br/> Hi Reyna how are you? I really like your  ice cream app I would like to know about it </p>
+                 <p style={{fontSize:"14px",marginLeft:"50px",color: "black"}}>Emma Sanders - January 1st,2018 03:00pm <br/> Hi Reyna how are you? I really like your  ice cream app I would like to know more about it </p>
                  <img src="css/images/reyna2.jpg" width="70" height="70" style={{marginTop:"20px",marginLeft:"70px",borderRadius:"50px"}}/>
                  <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "black"}}>January 1st,2018 03:250pm <br/>Hi Emma, nice to hear you like my application, what would you like to know about it?</p>
                  <img src="css/images/Emma.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>

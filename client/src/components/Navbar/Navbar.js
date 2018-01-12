@@ -19,9 +19,11 @@ const Navbar = props =>
               ? "active"
               : ""
           }>
-      
-        
         </li>
+        <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
+          <Link to="/messages" className="nav-link">Inbox</Link>
+        </li>
+        
         <li className ="nav-item" className={window.location.pathname === "/dashboard" ? "active" : ""}>
           <Link to="/dashboard" className="nav-link" >Dashboard</Link>
         </li>
@@ -35,9 +37,6 @@ const Navbar = props =>
         <li className = "nav-item" 
           className={window.location.pathname === "/browseideas" ? "active" : ""}>
           <Link to="/browseideas" className="nav-link" >Browse Ideas</Link>
-        </li>
-        <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
-          <Link to="/messages" className="nav-link">Inbox</Link>
         </li>
         
       </ul>
