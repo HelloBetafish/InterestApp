@@ -135,9 +135,6 @@ class Login extends Component
 
     const { name, value } = event.target;
 
-    console.log(this.state.users);
-
-
     this.setState({
 
       [name]: value

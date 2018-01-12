@@ -111,7 +111,7 @@ class BrowseIdeas extends Component {
                 </Row>
                 </div>
                
-              
+      
             </div>
           </div>
       </div>
