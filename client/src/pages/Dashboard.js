@@ -337,34 +337,33 @@ class Dashboard extends Component
                                 <div className="modal-body" style={{backgroundColor:" white"}}>
 
                                             <form id="input" style={{width:"93%", marginLeft:"20px",marginBottom:"40px"}}>
+                                              
+                                              <div className="form-group">
+                                                <a href="Bethany Pfeister" alt="Bethany">
+                                                <img src="css/images/bethany.jpg" width="30" height="30" style={{marginTop:"30px",marginLeft:"30px"}}/>
+                                                <p alt="Bethany Pfeister" style={{marginLeft:"90px", marginTop:"-20px"}}>Bethany Pfeister - Web Developer</p>
+                                                </a>
 
-                                               <div className="form-group">
+                                                <a href="Jesse Forte" alt="Jesse">
+                                                <img src="css/images/Jesse1.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                <p alt="Jesse Forte" style={{marginLeft:"90px", marginTop:"-20px"}}>Jesse Forte - Web Developer</p>
+                                                </a>
 
-                                                 <a href="Bethany Pfeister" alt="Bethany">
-                                                 <img src="css/images/bethany.jpg" width="30" height="30" style={{marginTop:"30px",marginLeft:"30px"}}/>
-                                                 <p alt="Bethany Pfeister" style={{marginLeft:"90px", marginTop:"-20px"}}>Bethany Pfeister - Web Developer</p>
-                                                 </a>
+                                                <a href="TJ Stephens" alt="TJ">
+                                                <img src="css/images/tj.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                <p alt="TJ Stephens" style={{marginLeft:"90px", marginTop:"-20px"}}>TJ Stephens - Web Developer</p>
+                                                </a>
+                                                
+                                                <a href="Reyna Perez" alt="Reyna">
+                                                <img src="css/images/reyna.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                <p alt="Reyna Perez" style={{marginLeft:"90px", marginTop:"-20px"}}>Reyna Perez - Web Developer</p>
+                                                </a>
 
-                                                 <a href="Jesse Forte" alt="Jesse">
-                                                 <img src="css/images/Jesse1.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
-                                                 <p alt="Jesse Forte" style={{marginLeft:"90px", marginTop:"-20px"}}>Jesse Forte - Web Developer</p>
-                                                 </a>
-
-                                                 <a href="TJ Stephens" alt="TJ">
-                                                 <img src="css/images/tj.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
-                                                 <p alt="TJ Stephens" style={{marginLeft:"90px", marginTop:"-20px"}}>TJ Stephens - Web Developer</p>
-                                                 </a>
-                                                  
-                                                 <a href="Reyna Perez" alt="Reyna">
-                                                 <img src="css/images/reyna.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
-                                                 <p alt="Reyna Perez" style={{marginLeft:"90px", marginTop:"-20px"}}>Reyna Perez - Web Developer</p>
-                                                 </a>
-
-                                                 <a href="John Anders" alt="Reyna">
-                                                 <img src="css/images/john.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
-                                                 <p alt="John Anders" style={{marginLeft:"90px", marginTop:"-20px"}}>John Anders - Web Developer</p>
-                                                 </a>
-                                                 
+                                                <a href="John Anders" alt="Reyna">
+                                                <img src="css/images/john.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                <p alt="John Anders" style={{marginLeft:"90px", marginTop:"-20px"}}>John Anders - Web Developer</p>
+                                                </a>
+                                                
 
                                                </div>
                                                                                        

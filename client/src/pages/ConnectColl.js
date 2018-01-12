@@ -67,7 +67,7 @@ class ConnectColl extends Component {
     // if (this.state.guessedCards.indexOf(id) === -1) 
     API.saveContact(this.state.IdOfSignedUser,
       { 
-        contactUserId: contactId
+        contacts: contactId
         }).then(res => console.log("Success!"))
         .catch(err => console.log(err));
     this.getUser(this.state.IdOfSignedUser);

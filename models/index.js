@@ -4,7 +4,7 @@ module.exports =
   Signin: require("./signin"),
   Idea: require("./idea"),
   File: require("./File"),
-  Contact: require("./Contact"),
+  // Contact: require("./Contact"),
   Post: require("./Post")
   
 };

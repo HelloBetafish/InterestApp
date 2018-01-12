@@ -10,6 +10,7 @@ import BrowseIdeas from "./pages/BrowseIdeas";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import MeetUs from "./pages/MeetUs";
+import AboutUs from "./pages/Aboutus";
 import NoMatch from "./pages/NoMatch";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -32,6 +33,7 @@ const App = () =>
         <Route exact path="/browseideas" component={BrowseIdeas} />
         <Route exact path="/createaccount" component={CreateAcct} />
         <Route exact path="/meetus" component={MeetUs} />
+        <Route exact path="/aboutus" component={AboutUs} />
         {/* <Route path="/*" component={NoMatch} /> */}
       </Wrapper>
       <Footer />
