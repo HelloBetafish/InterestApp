@@ -10,6 +10,7 @@ import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import Idea from "../components/Idea";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import { PostBoard, PostBtn, PostItem, TextArea } from "../components/PostBoard";
+import LinksURL from "../components/LinksURL";
 
 class FriendProfile extends Component
 {
@@ -148,13 +149,14 @@ addPost = event =>
                       skills={this.state.user.skills}
                 />)}
 
-                    
-                      <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
-                      <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-                      <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-                      <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-                      <span id='clickableAwesomeFont'><i class="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-                  </div>
+                <LinksURL
+                  GithubUrl= {this.state.user.GithubUrl}
+                  LinkedInUrl= {this.state.user.LinkedInUrl}
+                  VimeoUrl= {this.state.user.VimeoUrl}
+                  TwitterUrl= {this.state.user.TwitterUrl}
+                  FacebookUrl= {this.state.user.FacebookUrl}
+                />
+              </div>
                  
 
                   <div className="col-md-6">

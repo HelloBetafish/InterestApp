@@ -111,7 +111,7 @@ module.exports =
 
   updateUserField: function(req,res){
     db.User
-    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .findOneAndUpdate({ _id: req.params.id }, { $set: req.body })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
   },

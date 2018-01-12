@@ -23,5 +23,5 @@ router.use("/file", userRoutes6);
 router.use("/contacts", userRoutes7);
 router.use("/photo", userRoutes8);
 router.use("/post", userRoutes9);
-router.use("/linkurl", userRoutes9);
+router.use("/linkurl", userRoutes10);
 module.exports = router;
