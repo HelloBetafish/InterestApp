@@ -132,15 +132,21 @@ addPost = event =>
               
               
               <div className="col-md-3 text-center">
-
-                <Thumbnail2 
+              {(this.state.user.photoURL !=="") ?
+                (<Thumbnail2 
                       full_name={this.state.user.full_name} 
-                       photoURL={this.state.user.photoURL}
-                       title={this.state.user.title}
-                       skills={this.state.user.skills}
+                      photoURL={this.state.user.photoURL}
+                      title={this.state.user.title}
+                      skills={this.state.user.skills}
 
-                />
-
+                />) : 
+                (<Thumbnail2 
+                      full_name={this.state.user.full_name} 
+                      photoURL={this.state.dummyPhoto}
+                      title={this.state.user.title}
+                      skills={this.state.user.skills}
+                />)}
+                
                     
                       <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>

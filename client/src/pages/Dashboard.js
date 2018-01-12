@@ -18,12 +18,13 @@ class Dashboard extends Component
   {
     user: {},
     IdOfSignedUser: "",
+    dummyPhoto: "css/images/addphoto.png",
  
     //For (idea) collection
     ideaName: "",
     whatIsIdea: "",
     whyGoodIdea: "",
-    ideaphoto: "",
+    ideaphoto: "css/images/darkroom3.JPG",
     Author: "",
  
     // For Filestack docs
@@ -316,24 +317,33 @@ console.log(this.state.user.idea.Author);
               </Col>
                 
               <Col size="md-4" className="text-center">
-                <Thumbnail 
-                  full_name={this.state.user.full_name} 
-                  photoURL={this.state.user.photoURL}
-                  title={this.state.user.title}
-                  skills={this.state.user.skills}
-                  style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
-                />
-                <Row>
-                  <Col size="md-3"/>
-                <ReactFilestack
-                  apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
-                  buttonText="Upload Profile Pic"
-                  buttonClass="classname"
-                  options={this.state.optionsP}
-                  onSuccess={this.callbackFunctionPhoto}
-                />
-                </Row>
-              </Col>
+                {(this.state.user.photoURL !=="") ?
+                  (<Thumbnail 
+                    full_name={this.state.user.full_name} 
+                    photoURL={this.state.user.photoURL}
+                    title={this.state.user.title}
+                    skills={this.state.user.skills}
+                    style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
+                  />) :
+                  (<Thumbnail 
+                    full_name={this.state.user.full_name} 
+                    photoURL={this.state.dummyPhoto}
+                    title={this.state.user.title}
+                    skills={this.state.user.skills}
+                    style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
+                  />)}
+
+                  <Row>
+                    <Col size="md-3"/>
+                      <ReactFilestack
+                        apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
+                        buttonText="Upload Profile Pic"
+                        buttonClass="classname"
+                        options={this.state.optionsP}
+                        onSuccess={this.callbackFunctionPhoto}
+                      />
+                  </Row>
+                </Col>
              
 
               <Col size="md-1"></Col>
