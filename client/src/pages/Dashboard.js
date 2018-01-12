@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 // import "../style/Profile.css";
 import API from "../utils/API";
+import Row from "../components/Row";
 import Col from "../components/Login/Col";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
@@ -322,6 +323,8 @@ console.log(this.state.user.idea.Author);
                   skills={this.state.user.skills}
                   style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
                 />
+                <Row>
+                  <Col size="md-3"/>
                 <ReactFilestack
                   apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
                   buttonText="Upload Profile Pic"
@@ -329,6 +332,7 @@ console.log(this.state.user.idea.Author);
                   options={this.state.optionsP}
                   onSuccess={this.callbackFunctionPhoto}
                 />
+                </Row>
               </Col>
              
 

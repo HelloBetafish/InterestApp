@@ -1,6 +1,7 @@
 
 import React, {Component} from "react";
 import ReactFilestack, { client } from 'filestack-react';
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Row from "../components/Row";
 import Col from "../components/Col";
@@ -87,7 +88,7 @@ class BrowseIdeas extends Component {
                 <Row>
                   <Col size="md-1"/>
                   <Col size="md-11">
-                
+                  {this.state.ideas.length ? (
                     <Row>
                       {this.state.ideas.map(idea => (
                           <Idea
@@ -101,6 +102,11 @@ class BrowseIdeas extends Component {
                           />                                                 
                       ))}
                     </Row> 
+                  ) : (<h3 className="text-center">
+                    Looks like someone needs to start innovating!
+                    <br/>Why don't you be the first?<br/>
+                    <Link to="/dashboard#ideas">Click here to create an idea.</Link></h3>
+                  )}
                   </Col>
                 </Row>
                 </div>
