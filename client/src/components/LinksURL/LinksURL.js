@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const LinksURL = props => (
+export const LinksURL = props => (
   <div>
   <a href={props.GithubUrl} target="_blank"> 
     <span id='clickableAwesomeFont'>
@@ -44,5 +44,3 @@ LinksURL.propTypes = {
   TwitterUrl: PropTypes.string,
   FacebookUrl: PropTypes.string
 };
-
-export default LinksURL;

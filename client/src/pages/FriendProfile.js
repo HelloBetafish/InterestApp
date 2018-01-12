@@ -10,7 +10,7 @@ import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import Idea from "../components/Idea";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import { PostBoard, PostBtn, PostItem, TextArea } from "../components/PostBoard";
-import LinksURL from "../components/LinksURL";
+import { LinksURL, LinksURLForm } from "../components/LinksURL";
 
 class FriendProfile extends Component
 {

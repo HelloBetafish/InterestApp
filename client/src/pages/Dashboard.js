@@ -10,7 +10,7 @@ import Col from "../components/Login/Col";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import DeleteBtn from "../components/DeleteBtn";
-import LinksURL from "../components/LinksURL";
+import { LinksURL, LinksURLForm } from "../components/LinksURL";
 
 class Dashboard extends Component
 {
@@ -432,66 +432,34 @@ class Dashboard extends Component
 
               <Col size="md-1"></Col>
               <Col size="md-3" style={{marginTop:"100px",marginLeft:"-30px"}}>
-                    <LinksURL
-                      GithubUrl= {this.state.user.GithubUrl}
-                      LinkedInUrl= {this.state.user.LinkedInUrl}
-                      VimeoUrl= {this.state.user.VimeoUrl}
-                      TwitterUrl= {this.state.user.TwitterUrl}
-                      FacebookUrl= {this.state.user.FacebookUrl}
-                    />
-                    <span style={{float:"right"}}><a onClick={this.toggleLinks} href="#">hide/show</a></span>
+                <LinksURL
+                  GithubUrl= {this.state.user.GithubUrl}
+                  LinkedInUrl= {this.state.user.LinkedInUrl}
+                  VimeoUrl= {this.state.user.VimeoUrl}
+                  TwitterUrl= {this.state.user.TwitterUrl}
+                  FacebookUrl= {this.state.user.FacebookUrl}
+                />
+                <span style={{float:"right"}}><a onClick={this.toggleLinks} href="#">hide/show</a></span>
                 <hr/>
 
-                <form id="LinksUrl" className="form-inline" style={{display:"none"}}>
-                  <ul className="list-group list-group-flush">
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormGithub">Github</label>
-                      <div className="input-group">
-                        <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="GithubUrl" value={this.state.GithubUrl} className="form-control" id="inlineFormGithub" onChange={this.handleInputChange} placeholder={this.state.user.GithubUrl}/>
-                      </div>
-                      <button type="submit" onClick={this.addLinkG} className="btn btn-danger btn-sm" style={{marginTop:"5px", float: "right"}}>Save</button>
-                    </li>
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormLinkedIn">LinkedIn</label>
-                      <div className="input-group">
-                      <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="LinkedInUrl" value={this.state.LinkedInUrl} className="form-control" id="inlineFormLinkedIn" onChange={this.handleInputChange} placeholder={this.state.user.LinkedInUrl}/>
-                      </div>
-                      <button type="submit" onClick={this.addLinkL} className="btn btn-danger btn-sm" style={{marginTop:"5px", float: "right"}}>Save</button>
-                    </li>
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormVimeo">Vimeo</label>
-                      <div className="input-group">
-                      <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="VimeoUrl" value={this.state.VimeoUrl} className="form-control" id="inlineFormVimeo" onChange={this.handleInputChange} placeholder={this.state.user.VimeoUrl}/>
-                      </div>
-                      <button type="submit" onClick={this.addLinkV} className="btn btn-danger btn-sm" style={{marginTop:"5px", float: "right"}}>Save</button>
-                    </li>
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormTwitter">Twitter</label>
-                      <div className="input-group">
-                      <span id='clickableAwesomeFont'>
-                        <i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="TwitterUrl" value={this.state.TwitterUrl} className="form-control" id="inlineFormTwitter" onChange={this.handleInputChange} placeholder={this.state.user.TwitterUrl}/>
-                      </div>
-                      <button type="submit" onClick={this.addLinkT} className="btn btn-danger btn-sm" style={{marginTop:"5px", float: "right"}}>Save</button>
-                    </li>
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormFacebook">Facebook</label>
-                      <div className="input-group">
-                      <span id='clickableAwesomeFont'><i className="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="FacebookUrl" value={this.state.FacebookUrl} className="form-control" id="inlineFormFacebook" onChange={this.handleInputChange} placeholder={this.state.user.FacebookUrl}/>
-                      </div>
-                      <button type="submit" onClick={this.addLinkF} className="btn btn-danger btn-sm" style={{marginTop:"5px", float: "right"}}>Save</button>
-                    </li>
-                  </ul>
-                </form>
+                <LinksURLForm
+                  GithubUrl= {this.state.GithubUrl}
+                  LinkedInUrl= {this.state.LinkedInUrl}
+                  VimeoUrl= {this.state.VimeoUrl}
+                  TwitterUrl= {this.state.TwitterUrl}
+                  FacebookUrl= {this.state.FacebookUrl}
+                  UserGithubUrl= {this.state.user.GithubUrl}
+                  UserLinkedInUrl= {this.state.user.LinkedInUrl}
+                  UserVimeoUrl= {this.state.user.VimeoUrl}
+                  UserTwitterUrl= {this.state.user.TwitterUrl}
+                  UserFacebookUrl= {this.state.user.FacebookUrl}
+                  handleInputChange= {this.handleInputChange}
+                  addLinkG= {this.addLinkG}
+                  addLinkL= {this.addLinkL}
+                  addLinkV= {this.addLinkV}
+                  addLinkT= {this.addLinkT}
+                  addLinkF= {this.addLinkF}
+                />
                 <hr/>
 
                 <div className="text-center">
