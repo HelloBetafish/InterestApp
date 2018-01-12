@@ -18,7 +18,7 @@ class FriendProfile extends Component
     user: {},
     ideas: [],
     ideas2: [],
-    IdOfSignedUser: "",
+    IdOfUserProfile: "",
     files: [],
     posts: [],
     postBody: ""
@@ -32,13 +32,13 @@ class FriendProfile extends Component
       //this.getAllIdeas();
   }
 
-  //ReUse: Get Id of logged in user
+  //ReUse: Get Id profile user
   loadLoggedUsers = () => 
   {
     
-      API.getIdOfLoggedInUser().then(res =>
+      API.getIdOfProfileUser().then(res =>
         
-        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, this.getUser(res.data[0].IdOfSignedUser) )
+        this.setState({ IdOfUserProfile: res.data[0].IdOfUserProfile }, this.getUser(res.data[0].IdOfUserProfile) )
 
         ).catch(err => console.log(err))
 
@@ -104,16 +104,15 @@ addPost = event =>
     //Ensure users enter all data
     if(this.state.postBody)
     {
-        API.savePost(this.state.IdOfSignedUser, 
+        API.savePost(this.state.IdOfUserProfile, 
         { 
         body: this.state.postBody,
-        senderId: this.state.IdOfSignedUser,
+        senderId: this.state.IdOfUserProfile,
         senderName: this.state.user.full_name
         }).then(res => console.log("Post added."))
         .catch(err => console.log(err));
     }
-    this.getUser(this.state.IdOfSignedUser);
-    // Reset Text Area field
+    this.getUser(this.state.IdOfUserProfile);
     this.setState({ postBody:""});
 }
 
@@ -147,7 +146,6 @@ addPost = event =>
                       title={this.state.user.title}
                       skills={this.state.user.skills}
                 />)}
-
                     
                       <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
@@ -192,8 +190,8 @@ addPost = event =>
                   </div>
                   
                   <div className="col-md-3 text-center">
-                   <div className="boardann" style={{height:"100px",width:"100px",backgroundColor: "#65737e",marginTop:"45px", margin:"auto"}}>
-                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"20px"}}></i></span>
+                   <div className="boardann" style={{height:"80px",width:"70px",backgroundColor: "#65737e",marginTop:"45px", margin:"auto"}}>
+                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"2px"}}></i></span>
                    <p style={{color:"white",fontSize: "9px",marginTop:"5px"}}>private message</p>
 
                    </div>
@@ -262,7 +260,7 @@ addPost = event =>
         
 
          <div id="addedtitle">
-            <h5 style={{fontSize:"20px",color:"white"}}>Added Ideas</h5>
+            <h5 style={{fontSize:"20px",color:"white"}}>{this.state.user.full_name}'s Ideas</h5>
          </div>
 
          <hr/>
@@ -292,6 +290,7 @@ addPost = event =>
                    
                                  
           </div>
+
 
 
         );

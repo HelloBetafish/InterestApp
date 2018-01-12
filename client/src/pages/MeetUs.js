@@ -53,7 +53,7 @@ class MeetUs extends Component
 
 
     <div className="carousel-item">
-      <img id="photous" src="css/images/jesse.jpg" alt="Jesse" width="300" height="350"style={{marginTop:"20px"}}/>
+      <img id="photous" src="css/images/Jesse.jpg" alt="Jesse" width="300" height="350"style={{marginTop:"20px"}}/>
       <div className="carousel-caption">
          <h5 className="card-title" style={{fontSize:"20px",textAlign:"center",color:"black",marginTop:"-30px"}}>Jesse Forte</h5>
           <h6  style={{marginTop:"10px",color:"white"}}><li>Jesse is an author, speaker and worldwide traveler.</li>

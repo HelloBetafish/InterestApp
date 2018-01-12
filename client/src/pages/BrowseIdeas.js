@@ -21,7 +21,7 @@ class BrowseIdeas extends Component {
   {
 
       this.loadLoggedUsers();
-      //this.getAllIdeas();
+      
   }
 
   //ReUse: Get Id of logged in user

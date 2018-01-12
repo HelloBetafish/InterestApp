@@ -48,6 +48,12 @@ export default
     return axios.get("/api/signin");
   },
 
+  //FriendProfile: Get id that is stored in collection (profile)'s field(IdOfUserProfile)
+  getIdOfProfileUser: function()
+  {
+    return axios.get("/api/profile");
+  },
+
   //Profile: adds the idea field inside (user) collection
   addField: function(id)
   {
@@ -72,6 +78,15 @@ export default
   getIdea: function(id)
   {
     return axios.get("/api/personalinfo/" + id);
+  },
+
+  //Connect&Collab: creates a profile(collection) then insertin id
+  //of profile pic that was clicked inside (IdOfUserProfile) field
+  addIdOfProfilePic: function(id)
+  {
+
+    return axios.post("/api/profile/" + id);
+
   },
 
   // Document Schema
