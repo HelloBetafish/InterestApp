@@ -114,7 +114,14 @@ class BrowseIdeas extends Component {
       
             </div>
           </div>
+         
+
+
       </div>
+
+
+
+
     );
   }
 }
