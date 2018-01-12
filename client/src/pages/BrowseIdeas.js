@@ -82,20 +82,29 @@ class BrowseIdeas extends Component {
                   </label>
                   <button style={{marginTop:"-10px"}} type="button" className="btn btn-outline-danger">search</button>
                 </div>
+              </div> 
+                <div ClassName="container-fluid">
                 <Row>
-                  {this.state.ideas.map(idea => (
-                      <Idea
-                        key={idea.id}
-                        id={idea.id}
-                        Author={idea.Author}
-                        ideaName={idea.ideaName}
-                        whatIsIdea={idea.whatIsIdea}
-                        whyGoodIdea={idea.whyGoodIdea} 
-                        photo={idea.photo}
-                      />                                                 
-                  ))}
-                </Row> 
-              </div>  
+                  <Col size="md-1"/>
+                  <Col size="md-11">
+                
+                    <Row>
+                      {this.state.ideas.map(idea => (
+                          <Idea
+                            key={idea.id}
+                            id={idea.id}
+                            Author={idea.Author}
+                            ideaName={idea.ideaName}
+                            whatIsIdea={idea.whatIsIdea}
+                            whyGoodIdea={idea.whyGoodIdea} 
+                            photo={idea.photo}
+                          />                                                 
+                      ))}
+                    </Row> 
+                  </Col>
+                </Row>
+                </div>
+               
               
             </div>
           </div>

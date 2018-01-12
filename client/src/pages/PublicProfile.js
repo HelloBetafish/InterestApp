@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 import API from "../utils/API";
+import Row from "../components/Row";
+import Col from "../components/Col";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import Idea from "../components/Idea";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
@@ -250,35 +252,36 @@ addPost = event =>
 
 
       <div className="container">
+        
+
          <div id="addedtitle">
             <h5 style={{fontSize:"20px",color:"white"}}>Added Ideas</h5>
          </div>
 
          <hr/>
-            
-      
-         <div className="row" id="boxbox">
-         
+      </div>       
+      <Row>
+        <Col size="md-1"/>
+        <Col size="md-11">
+          <Row id="boxbox">
+            {this.state.ideas.map(idea => (
+
+            <Idea 
+              key={idea.id}
+              id={idea.id}
+              Author={idea.Author}
+              ideaName={idea.ideaName}
+              whatIsIdea={idea.whatIsIdea}
+              whyGoodIdea={idea.whyGoodIdea} 
+              photo={idea.photo}
+            />                                                  
+
+            ))}
+            <hr/>      
+          </Row>
+        </Col>
+      </Row>
               
-                   {this.state.ideas.map(idea => (
-
-                   <Idea 
-                      key={idea.id}
-                      id={idea.id}
-                      Author={idea.Author}
-                      ideaName={idea.ideaName}
-                      whatIsIdea={idea.whatIsIdea}
-                      whyGoodIdea={idea.whyGoodIdea} 
-                      photo={idea.photo}
-                   />                                                  
-
-                    ))}
-                                                
-              </div> 
-               <hr/>      
-
-              </div>
-         
                    
                                  
           </div>
