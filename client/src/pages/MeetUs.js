@@ -8,7 +8,7 @@ class MeetUs extends Component
   render() {
     return(
       <div>
-      <Navbar />
+     
       <h1 className="display-3" align="center" style={{marginTop:"20px"}}>Meet the team!</h1>
       <div className="barmeetus">
        <p className="lead" align="center" style={{color:"white", fontSize:"15px",paddingTop:"15px"}}>Our team has taken time to make this experience meaningful, user firendly and an opportunity to connect with the right team!</p>
