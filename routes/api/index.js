@@ -8,6 +8,8 @@ const userRoutes6 = require("./file");
 const userRoutes7 = require("./contacts");
 const userRoutes8 = require("./photo");
 const userRoutes9 = require("./post");
+const userRoutes10 = require("./linkurl");
+
 // users routes app or router can be used
 router.use("/users", userRoutes);
 //signin routes app or router can be used
@@ -21,4 +23,5 @@ router.use("/file", userRoutes6);
 router.use("/contacts", userRoutes7);
 router.use("/photo", userRoutes8);
 router.use("/post", userRoutes9);
+router.use("/linkurl", userRoutes9);
 module.exports = router;

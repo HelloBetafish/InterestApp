@@ -114,6 +114,7 @@ addPost = event =>
         .catch(err => console.log(err));
     }
     this.getUser(this.state.IdOfSignedUser);
+    // Reset Text Area field
     this.setState({ postBody:""});
 }
 
@@ -158,7 +159,7 @@ addPost = event =>
 
                   <div className="col-md-6">
                     <PostBoard>
-                      <h3 className="text-center">Leave a message &#8595;</h3>
+                      <h3 className="text-center">Leave a Note &#8595;</h3>
                       {this.state.posts.length ? (
                       <div id="scrollPost">
                         {this.state.posts.map(post => (
@@ -261,7 +262,7 @@ addPost = event =>
         
 
          <div id="addedtitle">
-            <h5 style={{fontSize:"20px",color:"white"}}>Added Ideas</h5>
+            <h5 style={{fontSize:"20px",color:"white"}}>{this.state.user.full_name}'s Ideas</h5>
          </div>
 
          <hr/>

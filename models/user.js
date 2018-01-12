@@ -91,7 +91,32 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Post"
     }
-  ]
+  ],
+  
+  GithubUrl:
+  {
+    type: String
+  },
+
+  LinkedInUrl:
+  {
+    type: String
+  },
+
+  VimeoUrl:
+  {
+    type: String
+  },
+
+  TwitterUrl:
+  {
+    type: String
+  },
+
+    FacebookUrl:
+  {
+    type: String
+  }
 
 });
 

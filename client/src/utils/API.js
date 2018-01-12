@@ -101,7 +101,13 @@ export default
     return axios.delete("/api/contacts/" + id);
   },
 
-  // Upload profile pic
+  // Change URL Links (Github, Twitter, etc.)
+  changeUrl: function(id, field)
+  {
+    return axios.put("/api/linkurl/" + id, field);
+  },
+
+  // Change profile pic
   changePhoto: function(id, field)
   {
     return axios.put("/api/photo/" + id, field);

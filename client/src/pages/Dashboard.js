@@ -42,7 +42,13 @@ class Dashboard extends Component
 
     fileUrl: "",
     fileName: "",
-    files: []
+    files: [],
+
+    GithubUrl: "",
+    VimeoUrl: "",
+    LinkedInUrl: "",
+    FacebookUrl: "",
+    TwitterUrl: ""
   };
 
   componentDidMount() 
@@ -154,7 +160,7 @@ class Dashboard extends Component
 
 
     
-console.log(this.state.user.idea.Author);
+// console.log(this.state.user.idea.Author);
 
     this.setState({
 
@@ -181,6 +187,7 @@ console.log(this.state.user.idea.Author);
     // console.log(result.filesUploaded[0].url);
   };
 
+  
   addIdea = event =>
   {
     event.preventDefault();
@@ -205,10 +212,44 @@ console.log(this.state.user.idea.Author);
 
           .catch(err => console.log(err));
 
+        // After saving idea, reset fields and default image
+          this.setState({
+            ideaName: "",
+            whatIsIdea: "",
+            whyGoodIdea: "",
+            ideaphoto:"css/images/darkroom3.JPG", 
+            Author: "",
+          });
+          var foto = document.getElementById('stockideaphoto');
+          foto.src = "css/images/health.jpg";
       }
   };
 
+  toggleLinks = () => {
+    var x = document.getElementById("LinksUrl");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  };
 
+  addLinks = (event) => {
+    event.preventDefault();
+    API.changeUrl(this.state.IdOfSignedUser,
+      {
+        GithubUrl: this.state.GithubUrl,
+        LinkedInUrl: this.state.LinkedInUrl,
+        VimeoUrl: this.state.VimeoUrl,
+        TwitterUrl: this.state.TwitterUrl,
+        FacebookUrl: this.state.FacebookUrl
+      }).then(res => console.log(res.data))
+      .catch(err => console.log(err));
+    // console.log(this.state.FacebookUrl);
+
+
+    this.getUser(this.state.IdOfSignedUser);
+  };
   
 
     render()
@@ -306,7 +347,7 @@ console.log(this.state.user.idea.Author);
                 <div tabIndex="3"className="box3">
                   <Link to="/publicprofile#scrollPost">
                     <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>{this.state.user.posts ? (this.state.user.posts.length) : 0 }</p></span>
-                    <p id="textmessage" >Messages</p>
+                    <p id="textmessage" style={{marginLeft: "30px"}}>Notes </p>
                   </Link>
                 </div>
                 
@@ -353,9 +394,56 @@ console.log(this.state.user.idea.Author);
                       <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
                       <span id='clickableAwesomeFont'><i className="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-
-                  
+                      <a onClick={this.toggleLinks} href="#">hide/show</a>
                 <hr/>
+
+                <form id="LinksUrl" className="form-inline" style={{display:"none"}}>
+                  <ul className="list-group list-group-flush">
+
+                    <li className="list-group-item">
+                      <label className="sr-only" for="inlineFormGithub">Github</label>
+                      <div className="input-group">
+                        <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginRight:"10px"}}></i></span>
+                        <input type="text" name="GithubUrl" value={this.state.GithubUrl} className="form-control" id="inlineFormGithub" onChange={this.handleInputChange} placeholder="Github URL"/>
+                      </div>
+                    </li>
+
+                    <li className="list-group-item">
+                      <label className="sr-only" for="inlineFormLinkedIn">LinkedIn</label>
+                      <div className="input-group">
+                      <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
+                        <input type="text" name="LinkedInUrl" value={this.state.LinkedInUrl} className="form-control" id="inlineFormLinkedIn" onChange={this.handleInputChange} placeholder="LinkedIn URL"/>
+                      </div>
+                    </li>
+
+                    <li className="list-group-item">
+                      <label className="sr-only" for="inlineFormVimeo">Vimeo</label>
+                      <div className="input-group">
+                      <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
+                        <input type="text" name="VimeoUrl" value={this.state.VimeoUrl} className="form-control" id="inlineFormVimeo" onChange={this.handleInputChange} placeholder="Vimeo URL"/>
+                      </div>
+                    </li>
+
+                    <li className="list-group-item">
+                      <label className="sr-only" for="inlineFormTwitter">Twitter</label>
+                      <div className="input-group">
+                      <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
+                        <input type="text" name="TwitterUrl" value={this.state.TwitterUrl} className="form-control" id="inlineFormTwitter" onChange={this.handleInputChange} placeholder="Twitter URL"/>
+                      </div>
+                    </li>
+
+                    <li className="list-group-item">
+                      <label className="sr-only" for="inlineFormFacebook">Facebook</label>
+                      <div className="input-group">
+                      <span id='clickableAwesomeFont'><i className="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
+                        <input type="text" name="FacebookUrl" value={this.state.FacebookUrl} className="form-control" id="inlineFormFacebook" onChange={this.handleInputChange} placeholder="Facebook URL"/>
+                      </div>
+                      <button type="submit" onClick={this.addLinks} className="btn btn-danger btn-sm" style={{float: "right"}}>Save</button>
+                    </li>
+                  </ul>
+                </form>
+                <hr/>
+
                 <div className="text-center">
                   <h4>Resume/Important Docs</h4>
                   <hr/>
@@ -399,8 +487,9 @@ console.log(this.state.user.idea.Author);
                         </Link>
                       </span>
 
-                      <h2 id="connect">Connect or Collaborate</h2>
-                      <p id="connectp">Connect with people who are looking for ideas <br/><br/>Find ideas you like and collarate with them
+                      <h2 id="connect">Connect & Collaborate</h2>
+                      <p id="connectp">Find like-minded creatives.<br/>Add them to your contact list.<br/>
+                      Send them a note to start collaborating!
                       </p> 
                     </div>
                   </div>
@@ -412,17 +501,17 @@ console.log(this.state.user.idea.Author);
                           <i className="fa fa-envelope fa-4x circle-icon" style={{fontSize: "40px", color:"red"}}></i>
                         </Link>
                       </span>
-                      <h2 id="message">Message Box</h2>
-                      <p id="messagep">Keep your messages organized</p>
+                      <h2 id="message">Inbox</h2>
+                      <p id="messagep">Keep your messages organized.</p>
                     </div>
                   </div>
 
                   <div className="col-md-4 ">
                     <div id="ideasprofile"style={{boxShadow: "9px 9px 20px grey"}}>
                       <span id='clickableAwesomeFont'><i onClick={this.addIdeaField} className="fa fa-lightbulb-o fa-4x circle-icon" data-toggle="modal" data-target="#exampleModal" style={{fontSize: "40px", color:"red"}}></i></span>
-                      <h2 id="ideas">Add and Keep Ideas</h2>
-                      <p id="ideasp">Add as many ideas you have <br/>
-                       See how many ideas you have submitted, keep, update or delete them
+                      <h2 id="ideas">Add Ideas</h2>
+                      <p id="ideasp">Add as many ideas as you care to share.<br/>
+                       View how your ideas resonate with others.
                       </p>
 
                     
@@ -441,18 +530,18 @@ console.log(this.state.user.idea.Author);
                                               <form id="input" style={{width:"93%", marginLeft:"20px",marginBottom:"40px"}}>
 
                                              <div className="formName-group">
-                                               <label className="col-form-label" for="formGroupExampleInput2"style={{color:"#65737e"}}>Idea's Name</label>
+                                               <label className="col-form-label" for="formGroupExampleInput2"style={{color:"#65737e"}}>Name of your Idea</label>
                                                <input type="text" name="ideaName" value={this.state.ideaName} onChange={this.handleInputChange} className="form-control" id="formGroupExampleInput2" placeholder=""/>
                                              </div>
                                           
                                           
                                              <div className="form-group">
-                                               <label className="col-form-label" for="formGroupExampleInput" style={{color:"#65737e"}}>What is your idea?</label>
+                                               <label className="col-form-label" for="formGroupExampleInput" style={{color:"#65737e"}}>What is the idea about?</label>
                                                <input type="text"name="whatIsIdea" value={this.state.whatIsIdea} onChange={this.handleInputChange} className="form-control" id="formGroupExampleInput" placeholder=""/>
                                              </div>
                                               
                                              <div className="form-group">
-                                               <label for="exampleFormControlTextarea1"style={{color:"#65737e"}}>Why is a good idea?</label>
+                                               <label for="exampleFormControlTextarea1"style={{color:"#65737e"}}>Why is this a good idea?</label>
                                                <textarea className="form-control" name="whyGoodIdea" value={this.state.whyGoodIdea} onChange={this.handleInputChange} id="exampleFormControlTextarea1" rows="3"></textarea>
                                              </div>
                                              <div className="form-group">
