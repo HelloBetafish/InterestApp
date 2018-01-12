@@ -8,7 +8,7 @@ import "./Idea.css";
 //TRY: deleting <main className= ... />
 const Idea = props => 
 
-<div className="ideaBox col-md-3">
+<div className="ideaBox col-md-2">
                                           
                         <img src={props.photo} alt="..." className="img-thumbnail" style={{width:"100%"}} />
                         <p > <b>Author: </b> {props.Author} </p>

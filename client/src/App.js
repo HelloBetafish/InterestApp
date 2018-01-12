@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import ConnectColl from "./pages/ConnectColl";
 import Messages from "./pages/Messages";
 import PublicProfile from "./pages/PublicProfile";
+import FriendProfile from "./pages/FriendProfile";
 import CreateAcct from "./pages/CreateAcct";
 import BrowseIdeas from "./pages/BrowseIdeas";
 import Home from "./pages/Home";
@@ -27,6 +28,7 @@ const App = () =>
         <Route exact path="/messages" component={Messages} />
         <Route exact path="/connect&collaborate" component={ConnectColl} />
         <Route exact path="/publicprofile" component={PublicProfile} />
+        <Route exact path="/friendprofile" component={FriendProfile} />
         <Route exact path="/browseideas" component={BrowseIdeas} />
         <Route exact path="/createaccount" component={CreateAcct} />
         <Route exact path="/meetus" component={MeetUs} />

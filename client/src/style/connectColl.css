@@ -289,7 +289,7 @@ label{
   #messagebox{
     background-color: rgba(5,4,2,0.1);
     height: 400px;
-    width: 100%;
+    width: 140%;
       padding: 15px; 
    }
   
@@ -305,7 +305,7 @@ label{
   }
  
   #box{
-    height: 70%;
+    height: 55%;
     width: 100%;
     background: white;
   }
@@ -327,7 +327,7 @@ label{
   }
    #pb{
     margin-top:5px;
-    margin-left:115px;
+    margin-left:30px;
     font-size: 15px; 
     color: black;
   }
@@ -411,6 +411,7 @@ h5{
 #boxbox{
 
 }
+
 #addedtitle{
   
   width: 260px;
