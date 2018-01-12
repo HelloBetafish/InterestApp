@@ -331,7 +331,7 @@ class Login extends Component
 
                <img src="images/logointapporange.jpg" className="img-fluid mx-auto d-block logoPic" alt="Responsive image" />
 
-               <Link to="/meetus" className="nav-link" >
+               <Link to="/aboutus" className="nav-link" >
                <div className="aboutUs"> <p className="aboutUsText"> about us </p> </div>
                </Link>
                

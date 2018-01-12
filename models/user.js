@@ -76,15 +76,14 @@ const userSchema = new Schema({
     {
     type: Schema.Types.ObjectId,
     ref: "File"
-    },
-  ],
-
-  contacts: [
-    {
-    type: Schema.Types.ObjectId,
-    ref: "Contact"
     }
   ],
+
+  contacts: 
+  {
+    type: Array,
+    unique: true
+  },
 
   posts: [
     {

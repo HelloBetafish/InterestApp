@@ -25,5 +25,8 @@ router.use("/contacts", userRoutes7);
 router.use("/photo", userRoutes8);
 router.use("/post", userRoutes9);
 router.use("/linkurl", userRoutes10);
+<<<<<<< HEAD
 router.use("/profile", userRoutes11);
+=======
+>>>>>>> bc476aa325275fee3b231eef6e496490963a3a17
 module.exports = router;

@@ -84,7 +84,7 @@ class BrowseIdeas extends Component {
                   <button style={{marginTop:"-10px"}} type="button" className="btn btn-outline-danger">search</button>
                 </div>
               </div> 
-                <div ClassName="container-fluid">
+                <div ClassName="container-fluid" style={{marginBottom:"-5px"}}>
                 <Row>
                   <Col size="md-1"/>
                   <Col size="md-11">
@@ -114,7 +114,14 @@ class BrowseIdeas extends Component {
       
             </div>
           </div>
+         
+
+
       </div>
+
+
+
+
     );
   }
 }

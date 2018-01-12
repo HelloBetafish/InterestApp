@@ -10,7 +10,7 @@ import Col from "../components/Login/Col";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import DeleteBtn from "../components/DeleteBtn";
-
+import { LinksURL, LinksURLForm } from "../components/LinksURL";
 
 class Dashboard extends Component
 {
@@ -48,7 +48,13 @@ class Dashboard extends Component
     VimeoUrl: "",
     LinkedInUrl: "",
     FacebookUrl: "",
-    TwitterUrl: ""
+    TwitterUrl: "",
+
+    GithubUrlSaved: "",
+    VimeoUrlSaved: "",
+    LinkedInUrlSaved: "",
+    FacebookUrlSaved: "",
+    TwitterUrlSaved: ""
   };
 
   componentDidMount() 
@@ -234,23 +240,60 @@ class Dashboard extends Component
     }
   };
 
-  addLinks = (event) => {
+  addLinkG = (event) => {
     event.preventDefault();
     API.changeUrl(this.state.IdOfSignedUser,
-      {
-        GithubUrl: this.state.GithubUrl,
-        LinkedInUrl: this.state.LinkedInUrl,
-        VimeoUrl: this.state.VimeoUrl,
-        TwitterUrl: this.state.TwitterUrl,
-        FacebookUrl: this.state.FacebookUrl
-      }).then(res => console.log(res.data))
+      { 
+        GithubUrl: this.state.GithubUrl
+      }).then(res => console.log("Added Github link"))
       .catch(err => console.log(err));
-    // console.log(this.state.FacebookUrl);
-
 
     this.getUser(this.state.IdOfSignedUser);
   };
   
+  addLinkL = (event) => {
+    event.preventDefault();
+    API.changeUrl(this.state.IdOfSignedUser,
+      { 
+        LinkedInUrl: this.state.LinkedInUrl
+      }).then(res => console.log("Added LinkedIn link"))
+      .catch(err => console.log(err));
+
+    this.getUser(this.state.IdOfSignedUser);
+  };
+  
+  addLinkV = (event) => {
+    event.preventDefault();
+    API.changeUrl(this.state.IdOfSignedUser,
+      { 
+        VimeoUrl: this.state.VimeoUrl
+      }).then(res => console.log("Added Vimeo link"))
+      .catch(err => console.log(err));
+
+    this.getUser(this.state.IdOfSignedUser);
+  };
+  
+  addLinkT = (event) => {
+    event.preventDefault();
+    API.changeUrl(this.state.IdOfSignedUser,
+      { 
+        TwitterUrl: this.state.TwitterUrl
+      }).then(res => console.log("Added Twitter link"))
+      .catch(err => console.log(err));
+
+    this.getUser(this.state.IdOfSignedUser);
+  };
+  
+  addLinkF = (event) => {
+    event.preventDefault();
+    API.changeUrl(this.state.IdOfSignedUser,
+      { 
+        FacebookUrl: this.state.FacebookUrl
+      }).then(res => console.log("Added Facebook link"))
+      .catch(err => console.log(err));
+
+    this.getUser(this.state.IdOfSignedUser);
+  };
 
     render()
     {
@@ -294,34 +337,33 @@ class Dashboard extends Component
                                 <div className="modal-body" style={{backgroundColor:" white"}}>
 
                                             <form id="input" style={{width:"93%", marginLeft:"20px",marginBottom:"40px"}}>
+                                              
+                                              <div className="form-group">
+                                                <a href="Bethany Pfeister" alt="Bethany">
+                                                <img src="css/images/bethany.jpg" width="30" height="30" style={{marginTop:"30px",marginLeft:"30px"}}/>
+                                                <p alt="Bethany Pfeister" style={{marginLeft:"90px", marginTop:"-20px"}}>Bethany Pfeister - Web Developer</p>
+                                                </a>
 
-                                               <div className="form-group">
+                                                <a href="Jesse Forte" alt="Jesse">
+                                                <img src="css/images/Jesse1.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                <p alt="Jesse Forte" style={{marginLeft:"90px", marginTop:"-20px"}}>Jesse Forte - Web Developer</p>
+                                                </a>
 
-                                                 <a href="Bethany Pfeister" alt="Bethany">
-                                                 <img src="css/images/bethany.jpg" width="30" height="30" style={{marginTop:"30px",marginLeft:"30px"}}/>
-                                                 <p alt="Bethany Pfeister" style={{marginLeft:"90px", marginTop:"-20px"}}>Bethany Pfeister - Web Developer</p>
-                                                 </a>
+                                                <a href="TJ Stephens" alt="TJ">
+                                                <img src="css/images/tj.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                <p alt="TJ Stephens" style={{marginLeft:"90px", marginTop:"-20px"}}>TJ Stephens - Web Developer</p>
+                                                </a>
+                                                
+                                                <a href="Reyna Perez" alt="Reyna">
+                                                <img src="css/images/reyna.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                <p alt="Reyna Perez" style={{marginLeft:"90px", marginTop:"-20px"}}>Reyna Perez - Web Developer</p>
+                                                </a>
 
-                                                 <a href="Jesse Forte" alt="Jesse">
-                                                 <img src="css/images/Jesse1.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
-                                                 <p alt="Jesse Forte" style={{marginLeft:"90px", marginTop:"-20px"}}>Jesse Forte - Web Developer</p>
-                                                 </a>
-
-                                                 <a href="TJ Stephens" alt="TJ">
-                                                 <img src="css/images/tj.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
-                                                 <p alt="TJ Stephens" style={{marginLeft:"90px", marginTop:"-20px"}}>TJ Stephens - Web Developer</p>
-                                                 </a>
-                                                  
-                                                 <a href="Reyna Perez" alt="Reyna">
-                                                 <img src="css/images/reyna.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
-                                                 <p alt="Reyna Perez" style={{marginLeft:"90px", marginTop:"-20px"}}>Reyna Perez - Web Developer</p>
-                                                 </a>
-
-                                                 <a href="John Anders" alt="Reyna">
-                                                 <img src="css/images/john.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
-                                                 <p alt="John Anders" style={{marginLeft:"90px", marginTop:"-20px"}}>John Anders - Web Developer</p>
-                                                 </a>
-                                                 
+                                                <a href="John Anders" alt="Reyna">
+                                                <img src="css/images/john.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
+                                                <p alt="John Anders" style={{marginLeft:"90px", marginTop:"-20px"}}>John Anders - Web Developer</p>
+                                                </a>
+                                                
 
                                                </div>
                                                                                        
@@ -389,59 +431,34 @@ class Dashboard extends Component
 
               <Col size="md-1"></Col>
               <Col size="md-3" style={{marginTop:"100px",marginLeft:"-30px"}}>
-                 <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginLeft:"10px"}}></i></span>
-                      <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-                      <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-                      <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-                      <span id='clickableAwesomeFont'><i className="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginLeft:"20px"}}></i></span>
-                      <a onClick={this.toggleLinks} href="#">hide/show</a>
+                <LinksURL
+                  GithubUrl= {this.state.user.GithubUrl}
+                  LinkedInUrl= {this.state.user.LinkedInUrl}
+                  VimeoUrl= {this.state.user.VimeoUrl}
+                  TwitterUrl= {this.state.user.TwitterUrl}
+                  FacebookUrl= {this.state.user.FacebookUrl}
+                />
+                <span style={{float:"right"}}><a onClick={this.toggleLinks} href="#">hide/show</a></span>
                 <hr/>
 
-                <form id="LinksUrl" className="form-inline" style={{display:"none"}}>
-                  <ul className="list-group list-group-flush">
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormGithub">Github</label>
-                      <div className="input-group">
-                        <span id='clickableAwesomeFont'><i className="fa fa-github" aria-hidden="true" style={{color:"#65737e",fontSize: "40px",marginTop:"20px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="GithubUrl" value={this.state.GithubUrl} className="form-control" id="inlineFormGithub" onChange={this.handleInputChange} placeholder="Github URL"/>
-                      </div>
-                    </li>
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormLinkedIn">LinkedIn</label>
-                      <div className="input-group">
-                      <span id='clickableAwesomeFont'><i className="fa fa-linkedin" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="LinkedInUrl" value={this.state.LinkedInUrl} className="form-control" id="inlineFormLinkedIn" onChange={this.handleInputChange} placeholder="LinkedIn URL"/>
-                      </div>
-                    </li>
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormVimeo">Vimeo</label>
-                      <div className="input-group">
-                      <span id='clickableAwesomeFont'><i className="fa fa-vimeo-square" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="VimeoUrl" value={this.state.VimeoUrl} className="form-control" id="inlineFormVimeo" onChange={this.handleInputChange} placeholder="Vimeo URL"/>
-                      </div>
-                    </li>
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormTwitter">Twitter</label>
-                      <div className="input-group">
-                      <span id='clickableAwesomeFont'><i className="fa fa-twitter" aria-hidden="true" style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="TwitterUrl" value={this.state.TwitterUrl} className="form-control" id="inlineFormTwitter" onChange={this.handleInputChange} placeholder="Twitter URL"/>
-                      </div>
-                    </li>
-
-                    <li className="list-group-item">
-                      <label className="sr-only" for="inlineFormFacebook">Facebook</label>
-                      <div className="input-group">
-                      <span id='clickableAwesomeFont'><i className="fa fa-facebook" aria-hidden="true"style={{color:"#65737e",fontSize: "35px", marginRight:"10px"}}></i></span>
-                        <input type="text" name="FacebookUrl" value={this.state.FacebookUrl} className="form-control" id="inlineFormFacebook" onChange={this.handleInputChange} placeholder="Facebook URL"/>
-                      </div>
-                      <button type="submit" onClick={this.addLinks} className="btn btn-danger btn-sm" style={{float: "right"}}>Save</button>
-                    </li>
-                  </ul>
-                </form>
+                <LinksURLForm
+                  GithubUrl= {this.state.GithubUrl}
+                  LinkedInUrl= {this.state.LinkedInUrl}
+                  VimeoUrl= {this.state.VimeoUrl}
+                  TwitterUrl= {this.state.TwitterUrl}
+                  FacebookUrl= {this.state.FacebookUrl}
+                  UserGithubUrl= {this.state.user.GithubUrl}
+                  UserLinkedInUrl= {this.state.user.LinkedInUrl}
+                  UserVimeoUrl= {this.state.user.VimeoUrl}
+                  UserTwitterUrl= {this.state.user.TwitterUrl}
+                  UserFacebookUrl= {this.state.user.FacebookUrl}
+                  handleInputChange= {this.handleInputChange}
+                  addLinkG= {this.addLinkG}
+                  addLinkL= {this.addLinkL}
+                  addLinkV= {this.addLinkV}
+                  addLinkT= {this.addLinkT}
+                  addLinkF= {this.addLinkF}
+                />
                 <hr/>
 
                 <div className="text-center">
