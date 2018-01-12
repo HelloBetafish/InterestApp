@@ -5,6 +5,7 @@ export default
 	//Login: function 1
 	getUsers: function()
 	{
+    console.log("getUsers");
 		return axios.get("/api/users");
 	},
 
@@ -104,5 +105,17 @@ export default
   changePhoto: function(id, field)
   {
     return axios.put("/api/photo/" + id, field);
+  },
+
+  // For Posts on Profile page
+  popPosts: function(id)
+  {
+    return axios.get("/api/post/" + id);
+  },
+
+  savePost: function(id, postData)
+  {
+    return axios.post("/api/post/" + id, postData);
   }
+
 };

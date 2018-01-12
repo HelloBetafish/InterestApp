@@ -86,10 +86,10 @@ const userSchema = new Schema({
     }
   ],
 
-  messages: [
+  posts: [
     {
     type: Schema.Types.ObjectId,
-    ref: "Message"
+    ref: "Post"
     }
   ]
 

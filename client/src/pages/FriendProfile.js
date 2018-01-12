@@ -11,7 +11,7 @@ import Idea from "../components/Idea";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import { PostBoard, PostBtn, PostItem, TextArea } from "../components/PostBoard";
 
-class PublicProfile extends Component
+class FriendProfile extends Component
 {
   state = 
   {
@@ -185,8 +185,8 @@ addPost = event =>
                   </div>
                   
                   <div className="col-md-3 text-center">
-                   <div className="boardann" style={{height:"80px",width:"70px",backgroundColor: "#65737e",marginTop:"45px", margin:"auto"}}>
-                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"2px"}}></i></span>
+                   <div className="boardann" style={{height:"100px",width:"100px",backgroundColor: "#65737e",marginTop:"45px", margin:"auto"}}>
+                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"20px"}}></i></span>
                    <p style={{color:"white",fontSize: "9px",marginTop:"5px"}}>private message</p>
 
                    </div>
@@ -292,4 +292,4 @@ addPost = event =>
   }
 }
 
-export default PublicProfile;
+export default FriendProfile;

@@ -1,0 +1,68 @@
+.custom-select
+{
+	width: 1045px;
+}
+
+
+.logoPic
+{
+    /*
+    height: 150px;
+    background: rgb(60, 60, 60);                            
+    background: rgba(60, 60, 60, 0.4);
+    */
+    opacity: 0.75;
+
+}
+
+.backgroundImg
+{
+   position:fixed;
+   padding:0;
+   margin:0;
+   top:0;
+   left:0;
+   width: 100%;
+   height: 100%;  
+}
+
+.intAppDiv
+{
+    background: gray;
+    font-family: serif, Times, "Times New Roman";
+    font-size: 45px;
+    font-weight: bold;
+    opacity: 0.75;
+}
+
+.aboutUs, .createAccount
+{
+    margin-top: 20px;
+    background: #dbe0d7;
+    text-align: center;
+    height: 80px;
+    opacity: 0.75;
+}
+
+iframe.backgroundImg
+{
+    pointer-events: none;
+}
+
+.aboutUsText, .createAccountText
+{
+    color: black;
+    position: relative;
+    top: 20px;
+    font-family: serif, Times, "Times New Roman";
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 960px)
+{
+	
+
+
+	
+}

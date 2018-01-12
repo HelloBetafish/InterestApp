@@ -135,6 +135,7 @@ class Login extends Component
 
     const { name, value } = event.target;
 
+    console.log(this.state.users);
 
 
     this.setState({
@@ -205,9 +206,10 @@ class Login extends Component
 
     console.log('result', result);
     console.log('link', result.filesUploaded[0].originalPath);
+    console.log("url", result.filesUploaded[0].url)
 
     //store photolink inside (photoURL) field of (user) collection
-    this.setState({photoURL: result.filesUploaded[0].originalPath})
+    this.setState({photoURL: result.filesUploaded[0].url})
 
 
   };
@@ -237,7 +239,7 @@ class Login extends Component
     <Wrapper>
       <Container>
 
-
+<img src="images/login3.jpg" class="img-fluid backgroundImg2" alt="Responsive image" />
 
         <Navbar>
 
@@ -245,7 +247,7 @@ class Login extends Component
   
 
             <a className="navbar-brand" >
-              <h1 className="navTitle"> Interest App </h1>
+              
             </a>
 
             <a className="navbar-brand" >

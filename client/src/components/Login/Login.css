@@ -4,7 +4,7 @@
 }
 
 
-.backgroundImg
+.backgroundImg2
 {
 	/*
 	position: absolute;
@@ -33,13 +33,9 @@
 	display: none;
 }
 
-/*
-#log
-{
-	border: 2px solid red;
-    border-radius: 4px;
-}
-*/
+
+
+
 
 
 @media screen and (max-width: 960px)

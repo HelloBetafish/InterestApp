@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
 // import "../style/Profile.css";
 import API from "../utils/API";
+import Row from "../components/Row";
 import Col from "../components/Login/Col";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
@@ -302,8 +303,8 @@ console.log(this.state.user.idea.Author);
               <Col size="md-2">
               
                 <div tabIndex="3"className="box3">
-                  <Link to="/messages">
-                    <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>4</p></span>
+                  <Link to="/publicprofile#scrollPost">
+                    <span id='clickableAwesomeFont'><p id="cuatro" style={{fontSize: "30px", fontWeight: "bold", marginLeft: "30px",paddingTop:"30px"}}>{this.state.user.posts ? (this.state.user.posts.length) : 0 }</p></span>
                     <p id="textmessage" >Messages</p>
                   </Link>
                 </div>
@@ -322,6 +323,8 @@ console.log(this.state.user.idea.Author);
                   skills={this.state.user.skills}
                   style={{marginTop:"40px",boxShadow: "1px 9px 20px grey"}}
                 />
+                <Row>
+                  <Col size="md-3"/>
                 <ReactFilestack
                   apikey={"AXodQkfA4Soq1kmjeI2Vbz"}
                   buttonText="Upload Profile Pic"
@@ -329,6 +332,7 @@ console.log(this.state.user.idea.Author);
                   options={this.state.optionsP}
                   onSuccess={this.callbackFunctionPhoto}
                 />
+                </Row>
               </Col>
              
 
