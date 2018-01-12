@@ -7,87 +7,94 @@ const Messages = () =>
 <div>
 <Navbar />
 
-<div className="container-fluid">
-  <div className="row">
-    <div className="col-md-1"></div>
-      <div class="col-md-2">
-        <span className="envelope" id='clickableAwesomeFont'><i className="fa fa-envelope fa-4x " style={{marginLeft:"50px", fontSize: "40px", color: "black", marginTop: "170px"}}></i></span>
-         <p id="pb"> 4 New</p>
-         <span className="openenvelope" id='clickableAwesomeFont'><i className="fa fa-envelope-open fa-4x " style={{marginLeft:"30px",fontSize: "40px", color: "black"}}></i></span>
-         <p id="pb">Read</p>
-         <span className="noread" id='clickableAwesomeFont'><i className="fa fa-envelope-square fa-4x " style={{marginLeft:"30px",fontSize: "40px", color:"black"}}></i></span>
-         <p id="pb" style={{marginLeft:"100px",fontSize: "15px", color: "black"}}>No Read</p>
-      </div>
 
-      <div id="computer" class="col-md-6" >
-        <div id="messagebox" class="col-md-8">
-          <span className="messageicon"><i className="fa fa-envelope fa-4x " style={{ marginLeft:"15px",fontSize: "40px", color:"white"}}></i></span>
-          <h2 id="messageppp">Message Box</h2>
-          <div id="box">
-            <p id="messagep">Keep your messages organized</p>
+
+
+
+   
+
+
+
+
+<div className="col-md-12">
+
+    <div className="col-md-2">
+    <div style={{marginTop:"100px",height:"650px",width:"100%",overflow:"auto",backgroundColor:"#343d46",color:"white",scrollbarBaseColor:"gold",fontFamily:"sans-serif",padding:"10px"}}>
+     <img src="css/images/bethany.jpg" width="70" height="70" style={{marginBottom:"10px",marginTop:"15px", borderRadius:"50px",marginLeft:"70px"}}/>
+             <p style={{fontSize:"14px",marginLeft:"50px",color: "white"}}>Bethany Pfeister</p>
+             <img src="css/images/tj3.jpg" width="70" height="70" style={{marginTop:"20px",marginLeft:"70px",borderRadius:"50px"}}/>
+             <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "white"}}>Terry Stephens</p>
+             <img src="css/images/jesse.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+             <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "white"}}>Jesse Forte</p>
+             <img src="css/images/Emma.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+             <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "white"}}>Emma Sander</p>
+             <img src="css/images/john.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+             <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "white"}}>John Brungs</p>
+             <img src="css/images/zac.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+             <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "white"}}>Zac Johnson</p>
+             <img src="css/images/reyna2.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+             <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "white"}}>Reyna Perez</p>
+
+    </div>
+      
+
+
+
+
+    </div>
+    
+
+
+     
+     
+      <div id="computer" className="col-md-6"style={{marginTop:"-650px",marginLeft:"30%"}}>
+       
+        <div id="messagebox" className="col-md-12">
+            <div style={{marginTop:"20px",height:"465px",width:"100%",overflow:"auto",backgroundColor:"white",color:"white",scrollbarBaseColor:"gold",fontFamily:"sans-serif",padding:"10px"}}>
+                  <img src="css/images/Emma.jpg" width="70" height="70" style={{marginBottom:"10px",marginTop:"15px", borderRadius:"50px",marginLeft:"70px"}}/>
+                 <p style={{fontSize:"14px",marginLeft:"50px",color: "black"}}>Emma Sanders - January 1st,2018 03:00pm <br/> Hi Reyna how are you? I really like your  ice cream app I would like to know about it </p>
+                 <img src="css/images/reyna2.jpg" width="70" height="70" style={{marginTop:"20px",marginLeft:"70px",borderRadius:"50px"}}/>
+                 <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "black"}}>January 1st,2018 03:250pm <br/>Hi Emma, nice to hear you like my application, what would you like to know about it?</p>
+                 <img src="css/images/Emma.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+                 <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "black"}}>Emma Sanders - January 1st,2017 04:00pm <br/>I would like to know if you would like assistance in building it I have experience with back end, I would like to know more about who will be your target because I also my family have icecream stores that I am sure they will be interested</p>
+                 <img src="css/images/reyna2.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+                 <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "black"}}>January 2nd, 2018<br/>I am interested in small business with not need to add more functions, I am looking for 2 more people to be part of my team. Where are you located, do you have a portfolios?</p>
+                 <img src="css/images/Emma.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+                 <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "black"}}>Emma Sanders</p>
+                 <img src="css/images/reyna2.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+                 <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "black"}}></p>
+                 <img src="css/images/Emma.jpg" width="70" height="70" style={{marginTop:"25px",marginLeft:"70px",borderRadius:"50px"}}/>
+                 <p style={{fontSize:"14px",marginBotton:"30px",marginLeft:"60px",color: "black"}}>Emma Sanders</p>
+
+             </div>
+      
+        
+         
+        
+          <div id="box1"> 
+            <div className="form-group">
+
+          
+            <textarea className="form-control" id="exampleTextarea" rows="3" style={{height:"40%"}}>
+
+
+            </textarea>
+          </div>
           </div>
           <div className="col-md-2 messagesButtons">
-            <button type="button" id="reply" className="btn btn-danger"data-toggle="modal" data-target="#exampleModal" style={{marginLeft:"220px", marginTop:"-8px"}}>reply</button>
-            <button type="button" id="keep" className="btn btn-warning" style={{marginLeft:"295px", marginTop:"-65px"}}>keep</button>
-            <button type="button" id="delete" className="btn btn-light"style={{marginLeft:"370px", marginTop:"-115px"}}>delete</button>
+            <span id='clickableAwesomeFont'><i className="fa fa-upload" aria-hidden="true"style={{marginLeft:"80px", fontSize: "30px", color: "black", marginTop: "30px"}} ></i></span>
+            <button type="button" id="reply" className="btn btn-danger"data-toggle="modal" data-target="#exampleModal" style={{marginLeft:"160px", marginTop:"-38px"}}>reply</button>
+            <button type="button" id="delete" className="btn btn-light"style={{marginLeft:"230px", marginTop:"-80px"}}>delete</button>
           </div>
+      
+         
         </div>
 
-              <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div className="modal-dialog" role="document">
-                                        <div className="modal-content">
-                                            <div className="modal-header">
-                                                <h5 className="modal-title" id="exampleModalLabel">Reply</h5>
-
-                                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div className="modal-body" style={{backgroundColor:" white"}}>
-                                                  <form id="input" style={{width:"93%", marginLeft:"20px",marginBottom:"40px"}}>
-
-                                                 <div className="formName-group">
-                                                   <label className="col-form-label" for="formGroupExampleInput2"style={{color:"#65737e"}}>to</label>
-                                                   <input type="text" className="form-control" id="formGroupExampleInput2" placeholder=""/>
-                                                 </div>
-                                              
-                                              
-                                                 <div className="form-group">
-                                                   <label className="col-form-label" for="formGroupExampleInput" style={{color:"#65737e"}}>cc</label>
-                                                   <input type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
-                                                 </div>
-                                                  
-                                                   <div className="formName-group">
-                                                   <label className="col-form-label" for="formGroupExampleInput2"style={{color:"#65737e"}}>subject</label>
-                                                   <input type="text" className="form-control" id="formGroupExampleInput2" placeholder=""/>
-                                                 </div>
-                                              
-                                                 <div className="form-group">
-                                                   <label for="exampleFormControlTextarea1"style={{color:"#65737e"}}></label>
-                                                   <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                                 </div>
-                                                 <div className="form-group">
-
-                                                 <a href="attach" alt="attach">
-                                                 <p alt="attach"> attach</p>
-                                                </a>
-                                                  
-                                                 </div>
-                                                 
-                                                
-
-                                                </form>
-                                              
-                                            </div>
-                                            <div className="modal-footer" style={{backgroundColor:" white"}}>
-                                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Discard</button>
-                                                <button type="button" className="btn btn-danger">send</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+             
           </div>
-    </div>
+    
+    
+   
 
   </div>;
 </div>
