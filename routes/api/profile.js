@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const appController = require("../../controllers/app_controller");
 
+router.route("/")
+.get(appController.findProfileId);
+
 router.route("/:id")
-.get(appController.findById)
-.post(appController.createContact);
+.post(appController.createProfileId);
 
 module.exports = router;

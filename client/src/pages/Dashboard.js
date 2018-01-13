@@ -27,6 +27,9 @@ class Dashboard extends Component
     ideaphoto: "css/images/darkroom3.JPG",
     Author: "",
  
+    // For contacts
+    contacts: [],
+
     // For Filestack docs
     optionsF: {
       accept: [".pdf",".doc",".docx",".docm"],
@@ -295,6 +298,28 @@ class Dashboard extends Component
     this.getUser(this.state.IdOfSignedUser);
   };
 
+  getContacts = (event) => {
+    event.preventDefault();
+    // console.log(this.state.user.contacts);
+    var pulledContacts = this.state.user.contacts;
+
+    // console.log(pulledContacts[0]);
+    for (var i = 0; i < pulledContacts.length; i++) {
+      
+      API.getContact(pulledContacts[i]).then(res => 
+        {
+          this.state.contacts.push({
+          full_name : res.data.full_name,
+          photo : res.data.photoURL,
+          title : res.data.title
+        })
+        }).catch(err => console.log(err));
+        // this.state.contacts.push(contactinfo)
+    }
+   // this.setState({contacts: this.state.contacts});
+    console.log(this.state.contacts);
+  };
+
     render()
     {
   
@@ -314,7 +339,7 @@ class Dashboard extends Component
                   </Link>
                 </div>
                 <div tabIndex="2"className="box2">
-                <span id='clickableAwesomeFont'><i className=" fa fa-address-book" data-toggle="modal" data-target=".bs-example-modal-sm" style={{fontSize: "40px", color:"black"}} ></i></span>
+                <span id='clickableAwesomeFont'><i onClick={this.getContacts} className=" fa fa-address-book" data-toggle="modal" data-target=".bs-example-modal-sm" style={{fontSize: "40px", color:"black"}} ></i></span>
                 <p id="contacts">Contacts</p>
                 </div>
               </div>
@@ -363,11 +388,7 @@ class Dashboard extends Component
                                                 <img src="css/images/john.jpg" width="30" height="30" style={{marginLeft:"30px"}}/>
                                                 <p alt="John Anders" style={{marginLeft:"90px", marginTop:"-20px"}}>John Anders - Web Developer</p>
                                                 </a>
-                                                
-
-                                               </div>
-                                                                                       
-
+                                               </div> 
                                             </form>
                                           
                               </div>

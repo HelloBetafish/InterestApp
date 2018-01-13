@@ -16,10 +16,12 @@ class FriendProfile extends Component
 {
   state = 
   {
+    signedUser: {},
+    IdOfSignedUser: "",
     user: {},
     ideas: [],
     ideas2: [],
-    IdOfSignedUser: "",
+    IdOfUserProfile: "",
     files: [],
     posts: [],
     postBody: ""
@@ -30,18 +32,21 @@ class FriendProfile extends Component
   {
 
       this.loadLoggedUsers();
-      //this.getAllIdeas();
+      
   }
 
-  //ReUse: Get Id of logged in user
+  //ReUse: Get Id profile user
   loadLoggedUsers = () => 
   {
-    
-      API.getIdOfLoggedInUser().then(res =>
-        
-        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, this.getUser(res.data[0].IdOfSignedUser) )
+    API.getIdOfLoggedInUser().then(res =>
+      
+      this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser })
+    ).catch(err => console.log(err));
 
-        ).catch(err => console.log(err))
+    API.getIdOfProfileUser().then(res =>
+        
+      this.setState({ IdOfUserProfile: res.data[0].IdOfUserProfile }, this.getUser(res.data[0].IdOfUserProfile) )
+    ).catch(err => console.log(err));
 
   };
 
@@ -62,7 +67,10 @@ class FriendProfile extends Component
     API.getUser(id).then(res => 
           this.setState({ user: res.data, ideas: res.data.idea}, console.log(res.data) )
           ).catch(err => console.log(err));
-    
+          
+    API.getUser(this.state.IdOfSignedUser).then(res => 
+      this.setState({ signedUser: res.data}, console.log(res.data) )
+      ).catch(err => console.log(err));
   };
   
   //We use id parameter (associtated with user with idea/id) where the idea (id)
@@ -105,16 +113,15 @@ addPost = event =>
     //Ensure users enter all data
     if(this.state.postBody)
     {
-        API.savePost(this.state.IdOfSignedUser, 
+        API.savePost(this.state.IdOfUserProfile, 
         { 
         body: this.state.postBody,
         senderId: this.state.IdOfSignedUser,
-        senderName: this.state.user.full_name
+        senderName: this.state.signedUser.full_name
         }).then(res => console.log("Post added."))
         .catch(err => console.log(err));
     }
-    this.getUser(this.state.IdOfSignedUser);
-    // Reset Text Area field
+    this.getUser(this.state.IdOfUserProfile);
     this.setState({ postBody:""});
 }
 
@@ -147,8 +154,9 @@ addPost = event =>
                       photoURL={this.state.dummyPhoto}
                       title={this.state.user.title}
                       skills={this.state.user.skills}
-                />)}
-
+                />)
+              }
+                    
                 <LinksURL
                   GithubUrl= {this.state.user.GithubUrl}
                   LinkedInUrl= {this.state.user.LinkedInUrl}
@@ -194,8 +202,8 @@ addPost = event =>
                   </div>
                   
                   <div className="col-md-3 text-center">
-                   <div className="boardann" style={{height:"100px",width:"100px",backgroundColor: "#65737e",marginTop:"45px", margin:"auto"}}>
-                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"20px"}}></i></span>
+                   <div className="boardann" style={{height:"80px",width:"70px",backgroundColor: "#65737e",marginTop:"45px", margin:"auto"}}>
+                   <span id='clickableAwesomeFont'><i className="fa fa-comment-o  " data-toggle="modal" data-target="#exampleModal" style={{color:"white",fontSize: "40px",marginTop:"2px"}}></i></span>
                    <p style={{color:"white",fontSize: "9px",marginTop:"5px"}}>private message</p>
 
                    </div>
@@ -264,7 +272,7 @@ addPost = event =>
         
 
          <div id="addedtitle">
-            <h5 style={{fontSize:"20px",color:"white"}}>Added Ideas</h5>
+            <h5 style={{fontSize:"20px",color:"white"}}>{this.state.user.full_name}'s Ideas</h5>
          </div>
 
          <hr/>
@@ -294,6 +302,10 @@ addPost = event =>
                    
                                  
           </div>
+
+
+          
+
 
 
         );

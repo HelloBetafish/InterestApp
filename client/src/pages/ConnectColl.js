@@ -1,5 +1,5 @@
-
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Row from "../components/Row";
 import Col from "../components/Col";
@@ -7,6 +7,7 @@ import ImgCard from "../components/ImgCard";
 import AddContactBtn from "../components/AddContactBtn";
 import API from "../utils/API";
 import "../style/connectColl.css";
+import ReactFilestack, { client } from 'filestack-react';
 
 class ConnectColl extends Component {
   state = 
@@ -14,6 +15,9 @@ class ConnectColl extends Component {
     user: {},
     users: [],
     IdOfSignedUser: "",
+    contacts: [],
+    id: "",
+    dummyPhoto: "css/images/addphoto.png"
   };
 
   componentDidMount() 
@@ -40,7 +44,7 @@ class ConnectColl extends Component {
   {
 
     API.getUser(id).then(res => 
-          this.setState({ user: res.data }, console.log(res.data))
+          this.setState({ user: res.data, contacts: res.data.contacts }, console.log(res.data))
           ).catch(err => console.log(err))
   };
 
@@ -57,10 +61,14 @@ class ConnectColl extends Component {
   handleClick = (event) => {
     event.preventDefault();
     const contactId = event.target.attributes.getNamedItem("data-id").value;
-    console.log(contactId);
+    // console.log(contactId);
     // Use ID value to redirect to that person's profile page.
-    this.addContact(contactId);
-    
+    if (this.state.contacts.indexOf(contactId) === -1) {
+      this.addContact(contactId);
+    }
+    else{
+      alert("Contact has already been added.");
+    }
   };
 
   addContact = (contactId) => {
@@ -68,9 +76,18 @@ class ConnectColl extends Component {
     API.saveContact(this.state.IdOfSignedUser,
       { 
         contacts: contactId
-        }).then(res => console.log("Success!"))
+        }).then(res => alert("Contact added."))
         .catch(err => console.log(err));
     this.getUser(this.state.IdOfSignedUser);
+  };
+
+  //When user clicks on profile pic, before we link to (FriendProfile) we
+  //need to store the id of photo inside the field (IdOfUserProfile) of profile collection 
+  seeProfile = id => 
+  {
+
+    API.addIdOfProfilePic(id).then(res => this.loadUsers())
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -118,13 +135,21 @@ class ConnectColl extends Component {
       {this.state.users.filter(user => user._id != this.state.IdOfSignedUser)
       .map(card => (
         <Col size="md-3" className="zoom">
+
+        <Link to="/friendprofile" className="nav-link" >
+                  
           <ImgCard
+            onClick={this.seeProfile}
             photoURL={card.photoURL}
             full_name={card.full_name}
             title={card.title}
             skills={card.skills}
             key={card._id}
+            id={card._id}
           />
+
+        </Link>
+          
           <AddContactBtn id={card._id} handleClick={this.handleClick}/>
         </Col>
       ))}

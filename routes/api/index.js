@@ -9,6 +9,7 @@ const userRoutes7 = require("./contacts");
 const userRoutes8 = require("./photo");
 const userRoutes9 = require("./post");
 const userRoutes10 = require("./linkurl");
+const userRoutes11 = require("./profile");
 
 // users routes app or router can be used
 router.use("/users", userRoutes);
@@ -18,10 +19,12 @@ router.use("/signin", userRoutes2);
 router.use("/idea", userRoutes3);
 //obtains idea object
 router.use("/personalinfo", userRoutes4);
-// router.use("/conncoll", userRoutes5);
+router.use("/conncoll", userRoutes5);
 router.use("/file", userRoutes6);
 router.use("/contacts", userRoutes7);
 router.use("/photo", userRoutes8);
 router.use("/post", userRoutes9);
 router.use("/linkurl", userRoutes10);
+router.use("/profile", userRoutes11);
+
 module.exports = router;

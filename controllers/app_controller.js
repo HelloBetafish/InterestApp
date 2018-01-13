@@ -48,22 +48,7 @@ module.exports =
 
   update: function(req, res) 
   {
-  	/*
-    db.User.update({ _id: req.params.id }, {$set: {"online": 1}}).then(function(dbModel)
-    {
-    	console.log("true");
-    	console.log(req.params.id);
-    	res.json(dbModel);
-    }).catch(function(err)
-    {
-    	console.log("false");
-    	res.status(422).json(err)
-    })
-    */
-    
-
-	
-	
+  
       //DB1: user collection(table). Set field(online = true)
       db.User.update({ _id: req.params.id }, {$set: {"online": 1}} ).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -75,8 +60,18 @@ module.exports =
       db.Signin
       .create({ IdOfSignedUser: req.params.id }).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-
    
+  },
+
+  //profile collection(table) set field(IdOfUserProfile = id of clicked pitcture on connect&colab)
+  createProfileId: function(req, res)
+  {
+  	//Removes previous (IdOfUserProfile) of previous user so new user id will be inserted when view new user page.
+  	db.Profile.remove({}).then(dbModel => res.json(dbModel)).catch(err => res.status(422).json(err));
+
+  	db.Profile
+      .create({ IdOfUserProfile: req.params.id }).then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
 
   //Returns the signins object from db to obtain the field (IdOfSignUser)
@@ -88,26 +83,21 @@ module.exports =
       .find()
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))						
-      .catch(err => res.status(422).json(err));
-      
-     
-      /*
-      //dbModel is an array of signin objects stored inside mongoDB
-      db.Signin.find().sort({ date: -1 }).then(function(dbModel)
-      {
-      	console.log("signed user");
-      	console.log(dbModel);
-      	res.json(dbModel);
-
-      }).catch(function(err)
-      {
-      	console.log("falseeeee");
-      	res.status(422).json(err);
-
-      });
-      */
-      
+      .catch(err => res.status(422).json(err));   
   },
+
+  //Returns the (profile) object from db/profile to obtain field(IdOfUserProfile)
+  //which is the id of the user when we click on their profile picture
+  findProfileId: function(req, res) 
+  {
+  	
+    db.Profile
+      .find()
+      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))						
+      .catch(err => res.status(422).json(err));   
+  },
+
 
   updateUserField: function(req,res){
     db.User
@@ -145,9 +135,6 @@ module.exports =
     	//that is found by article(id) inside our mongoDB
     	return db.User.findOneAndUpdate({_id: req.params.id}, {$push: {idea: req.body}}, {new: true});
 
-
-
-  
   	}).then(function(dbUser)
   	{
   
@@ -177,21 +164,7 @@ module.exports =
   	db.Idea
   	.findById(req.params.id)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-    
-      
-
-      /*
-      db.Idea.findById(req.params.id).then(function(dbModel)
-      {
-      	console.log("get idea");
-      	console.log(req.params.id);
-      	console.log(dbModel);
-
-      	res.json(dbModel)
-
-      }).catch(err => res.status(422).json(err));
-      */
+      .catch(err => res.status(422).json(err));   
   	
   },
 

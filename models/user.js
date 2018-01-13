@@ -56,7 +56,7 @@ const userSchema = new Schema({
   online:
   {
     type: Boolean,
-    default: false,
+    default: false
   
   },
 
@@ -81,8 +81,7 @@ const userSchema = new Schema({
 
   contacts: 
   {
-    type: Array,
-    unique: true
+    type: Array
   },
 
   posts: [

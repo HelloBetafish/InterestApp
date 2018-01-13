@@ -31,7 +31,7 @@ class PublicProfile extends Component
   {
 
       this.loadLoggedUsers();
-      //this.getAllIdeas();
+     
   }
 
   //ReUse: Get Id of logged in user
@@ -75,16 +75,6 @@ class PublicProfile extends Component
     
   };
 
-/*
-  getAllIdeas = () =>
-  {
-    API.getAllIdeas().then(res =>
-
-        this.setState({ ideas: res.data }, console.log("all"), console.log(res.data))
-
-        ).catch(err => console.log(err));
-  };
-  */
 
 handleInputChange = event => 
 {

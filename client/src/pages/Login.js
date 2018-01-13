@@ -91,12 +91,8 @@ class Login extends Component
         //Set (online) field of user signing in to true
          var id = this.state.users[i]._id;
 
-         //Store id of signed in user in a remote location(SignedInUser/Online.js)
-         //in order for the user information in (Profile.js) to be obtained.
-         //Online.setId(id);
-
-
-        //console.log(id);
+        //Set the field (online) to true and create the signin collection
+        //and store the id of signed in user in (idOfSignedUser) field simultaneously.
         API.userOnline(id).then(res => this.loadUsers())
 
         .catch(err => console.log(err));
@@ -132,7 +128,6 @@ class Login extends Component
   //Function3: user enters data in textfields
   handleInputChange = event => 
   {
-
     const { name, value } = event.target;
 
     this.setState({
@@ -140,25 +135,14 @@ class Login extends Component
       [name]: value
 
     });
-
   };
 
-  test = event => 
-  {
-    //console.log(this.state.username2);
-
-    if(this.state.username2 == "a")
-    {
-      console.log("true");
-    }
-  };
 
   //Function4: adds new user to MongoDB when signing up.
   addNewUser = event => 
   {
     event.preventDefault();
 
-    
 
     //Checks to make sure textfields are not empty when submitting new user.
     if (this.state.username && this.state.password && this.state.title && this.state.full_name &&
@@ -200,10 +184,6 @@ class Login extends Component
   //Callback function after user uploads image or document
   onSuccess = result => 
   {
-
-    console.log('result', result);
-    console.log('link', result.filesUploaded[0].originalPath);
-    console.log("url", result.filesUploaded[0].url)
 
     //store photolink inside (photoURL) field of (user) collection
     this.setState({photoURL: result.filesUploaded[0].url})
