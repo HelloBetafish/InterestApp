@@ -15,7 +15,7 @@ class ConnectColl extends Component {
     user: {},
     users: [],
     IdOfSignedUser: "",
-    contacts: []
+    contacts: [],
     id: ""
   };
 
