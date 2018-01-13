@@ -16,6 +16,8 @@ class FriendProfile extends Component
 {
   state = 
   {
+    signedUser: {},
+    IdOfSignedUser: "",
     user: {},
     ideas: [],
     ideas2: [],
@@ -36,12 +38,15 @@ class FriendProfile extends Component
   //ReUse: Get Id profile user
   loadLoggedUsers = () => 
   {
-    
-      API.getIdOfProfileUser().then(res =>
-        
-        this.setState({ IdOfUserProfile: res.data[0].IdOfUserProfile }, this.getUser(res.data[0].IdOfUserProfile) )
+    API.getIdOfLoggedInUser().then(res =>
+      
+      this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser })
+    ).catch(err => console.log(err));
 
-        ).catch(err => console.log(err))
+    API.getIdOfProfileUser().then(res =>
+        
+      this.setState({ IdOfUserProfile: res.data[0].IdOfUserProfile }, this.getUser(res.data[0].IdOfUserProfile) )
+    ).catch(err => console.log(err));
 
   };
 
@@ -62,7 +67,10 @@ class FriendProfile extends Component
     API.getUser(id).then(res => 
           this.setState({ user: res.data, ideas: res.data.idea}, console.log(res.data) )
           ).catch(err => console.log(err));
-    
+          
+    API.getUser(this.state.IdOfSignedUser).then(res => 
+      this.setState({ signedUser: res.data}, console.log(res.data) )
+      ).catch(err => console.log(err));
   };
   
   //We use id parameter (associtated with user with idea/id) where the idea (id)
@@ -108,8 +116,8 @@ addPost = event =>
         API.savePost(this.state.IdOfUserProfile, 
         { 
         body: this.state.postBody,
-        senderId: this.state.IdOfUserProfile,
-        senderName: this.state.user.full_name
+        senderId: this.state.IdOfSignedUser,
+        senderName: this.state.signedUser.full_name
         }).then(res => console.log("Post added."))
         .catch(err => console.log(err));
     }

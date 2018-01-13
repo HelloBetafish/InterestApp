@@ -16,7 +16,8 @@ class ConnectColl extends Component {
     users: [],
     IdOfSignedUser: "",
     contacts: [],
-    id: ""
+    id: "",
+    dummyPhoto: "css/images/addphoto.png"
   };
 
   componentDidMount() 
