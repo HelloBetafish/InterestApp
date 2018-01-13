@@ -8,13 +8,13 @@ const AboutUs = () =>
 <Navbar />
 
 
-
+<div className="background">
 <div className="cards">
   <div className="imgBox"><img src="css/images/people4.jpg" style={{width:"100%",height:"100%"}}/></div>
     <div className="details">
       <div className="content">
 
-       <h3 style={{color:"black"}}>You are a one step <br/><spna>to make it real!</spna></h3>
+       <h3 style={{color:"black"}}>You are a one step <br/><span>to make it real!</span></h3>
 
       </div>
     </div>  
@@ -55,7 +55,7 @@ const AboutUs = () =>
 
 
 
- 
+ </div>
 
 
 
