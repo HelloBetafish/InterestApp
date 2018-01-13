@@ -200,12 +200,22 @@
 
 }
 
-.Meetus{
 
-    background-image: url("bgdesert.jpg");
+
+#texta{
+	text-align: center;
+	padding-top: 15px;
+	color:black;
+	font-weight: bold;
+	font-size:17px;
+}
+#textb{
+	text-align: center;
+	color:black;
+	
+	font-size:13px;
 
 }
-
 #photo{
 	margin-top:50px;
 }
@@ -557,6 +567,7 @@ body, html, main {
  	margin-top: 20px;
  	margin-left: 20px;
  	margin-bottom: 20px;
+ 	
 
  }
  #accounttitle{
@@ -591,5 +602,4 @@ body, html, main {
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
 }
-
 
