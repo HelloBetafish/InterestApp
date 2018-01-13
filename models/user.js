@@ -56,7 +56,7 @@ const userSchema = new Schema({
   online:
   {
     type: Boolean,
-    default: false,
+    default: false
   
   },
 
