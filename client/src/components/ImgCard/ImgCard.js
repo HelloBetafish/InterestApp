@@ -5,8 +5,8 @@ import "./ImgCard.css";
 //NOTE: {...props} OR onClick={() => props.onClick(props.id)} allows onClick to work
 const ImgCard = props  => (
 
-  <div  className="img-thumbnail zoom" >
-    <img onClick={() => props.onClick(props.id)} src={props.photoURL} alt="Profile Pic" width="150" height="150" style={{marginLeft:"45px"}}/>
+  <div  className="img-thumbnail zoom text-center">
+    <img onClick={() => props.onClick(props.id)} src={props.photoURL} alt="Profile Pic" width="150" height="150" style={{margin:"auto"}}/>
       <div className="people">
         <p id="texta">{props.full_name}</p> 
         <p id="textb"><strong>{props.title}</strong><br/>{props.skills}</p> 
