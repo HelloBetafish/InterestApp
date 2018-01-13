@@ -81,8 +81,7 @@ const userSchema = new Schema({
 
   contacts: 
   {
-    type: Array,
-    unique: true
+    type: Array
   },
 
   posts: [
