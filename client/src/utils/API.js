@@ -105,7 +105,13 @@ export default
     return axios.delete("/api/file/" + id);
   },
 
+
   // Contact Schema
+  getContact: function(id) 
+  {
+    	return axios.get("/api/contacts/" + id);
+  },
+
   saveContact: function(id, contactData)
   {
     return axios.post("/api/contacts/" + id, contactData);

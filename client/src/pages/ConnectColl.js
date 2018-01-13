@@ -15,6 +15,7 @@ class ConnectColl extends Component {
     user: {},
     users: [],
     IdOfSignedUser: "",
+    contacts: []
     id: ""
   };
 
@@ -42,7 +43,7 @@ class ConnectColl extends Component {
   {
 
     API.getUser(id).then(res => 
-          this.setState({ user: res.data }, console.log(res.data))
+          this.setState({ user: res.data, contacts: res.data.contacts }, console.log(res.data))
           ).catch(err => console.log(err))
   };
 
@@ -59,10 +60,14 @@ class ConnectColl extends Component {
   handleClick = (event) => {
     event.preventDefault();
     const contactId = event.target.attributes.getNamedItem("data-id").value;
-    console.log(contactId);
+    // console.log(contactId);
     // Use ID value to redirect to that person's profile page.
-    this.addContact(contactId);
-    
+    if (this.state.contacts.indexOf(contactId) === -1) {
+      this.addContact(contactId);
+    }
+    else{
+      alert("Contact has already been added.");
+    }
   };
 
   addContact = (contactId) => {
@@ -70,7 +75,7 @@ class ConnectColl extends Component {
     API.saveContact(this.state.IdOfSignedUser,
       { 
         contacts: contactId
-        }).then(res => console.log("Success!"))
+        }).then(res => alert("Contact added."))
         .catch(err => console.log(err));
     this.getUser(this.state.IdOfSignedUser);
   };
