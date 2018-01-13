@@ -105,7 +105,7 @@
 	height: 250px;
 	backface-visibility: hidden;
 	position: absolute;
-	background:#65737e; 
+	background:#343d46; 
 	font-size: 30px;
 	font-family:'Raleway', sans-serif; 
 	font-weight: bold;
@@ -122,13 +122,14 @@
 	font-weight: bold;
 }
 
+
 .flip  .back{
 
 	width: 250px;
 	height: 250px;
 	backface-visibility: hidden;
 	position: absolute;
-	background:#343d46;
+	background:#f9bd05;
 	font-size: 15px;
 	font-family: helvetica; 
 	color:white;
