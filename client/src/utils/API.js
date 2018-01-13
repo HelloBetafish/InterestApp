@@ -27,13 +27,22 @@ export default
   },
 
 
-  //Sets user online(updates fiedld online: true)
+  //Login: Sets user online(updates fiedld online: true)
   userOnline: function(id)
   {
 
   		return axios.put("/api/users/" + id);
 
   },
+
+  //Navbar: updates the online value to false when user logs out
+   userOffline: function(id)
+  {
+
+      return axios.put("/api/signin/" + id);
+
+  },
+
 
   addSignUserId: function(id)
   {

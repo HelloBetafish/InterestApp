@@ -1,10 +1,52 @@
-import React from "react";
+import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import API from "../../utils/API";
 import "./Navbar.css";
 
 
-const Navbar = props =>
- <nav className="navbar navbar-dark bg-dark data-spy-affix navbar-expand-sm">
+class Navbar extends Component
+{
+
+  state = 
+  {
+    
+    IdOfSignedUser: ""
+  }
+
+  componentDidMount() 
+  {
+
+      this.loadLoggedUsers();
+     
+  }
+
+  //ReUse: Get Id of logged in user
+  loadLoggedUsers = () => 
+  {
+    
+      API.getIdOfLoggedInUser().then(res =>
+        
+        this.setState({ IdOfSignedUser: res.data[0].IdOfSignedUser }, console.log(res.data[0].IdOfSignedUser) )
+
+        ).catch(err => console.log(err))
+
+  };
+
+  signOut = () => 
+  {
+    
+        
+        API.userOffline(this.state.IdOfSignedUser).then(res => this.loadUsers())
+
+        .catch(err => console.log(err));
+  };
+
+  
+render()
+{
+
+    return(
+     <nav className="navbar navbar-dark bg-dark data-spy-affix navbar-expand-sm">
   <div className="container-fluid">
     <div className="navbar-header">
       <Link className="navbar-brand" to="/dashboard">
@@ -41,6 +83,10 @@ const Navbar = props =>
           className={window.location.pathname === "/browseideas" ? "active" : ""}>
           <Link to="/browseideas" className="nav-link" >Browse Ideas</Link>
         </li>
+        <li className = "nav-item" 
+          className={window.location.pathname === "/" ? "active" : ""}>
+          <Link to="/" onClick={this.signOut} className="nav-link" >Sign Out</Link>
+        </li>
         
       </ul>
       <form className=" form-inline navbar-form navbar-left" action="/action_page.php">
@@ -51,5 +97,9 @@ const Navbar = props =>
       </div>
     </form>
   </div>
-</nav>;
+</nav>
+
+);
+}
+}
 export default Navbar;

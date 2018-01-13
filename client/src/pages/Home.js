@@ -22,11 +22,6 @@ import "../style/Home.css";
 import Encrypt_Decrypt from "../EncryptionDecryption/Encrypt_Decrypt";
 import Footer from "../components/Footer";
 
-
-
-var stack = [];
-
-
 class Login extends Component
 {
 

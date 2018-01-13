@@ -6,6 +6,7 @@ router.route("/")
 .get(appController.findId);
 
 router.route("/:id")
-.get(appController.findById);
+.get(appController.findById)
+.put(appController.updateOffline);
 
 module.exports = router;

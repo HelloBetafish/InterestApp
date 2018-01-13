@@ -21,10 +21,6 @@ import Badge from "../components/Login/Badge";
 import "../components/Login/Login.css";
 import Encrypt_Decrypt from "../EncryptionDecryption/Encrypt_Decrypt";
 
-
-var stack = [];
-
-
 class Login extends Component
 {
 
