@@ -5,8 +5,6 @@ import "../style/Aboutus.css";
 const AboutUs = () =>
 
 <div>
-<Navbar />
-
 
 <div className="background">
 <div className="cards">
