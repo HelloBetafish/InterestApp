@@ -11,6 +11,7 @@ import Idea from "../components/Idea";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import { PostBoard, PostBtn, PostItem, TextArea } from "../components/PostBoard";
 import { LinksURL, LinksURLForm } from "../components/LinksURL";
+import Footer from "../components/Footer";
 
 class FriendProfile extends Component
 {
@@ -298,10 +299,8 @@ addPost = event =>
           </Row>
         </Col>
       </Row>
-              
-                   
-                                 
-          </div>
+    <Footer />    
+</div>
 
 
           

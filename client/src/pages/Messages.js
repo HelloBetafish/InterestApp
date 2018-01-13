@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import "../style/connectColl.css";
+import Footer from "../components/Footer";
 
 const Messages = () =>
 
@@ -97,5 +98,7 @@ const Messages = () =>
    
 
   </div>;
+  <Footer />
 </div>
+
 export default Messages; 

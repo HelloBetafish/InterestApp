@@ -316,15 +316,9 @@ class Login extends Component
         
         <div className="row">
 
-              <div className="col-lg-3">
+              <div className="col-lg-6">
 
-              </div>
-        
-          
-         
-           
-
-              <div className="col-lg-7">
+              
 
 
                 
@@ -332,11 +326,11 @@ class Login extends Component
                <img src="images/logointapporange.jpg" className="img-fluid mx-auto d-block logoPic" alt="Responsive image" />
 
                <Link to="/aboutus" className="nav-link" >
-               <div className="aboutUs"> <p className="aboutUsText"> about us </p> </div>
+               <div className="aboutUs"> <p className="aboutUsText"> Learn More</p> </div>
                </Link>
                
                <Link to="/login" className="nav-link" >
-               <div className="createAccount"> <p className="createAccountText"> create account </p> </div>
+               <div className="createAccount"> <p className="createAccountText"> Create Account </p> </div>
                </Link>
 
                 

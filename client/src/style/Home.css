@@ -11,7 +11,7 @@
     background: rgb(60, 60, 60);                            
     background: rgba(60, 60, 60, 0.4);
     */
-    opacity: 0.75;
+    opacity: 0.90;
 
 }
 
@@ -30,7 +30,7 @@
 .intAppDiv
 {
     background: gray;
-    font-family: serif, Times, "Times New Roman";
+    font-family: serif, Helvetica;
     font-size: 45px;
     font-weight: bold;
     opacity: 0.75;
@@ -55,7 +55,7 @@ iframe.backgroundImg
     color: black;
     position: relative;
     top: 20px;
-    font-family: serif, Times, "Times New Roman";
+    font-family: Helvetica;
     font-size: 25px;
     font-weight: bold;
 }

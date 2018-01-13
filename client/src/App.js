@@ -22,7 +22,7 @@ const App = () =>
 
     <div>
       
-      <Wrapper>
+      
       	<Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/dashboard" component={Dashboard} />
@@ -35,8 +35,8 @@ const App = () =>
         <Route exact path="/meetus" component={MeetUs} />
         <Route exact path="/aboutus" component={AboutUs} />
         {/* <Route path="/*" component={NoMatch} /> */}
-      </Wrapper>
-      <Footer />
+    
+      
     </div>
   </Router>
 

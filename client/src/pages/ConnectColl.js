@@ -8,6 +8,7 @@ import AddContactBtn from "../components/AddContactBtn";
 import API from "../utils/API";
 import "../style/connectColl.css";
 import ReactFilestack, { client } from 'filestack-react';
+import Footer from "../components/Footer";
 
 class ConnectColl extends Component {
   state = 
@@ -164,6 +165,7 @@ class ConnectColl extends Component {
 </section>
 </div>
 </div>
+<Footer />
 </div>
 
 

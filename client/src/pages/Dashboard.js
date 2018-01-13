@@ -11,6 +11,7 @@ import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import DeleteBtn from "../components/DeleteBtn";
 import { LinksURL, LinksURLForm } from "../components/LinksURL";
+import Footer from "../components/Footer";
 
 class Dashboard extends Component
 {
@@ -618,6 +619,7 @@ class Dashboard extends Component
           </div>
       </section>
     </div>
+    <Footer />
   </div>
     );
     }
