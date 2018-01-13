@@ -11,11 +11,7 @@ import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import DeleteBtn from "../components/DeleteBtn";
 import { LinksURL, LinksURLForm } from "../components/LinksURL";
-<<<<<<< Updated upstream
 import Footer from "../components/Footer";
-=======
-import { ContactList, Contact} from "../components/ContactList";
->>>>>>> Stashed changes
 
 class Dashboard extends Component
 {
@@ -111,8 +107,7 @@ class Dashboard extends Component
    
     API.getUser(id).then(res => 
           this.setState({ user: res.data },  console.log(res.data) )
-          ).catch(err => console.log(err));
-    this.getContacts();
+          ).catch(err => console.log(err))
   };
 
   // Filestack callback function for uploading files to user db
