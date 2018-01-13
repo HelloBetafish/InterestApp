@@ -177,9 +177,7 @@ addPost = event =>
                           <PostItem 
                             key={post._id}
                             senderId={post.senderId}>
-                            From <Link to={"/publicprofile/"}>
-                              {post.senderName}
-                            </Link> :
+                              From {post.senderName} :
                               <hr/>
                               <p style={{textIndent:"10px"}}>{post.body}</p>
                               <small style={{float:"right"}}>Note sent: {post.userCreated}</small>
