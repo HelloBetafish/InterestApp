@@ -215,7 +215,8 @@ class Dashboard extends Component
           whatIsIdea: this.state.whatIsIdea,
           whyGoodIdea: this.state.whyGoodIdea,
           photo: this.state.ideaphoto,
-          Author: this.state.user.full_name
+          Author: this.state.user.full_name,
+          AuthorId: this.state.IdOfSignedUser
 
 
          }).then(res => console.log(res.data))
@@ -316,19 +317,16 @@ class Dashboard extends Component
           title : res.data.title
         })
         }).catch(err => console.log(err));
-        // this.state.contacts.push(contactinfo)
     }
   //  this.setState({contacts: this.state.contacts});
     console.log(this.state.contacts);
-    // console.log(this.state.contacts[1].full_name);
   };
 
-  seeProfile = id => 
-  {
-
-    API.addIdOfProfilePic(id).then(res => this.loadUsers())
-      .catch(err => console.log(err));
-  };
+  // seeProfile = id => 
+  // {
+  //   API.addIdOfProfilePic(id).then(res => this.loadUsers())
+  //     .catch(err => console.log(err));
+  // };
 
     render()
     {

@@ -32,8 +32,13 @@ const userSchema = new Schema({
   {
     type: String,
     default: ""
-  }
+  },
 
+  AuthorId:
+  {
+    type: String,
+    required: true
+  }
 
  });
 

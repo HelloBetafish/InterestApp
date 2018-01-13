@@ -99,7 +99,6 @@ handleInputChange = event =>
 
     const { name, value } = event.target;
 
-     
     this.setState({
 
       [name]: value
@@ -124,7 +123,14 @@ addPost = event =>
     }
     this.getUser(this.state.IdOfUserProfile);
     this.setState({ postBody:""});
-}
+};
+
+seeProfile = id => 
+{
+
+  API.addIdOfProfilePic(id).then(res => this.loadLoggedUsers())
+    .catch(err => console.log(err));
+};
 
  render()
  {
@@ -177,7 +183,9 @@ addPost = event =>
                           <PostItem 
                             key={post._id}
                             senderId={post.senderId}>
-                              From {post.senderName} :
+                            <Link to="/friendprofile" className="nav-link" onClick={() => this.seeProfile(post.senderId)}>
+                            From : {post.senderName} 
+                            </Link> 
                               <hr/>
                               <p style={{textIndent:"10px"}}>{post.body}</p>
                               <small style={{float:"right"}}>Note sent: {post.userCreated}</small>
@@ -189,11 +197,12 @@ addPost = event =>
                       )}
                       
                         <TextArea
+                        name="postBody"
                         value={this.state.postBody}
                         onChange={this.handleInputChange}
                         style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}}
                         id="textAreaPost" 
-                        name="postBody"
+                        
                         />
                       <PostBtn
                         onClick={this.addPost}/>

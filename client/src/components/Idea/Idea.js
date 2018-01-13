@@ -1,6 +1,7 @@
 
 
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Idea.css";
 
 
@@ -11,7 +12,13 @@ const Idea = props =>
 <div className="ideaBox col-md-2">
                                           
                         <img src={props.photo} alt="..." className="img-thumbnail" style={{width:"100%"}} />
-                        <p > <b>Author: </b> {props.Author} </p>
+                        
+                        <p onClick={() => props.onClick(props.userid)}> <b>Author: </b>
+                          <Link to="/friendprofile" className="nav-link" > 
+                            {props.Author} 
+                          </Link>
+                        </p>
+                        
                         <p className="theTest"> <b>Idea Name: </b> {props.ideaName} </p>
                         <p> <b>Idea: </b> {props.whatIsIdea} </p>
                         <p> <b>Why: </b> {props.whyGoodIdea} </p>

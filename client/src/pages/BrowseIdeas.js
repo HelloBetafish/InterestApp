@@ -44,6 +44,12 @@ class BrowseIdeas extends Component {
         ).catch(err => console.log(err));
   };
 
+  seeProfile = id => 
+  {
+
+    API.addIdOfProfilePic(id).then(res => this.loadLoggedUser())
+      .catch(err => console.log(err));
+  };
 
   render() {
     return(
@@ -91,6 +97,8 @@ class BrowseIdeas extends Component {
                     <Row>
                       {this.state.ideas.map(idea => (
                           <Idea
+                            onClick={this.seeProfile}
+                            userid={idea.AuthorId}
                             key={idea.id}
                             id={idea.id}
                             Author={idea.Author}

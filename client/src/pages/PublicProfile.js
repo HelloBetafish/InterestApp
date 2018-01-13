@@ -108,7 +108,13 @@ addPost = event =>
     this.getUser(this.state.IdOfSignedUser);
     // Reset Text Area field
     this.setState({ postBody:""});
-}
+};
+
+seeProfile = id => 
+{
+  API.addIdOfProfilePic(id).then(res => this.loadLoggedUsers())
+    .catch(err => console.log(err));
+};
 
  render()
  {
@@ -161,9 +167,9 @@ addPost = event =>
                           <PostItem 
                             key={post._id}
                             senderId={post.senderId}>
-                            From <Link to={"/publicprofile/"}>
-                              {post.senderName}
-                            </Link> :
+                            <Link to="/friendprofile" className="nav-link" onClick={() => this.seeProfile(post.senderId)}>
+                            From : {post.senderName} 
+                            </Link> 
                               <hr/>
                               <p style={{textIndent:"10px"}}>{post.body}</p>
                               <small style={{float:"right"}}>Note sent: {post.userCreated}</small>
