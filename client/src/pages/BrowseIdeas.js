@@ -1,4 +1,3 @@
-
 import React, {Component} from "react";
 import ReactFilestack, { client } from 'filestack-react';
 import { Link } from "react-router-dom";
@@ -6,9 +5,9 @@ import Navbar from "../components/Navbar";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import API from "../utils/API";
-
 import Idea from "../components/Idea";
 import "../style/connectColl.css";
+import Footer from "../components/Footer";
 
 class BrowseIdeas extends Component {
   state = 
@@ -45,6 +44,12 @@ class BrowseIdeas extends Component {
         ).catch(err => console.log(err));
   };
 
+  seeProfile = id => 
+  {
+
+    API.addIdOfProfilePic(id).then(res => this.loadLoggedUser())
+      .catch(err => console.log(err));
+  };
 
   render() {
     return(
@@ -92,6 +97,8 @@ class BrowseIdeas extends Component {
                     <Row>
                       {this.state.ideas.map(idea => (
                           <Idea
+                            onClick={this.seeProfile}
+                            userid={idea.AuthorId}
                             key={idea.id}
                             id={idea.id}
                             Author={idea.Author}
@@ -116,7 +123,7 @@ class BrowseIdeas extends Component {
           </div>
          
 
-
+      <Footer />
       </div>
 
 

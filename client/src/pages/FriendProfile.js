@@ -11,6 +11,7 @@ import Idea from "../components/Idea";
 import { FileDisplay, FileDisplay2 } from "../components/FileDisplay";
 import { PostBoard, PostBtn, PostItem, TextArea } from "../components/PostBoard";
 import { LinksURL, LinksURLForm } from "../components/LinksURL";
+import Footer from "../components/Footer";
 
 class FriendProfile extends Component
 {
@@ -98,7 +99,6 @@ handleInputChange = event =>
 
     const { name, value } = event.target;
 
-     
     this.setState({
 
       [name]: value
@@ -123,7 +123,14 @@ addPost = event =>
     }
     this.getUser(this.state.IdOfUserProfile);
     this.setState({ postBody:""});
-}
+};
+
+seeProfile = id => 
+{
+
+  API.addIdOfProfilePic(id).then(res => this.loadLoggedUsers())
+    .catch(err => console.log(err));
+};
 
  render()
  {
@@ -176,9 +183,9 @@ addPost = event =>
                           <PostItem 
                             key={post._id}
                             senderId={post.senderId}>
-                            From <Link to={"/publicprofile/"}>
-                              {post.senderName}
-                            </Link> :
+                            <Link to="/friendprofile" className="nav-link" onClick={() => this.seeProfile(post.senderId)}>
+                            From : {post.senderName} 
+                            </Link> 
                               <hr/>
                               <p style={{textIndent:"10px"}}>{post.body}</p>
                               <small style={{float:"right"}}>Note sent: {post.userCreated}</small>
@@ -190,11 +197,12 @@ addPost = event =>
                       )}
                       
                         <TextArea
+                        name="postBody"
                         value={this.state.postBody}
                         onChange={this.handleInputChange}
                         style={{ backgroundColor: "white",marginLeft:"20px", width:"92%"}}
                         id="textAreaPost" 
-                        name="postBody"
+                        
                         />
                       <PostBtn
                         onClick={this.addPost}/>
@@ -298,10 +306,8 @@ addPost = event =>
           </Row>
         </Col>
       </Row>
-              
-                   
-                                 
-          </div>
+    <Footer />    
+</div>
 
 
           

@@ -46,6 +46,7 @@ module.exports =
       .catch(err => res.status(422).json(err));
   },
 
+  //Login: sets online field to true when user logs in
   update: function(req, res) 
   {
   
@@ -61,6 +62,15 @@ module.exports =
       .create({ IdOfSignedUser: req.params.id }).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
    
+  },
+
+  //Navbar: sets online field to offline when user logs out
+  updateOffline: function(req, res)
+  {
+  	//DB1: user collection(table). Set field(online = true)
+      db.User.update({ _id: req.params.id }, {$set: {"online": 0}} ).then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+
   },
 
   //profile collection(table) set field(IdOfUserProfile = id of clicked pitcture on connect&colab)

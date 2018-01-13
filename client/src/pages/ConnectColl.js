@@ -8,6 +8,7 @@ import AddContactBtn from "../components/AddContactBtn";
 import API from "../utils/API";
 import "../style/connectColl.css";
 import ReactFilestack, { client } from 'filestack-react';
+import Footer from "../components/Footer";
 
 class ConnectColl extends Component {
   state = 
@@ -137,8 +138,9 @@ class ConnectColl extends Component {
         <Col size="md-3" className="zoom">
 
         <Link to="/friendprofile" className="nav-link" >
-                  
-          <ImgCard
+
+        {(card.photoURL !=="") ?        
+          (<ImgCard
             onClick={this.seeProfile}
             photoURL={card.photoURL}
             full_name={card.full_name}
@@ -146,8 +148,17 @@ class ConnectColl extends Component {
             skills={card.skills}
             key={card._id}
             id={card._id}
-          />
-
+          />) :
+          (<ImgCard
+            onClick={this.seeProfile}
+            photoURL={this.state.dummyPhoto}
+            full_name={card.full_name}
+            title={card.title}
+            skills={card.skills}
+            key={card._id}
+            id={card._id}
+          />)}
+          
         </Link>
           
           <AddContactBtn id={card._id} handleClick={this.handleClick}/>
@@ -164,6 +175,7 @@ class ConnectColl extends Component {
 </section>
 </div>
 </div>
+<Footer />
 </div>
 
 

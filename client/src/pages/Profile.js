@@ -7,6 +7,7 @@ import "../style/connectColl.css";
 import API from "../utils/API";
 import Col from "../components/Login/Col";
 import { Thumbnail, Thumbnail2 } from "../components/Thumbnail";
+import Footer from "../components/Footer";
 
 
 class Profile extends Component
@@ -380,6 +381,7 @@ class Profile extends Component
           </div>
       </section>
     </div>
+    <Footer />
   </div>
     );
     }
