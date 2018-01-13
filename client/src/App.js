@@ -32,8 +32,8 @@ const App = () =>
         <Route exact path="/friendprofile" component={FriendProfile} />
         <Route exact path="/browseideas" component={BrowseIdeas} />
         <Route exact path="/createaccount" component={CreateAcct} />
-        <Route exact path="/meetus" component={MeetUs} />
-        <Route exact path="/aboutus" component={AboutUs} />
+        <Route exact path="/aboutus" component={MeetUs} />
+        <Route exact path="/learnmore" component={AboutUs} />
         {/* <Route path="/*" component={NoMatch} /> */}
     
       

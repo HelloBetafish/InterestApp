@@ -62,12 +62,11 @@ render()
               : ""
           }>
         </li>
+        <li className ="nav-item" className={window.location.pathname === "/aboutus" ? "active" : ""}>
+          <Link to="/aboutus" className="nav-link">About us</Link>
+        </li>
         <li className ="nav-item" className={window.location.pathname === "/messages" ? "active" : ""}>
           <Link to="/messages" className="nav-link">Inbox</Link>
-        </li>
-        
-         <li className ="nav-item" className={window.location.pathname === "/aboutus" ? "active" : ""}>
-          <Link to="/aboutus" className="nav-link">About us</Link>
         </li>
         <li className ="nav-item" className={window.location.pathname === "/dashboard" ? "active" : ""}>
           <Link to="/dashboard" className="nav-link" >Dashboard</Link>

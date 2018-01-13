@@ -10,7 +10,7 @@ const Footer = () =>
         <p className="text-left">InterestApp , Gilbert AZ  </p>
       </div>
       <div className='col-md-6'>
-        <p className="text-right">Privacy | Android App | Help | <Link to="/meetus">Meet Us</Link></p>
+        <p className="text-right">Privacy | Android App | Help | <Link to="/aboutus">Meet Us  </Link>| <Link to="/learnmore">Learn More</Link></p>
       </div>
     </div>
   </div>
