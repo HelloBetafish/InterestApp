@@ -6,8 +6,6 @@ const AboutUs = () =>
 
 <div>
 
-
-
 <div className="background">
 <div className="cards">
   <div className="imgBox"><img src="css/images/people4a.jpg" style={{width:"100%",height:"100%"}}/></div>
