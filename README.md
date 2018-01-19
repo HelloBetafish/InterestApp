@@ -17,6 +17,9 @@ MVC
 ![Img1](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img1.png)
 Home Page with Cinemagraph background.
 
+![create](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/create.png)
+Creating a new account.
+
 ![Img2](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img2.png)
 User1 logs in.
 
@@ -46,6 +49,9 @@ User1 can view all availible users and click on the image to view profile of a u
 
 ![Img7](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img7.png)
 View every idea posted by every user.
+
+![db](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/db.png)
+Database with 4 collections: **posts, profiles, signins, users**
 
 
 
