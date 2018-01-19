@@ -51,7 +51,7 @@ User1 can view all availible users and click on the image to view profile of a u
 View every idea posted by every user.
 
 ![db](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/db.png)
-Database with 4 collections: **posts, profiles, signins, users**
+Database with 4 collections: **posts, profiles, signins, users** and TJ's password is encrypted using CryptoJS.
 
 
 
