@@ -17,6 +17,21 @@ MVC
 ![Img1](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img1.png)
 Home Page with Cinemagraph background.
 
+![Img8](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img8.png)
+Inbox page
+
+![Img9](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img9.png)
+AboutMePage/Bethany
+
+![Img10](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img10.png)
+AboutMePage/Reyna
+
+![Img11](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img11.png)
+AboutMePage/Jesse
+
+![Img12](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/Img12.png)
+AboutMePage/TJ
+
 ![create](https://github.com/tdsteph1/InterestApp/blob/master/client/public/images/create.png)
 Creating a new account.
 
